@@ -1,0 +1,333 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 9% 17%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 0 0% 98%;
+    --sidebar-primary-foreground: 240 5.9% 10%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.prose {
+  @apply max-w-none;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.prose img {
+  @apply max-w-full h-auto;
+}
+
+.prose pre {
+  @apply overflow-x-auto;
+  max-width: 100%;
+}
+
+.prose code {
+  @apply break-words;
+}
+
+.prose table {
+  @apply w-full;
+  table-layout: fixed;
+}
+
+.prose td,
+.prose th {
+  @apply break-words;
+  overflow-wrap: break-word;
+}
+
+.prose h1 {
+  @apply text-3xl font-bold tracking-tight;
+}
+
+.prose h2 {
+  @apply text-2xl font-semibold tracking-tight mt-8 mb-4;
+}
+
+.prose h3 {
+  @apply text-xl font-semibold tracking-tight mt-6 mb-3;
+}
+
+.prose h4 {
+  @apply text-lg font-semibold tracking-tight mt-4 mb-2;
+}
+
+.prose p {
+  @apply mb-4 leading-7;
+}
+
+.prose ul,
+.prose ol {
+  @apply mb-4 ml-0 pl-6;
+}
+
+.prose ul {
+  list-style-type: disc;
+  list-style-position: outside;
+}
+
+.prose ol {
+  list-style-type: decimal;
+  list-style-position: outside;
+}
+
+.prose li {
+  @apply mb-2 pl-2;
+  position: relative;
+}
+
+.prose ul li {
+  list-style-type: disc;
+}
+
+.prose ul ul li {
+  list-style-type: circle;
+}
+
+.prose ul ul ul li {
+  list-style-type: square;
+}
+
+.prose ol li {
+  list-style-type: decimal;
+}
+
+.prose ol ol li {
+  list-style-type: lower-alpha;
+}
+
+.prose ol ol ol li {
+  list-style-type: lower-roman;
+}
+
+/* Ensure proper spacing for nested lists */
+.prose ul ul,
+.prose ol ol,
+.prose ul ol,
+.prose ol ul {
+  @apply mt-2 mb-2;
+}
+
+/* Better bullet point visibility */
+.prose ul li::marker {
+  color: hsl(var(--primary));
+  font-weight: bold;
+}
+
+.prose ol li::marker {
+  color: hsl(var(--primary));
+  font-weight: bold;
+}
+
+.prose code {
+  @apply bg-muted px-1.5 py-0.5 rounded text-sm;
+}
+
+.prose pre {
+  @apply bg-muted p-4 rounded-lg overflow-x-auto mb-4;
+}
+
+.prose a {
+  @apply text-primary hover:underline;
+}
+
+/* Enhanced blockquote styles */
+.prose blockquote {
+  @apply border-l-4 pl-4 py-3 my-4 rounded-r-lg;
+  margin-left: 0;
+  font-style: normal;
+}
+
+/* Default blockquote */
+.prose blockquote:not([data-type]) {
+  @apply border-l-blue-500 bg-blue-50 text-blue-900;
+}
+
+.dark .prose blockquote:not([data-type]) {
+  @apply bg-blue-950/30 text-blue-100;
+}
+
+/* Note style */
+.prose blockquote[data-type="note"] {
+  @apply border-l-blue-500 bg-blue-50 text-blue-900;
+}
+
+.dark .prose blockquote[data-type="note"] {
+  @apply bg-blue-950/30 text-blue-100;
+}
+
+/* Tip style */
+.prose blockquote[data-type="tip"] {
+  @apply border-l-green-500 bg-green-50 text-green-900;
+}
+
+.dark .prose blockquote[data-type="tip"] {
+  @apply bg-green-950/30 text-green-100;
+}
+
+/* Warning style */
+.prose blockquote[data-type="warning"] {
+  @apply border-l-yellow-500 bg-yellow-50 text-yellow-900;
+}
+
+.dark .prose blockquote[data-type="warning"] {
+  @apply bg-yellow-950/30 text-yellow-100;
+}
+
+/* Important style */
+.prose blockquote[data-type="important"] {
+  @apply border-l-red-500 bg-red-50 text-red-900;
+}
+
+.dark .prose blockquote[data-type="important"] {
+  @apply bg-red-950/30 text-red-100;
+}
+
+/* Caution style */
+.prose blockquote[data-type="caution"] {
+  @apply border-l-orange-500 bg-orange-50 text-orange-900;
+}
+
+.dark .prose blockquote[data-type="caution"] {
+  @apply bg-orange-950/30 text-orange-100;
+}
+
+.prose blockquote p {
+  @apply mb-2 last:mb-0;
+}
+
+.prose blockquote strong {
+  @apply font-semibold;
+}
+
+/* Add smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Offset scroll position to account for fixed header */
+h1[id],
+h2[id],
+h3[id],
+h4[id],
+h5[id],
+h6[id],
+span[id],
+div[id] {
+  scroll-margin-top: 6rem;
+}
+
+/* Highlight target section briefly when navigated to via anchor */
+:target {
+  animation: highlight 3s ease-in-out;
+}
+
+/* Custom highlight for search results */
+.search-highlight {
+  animation: search-highlight 5s ease-in-out;
+  position: relative;
+}
+
+.search-highlight::before {
+  content: "";
+  position: absolute;
+  left: -1rem;
+  top: 0;
+  height: 100%;
+  width: 0.25rem;
+  background-color: hsl(var(--highlight-bg));
+  border-radius: 0.25rem;
+}
+
+@keyframes highlight {
+  0%,
+  20% {
+    background-color: rgba(59, 130, 246, 0.15);
+    border-radius: 4px;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+@keyframes search-highlight {
+  0%,
+  10% {
+    background-color: rgba(255, 213, 220, 0.8); /* soft pink */
+    box-shadow: 0 0 0 4px rgba(255, 204, 204, 0.3); /* subtle glow */
+    border-radius: 4px;
+  }
+  70%,
+  100% {
+    background-color: transparent;
+    box-shadow: none;
+  }
+}
