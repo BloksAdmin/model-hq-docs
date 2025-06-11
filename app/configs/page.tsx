@@ -42,7 +42,7 @@ export default function ConfigsPage() {
 
         <p>&nbsp;</p>
 
-        <h3 id="1-launching-the-configure-interface">1. Launching the configure Interface</h3>
+        <h3 id="launching-the-configure-interface">1. Launching the configure Interface</h3>
         <p>
           To begin, click on the <strong>configure</strong> button ( ❃ ) from the main menu present in the top right
           side.
@@ -52,7 +52,7 @@ export default function ConfigsPage() {
 
         <p>&nbsp;</p>
 
-        <h3 id="2-overview-of-the-configure-interface">2. Overview of the configure Interface</h3>
+        <h3 id="overview-of-the-configure-interface">2. Overview of the configure Interface</h3>
         <p>
           After launching the configure section, the interface displays the following key options:
           <br />

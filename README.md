@@ -143,18 +143,22 @@ Before you begin, ensure you have the following installed:
    ```bash
    npm install
    # or
-   yarn install
+   yarn install # if using Github Codespaces, then use this.
    # or
    pnpm install
+   # or
+   bun install
    ```
 
 3. **Run the development server**
    ```bash
    npm run dev
    # or
-   yarn dev
+   yarn run dev # if using Github Codespaces, then use this.
    # or
-   pnpm dev
+   pnpm run dev
+   # or
+   bun run dev
    ```
 
 4. **Open your browser**
@@ -463,6 +467,225 @@ console.log(example);
   </table>
 </div>
 ```
+
+## 🎥 Managing Video Tutorials
+
+### Video Data Structure
+
+Videos are managed through the `VideoData` interface in `app/video-tutorials/page.tsx`:
+
+````typescript
+interface VideoData {
+  id: string              // YouTube video ID (extracted from URL)
+  title: string           // Video title
+  description: string     // Detailed description
+  duration: string        // Video length (e.g., "10:14")
+  views: string          // View count (e.g., "174K")
+  thumbnail: string      // Thumbnail image path
+  publishedAt?: string   // Publication date (ISO string)
+  tags?: string[]        // Category tags for filtering
+  isManuallyAdded?: boolean // Whether manually added vs playlist
+}
+````
+
+### Adding New Videos
+
+#### 1. Add to Video Array
+
+Update the `playlistVideos` array in `app/video-tutorials/page.tsx`:
+
+````typescript
+const playlistVideos: VideoData[] = [
+  // ... existing videos
+  {
+    id: "YOUR_VIDEO_ID",
+    title: "Your Video Title",
+    description: "Comprehensive description of what the video covers...",
+    duration: "12:34",
+    views: "15K",
+    thumbnail: "/youtube/your-thumbnail.png",
+    tags: ["Tutorial", "Feature", "Getting Started"],
+    isManuallyAdded: true,
+  },
+]
+````
+
+#### 2. Extract YouTube Video ID
+
+From YouTube URL `https://www.youtube.com/watch?v=ABC123DEF456`, the video ID is `ABC123DEF456`.
+
+#### 3. Add Thumbnail Image
+
+1. **Create thumbnail**: 320x180px image (16:9 aspect ratio)
+2. **Save to**: `public/youtube/your-thumbnail.png`
+3. **Naming convention**: Use descriptive names like `getting-started.png`, `advanced-features.png`
+4. **Optimize**: Use WebP format when possible for better performance
+
+#### 4. Choose Appropriate Tags
+
+Common tag categories:
+- **Difficulty**: `Getting Started`, `Advanced`, `Expert`
+- **Features**: `Chat`, `RAG`, `Models`, `Bots`, `Agent`
+- **Hardware**: `Intel`, `AI PC`, `Performance`
+- **Content Type**: `Tutorial`, `Deep Dive`, `Overview`, `Demo`
+- **Audience**: `Business`, `Developer`, `Executive`
+
+### Video Management Best Practices
+
+#### Content Guidelines
+
+````typescript
+// Good video entry example
+{
+  id: "ABC123DEF456",
+  title: "Setting Up RAG with Model HQ - Complete Guide", // Clear, descriptive
+  description: "Learn how to set up Retrieval-Augmented Generation (RAG) in Model HQ. This comprehensive tutorial covers document ingestion, vector databases, and query optimization for better AI responses.", // Detailed, helpful
+  duration: "15:42", // Accurate duration
+  views: "25.3K", // Current view count
+  thumbnail: "/youtube/rag-setup-guide.png", // Descriptive filename
+  tags: ["RAG", "Tutorial", "Getting Started", "Documents"], // Relevant tags
+  isManuallyAdded: true,
+}
+````
+
+#### Thumbnail Guidelines
+
+1. **Dimensions**: 320x180px (matches YouTube thumbnail ratio)
+2. **Format**: PNG or WebP for best quality
+3. **Content**: Should represent the video content clearly
+4. **Text**: Minimal overlay text, readable at small sizes
+5. **Branding**: Consistent with Model HQ visual identity
+
+#### Video Organization
+
+````typescript
+// Organize videos by importance/recency
+const playlistVideos: VideoData[] = [
+  // 1. Featured/New videos first
+  { id: "new-feature", isManuallyAdded: true, /* ... */ },
+  
+  // 2. Getting started content
+  { id: "getting-started", tags: ["Getting Started"], /* ... */ },
+  
+  // 3. Feature-specific tutorials
+  { id: "rag-tutorial", tags: ["RAG", "Tutorial"], /* ... */ },
+  
+  // 4. Advanced content
+  { id: "advanced-config", tags: ["Advanced"], /* ... */ },
+]
+````
+
+### Updating Video Information
+
+#### Bulk Updates
+
+For multiple video updates, modify the array directly:
+
+````typescript
+// Update view counts, add new tags, etc.
+const updatedVideos = playlistVideos.map(video => ({
+  ...video,
+  // Add new tag to all videos
+  tags: [...(video.tags || []), "Model HQ"],
+  // Update view counts (do this periodically)
+  views: getUpdatedViewCount(video.id),
+}))
+````
+
+#### Individual Updates
+
+````typescript
+// Find and update specific video
+const videoIndex = playlistVideos.findIndex(v => v.id === "target-video-id")
+if (videoIndex !== -1) {
+  playlistVideos[videoIndex] = {
+    ...playlistVideos[videoIndex],
+    title: "Updated Title",
+    description: "Updated description...",
+    tags: ["New", "Tags"],
+  }
+}
+````
+
+### YouTube Integration
+
+#### Playlist Management
+
+The videos are sourced from the official LLMWare YouTube playlist:
+- **Playlist ID**: `PL1-dn33KwsmBiKZDobr9QT-4xI8bNJvIU`
+- **Channel**: `@llmware`
+- **URL**: `https://www.youtube.com/playlist?list=PL1-dn33KwsmBiKZDobr9QT-4xI8bNJvIU`
+
+#### Adding Videos to YouTube Playlist
+
+1. **Upload video** to LLMWare YouTube channel
+2. **Add to playlist** using the playlist ID above
+3. **Update local data** in the documentation site
+4. **Test video playback** in the embedded player
+
+### Video Player Integration
+
+Videos are played using the custom video player at `/video-tutorials/watch/[videoId]`:
+
+````typescript
+// Navigation to video player
+const handleVideoClick = (videoId: string, title: string) => {
+  window.location.href = `/video-tutorials/watch/${videoId}?title=${encodeURIComponent(title)}`
+}
+````
+
+#### Player Features
+
+- **YouTube embed** with custom controls
+- **Responsive design** for all screen sizes
+- **Related videos** suggestions
+- **Breadcrumb navigation** back to tutorials
+- **SEO optimization** with proper meta tags
+
+### Maintenance Tasks
+
+#### Regular Updates
+
+1. **Monthly**: Update view counts from YouTube Analytics
+2. **Quarterly**: Review and update video descriptions
+3. **As needed**: Add new videos from playlist
+4. **As needed**: Update thumbnails for better click-through rates
+
+#### Quality Checks
+
+````typescript
+// Validation checklist for new videos
+const validateVideo = (video: VideoData) => {
+  const checks = {
+    hasValidId: video.id && video.id.length === 11,
+    hasTitle: video.title && video.title.length > 10,
+    hasDescription: video.description && video.description.length > 50,
+    hasDuration: video.duration && /^\d+:\d{2}$/.test(video.duration),
+    hasThumbnail: video.thumbnail && video.thumbnail.startsWith('/youtube/'),
+    hasTags: video.tags && video.tags.length > 0,
+  }
+  
+  return Object.values(checks).every(Boolean)
+}
+````
+
+### Troubleshooting
+
+#### Common Issues
+
+1. **Video not loading**: Check YouTube video ID and privacy settings
+2. **Thumbnail not showing**: Verify image path and file exists
+3. **Search not finding video**: Ensure video is added to search data
+4. **Mobile display issues**: Test responsive design on various devices
+
+#### Debug Steps
+
+````typescript
+// Debug video data
+console.log('Video validation:', validateVideo(videoData))
+console.log('YouTube URL:', `https://www.youtube.com/watch?v=${videoData.id}`)
+console.log('Thumbnail path:', videoData.thumbnail)
+````
 
 ## 🎨 Design System
 

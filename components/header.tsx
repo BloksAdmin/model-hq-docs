@@ -249,6 +249,68 @@ export function Header() {
     { title: "Sample Docs", url: "/tools#sample-docs", type: "heading", parentPage: "Tools" },
     { title: "System Info", url: "/tools#system-info", type: "heading", parentPage: "Tools" },
 
+    // Configs headings
+    {
+      title: "Launching Configure Interface",
+      url: "/configs#launching-the-configure-interface",
+      type: "heading",
+      parentPage: "Configs",
+    },
+    {
+      title: "Configure Interface Overview",
+      url: "/configs#overview-of-the-configure-interface",
+      type: "heading",
+      parentPage: "Configs",
+    },
+    {
+      title: "App Button",
+      url: "/configs#app-button",
+      type: "heading",
+      parentPage: "Configs",
+    },
+    {
+      title: "UI Button",
+      url: "/configs#ui-button",
+      type: "heading",
+      parentPage: "Configs",
+    },
+    {
+      title: "Models Button",
+      url: "/configs#models-button",
+      type: "heading",
+      parentPage: "Configs",
+    },
+    {
+      title: "RAG Button",
+      url: "/configs#rag-button",
+      type: "heading",
+      parentPage: "Configs",
+    },
+    {
+      title: "DB Button",
+      url: "/configs#db-button",
+      type: "heading",
+      parentPage: "Configs",
+    },
+    {
+      title: "Controls Button",
+      url: "/configs#controls-button",
+      type: "heading",
+      parentPage: "Configs",
+    },
+    {
+      title: "Templates Button",
+      url: "/configs#templates-button",
+      type: "heading",
+      parentPage: "Configs",
+    },
+    {
+      title: "Reset Button",
+      url: "/configs#reset-button",
+      type: "heading",
+      parentPage: "Configs",
+    },
+
     // Intel page headings
     {
       title: "Intel Optimization Features",
