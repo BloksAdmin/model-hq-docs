@@ -2,7 +2,7 @@
 
 import type * as React from "react"
 import { usePathname } from "next/navigation"
-import { Bot, MessageSquare, Play, Database, Search, Settings, ChevronRight, Cog, Mail, PanelLeft, Cpu } from "lucide-react"
+import { Bot, MessageSquare, Play, Database, Search, Settings, ChevronRight, Cog, Mail, PanelLeft, Cpu, Video, BookOpen } from "lucide-react"
 
 import {
   Sidebar,
@@ -89,6 +89,18 @@ const navigationData = {
       icon: Cpu,
     },
   ],
+  resources: [
+    {
+      title: "Video Tutorials",
+      url: "/video-tutorials",
+      icon: Video,
+    },
+    {
+      title: "Blogs",
+      url: "/blogs",
+      icon: BookOpen,
+    },
+  ],
 }
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
@@ -151,7 +163,11 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                     >
                       <SidebarMenuItem>
                         <CollapsibleTrigger asChild>
-                          <SidebarMenuButton tooltip={item.title} isActive={pathname === item.url}>
+                          <SidebarMenuButton
+                            tooltip={item.title}
+                            isActive={pathname === item.url}
+                            suppressHydrationWarning
+                          >
                             {item.icon && <item.icon className="size-4" />}
                             <span>{item.title}</span>
                             <ChevronRight className="ml-auto size-4 transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
@@ -161,7 +177,11 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                           <SidebarMenuSub>
                             {item.items.map((subItem) => (
                               <SidebarMenuSubItem key={subItem.title}>
-                                <SidebarMenuSubButton asChild isActive={pathname === subItem.url}>
+                                <SidebarMenuSubButton
+                                  asChild
+                                  isActive={pathname === subItem.url}
+                                  suppressHydrationWarning
+                                >
                                   <a href={subItem.url}>
                                     <span>{subItem.title}</span>
                                   </a>
@@ -178,7 +198,12 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                 // If item has no sub-items, render as simple link
                 return (
                   <SidebarMenuItem key={item.title}>
-                    <SidebarMenuButton asChild tooltip={item.title} isActive={pathname === item.url}>
+                    <SidebarMenuButton
+                      asChild
+                      tooltip={item.title}
+                      isActive={pathname === item.url}
+                      suppressHydrationWarning
+                    >
                       <a href={item.url}>
                         {item.icon && <item.icon className="size-4" />}
                         <span>{item.title}</span>
@@ -198,7 +223,36 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             <SidebarMenu>
               {navigationData.supportedModels.map((item) => (
                 <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild tooltip={item.title} isActive={pathname === item.url}>
+                  <SidebarMenuButton
+                    asChild
+                    tooltip={item.title}
+                    isActive={pathname === item.url}
+                    suppressHydrationWarning
+                  >
+                    <a href={item.url}>
+                      {item.icon && <item.icon className="size-4" />}
+                      <span className="text-sm">{item.title}</span>
+                    </a>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              ))}
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+
+        {/* Resources Section */}
+        <SidebarGroup>
+          <SidebarGroupLabel>Resources</SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              {navigationData.resources.map((item) => (
+                <SidebarMenuItem key={item.title}>
+                  <SidebarMenuButton
+                    asChild
+                    tooltip={item.title}
+                    isActive={pathname === item.url}
+                    suppressHydrationWarning
+                  >
                     <a href={item.url}>
                       {item.icon && <item.icon className="size-4" />}
                       <span className="text-sm">{item.title}</span>
@@ -213,7 +267,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       <SidebarFooter>
         <SidebarMenu>
           <SidebarMenuItem>
-            <SidebarMenuButton asChild tooltip="Contact Support">
+            <SidebarMenuButton asChild tooltip="Contact Support" suppressHydrationWarning>
               <a href="/support" className="w-full flex gap-2 bg-gray-200 hover:bg-gray-300 rounded-md py-6 transition-colors">
                 <Mail className="size-6" />
                 <span>Contact Support</span>

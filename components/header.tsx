@@ -469,6 +469,7 @@ export function Header() {
               onChange={(e) => setSearchQuery(e.target.value)}
               onKeyDown={handleKeyDown}
               onFocus={() => searchQuery && setShowResults(true)}
+              suppressHydrationWarning
             />
 
             {/* Search Results Dropdown */}

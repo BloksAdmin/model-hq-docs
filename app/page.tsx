@@ -1,12 +1,3 @@
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
-
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -192,7 +183,7 @@ export default function HomePage() {
                 </div> */}
                 <div className="flex items-center gap-2 text-sm">
                   <Shield className="h-4 w-4 text-green-600" />
-                  <span className="font-medium">CPU, and NPU Support</span>
+                  <span className="font-medium">CPU & NPU Support</span>
                 </div>
                 <div className="flex items-center gap-2 text-sm">
                   <Database className="h-4 w-4 text-green-600" />
@@ -221,6 +212,113 @@ export default function HomePage() {
             <a href="/system-configuration">Check System Requirements</a>
           </Button>
         </div>
+      </div>
+
+      {/* Resources Section */}
+      <div className="mt-8 py-16 px-4 bg-gradient-to-br from-purple-50 to-pink-50 rounded-lg">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold tracking-tight mb-4">Learning Resources</h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Comprehensive tutorials, guides, and insights to master Model HQ
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <Card className="border-purple-200 hover:border-purple-300 transition-all duration-300 hover:shadow-lg">
+            <CardHeader className="text-center pb-4">
+              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="h-8 w-8 text-purple-600" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+              <CardTitle className="text-purple-900 text-xl">Video Tutorials</CardTitle>
+              <CardDescription className="text-sm">Step-by-step video guides and walkthroughs</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="space-y-3">
+                <div className="flex items-center gap-2 text-sm">
+                  <Star className="h-4 w-4 text-purple-600" />
+                  <span className="font-medium">7+ Comprehensive Tutorials</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <Users className="h-4 w-4 text-purple-600" />
+                  <span className="font-medium">Expert Insights from Founders</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <Zap className="h-4 w-4 text-purple-600" />
+                  <span className="font-medium">Real-World Examples</span>
+                </div>
+              </div>
+              <p className="text-sm text-muted-foreground">
+                Watch detailed tutorials covering AI agents, chat features, Intel optimization, and more from the Model
+                HQ team.
+              </p>
+              <Button asChild className="w-full bg-purple-600 hover:bg-purple-700">
+                <a href="/video-tutorials">
+                  Watch Tutorials
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
+          <Card className="border-pink-200 hover:border-pink-300 transition-all duration-300 hover:shadow-lg">
+            <CardHeader className="text-center pb-4">
+              <div className="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="h-8 w-8 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                  />
+                </svg>
+              </div>
+              <CardTitle className="text-pink-900 text-xl">
+                Blogs
+                {/* <Badge variant="secondary" className="ml-2 text-xs">
+                  Coming Soon
+                </Badge> */}
+              </CardTitle>
+              <CardDescription className="text-sm">In-depth articles and technical insights</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="space-y-3">
+                <div className="flex items-center gap-2 text-sm">
+                  <Shield className="h-4 w-4 text-pink-600" />
+                  <span className="font-medium">Technical Deep-Dives</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <Star className="h-4 w-4 text-pink-600" />
+                  <span className="font-medium">Best Practices & Tips</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <Database className="h-4 w-4 text-pink-600" />
+                  <span className="font-medium">Industry Insights</span>
+                </div>
+              </div>
+              <p className="text-sm text-muted-foreground">
+                Detailed articles covering advanced topics, use cases, and industry trends in AI and local model
+                deployment.
+              </p>
+              <Button asChild className="w-full bg-pink-600 hover:bg-pink-700">
+                <a href="/blogs">
+                  Coming Soon
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* <div className="text-center mt-8">
+          <p className="text-sm text-muted-foreground mb-4">
+            Explore comprehensive learning materials to get the most out of Model HQ
+          </p>
+          <Button asChild variant="outline">
+            <a href="/video-tutorials">Start Learning</a>
+          </Button>
+        </div> */}
       </div>
 
       {/* Quick Navigation */}
@@ -325,7 +423,21 @@ export default function HomePage() {
                 <a href="/tools" className="text-xl font-semibold text-primary hover:underline">
                   Tools
                 </a>
-                <span className="text-muted-foreground ml-2">- Powerful utilities for managing your local setup and parsing documents</span>
+                <span className="text-muted-foreground ml-2">
+                  - Powerful utilities for managing your local setup and parsing documents
+                </span>
+              </div>
+            </div>
+
+            {/* Configure */}
+            <div>
+              <div className="mb-3">
+                <a href="/configs" className="text-xl font-semibold text-primary hover:underline">
+                  Configs
+                </a>
+                <span className="text-muted-foreground ml-2">
+                  - Provides a centralized interface for managing Model HQ's core settings
+                </span>
               </div>
             </div>
           </div>
@@ -344,8 +456,6 @@ export default function HomePage() {
           Get Started
         </a>
       </div>
-
-      
 
       {/* Contact Section */}
       <div className="py-16 px-4 text-center">

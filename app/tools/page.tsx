@@ -115,7 +115,14 @@ export default function ToolsPage() {
 
         <h3 id="backend">Backend</h3>
         <p>
-          Launches the API backend server, enabling core Model HQ functionalities.
+          Launches the API backend server, and turns off the UI, providing a programmatic interface to the core Model HQ 
+          platform capabilities, while running as a background service. This enables you to close the browser, while the 
+          server quietly runs in the background, providing 50+ APIs, which can be configured to be LocalHost, or exposed 
+          over external IP (for a lightweight modular inference server accessible on the network).  You can configure the 
+          backend server, and when ready, start the server.  Note: this will have the effect of closing the application 
+          and the UI will be unresponsive. You will see a download link for a SDK client package, which includes a 
+          python-based SDK with examples and samples to get quickly started. Open your IDE, create a project with the 
+          SDK, and you should be writing API calls in minutes to the backend server - all running privately and locally.
           <br />
           <img src="/tools/backend.png" alt="backend" />
         </p>
@@ -127,6 +134,12 @@ export default function ToolsPage() {
           Selecting this option opens a separate CLI window allowing you to run commands directly.
           <br />
           <img src="/tools/cli.png" alt="cli" />
+          <br />
+          By selecting to open the App in a command-line terminal, a second instance of the App will be created, exposed 
+          through a new terminal. You can use the CLI to start running chats, in parallel, while using the main app UI.
+          <br />
+          To get started, once the command line interface opens, enter 'help' - and a list of options will be provided to 
+          get started.
         </p>
 
         <p>Example usage with llmware Python client:</p>
@@ -145,8 +158,11 @@ export default function ToolsPage() {
 
         <h3 id="share">Share</h3>
         <p>
-          Use Share Connection to transfer your session to an external IP address. This is particularly useful for
-          collaboration or accessing the interface from another machine.
+          Use Share Connection to transfer your session to an external IP address. This is particularly useful for collaboration 
+          or accessing the interface from another machine. Note: this will close the localhost connection, and transfer the 
+          connection to your Model HQ app to be an externally available IP address, accessible over the network. 
+          You can then use any device to access the App, provided that it has corporate network access to that IP address. 
+          Try with a smart phone, tablet or another PC. 
           <br />
           <img src="/tools/share.png" alt="share" />
         </p>

@@ -206,11 +206,14 @@ export default function GettingStartedPage() {
 
         <h2 id="getting-started-with-enterprise-template">Getting Started with Enterprise Template</h2>
         <p>
-          The <strong>Enterprise Template</strong> is a fully pre-configured setup tailored specifically for enterprise
-          needs.
+          The <strong>Enterprise Template</strong> is a fully pre-configured setup tailored specifically for enterprise needs, 
+          and enables a standard configuration for all users, including a common set of custom Bots, Agents and other 
+          configurations.
           <br />
-          It includes a carefully selected collection of models, templates, and workflows designed to support
-          large-scale deployment and team-based collaboration—without the need for manual configuration.
+          If you have received an Enterprise Template from your IT or development team, you can launch the Model HQ 
+          application by selecting this option. You will then be prompted to upload the template zip file.  Once you 
+          upload the template zip file, the configuration template will be installed, and you will all set and ready 
+          to get started!
         </p>
 
         <ol>
