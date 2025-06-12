@@ -60,7 +60,7 @@ export default function BlogsPage() {
       <div className="space-y-12">
         {/* Header */}
         <div className="text-center space-y-4">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900">Resources & Insights</h1>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900">Blogs & Partner Solutions</h1>
           <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
             Explore our latest blogs, partner solutions, and technical insights about AI model deployment and
             management.
@@ -92,7 +92,7 @@ export default function BlogsPage() {
                     priority
                   />
                 </div>
-                <CardContent className="p-0 bg-gradient-to-b from-gray-50 to-white">
+                <CardContent className="p-0 bg-gradient-to-b from-gray-50 to-white flex justify-center">
                   <div className="p-6">
                     <button
                       onClick={() => window.open(solution.link, "_blank")}
