@@ -274,23 +274,20 @@ export default function HomePage() {
                   />
                 </svg>
               </div>
-              <CardTitle className="text-pink-900 text-xl">
-                Blogs
-                {/* <Badge variant="secondary" className="ml-2 text-xs">
-                  Coming Soon
-                </Badge> */}
-              </CardTitle>
-              <CardDescription className="text-sm">In-depth articles and technical insights</CardDescription>
+              <CardTitle className="text-pink-900 text-xl">Blogs & Partner Solutions</CardTitle>
+              <CardDescription className="text-sm">
+                In-depth articles, technical insights & partner solutions
+              </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="space-y-3">
                 <div className="flex items-center gap-2 text-sm">
                   <Shield className="h-4 w-4 text-pink-600" />
-                  <span className="font-medium">Technical Deep-Dives</span>
+                  <span className="font-medium">Partner Solutions Available</span>
                 </div>
                 <div className="flex items-center gap-2 text-sm">
                   <Star className="h-4 w-4 text-pink-600" />
-                  <span className="font-medium">Best Practices & Tips</span>
+                  <span className="font-medium">Technical Deep-Dives</span>
                 </div>
                 <div className="flex items-center gap-2 text-sm">
                   <Database className="h-4 w-4 text-pink-600" />
@@ -298,12 +295,11 @@ export default function HomePage() {
                 </div>
               </div>
               <p className="text-sm text-muted-foreground">
-                Detailed articles covering advanced topics, use cases, and industry trends in AI and local model
-                deployment.
+                Explore partner solutions showcasing real-world AI implementations, plus upcoming detailed articles.
               </p>
               <Button asChild className="w-full bg-pink-600 hover:bg-pink-700">
                 <a href="/blogs">
-                  Coming Soon
+                  Explore Resources
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </a>
               </Button>

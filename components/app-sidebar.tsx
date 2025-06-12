@@ -96,8 +96,8 @@ const navigationData = {
       icon: Video,
     },
     {
-      title: "Blogs",
-      url: "/blogs",
+      title: "Blogs and Partner Solutions",
+      url: "/blogs-and-partner-solutions",
       icon: BookOpen,
     },
   ],
