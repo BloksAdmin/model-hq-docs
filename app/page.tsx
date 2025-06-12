@@ -380,6 +380,18 @@ export default function HomePage() {
                   Agents
                 </a>
                 <span className="text-muted-foreground ml-2">- Create and manage intelligent agents</span>
+                <ul className="ml-6 space-y-1 list-disc">
+                  <li>
+                    <a href="/agent" className="text-primary hover:underline">
+                      Agent Overview
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/agent/multi-docs-agent" className="text-primary hover:underline">
+                      Multi Docs Agent
+                    </a>
+                  </li>
+                </ul>
               </div>
             </div>
 

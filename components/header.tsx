@@ -76,6 +76,7 @@ export function Header() {
     },
     { title: "Error Handling", url: "/chat/error", type: "page", description: "Troubleshoot chat-related issues" },
     { title: "Agents", url: "/agent", type: "page", description: "Create and manage intelligent agents" },
+    { title: "Agents", url: "/agent/multi-docs-agent", type: "page", description: "batch run" },
     { title: "Bots", url: "/bots", type: "page", description: "Build and customize your own bots" },
     { title: "RAG", url: "/rag", type: "page", description: "Retrieval-Augmented Generation workflows" },
     { title: "Models", url: "/models", type: "page", description: "Discover and manage AI models" },
@@ -337,6 +338,90 @@ export function Header() {
       url: "/supported-models/qualcomm#qualcomm-supported-models",
       type: "heading",
       parentPage: "Qualcomm Supported Models",
+    },
+
+    // Agent pages
+    {
+      title: "Agents",
+      url: "/agent",
+      type: "page",
+      description: "Create and manage intelligent agents for automated document processing",
+    },
+    {
+      title: "Multi-Doc Agent",
+      url: "/agent/multi-doc",
+      type: "page",
+      description: "Process multiple documents simultaneously with Batch Run",
+    },
+
+    // Agent page headings
+    {
+      title: "Launching the Agent Interface",
+      url: "/agent#1-launching-the-agent-interface",
+      type: "heading",
+      parentPage: "Agents",
+    },
+    {
+      title: "Understanding the Agent Menu",
+      url: "/agent#2-understanding-the-agent-menu",
+      type: "heading",
+      parentPage: "Agents",
+    },
+    {
+      title: "Confirming the Agent",
+      url: "/agent#3-confirming-the-agent",
+      type: "heading",
+      parentPage: "Agents",
+    },
+    {
+      title: "Uploading an Input File",
+      url: "/agent#4-uploading-an-input-file",
+      type: "heading",
+      parentPage: "Agents",
+    },
+    {
+      title: "Receiving the Output",
+      url: "/agent#5-receiving-the-output",
+      type: "heading",
+      parentPage: "Agents",
+    },
+    {
+      title: "Inference History",
+      url: "/agent#6-inference-history",
+      type: "heading",
+      parentPage: "Agents",
+    },
+    {
+      title: "Files Created",
+      url: "/agent#7-files-created",
+      type: "heading",
+      parentPage: "Agents",
+    },
+    {
+      title: "Exiting Agents",
+      url: "/agent#8-exiting-agents",
+      type: "heading",
+      parentPage: "Agents",
+    },
+
+    // Multi-Doc Agent page headings
+    {
+      title: "Batch Run Overview",
+      url: "/agent/multi-docs-agent#batch-run-overview",
+      type: "heading",
+      parentPage: "Multi-Doc Agent",
+    },
+    {
+      title: "Uploading Documents for Batch Processing",
+      url: "/agent/multi-docs-agent#uploading-documents-for-batch-processing",
+      type: "heading",
+      parentPage: "Multi-Doc Agent",
+    },
+    {
+      title: "Batch Run Results",
+      url: "/agent/multi-docs-agent#batch-run-results",
+      type: "heading",
+      parentPage: "Multi-Doc Agent",
     },
   ]
 

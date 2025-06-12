@@ -51,6 +51,10 @@ const navigationData = {
       title: "Agents",
       url: "/agent",
       icon: Bot,
+      items: [
+        { title: "Agent Overview", url: "/agent" },
+        { title: "Multi Docs Agent", url: "/agent/multi-docs-agent" },
+      ],
     },
     {
       title: "Bots",
