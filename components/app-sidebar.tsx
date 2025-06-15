@@ -53,7 +53,10 @@ const navigationData = {
       icon: Bot,
       items: [
         { title: "Agent Overview", url: "/agent" },
-        { title: "Multi Docs Agent", url: "/agent/multi-docs-agent" },
+        { title: "Create New Agent", url: "/agent/create-new-agent" },
+        { title: "Agent Builder Menu", url: "/agent/agent-builder-menu" },
+        { title: "Edit Agent", url: "/agent/edit-agent" },
+        { title: "Batch Run", url: "/agent/multi-docs-agent" },
       ],
     },
     {

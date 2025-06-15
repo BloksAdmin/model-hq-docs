@@ -45,6 +45,17 @@ const playlistVideos: VideoData[] = [
     isManuallyAdded: true,
   },
   {
+    id: "lMQwcw0TeVM",
+    title: "Unlock Hybrid AI: AI PC + API Server",
+    description:
+      "Unlock the Power of Hybrid AI – Local (AI PC) + Server, Working Together.",
+    duration: "8:53",
+    views: "12K",
+    thumbnail: "/youtube/api-server.png?height=180&width=320&text=AI+Agents+No+Code",
+    tags: ["AI PC", "API Server"],
+    isManuallyAdded: false,
+  },
+  {
     id: "nhf0VwUpV3c",
     title: "Model HQ for Intel AI PCs - Getting Started Video",
     description:

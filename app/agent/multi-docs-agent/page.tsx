@@ -27,7 +27,7 @@ export default function MultiDocAgentPage() {
       </Breadcrumb>
 
       <div className="space-y-4">
-        <h1 className="text-3xl font-bold tracking-tight">Multi-Doc Agent or Batch Run</h1>
+        <h1 className="text-3xl font-bold tracking-tight">Batch Run</h1>
         <p className="text-lg text-muted-foreground">
           Learn how to process multiple documents simultaneously with Model HQ's Batch Run feature
         </p>

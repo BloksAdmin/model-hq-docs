@@ -423,6 +423,210 @@ export function Header() {
       type: "heading",
       parentPage: "Multi-Doc Agent",
     },
+
+    // Creating New Agent headings
+    {
+      title: "Configure Agent",
+      url: "/agent/create#configure-agent",
+      type: "heading",
+      parentPage: "Creating New Agent",
+    },
+    {
+      title: "Inputs",
+      url: "/agent/create#input",
+      type: "heading",
+      parentPage: "Creating New Agent",
+    },   
+    {
+      title: "Agent Setup",
+      url: "/agent/create#agent-setup",
+      type: "heading",
+      parentPage: "Creating New Agent",
+    },
+    {
+      title: "Agent Builder",
+      url: "/agent/create#agent-builder",
+      type: "heading",
+      parentPage: "Creating New Agent",
+    },
+    {
+      title: "Building the Process",
+      url: "/agent/create#building-the-process",
+      type: "heading",
+      parentPage: "Creating New Agent",
+    },
+    {
+      title: "Service Table",
+      url: "/agent/create#service-table",
+      type: "heading",
+      parentPage: "Creating New Agent",
+    },
+    {
+      title: "Creating an Agent",
+      url: "/agent/create#how-to-create-an-agent-from-agent-builder",
+      type: "heading",
+      parentPage: "Creating New Agent",
+    },
+    {
+      title: "Creating a Demo_Agent",
+      url: "/agent/create#creating-a-demo_agent",
+      type: "heading",
+      parentPage: "Creating New Agent",
+    },
+    {
+      title: "Details",
+      url: "/agent/create#details",
+      type: "heading",
+      parentPage: "Creating New Agent",
+    },
+    {
+      title: "Documentation",
+      url: "/agent/create#documentation",
+      type: "heading",
+      parentPage: "Creating New Agent",
+    },
+    {
+      title: "Agent Legend",
+      url: "/agent/create#agent-legend",
+      type: "heading",
+      parentPage: "Creating New Agent",
+    },
+    {
+      title: "Building a Demo_Agent",
+      url: "/agent/create#building-a-demo_agent",
+      type: "heading",
+      parentPage: "Creating New Agent",
+    },
+
+    // Agent Builder Options headings
+    {
+      title: "Building the Process",
+      url: "/agent/builder#building-the-process",
+      type: "heading",
+      parentPage: "Agent Builder Options",
+    },
+    {
+      title: "Inputs",
+      url: "/agent/builder#inputs",
+      type: "heading",
+      parentPage: "Agent Builder Options",
+    },
+    {
+      title: "Files",
+      url: "/agent/builder#files",
+      type: "heading",
+      parentPage: "Agent Builder Options",
+    },
+    {
+      title: "Load",
+      url: "/agent/builder#load",
+      type: "heading",
+      parentPage: "Agent Builder Options",
+    },
+    {
+      title: "Run",
+      url: "/agent/builder#run",
+      type: "heading",
+      parentPage: "Agent Builder Options",
+    },
+    {
+      title: "Reset",
+      url: "/agent/builder#reset",
+      type: "heading",
+      parentPage: "Agent Builder Options",
+    },
+
+    // Editing Agents headings
+    {
+      title: "Open the Edit Interface",
+      url: "/agent/edit#open-the-edit-interface",
+      type: "heading",
+      parentPage: "Editing Agents",
+    },
+    {
+      title: "Edit Interface",
+      url: "/agent/edit#edit-interface",
+      type: "heading",
+      parentPage: "Editing Agents",
+    },
+    {
+      title: "Process",
+      url: "/agent/edit#process",
+      type: "heading",
+      parentPage: "Editing Agents",
+    },
+    {
+      title: "Run",
+      url: "/agent/edit#run",
+      type: "heading",
+      parentPage: "Editing Agents",
+    },
+    {
+      title: "Export",
+      url: "/agent/edit#export",
+      type: "heading",
+      parentPage: "Editing Agents",
+    },
+    {
+      title: "Build",
+      url: "/agent/edit#build",
+      type: "heading",
+      parentPage: "Editing Agents",
+    },
+    {
+      title: "Meta",
+      url: "/agent/edit#meta",
+      type: "heading",
+      parentPage: "Editing Agents",
+    },
+    {
+      title: "Options",
+      url: "/agent/edit#options",
+      type: "heading",
+      parentPage: "Editing Agents",
+    },
+    {
+      title: "JSON Editor",
+      url: "/agent/edit#json-editor",
+      type: "heading",
+      parentPage: "Editing Agents",
+    },
+    {
+      title: "Files",
+      url: "/agent/edit#files",
+      type: "heading",
+      parentPage: "Editing Agents",
+    },
+    {
+      title: "Reports",
+      url: "/agent/edit#reports",
+      type: "heading",
+      parentPage: "Editing Agents",
+    },
+    {
+      title: "Outputs",
+      url: "/agent/edit#outputs",
+      type: "heading",
+      parentPage: "Editing Agents",
+    },
+    {
+      title: "Global",
+      url: "/agent/edit#global",
+      type: "heading",
+      parentPage: "Editing Agents",
+    },
+    {
+      title: "Controls",
+      url: "/agent/edit#controls",
+      type: "heading",
+      parentPage: "Editing Agents",
+    },
+    {
+      title: "Upload",
+      url: "/agent/edit#upload",
+      type: "heading",
+      parentPage: "Editing Agents",
+    },
   ]
 
   const performSearch = (query: string): SearchResult[] => {

@@ -124,9 +124,8 @@ export default function AgentPage() {
           Select any agent from the list and click the <code>&gt;</code> button to continue.
           <br />
           For this walkthrough, we have selected <strong>Contract Analyzer</strong> which was specifically designed to
-          demonstrate how complex Employment Agreements can be quickly queried using pre-built agents. The Contract
-          Analyzer (Detailed information about this Agent workflow can also be found in LLMWare&apos;s YouTube channel-{" "}
-          <a href="https://youtu.be/FSjpAgIZnPM?si=6UMkLD4HMdXxmxcg" target="_blank" rel="noopener noreferrer">
+          demonstrate how complex Employment Agreements can be quickly queried using pre-built agents. (Detailed information about this Agent workflow can also be found in LLMWare&apos;s YouTube channel-{" "}
+          <a href="https://youtu.be/FSjpAgIZnPM?si=6UMkLD4HMdXxmxcg" target="_blank" rel="noopener noreferrer" style={{ color: "red" }} >
             https://youtu.be/FSjpAgIZnPM?si=6UMkLD4HMdXxmxcg
           </a>
           )
@@ -575,7 +574,7 @@ flowchart TD
             rel="noopener noreferrer"
             style={{ color: "#00aaff" }}
           >
-            https://github.com/RS-labhub/ModelHQ-Docs/blob/master/agent/contract_analyzer_take_aways.txt
+            TEXT OUTPUT
           </a>
         </p>
 
@@ -595,7 +594,7 @@ flowchart TD
             rel="noopener noreferrer"
             style={{ color: "#00aaff" }}
           >
-            https://github.com/RS-labhub/ModelHQ-Docs/blob/master/agent/contract_analyzer_take_aways.json
+            JSON OUTPUT
           </a>
         </p>
 
@@ -612,8 +611,8 @@ flowchart TD
           This concludes the walkthrough of the <strong>Agent</strong> interface in Model HQ.
           <br />
           In subsequent sections, we will explore how to build, edit and customize your own agents from scratch or run
-          the workflow in batches (run multiple documents at once). Please go to the Creating New Agent, Edit Agent or{" "}
-          <a href="/agent/multi-doc">Batch Run</a> Sections of this documentation.
+          the workflow in batches (run multiple documents at once). Please go to the <a href="/agent/create-new-agent" style={{ color: "#00aaff" }} >Creating New Agent</a>, <a href="/agent/edit-agent" style={{ color: "#00aaff" }} >Edit Agent</a> or{" "}
+          <a href="/agent/multi-doc" style={{ color: "#00aaff" }} >Batch Run</a> Sections of this documentation.
         </p>
 
         <p>

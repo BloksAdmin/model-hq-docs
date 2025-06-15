@@ -9,6 +9,22 @@ const videoDescriptions: Record<string, string> = {
   Dbxb5qfsMaM: `
     Introducing Model HQ for AI PCs powered by Intel
   `,
+  lMQwcw0TeVM: `
+    Unlock the Power of Hybrid AI – Local (AI PC) + Server, Working Together.
+    What if you could combine the speed and privacy of on-device AI with the scale and flexibility of server-based processing?
+
+    In this video, we dive into Hybrid Inferencing with Model HQ—LLMWare’s powerful approach to blending edge and API-based AI inferencing. Whether you're working on an AI PC or deploying across enterprise servers, Model HQ makes it seamless to shift workloads between local and server environments without sacrificing privacy, speed, or cost.
+
+    You’ll learn how to:
+    • (00:41) Seamlessly Switch Between Local & API Inference
+    • (3:10) Query Remote Knowledge Bases from Your AI PC
+    • (4:56) Run Agents Anywhere—Locally or via API
+    • (5:56) Build & Share Smart Semantic Libraries
+
+    💡 Designed for enterprise users, developers, and IT teams looking for secure, flexible, and efficient generative AI deployments.
+
+    Powered by Intel’s AI PC, this is the future of secure, private AI for the enterprise—in action. (Intel Core Ultra Processor 9, 290 V Series 2 - Lunar Lake - 32 GB, MSI).
+  `,
   nhf0VwUpV3c: `
     Complete getting started guide specifically designed for Intel AI PC users looking to maximize their Model HQ experience with Intel's cutting-edge AI acceleration technology.
 
