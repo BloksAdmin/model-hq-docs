@@ -22,13 +22,13 @@ export default function AgentBuilderPage() {
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbPage>Agent Builder Options</BreadcrumbPage>
+            <BreadcrumbPage>Agent Builder Menu</BreadcrumbPage>
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
 
       <div className="space-y-4">
-        <h1 className="text-3xl font-bold tracking-tight">Exploring Agent Builder Options</h1>
+        <h1 className="text-3xl font-bold tracking-tight">Exploring Agent Builder Menu</h1>
         <p className="text-lg text-muted-foreground">
           This is where you construct the core logic of your agent. Learn about all the available options and features
           in the Agent Builder interface.
