@@ -134,7 +134,7 @@ export default function QualcommSupportedModelsPage() {
     ]
 
     return (
-        <div className="w-full max-w-7xl mx-auto space-y-4 sm:space-y-6 px-2 sm:px-4 lg:px-6">
+        <div className="w-full max-w-4xl mx-auto space-y-6 sm:space-y-6 px-2 sm:px-4 lg:px-6">
             <Breadcrumb>
                 <BreadcrumbList>
                     <BreadcrumbItem>
