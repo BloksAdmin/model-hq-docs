@@ -2,7 +2,22 @@
 
 import type * as React from "react"
 import { usePathname } from "next/navigation"
-import { Bot, MessageSquare, Play, Database, Search, Settings, ChevronRight, Cog, Mail, PanelLeft, Cpu, Video, BookOpen } from "lucide-react"
+import {
+  Bot,
+  MessageSquare,
+  Play,
+  Database,
+  Search,
+  Settings,
+  ChevronRight,
+  Cog,
+  Mail,
+  PanelLeft,
+  Cpu,
+  Video,
+  BookOpen,
+  Code,
+} from "lucide-react"
 
 import {
   Sidebar,
@@ -23,7 +38,6 @@ import {
 } from "@/components/ui/sidebar"
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
 import { Button } from "@/components/ui/button"
-import { Tooltip } from "recharts"
 
 const navigationData = {
   main: [
@@ -75,6 +89,11 @@ const navigationData = {
       icon: Database,
     },
     {
+      title: "API Reference",
+      url: "/api-reference",
+      icon: Code,
+    },
+    {
       title: "Configs & Tools",
       url: "/configs-tools",
       icon: Cog,
@@ -120,7 +139,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
-          <SidebarMenuButton size="lg" asChild className={`h-16 ${isCollapsed ? "px-0 justify-center" : "px-3"}`}>
+            <SidebarMenuButton size="lg" asChild className={`h-16 ${isCollapsed ? "px-0 justify-center" : "px-3"}`}>
               <a href="/">
                 <div
                   className={`flex aspect-square ${isCollapsed ? "size-10" : "size-12"} items-center justify-center rounded-lg bg-white p-2 shadow-sm mx-auto`}
@@ -139,12 +158,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           {state === "collapsed" && (
             <SidebarMenuItem>
               <div title="Expand Sidebar">
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={toggleSidebar}
-                  className="h-8 w-8 p-0"
-                >
+                <Button variant="ghost" size="sm" onClick={toggleSidebar} className="h-8 w-8 p-0">
                   <PanelLeft className="h-4 w-4" />
                   <span className="sr-only">Expand Sidebar</span>
                 </Button>
@@ -275,7 +289,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton asChild tooltip="Contact Support" suppressHydrationWarning>
-              <a href="/support" className="w-full flex gap-2 bg-gray-200 hover:bg-gray-300 rounded-md py-6 transition-colors">
+              <a
+                href="/support"
+                className="w-full flex gap-2 bg-gray-200 hover:bg-gray-300 rounded-md py-6 transition-colors"
+              >
                 <Mail className="size-6" />
                 <span>Contact Support</span>
               </a>
