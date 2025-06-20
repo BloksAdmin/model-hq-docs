@@ -4,7 +4,23 @@ The Model HQ API provides programmatic access to the Model HQ platform, whether 
 
 ---
 
-### Trusted Key
+### Getting Started - Model HQ Developer App
+
+When you launch the Model HQ Developer App to run as a background service, you have the option whether to run on LocalHost or on the external-facing IP address of the endpoint, and to optionally configure the port. In either case, when the background service is launched, the host and port details are saved in configuration settings which can be exposed automatically through the client SDK, simplifying the process of connecting to the endpoint. 
+
+Option #1 - Automatic Discovery 
+```python
+   from llmware_client_sdk import LLMWareClient, get_url_string
+   api_endpoint = get_url_string()
+   client = LLMWareClient(api_endpoint=api_endpoint)
+```
+
+Option #2 - Direct Setting
+```python
+   from llmware_client_sdk import LLMWareClient
+   api_endpoint = "http://localhost:8088"
+   client = LLMWareClient(api_endpoint=api_endpoint)
+```
 
 Alternative authentication using:
 
