@@ -1,20 +1,8 @@
 ## 📖 API Reference
 
-The Model HQ API provides programmatic access to our language models through simple HTTP requests. All API requests require authentication and return JSON responses.
+The Model HQ API provides programmatic access to the Model HQ platform, whether running as a development server on a client Windows device (Model HQ Developer App), or as a multi-tenant Linux server (Model HQ API Server). The API is accessed through either REST API calls or through a Python SDK. These examples will illustrate both ways to access the API.
 
 ---
-
-## 🔐 Authentication
-
-The Model HQ API uses API keys for authentication. You can obtain your API key from your dashboard. Include your API key in the request body or use a trusted key for enhanced security.
-
-### API Key
-
-Include your API key in the request body as:
-
-```json
-"api_key": "your-api-key"
-```
 
 ### Trusted Key
 
