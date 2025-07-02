@@ -9,6 +9,163 @@ const videoDescriptions: Record<string, string> = {
   Dbxb5qfsMaM: `
     Introducing Model HQ for AI PCs powered by Intel
   `,
+  g1g9UbAzv9c: `
+    Can you really run today’s advanced AI PC apps on old hardware? In this video, we take a nearly 5-year-old laptop -- Dell XPS 13 (11th Gen i7, Tiger Lake, 32 GB) running Windows 10 Home — and put it to the test with Model HQ, small language models, RAG, multimodal models, and AI agents.
+
+    Find out:
+    ✅ Will the apps even launch?
+    ✅ How well do small models perform on older hardware?
+    ✅ Can you run multimodal and agent workflows?
+    ✅ What about large models (7B, 14B)?
+    ✅ Is it practical for enterprise use in environments with mixed device fleets?
+
+    If you’re a CIO, in IT or a developer wondering about AI PC rollout strategies — this is for you!
+
+    ⏱️ 5 Key Timestamps:
+
+    00:13 — Testing AI PC apps on an old Dell XPS (11th Gen)
+    01:51 — Small language model chat + performance
+    04:00 — RAG (retrieval augmented generation) + multimodal test
+    08:52 — Agent workflows & multi-model performance
+    12:51 — Big models (7B, 14B) + final thoughts for enterprise rollouts
+
+    🔐 No cloud. No coding. No compromise.
+    This is how modern enterprises deploy private, local generative AI—today.
+
+    ⚙️ Try Model HQ through Intel’s AI PC App Pack, purchase Model HQ on our website or contact us for a free 90 day trial license (link in our website).
+
+    💻 Visit llmware.ai or contact us at info@aibloks.com to learn more.
+  `,
+  T1AOuUF7oQ8: `
+    Unlock powerful document intelligence — right on your AI PC! 🚀 In this video, we show you exactly how to build a PDF Embedded Tables Bot in just a few minutes — no code required — using Model HQ running locally on an Intel® AI PC (Arrow Lake). 
+
+    Watch step-by-step how to turn complex annual report PDFs into interactive, business-ready bots that can:
+
+    ✅ Parse and extract embedded tables
+    👉 [03:18] Table-Only Mode: How It Filters and Focuses on Embedded Tables
+
+    ✅ Run advanced table-only RAG for precision
+    👉 [03:28] Setting RAG parameters and enabling Table-Only Mode
+
+    ✅ Answer natural language questions about financials
+    👉 [05:18] Asking and validating precise financial questions across different tables
+
+    ✅ Auto-generate clear summaries & insights
+    👉 [10:25] Auto-summarizing cash flow and operations tables into readable reports
+
+    ✅ Export results for instant use in your reports
+    👉 [11:49] Exporting and downloading a full analysis transcript for reuse
+
+    And the best part — everything runs 100% privately on your device, no cloud needed, zero per-token fees!
+
+    Perfect for financial analysts, business users, or anyone who works with detailed reports, earnings statements, or compliance docs.
+
+    🔐 No token charges. No data sharing. No AI Ph.D. required.
+
+    🔔 Subscribe to see how Model HQ powers custom enterprise bots and intelligent agents—right from your laptop.
+
+    Powered by Intel’s AI PC, this is the future of secure, private AI for the enterprise—in action. (Intel Core Ultra 7 255H, Arrow Lake - 32 GB, ASUS ZENBOOK 14).
+
+
+    ⚙️ Try Model HQ through Intel’s AI PC App Pack, purchase Model HQ on our website or contact us for a free 90 day trial license (link in our website).
+
+    💻 Visit llmware.ai or contact us at info@aibloks.com to learn more
+  `,
+  cd_08qQ5Z2o: `
+    Tired of digging through giant spreadsheets? This video shows you how to easily talk to your spreadsheets using natural language—with full privacy, no code, and zero token costs with Model HQ.
+
+    In this video we will cover:
+
+    00:14 | The Spreadsheet Struggle is Real
+    Everyone’s been there—huge datasets, lots of questions. Learn how AI can fix it.
+
+    02:11 | Set Up in Minutes, Not Days
+    Watch how structured CSVs become fully queryable local databases—zero setup, no support needed.
+
+    03:01 | Natural Language → SQL → Answer
+    Ask plain English questions. Get SQL-powered, grounded answers—instantly and securely.
+
+    06:30 | Real-Life Queries Across 3 Datasets
+    From customer tables to global sales—see the AI agent in action.
+
+    08:49 | Bring Your Own Data
+    Add your own spreadsheets with one click, no code—and query them like a pro.
+
+    Whether it’s sales data, customer tables, or financial reports—this changes the way you work with structured data forever.
+
+    🔐 No token charges. No data sharing. No AI Ph.D. required.
+
+    🔔 Subscribe to see how Model HQ powers custom enterprise bots and intelligent agents—right from your laptop.
+
+    Powered by Intel’s AI PC, this is the future of secure, private AI for the enterprise—in action. (Intel Core Ultra Processor 9, Series 1, Meteor Lake - 32 GB, Dell Inspiron).
+
+    ⚙️ Try Model HQ through Intel’s AI PC App Pack, purchase Model HQ on our website or contact us for a free 90 day trial license (link in our website).
+
+    💻 Visit llmware.ai or contact us at info@aibloks.com to learn more
+  `,
+  "evbLEX-eA8o": `
+    We walk through exactly how to share and distribute your custom-built chatbot from Model HQ—built in under 10 minutes with no code (in Part 1 of this Series called Build a Custom Chat/Rag-Bot in Under 10 Min). 
+
+    Whether you want to send a chatbot directly to a colleague or make it discoverable enterprise-wide via Model HQ Server, we’ll show you two easy ways to do it. You’ll learn how to export, add metadata, and seamlessly import bots locally onto other AI PCs—no cloud required.
+
+    Watch till the end for a demo of how business users can start chatting with documents and reports—privately and securely with their own custom bots.
+
+    In this video, you will learn:
+
+    🚀 Build a No-Code Business Bot (00:35)
+    Recap of creating a simple chatbot in under 10 minutes with Model HQ — no coding required (part 1 of video series).
+
+    📦 Export & Share via Zip File (02:30)
+    Package your bot with all configs, icons, and sources—share it like a PowerPoint or Excel file.
+
+    🌐 Publish to Model HQ Server (04:02)
+    Push your bot to the server for easy enterprise-wide discovery and access.
+
+    ⚙️ Install & Use in Seconds (06:08)
+    Demo of downloading and installing the bot on another device—fully local and secure.
+
+    📊 Real-World Bot Interaction (06:48)
+    Use the chatbot to analyze earnings reports, get grounded answers, and verify sources instantly.
+
+    By the end, you’ll be able to share fully operational bot — with a clean business interface, private local inference, and enterprise-grade safety settings.
+
+    🔐 No token charges. No data sharing. No engineering team required.
+
+    🔔 Subscribe to see how Model HQ powers custom enterprise bots and intelligent agents—right from your laptop.
+
+    Powered by Intel’s AI PC, this is the future of secure, private AI for the enterprise—in action. (Intel Core Ultra Processor 9, Series 1, Meteor Lake - 32 GB, Dell Inspiron).
+
+
+    ⚙️ Try Model HQ through Intel’s AI PC App Pack, purchase Model HQ on our website or contact us for a free 90 day trial license (link in our website).
+
+    💻 Visit llmware.ai or contact us at info@aibloks.com to learn more
+  `,
+  uy53WKrMOXc: `
+    Rapidly build and deploy custom enterprise bots – no code, no cloud, fully local.
+
+    In this video, we walk through how to build a custom AI Chat/RAG-Bot using Model HQ’s no-code platform, fully configured in under 10 minutes on an Intel® Meteor Lake AI PC.
+
+    We’ll show how to:
+
+    00:22 – Build a Business Bot to Query Docs
+    01:16 – Set Models, RAG, UI & Safety in Clicks
+    04:04 – Load Annual Reports & Enterprise Files
+    04:58 – Search Wikipedia On-Device
+    07:17 – Auto-Redact Emails & SSNs
+
+    By the end, you’ll have a fully operational bot — with a clean business interface, private local inference, and enterprise-grade safety settings.
+
+    🔐 No token charges. No data sharing. No AI Ph.D. required.
+
+    🔔 Subscribe to see how Model HQ powers custom enterprise bots and intelligent agents—right from your laptop.
+
+    Powered by Intel’s AI PC, this is the future of secure, private AI for the enterprise—in action. (Intel Core Ultra Processor 9, Series 1, Meteor Lake - 32 GB, Dell Inspiron).
+
+
+    ⚙️ Try Model HQ through Intel’s AI PC App Pack, purchase Model HQ on our website or contact us for a free 90 day trial license (link in our website).
+
+    💻 Visit llmware.ai or contact us at info@aibloks.com to learn more
+  `,
   lMQwcw0TeVM: `
     Unlock the Power of Hybrid AI – Local (AI PC) + Server, Working Together.
     What if you could combine the speed and privacy of on-device AI with the scale and flexibility of server-based processing?

@@ -88,11 +88,11 @@ const navigationData = {
       url: "/models",
       icon: Database,
     },
-    {
-      title: "API Reference",
-      url: "/api-reference",
-      icon: Code,
-    },
+    // {
+    //   title: "API Reference",
+    //   url: "/api-reference",
+    //   icon: Code,
+    // },
     {
       title: "Configs & Tools",
       url: "/configs-tools",

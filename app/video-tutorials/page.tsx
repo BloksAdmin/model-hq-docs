@@ -45,6 +45,61 @@ const playlistVideos: VideoData[] = [
     isManuallyAdded: true,
   },
   {
+    id: "g1g9UbAzv9c",
+    title: "Will It Run? Testing AI PC App on a 5-Year old Laptop",
+    description:
+      "Can you really run today’s advanced AI PC apps on old hardware? In this video, we take a nearly 5-year-old laptop -- Dell XPS 13 (11th Gen i7, Tiger Lake, 32 GB) running Windows 10 Home",
+    duration: "13:21",
+    views: "12K",
+    thumbnail: "/youtube/will-it-run.png?height=180&width=320&text=AI+Agents+No+Code",
+    tags: ["Testing", "5 Years Old Machine"],
+    isManuallyAdded: false,
+  },
+  {
+    id: "T1AOuUF7oQ8",
+    title: "Build a Table Reading Bot in Minutes - No Code on AI PC",
+    description:
+      "Unlock powerful document intelligence — right on your AI PC! 🚀 In this video, we show you exactly how to build a PDF Embedded Tables Bot in just a few minutes — no code required — using Model HQ running locally on an Intel® AI PC (Arrow Lake).",
+    duration: "13:23",
+    views: "12K",
+    thumbnail: "/youtube/tr-bot.png?height=180&width=320&text=AI+Agents+No+Code",
+    tags: ["Table Reading Bot"],
+    isManuallyAdded: false,
+  },
+  {
+    id: "cd_08qQ5Z2o",
+    title: "Talk to Your Spreadsheets with AI: No Code SQL Bot on AI PC",
+    description:
+      "Tired of digging through giant spreadsheets? This video shows you how to easily talk to your spreadsheets using natural language—with full privacy, no code, and zero token costs with Model HQ.",
+    duration: "11:33",
+    views: "12K",
+    thumbnail: "/youtube/sql-bot.png?height=180&width=320&text=AI+Agents+No+Code",
+    tags: ["SpreadSheet", "SQL Bot", "No Code"],
+    isManuallyAdded: false,
+  },
+  {
+    id: "evbLEX-eA8o",
+    title: "Share & Deploy Custom AI Chatbots - (Part 2 of 2)",
+    description:
+      "We walk through exactly how to share and distribute your custom-built chatbot from Model HQ—built in under 10 minutes with no code (in Part 1 of this Series called Build a Custom Chat/Rag-Bot in Under 10 Min).",
+    duration: "10:43",
+    views: "12K",
+    thumbnail: "/youtube/share.png?height=180&width=320&text=AI+Agents+No+Code",
+    tags: ["Share", "Chat Bot", "RAG Bot", "AI PC"],
+    isManuallyAdded: false,
+  },
+  {
+    id: "uy53WKrMOXc",
+    title: "Build a Custom Chat/RAG-Bot in 10 min with No Code on AI PC (part 1 of 2)",
+    description:
+      "Rapidly build and deploy custom enterprise bots – no code, no cloud, fully local.",
+    duration: "10:00",
+    views: "12K",
+    thumbnail: "/youtube/chat-rag-bot.png?height=180&width=320&text=AI+Agents+No+Code",
+    tags: ["Chat Bot", "RAG Bot", "AI PC"],
+    isManuallyAdded: false,
+  },
+  {
     id: "lMQwcw0TeVM",
     title: "Unlock Hybrid AI: AI PC + API Server",
     description:
