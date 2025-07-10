@@ -67,11 +67,11 @@ If everything looks good, proceed by clicking the **RUN** button.
 &nbsp;
 
 ## 4. Uploading an Input File
-In this step, upload the file that the agent will process. Model HQ includes sample executive employment agreements documents for you to try for this test agent use case in **c:\users\{user name}\llmware_data\sample_files\agreements**. This sample agent is designed to show how you can query documents using pre-built agents in an automated workflow. 
+In this step, upload the file that the agent will process. Model HQ includes sample executive employment agreements documents for you to try for this test agent use case in **c:\users\{user name}\llmware_data\sample_files\agreements**. This sample agent is designed to show how you can query documents using pre-built agents in an automated workflow using one of the provided Executive Employment Agreements as an example. 
 
 (The supported file types are `.pdf`, `.pptx`, `.docx`, `.txt`, and `.md`.)
 
-This screen is straightforward—simply upload an example file from the file path above and click the `>` button to proceed.
+This screen is straightforward—simply upload an example file of an Executive Employment Agreement from the file path above and click the `>` button to proceed.
 
 ![Upload File](agent/agent3.png)
 
