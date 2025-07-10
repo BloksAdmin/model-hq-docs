@@ -91,6 +91,27 @@
 
 ---
 
+### Service: **web_search**
+**Instruction**: Add query for a topic or a question 
+**Description**: Runs websearches returning a summary text as a source and an indexed set of text chunks - needs SERP API or Tavily API
+**Context**: `None`
+
+---
+
+### Service: **website_scraper**
+**Instruction**: Enter the full website url 
+**Description**: Scrapes the website in question (some websites are protected against automatic scraping and does not work for all websites) to extract content for a downstream question in the agent process
+**Context**: `None`
+
+---
+
+### Service: **send_email**
+**Instruction**: Enter the email address of the receiver
+**Description**: Automatically sends an email (Gmail only with credentials provided in Configuration/Credentials)
+**Context**: `Select context of the email`
+
+---
+
 ### Service: **connect_library**
 **Instruction:** Enter library name  
 **Description:**First step necessary for Semantic library retrieval for a library created on a Model HQ API Server. Adds the library interface into the agent process. After using this Service, you can use the the 'Query Library' service to run semantic queries on the library.
@@ -242,3 +263,17 @@
 **Instruction:** End of process  
 **Description:** Final step in the agent. Signifies process completion  
 **Context:** `None`
+
+---
+
+### Service: **openai_chat**
+**Instruction:** Enter input question or instruction  
+**Description:** Chat agent calls OpenAI (requires separate API key in Configuration/Credentials) with an optional text input context. The output provides a context passage that can be used by other services  
+**Context:** `Main Input or other Text Source`
+
+---
+
+### Service: **anthropic_chat**
+**Instruction:** Enter input question or instruction  
+**Description:** Chat agent calls Anthropic (requires separate API key in Configuration/Credentials) with an optional text input context. The output provides a context passage that can be used by other services  
+**Context:** `Main Input or other Text Source`

@@ -5,7 +5,7 @@ import { ArrowRight, Zap, Shield, Cpu, Download, Users, Star, Database } from "l
 
 export default function HomePage() {
   return (
-    <div className="max-w-6xl mx-auto">
+    <div className="max-w-4xl mx-auto">
       {/* Hero Section */}
       <div className="text-center space-y-6 py-12 px-4">
         <div className="space-y-4">
@@ -387,8 +387,28 @@ export default function HomePage() {
                     </a>
                   </li>
                   <li>
+                    <a href="/agent/create-new-agent" className="text-primary hover:underline">
+                      Create New Agent
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/agent/agent-builder-menu" className="text-primary hover:underline">
+                      Agent Builder Menu
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/agent/edit-agent" className="text-primary hover:underline">
+                      Edit Agent
+                    </a>
+                  </li>
+                  <li>
                     <a href="/agent/multi-docs-agent" className="text-primary hover:underline">
-                      Multi Docs Agent
+                      Batch Run
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/agent/openAI-and-anthropic" className="text-primary hover:underline">
+                      OpenAI and Anthropic
                     </a>
                   </li>
                 </ul>

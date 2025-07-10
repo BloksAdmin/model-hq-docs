@@ -164,7 +164,7 @@ export default function AgentPage() {
           In this step, upload the file that the agent will process. Model HQ includes sample executive employment
           agreements documents for you to try for this test agent use case in{" "}
           <strong>c:\users\{"{user name}"}\llmware_data\sample_files\agreements</strong>. This sample agent is designed
-          to show how you can query documents using pre-built agents in an automated workflow.
+          to show how you can query documents using pre-built agents in an automated workflow using one of the provided <b>Executive Employment Agreements</b> as an example.
         </p>
 
         <p>
@@ -173,7 +173,7 @@ export default function AgentPage() {
         </p>
 
         <p>
-          This screen is straightforward—simply upload an example file from the file path above and click the{" "}
+          This screen is straightforward—simply upload an example file of an Executive Employment Agreement from the file path above and click the{" "}
           <code>&gt;</code> button to proceed.
           <br />
           <img src="/agent/agent3.png" alt="Upload File" />

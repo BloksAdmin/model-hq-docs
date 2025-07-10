@@ -145,6 +145,24 @@ const serviceData = [
     context: "None",
   },
   {
+    name: "web_search",
+    instruction: "Add query for a topic or a question",
+    description: "Runs web searches returning a summary text as a source and an indexed set of text chunks - needs SERP API or Tavily API",
+    context: "None",
+  },
+  {
+    name: "website_scraper",
+    instruction: "Enter the full website URL",
+    description: "Scrapes the website in question to extract content for a downstream question in the agent process (may not work for all websites due to scraping protection)",
+    context: "None",
+  },
+  {
+    name: "send_email",
+    instruction: "Enter the email address of the receiver",
+    description: "Automatically sends an email using Gmail (requires credentials provided in Configuration/Credentials)",
+    context: "Select context of the email",
+  },
+  {
     name: "connect_library",
     instruction: "Enter library name",
     description: "Connects to Semantic Library from Model HQ API",
@@ -275,5 +293,17 @@ const serviceData = [
     instruction: "End of process",
     description: "Marks the end of agent process",
     context: "None",
+  },
+  {
+    name: "openai_chat",
+    instruction: "Enter input question or instruction",
+    description: "Chat agent calls OpenAI (requires separate API key in Configuration/Credentials) with an optional text input context. The output provides a context passage that can be used by other services",
+    context: "Main Input or other Text Source",
+  },
+  {
+    name: "anthropic_chat",
+    instruction: "Enter input question or instruction",
+    description: "Chat agent calls Anthropic (requires separate API key in Configuration/Credentials) with an optional text input context. The output provides a context passage that can be used by other services",
+    context: "Main Input or other Text Source",
   },
 ]

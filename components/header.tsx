@@ -75,8 +75,6 @@ export function Header() {
       description: "Update the default model used for Chat",
     },
     { title: "Error Handling", url: "/chat/error", type: "page", description: "Troubleshoot chat-related issues" },
-    { title: "Agents", url: "/agent", type: "page", description: "Create and manage intelligent agents" },
-    { title: "Agents", url: "/agent/multi-docs-agent", type: "page", description: "batch run" },
     { title: "Bots", url: "/bots", type: "page", description: "Build and customize your own bots" },
     { title: "RAG", url: "/rag", type: "page", description: "Retrieval-Augmented Generation workflows" },
     { title: "Models", url: "/models", type: "page", description: "Discover and manage AI models" },
@@ -306,6 +304,12 @@ export function Header() {
       parentPage: "Configs",
     },
     {
+      title: "Credentials",
+      url: "/configs#credentials",
+      type: "heading",
+      parentPage: "Configs",
+    },
+    {
       title: "Reset Button",
       url: "/configs#reset-button",
       type: "heading",
@@ -348,10 +352,34 @@ export function Header() {
       description: "Create and manage intelligent agents for automated document processing",
     },
     {
-      title: "Multi-Doc Agent",
-      url: "/agent/multi-doc",
+      title: "Create New Agent",
+      url: "/agent/create-new-agent",
+      type: "page",
+      description: "Create a new agent from scratch",
+    },
+    {
+      title: "Agent Builder Menu",
+      url: "/agent/agent-builder-menu",
+      type: "page",
+      description: "Construct the core logic of your agent",
+    },
+    {
+      title: "Edit Agent",
+      url: "/agent/edit-agent",
+      type: "page",
+      description: "Edit or Modify the existing agent",
+    },
+    {
+      title: "Batch Run",
+      url: "/agent/batch-run",
       type: "page",
       description: "Process multiple documents simultaneously with Batch Run",
+    },
+    {
+      title: "OpenAI and Anthropic Models",
+      url: "/agent/openAI-and-anthropic",
+      type: "page",
+      description: "Add external llm providers like OpenAI and Anthropic to your agents",
     },
 
     // Agent page headings
@@ -626,6 +654,19 @@ export function Header() {
       url: "/agent/edit-agent#upload",
       type: "heading",
       parentPage: "Editing Agents",
+    },
+    // OpenAI and Anthropic page headings
+    {
+      title: "Using OpenAI or Anthropic Models",
+      url: "/agent/openAI-and-anthropic#default-setup",
+      type: "heading",
+      parentPage: "OpenAi and Anthropic",
+    },
+    {
+      title: "Switching to OpenAI",
+      url: "/agent/openAI-and-anthropic#switching-to-openAI",
+      type: "heading",
+      parentPage: "OpenAi and Anthropic",
     },
   ]
 

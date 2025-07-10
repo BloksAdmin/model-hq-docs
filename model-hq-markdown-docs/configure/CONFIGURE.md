@@ -12,6 +12,7 @@ To begin, click on the **configure** button ( ❃ ) from the main menu present i
 
 ## 2. Overview of the configure Interface
 After launching the configure section, the interface displays the following key options:
+
 ![tools](configure/configureInterface.png)
 
 It includes:
@@ -253,6 +254,8 @@ This section allows users to enter secret keys for using external APIs. Examples
 - Gmail
 - Serp API
 - Tavily API
+
+![tools](configure/credentials.png)
 
 To access any of these external APIs, including access to models such as OpenAI and Anthropic, a user must enter the API key prior to usage. Credentials are stored encrypted in local machines only and no credential information is shared with LLMWare. Please do not save or transmit credential information unless as needed. 
 

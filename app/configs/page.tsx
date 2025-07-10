@@ -83,6 +83,9 @@ export default function ConfigsPage() {
             <strong>Templates</strong>
           </li>
           <li>
+            <strong>Credentials</strong>
+          </li>
+          <li>
             <strong>Reset</strong>
           </li>
           <li>
@@ -471,6 +474,34 @@ export default function ConfigsPage() {
         </p>
 
         <p>Here you will a lot of options. Play with it.</p>
+
+        <p>&nbsp;</p>
+
+        <h3 id="credentials">Credentials</h3>
+        <p>
+          This section allows users to enter secret keys for using external APIs. Examples of external APIs currently supported through Model HQ are:
+        </p>
+
+        <ul>
+          <li>OpenAI</li>
+          <li>Anthropic</li>
+          <li>Azure OpenAI endpoint</li>
+          <li>Azure OpenAI</li>
+          <li>Azure API</li>
+          <li>Gmail</li>
+          <li>Serp API</li>
+          <li>Tavily API</li>
+        </ul>
+
+        <p>
+          <img src="/configs/credentials.png" alt="credentials" />
+          <br />
+          To access any of these external APIs, including access to models such as <code>OpenAI</code> and <code>Anthropic</code>, a user must enter the API key prior to usage. Credentials are stored encrypted in local machines only and no credential information is shared with LLMWare. Please do not save or transmit credential information unless as needed.
+        </p>
+
+        <p>
+          You can delete credentials by clicking on the <b>Refresh</b> button.
+        </p>
 
         <p>&nbsp;</p>
 

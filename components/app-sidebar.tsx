@@ -71,6 +71,7 @@ const navigationData = {
         { title: "Agent Builder Menu", url: "/agent/agent-builder-menu" },
         { title: "Edit Agent", url: "/agent/edit-agent" },
         { title: "Batch Run", url: "/agent/multi-docs-agent" },
+        { title: "OpenAI and Anthropic", url: "/agent/openAI-and-anthropic" },
       ],
     },
     {
