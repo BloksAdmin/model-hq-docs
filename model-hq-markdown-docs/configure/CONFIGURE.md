@@ -22,6 +22,7 @@ It includes:
 - **DB**
 - **Controls**
 - **Templates**
+- **Credentials**
 - **Reset**
 - **Display mode** 🕸️ (light-dark mode toggle button)
 - **Home**
@@ -237,7 +238,25 @@ The template buttons ask you to build a new template or to edit/view the existin
 Hit `>` to proceed with your choice. For demonstration, we are going with `build new` option.
 ![tools](configure/templatesNext.png)
 
-Here you will a lot of options. Play with it.
+Here you have many options to configure new templates.
+
+&nbsp;
+
+## Credentials
+This section allows users to enter secret keys for using external APIs. Examples of external APIs currently supported through Model HQ are:
+
+- OpenAI
+- Anthropic
+- Azure OpenAI endpoint
+- Azure OpenAI
+- Azure API
+- Gmail
+- Serp API
+- Tavily API
+
+To access any of these external APIs, including access to models such as OpenAI and Anthropic, a user must enter the API key prior to usage. Credentials are stored encrypted in local machines only and no credential information is shared with LLMWare. Please do not save or transmit credential information unless as needed. 
+
+You can delete credentials by clicking on the Refresh button.
 
 &nbsp;
 
