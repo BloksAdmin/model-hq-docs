@@ -113,7 +113,7 @@ export default function CloudModelsPage() {
                     <p>
                         <strong>IMPORTANT</strong>
                         <br />
-                        Make sure to set the <strong>Context</strong> of <code>Chat_1</code> to <code>None</code>
+                        Make sure to set the <strong>Context</strong> of <code>Chat_1</code> to <code>None</code> in the first row. (the context of OpenAI should correctly remain as <code>Chat_1</code>)
                         <br />
                         There is no context needed for this model to provide a valid answer. This option may become available{" "}
                         <strong>
