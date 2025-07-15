@@ -1,6 +1,8 @@
 # RAG Bot
 The RAG Bot offers a fast and flexible way to analyze and extract insights from enterprise documents like executive employment agreements, MSAs, and NDAs. Using a Retrieval-Augmented Generation (RAG) architecture, this bot supports multiple modes of interaction including chatbot, agent, batch processing, and API integration; making it ideal for business users, analysts, and developers alike. With no setup code required, users can quickly ask natural language questions, run multi-step agent workflows, and scale analysis across large volumes of documents, all from a single no-code platform.
 
+This walkthrough is also demonstrated step-by-step on our YouTube video "Build a Custom Chat/RagBot in 10 Minutes": https://youtu.be/uy53WKrMOXc
+
 ## Use Case
 
 Analyze and extract key information from executive employment agreements (a stand-in for many enterprise documents like MSAs, NDAs, research papers, etc.) using Model HQ’s **Chat**, **Agent**, and **API** modes.
