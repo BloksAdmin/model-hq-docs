@@ -1,7 +1,7 @@
 # RAG Bot
 The RAG Bot offers a fast and flexible way to analyze and extract insights from enterprise documents like executive employment agreements, MSAs, and NDAs. Using a Retrieval-Augmented Generation (RAG) architecture, this bot supports multiple modes of interaction including chatbot, agent, batch processing, and API integration; making it ideal for business users, analysts, and developers alike. With no setup code required, users can quickly ask natural language questions, run multi-step agent workflows, and scale analysis across large volumes of documents, all from a single no-code platform.
 
-This walkthrough is also demonstrated step-by-step on our YouTube video "Build a Custom Chat/RagBot in 10 Minutes": https://youtu.be/uy53WKrMOXc
+This walkthrough is also demonstrated step-by-step on our YouTube video "Private AI for Document Analysis in AI PC": [https://youtu.be/uy53WKrMOXc](https://youtu.be/FSjpAgIZnPM)
 
 ## Use Case
 
