@@ -20,15 +20,15 @@ We provide the prompt below so you can copy and paste it if you want to try the 
 
 1. Go to **Main Menu > Bots > Build New > Models**
 2. Name the Bot: **Michael Scott Bot**
-3. You'll land in the **Model and Agent Configuration Screen**.
+3. You'll land in the **Model and Agent Configuration Screen**. 
 
-### Model Settings:
+### Model Settings - make the following selections:
 
 * **Model Size**: Small
 * **Model Selection**:
 
   * `llama 3.2-3b-instruct-gguf` (if using Qualcomm)
-  * `3.2-3b-instruct-ov` (if using Intel)
+  * `llama 3.2-3b-instruct-ov` (if using Intel)
 * **Model User Input**: Choose for User
 
 Leave the rest of the settings as default and click `>` at the bottom of the screen.
@@ -37,10 +37,10 @@ Leave the rest of the settings as default and click `>` at the bottom of the scr
 
 ## Prompting the Bot
 
-1. Go to **RAG**.
+1. Go to **RAG** in Configure Michael Scott Bot screen.
    (If coming from the Models screen, you should see the RAG button. Otherwise, go to **Bots > RAG**.)
 2. In the **Prompt Instruction passed to RAG** section, paste your prompt.
-   Use the Michael Scott Bot example below and click `>` at the bottom of the screen.
+   Use the Michael Scott Bot example below by copying and pasting into the box and click `>` at the bottom of the screen.
 
 &nbsp;
 
