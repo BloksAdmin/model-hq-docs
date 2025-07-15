@@ -2,7 +2,7 @@
 
 A comprehensive documentation website for Model HQ - an AI platform that allows users to run cutting-edge AI models directly on their PC with complete privacy and offline capabilities.
 
-![Model HQ Documentation](public/images/modelhq-logo.png)
+![Model HQ Documentation](public/images/new-modelhq-logo.png)
 
 ## 🌟 Overview
 
