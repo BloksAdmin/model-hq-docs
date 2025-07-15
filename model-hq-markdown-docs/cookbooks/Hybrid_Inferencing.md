@@ -6,7 +6,7 @@ Seamlessly combine local and server-based inference modes—chat, agents, and se
 
 This walkthrough is built for developers or technical practitioners looking to toggle between local AI PC inferencing and API server-based inference, including how to access remote vector libraries, run agents remotely, and build enterprise-wide RAG pipelines.
 
-This walkthrough is also demonstrated step-by-step on our YouTube channel:
+This walkthrough is also demonstrated step-by-step on our YouTube video "Unlock Hybrid AI: AI PC + API Server":
 [https://youtu.be/lMQwcw0TeVM](https://youtu.be/lMQwcw0TeVM)
 
 &nbsp;
@@ -31,6 +31,7 @@ This walkthrough is also demonstrated step-by-step on our YouTube channel:
 * Go to **App** in the Model HQ Configuration Center
 * Toggle **Connected Enterprise Servers** to **ON**
 * Click `>` at the bottom of the screen
+* Note: If you do not have an API connection pre-established, you will be directed to the 'Add New API Connection' screen, where you can enter the API Name, IP Address, Port and Secret Key information to establish a connection.
 
 ### 1.2 Confirm Server Discoverability
 
@@ -51,7 +52,7 @@ This walkthrough is also demonstrated step-by-step on our YouTube channel:
 * From the Main Menu, go to **Bots**
 * You'll see local bots like **Fast Start Chatbot** or **Model HQ Biz Bot**
 * You'll also see server-based bots like **Model HQ API Server Biz Bot**
-* Select the server bot and click `>`
+* Select the Model HQ 'API Server Biz Bot' and click `>`
 * Choose a model (e.g., **Phi-4-ov**) running on the server
 * Begin chatting with the model
 
