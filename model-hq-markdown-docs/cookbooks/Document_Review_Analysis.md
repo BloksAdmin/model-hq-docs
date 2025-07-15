@@ -17,8 +17,8 @@ Custom analysis of music license royalty agreements as an example, derived from 
 ## Ingredients (Prerequisites)
 
 * Model HQ installed
-* A sample agent (e.g., **Contract Analyzer**) available
-* A sample PDF — e.g., *Circe License Agreement for Copyrighted Music*
+* A sample agent (e.g., **Contract Analyzer**) available as a template in Model HQ
+* A sample PDF — e.g., *Circe License Agreement for Copyrighted Music* - sample document provided as part of Model HQ
   (Path: `C:\users\[username]\llmware_data\sample_files\AgreementsLarge\Circe License Agreement for Copyrighted Music.pdf`)
 * No coding knowledge required!
 
@@ -42,7 +42,8 @@ Use the no-code visual editor to:
 
 #### Steps:
 
-* Open **Agents > Select Build New** then click **Start Building** in *Configure Agent*
+* Open **Agents > Select Build New** then click '>'
+* Next, select **Start Building** in *Configure Agent*
 * Input process name in *Set Up Agent*, e.g., **License Agreement**
 * Set input type to **User Document** (indicates PDF upload)
 
@@ -55,7 +56,7 @@ Use the no-code visual editor to:
 
 ### 2. Understand the Template Process (Contract Analyzer)
 
-You’ll see pre-loaded steps:
+You’ll see pre-loaded steps for this template which was designed for employment agreements, which we will modify for the new contracts related to music license royalty agreements:
 
 1. Parse the uploaded document
 2. Run RAG answer agent on 3 default questions:
@@ -75,7 +76,7 @@ You’ll see pre-loaded steps:
 
 * **Keep**:
 
-  * **Parse Document** (critical for extracting from non-`.txt` files)
+  * **Parse Document** (critical for extracting text from non-`.txt` files)
 
 * **Modify Questions**:
 
@@ -96,7 +97,7 @@ You’ll see pre-loaded steps:
 * Skip generating Word reports—commentary replaces it
 * Output: Natural language summary of findings
 
-In the workflow:
+How to in the workflow:
 
 * At the end of Row 5, click the **‘+’** button
 
@@ -137,7 +138,6 @@ In the workflow:
 
   * *Circe License Agreement for Copyrighted Music*
   * *Cybele Music License Agreement*
-  * *Diana Music License Agreement*
   * *Eos License Agreement for Copyrighted Music*
 
 > Folder path: `C:\users\[username]\llmware_data\sample_files\AgreementsLarge\`
