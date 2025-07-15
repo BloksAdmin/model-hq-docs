@@ -58,12 +58,8 @@ It does **not** use an external model and is intended as a **quick test** to ens
 
 > [!IMPORTANT]
 > 
-> Make sure to set the **Context** of `Chat_1` to:
-> 
-> ```
-> None
-> ```
-> 
+> Make sure to set the **Context** of `Chat_1` to **None** in the first row. (The context of OpenAI should correctly remain as `Chat_1`)
+>
 > There is no context needed for this model to provide a valid > answer.  
 > This option may become available **only after clicking `>`** > following the model change in the Cloud API Agent workflow.
 

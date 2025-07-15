@@ -6,13 +6,13 @@ import { SidebarTrigger } from "@/components/ui/sidebar"
 import { Separator } from "@/components/ui/separator"
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
-import { Search, FileText, Hash } from "lucide-react"
+import { Search, FileText, Hash, BookOpen } from "lucide-react"
 import { useRouter, usePathname } from "next/navigation"
 
 interface SearchResult {
   title: string
   url: string
-  type: "page" | "heading"
+  type: "page" | "heading" | "cookbook"
   parentPage?: string
   description?: string
 }
@@ -464,7 +464,7 @@ export function Header() {
       url: "/agent/create-new-agent#input",
       type: "heading",
       parentPage: "Creating New Agent",
-    },   
+    },
     {
       title: "Agent Setup",
       url: "/agent/create-new-agent#agent-setup",
@@ -668,6 +668,32 @@ export function Header() {
       type: "heading",
       parentPage: "OpenAi and Anthropic",
     },
+
+    // Cookbooks
+    {
+      title: "Personalized Bot",
+      url: "/cookbooks/personalized-bot",
+      type: "cookbook",
+      parentPage: "Cookbooks",
+    },
+    {
+      title: "RAG Bot",
+      url: "/cookbooks/rag-bot",
+      type: "cookbook",
+      parentPage: "Cookbooks",
+    },
+    {
+      title: "Build a No-Code Document Review and Analysis Custom Agent Workflow in Model HQ",
+      url: "/cookbooks/document-review-and-analysis-tool",
+      type: "cookbook",
+      parentPage: "Cookbooks",
+    },
+    {
+      title: "Hybrid Inferencing using Model HQ (AI PC + API Server)",
+      url: "/cookbooks/hybrid-inferencing",
+      type: "cookbook",
+      parentPage: "Cookbooks",
+    },
   ]
 
   const performSearch = (query: string): SearchResult[] => {
@@ -694,11 +720,9 @@ export function Header() {
         if (aExact && !bExact) return -1
         if (!aExact && bExact) return 1
 
-        // Then by type (pages first)
-        if (a.type === "page" && b.type === "heading") return -1
-        if (a.type === "heading" && b.type === "page") return 1
-
-        return 0
+        // Type-based sorting
+        const typePriority = { page: 0, cookbook: 1, heading: 2 }
+        return typePriority[a.type] - typePriority[b.type]
       })
       .slice(0, 8) // Limit to 8 results
   }
@@ -839,9 +863,8 @@ export function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-40 flex h-16 shrink-0 items-center gap-2 border-b bg-background px-2 sm:px-4 transition-transform duration-300 ${
-        isVisible ? "translate-y-0" : "-translate-y-full"
-      }`}
+      className={`sticky top-0 z-40 flex h-16 shrink-0 items-center gap-2 border-b bg-background px-2 sm:px-4 transition-transform duration-300 ${isVisible ? "translate-y-0" : "-translate-y-full"
+        }`}
     >
       <SidebarTrigger className="-ml-1" />
       <Separator orientation="vertical" className="mr-2 h-4" />
@@ -870,14 +893,15 @@ export function Header() {
                 {searchResults.map((result, index) => (
                   <div
                     key={`${result.url}-${index}`}
-                    className={`flex items-center gap-3 p-3 cursor-pointer hover:bg-muted transition-colors ${
-                      index === selectedIndex ? "bg-muted" : ""
-                    }`}
+                    className={`flex items-center gap-3 p-3 cursor-pointer hover:bg-muted transition-colors ${index === selectedIndex ? "bg-muted" : ""
+                      }`}
                     onClick={() => handleResultClick(result)}
                   >
                     <div className="flex-shrink-0">
                       {result.type === "page" ? (
                         <FileText className="h-4 w-4 text-primary" />
+                      ) : result.type === "cookbook" ? (
+                        <BookOpen className="h-4 w-4 text-blue-700" />
                       ) : (
                         <Hash className="h-4 w-4 text-muted-foreground" />
                       )}
@@ -885,8 +909,24 @@ export function Header() {
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2">
                         <span className="font-medium text-sm truncate">{result.title}</span>
-                        <Badge variant={result.type === "page" ? "default" : "secondary"} className="text-xs">
-                          {result.type === "page" ? "Page" : "Section"}
+                        <Badge
+                          variant={
+                            result.type === "page"
+                              ? "default"
+                              : result.type === "cookbook"
+                                ? "secondary"
+                                : "secondary"
+                          }
+                          className={`text-xs ${result.type === "cookbook"
+                            ? "bg-blue-100 text-black-700 border border-blue-200 font-medium"
+                            : ""
+                            }`}
+                        >
+                          {result.type === "page"
+                            ? "Page"
+                            : result.type === "cookbook"
+                              ? "Cookbook"
+                              : "Section"}
                         </Badge>
                       </div>
                       {result.type === "heading" && result.parentPage && (

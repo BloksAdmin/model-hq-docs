@@ -16,7 +16,10 @@ import {
   Cpu,
   Video,
   BookOpen,
-  Code,
+  Radio,
+  BrainCircuit,
+  Library,
+  FileSearch,
 } from "lucide-react"
 
 import {
@@ -113,7 +116,7 @@ const navigationData = {
     {
       title: "Qualcomm Supported Models",
       url: "/supported-models/qualcomm",
-      icon: Cpu,
+      icon: Radio,
     },
   ],
   resources: [
@@ -127,6 +130,28 @@ const navigationData = {
       url: "/blogs-and-partner-solutions",
       icon: BookOpen,
     },
+  ],
+  cookbooks: [
+    {
+      title: "Personalized Bot",
+      url: "/cookbooks/personalized-bot",
+      icon: BrainCircuit,
+    },
+    {
+      title: "RAG Bot",
+      url: "/cookbooks/rag-bot",
+      icon: Library,
+    },
+    {
+      title: "Document Review and Analysis Tool",
+      url: "/cookbooks/document-review-and-analysis-tool",
+      icon: FileSearch,
+    },
+    {
+      title: "Hybrid Inferencing",
+      url: "/cookbooks/hybrid-inferencing",
+      icon: FileSearch,
+    }
   ],
 }
 
@@ -268,6 +293,30 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           <SidebarGroupContent>
             <SidebarMenu>
               {navigationData.resources.map((item) => (
+                <SidebarMenuItem key={item.title}>
+                  <SidebarMenuButton
+                    asChild
+                    tooltip={item.title}
+                    isActive={pathname === item.url}
+                    suppressHydrationWarning
+                  >
+                    <a href={item.url}>
+                      {item.icon && <item.icon className="size-4" />}
+                      <span className="text-sm">{item.title}</span>
+                    </a>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              ))}
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+
+        {/* Cookbooks Section */}
+        <SidebarGroup>
+          <SidebarGroupLabel>Cookbooks</SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              {navigationData.cookbooks.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton
                     asChild
