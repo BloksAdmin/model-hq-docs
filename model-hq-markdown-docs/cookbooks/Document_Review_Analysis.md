@@ -4,6 +4,8 @@
 
 Custom analysis of music license royalty agreements as an example, derived from an existing **Contract Analyzer** agent.
 
+This walkthrough is also demonstrated step-by-step on our YouTube video "Build a Custom Chat/RAG Bot in 10 Minutes": https://youtu.be/uy53WKrMOXc
+
 &nbsp;
 
 ## Who This Is For
