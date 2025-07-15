@@ -53,8 +53,8 @@ Model HQ will return:
 
 * Switch to **Agent Mode** from Home
 * Select the built-in **Contract Analyzer Agent**
-* Upload a document from the `agreements` folder
-* Agent will run 3 predefined questions (e.g., compensation, start date, termination clause)
+* Upload a document from the `agreements` folder found in: `C:\users\[username]\llmware_data\sample_files\agreements\[list of 12 executive employment agreements]`
+* Agent will run 3 predefined questions (e.g., effective date, annual rate of base salary, number of vacation days)
 * Output includes:
 
   * Full inference log
@@ -71,8 +71,8 @@ Model HQ will return:
 #### Steps:
 
 * Go to **Agent > Load Existing**, select **ContractAnalyzer**
-* Choose **Batch Processing** in the UI
-* Upload multiple documents (e.g., first 5 from the sample agreements folder)
+* Choose **Batch Run** in the UI
+* Upload multiple documents (e.g., first 5 from the sample agreements folder for this example)
   `C:\users\[username]\llmware_data\sample_files\agreements\`
 * Agent will iterate through each document and apply consistent questions
 
@@ -85,8 +85,6 @@ Model HQ will return:
 &nbsp;
 
 ### 4. Enable Backend API Mode (For Developers)
-
-> *Note: Please verify this section with the official video demos.*
 
 **Purpose**: Integrate Model HQ into custom applications via API.
 
