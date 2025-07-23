@@ -6,6 +6,9 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Separator } from "@radix-ui/react-separator"
+import { Laptop } from "lucide-react"
 
 export default function GettingStartedPage() {
   return (
@@ -26,9 +29,41 @@ export default function GettingStartedPage() {
         <h1 className="text-3xl font-bold tracking-tight">Getting Started with Model HQ</h1>
       </div>
 
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2 text-lg sm:text-xl">
+            <Laptop className="h-5 w-5 flex-shrink-0" />
+            <span id="laptop-configuration">Laptop Configuration</span>
+          </CardTitle>
+          <CardDescription className="text-sm sm:text-base">
+            System requirements for PC and laptop installations
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <img
+            src="/laptop_config.png"
+            alt="Laptop Configuration Requirements"
+            className="w-full rounded-lg border"
+          />
+        </CardContent>
+      </Card>
+
+      <div className="prose prose-gray max-w-none">
+        <blockquote data-type="tip">
+          <p>
+            It is critical to set the screen hibernation and sleep mode as shown for initial batch downloading of models. Model transfers
+            may fail because internet connectivity will be interrupted if the machine goes into hibernation or sleep mode during download.
+          </p>
+        </blockquote>
+      </div>
+
+      <Separator />
+
+      <p>&nbsp;</p>
+
       <div className="prose prose-gray max-w-none">
         <p>
-          After installing the <strong>llmware</strong> application on your system, launch the application. You will be
+          After installing the <strong>llmware</strong> application and checking the system requirements on your system, launch the application. You will be
           presented with an interface similar to the one shown below:
         </p>
 
@@ -206,13 +241,13 @@ export default function GettingStartedPage() {
 
         <h2 id="getting-started-with-enterprise-template">Getting Started with Enterprise Template</h2>
         <p>
-          The <strong>Enterprise Template</strong> is a fully pre-configured setup tailored specifically for enterprise needs, 
-          and enables a standard configuration for all users, including a common set of custom Bots, Agents and other 
+          The <strong>Enterprise Template</strong> is a fully pre-configured setup tailored specifically for enterprise needs,
+          and enables a standard configuration for all users, including a common set of custom Bots, Agents and other
           configurations.
           <br />
-          If you have received an Enterprise Template from your IT or development team, you can launch the Model HQ 
-          application by selecting this option. You will then be prompted to upload the template zip file.  Once you 
-          upload the template zip file, the configuration template will be installed, and you will all set and ready 
+          If you have received an Enterprise Template from your IT or development team, you can launch the Model HQ
+          application by selecting this option. You will then be prompted to upload the template zip file.  Once you
+          upload the template zip file, the configuration template will be installed, and you will all set and ready
           to get started!
         </p>
 

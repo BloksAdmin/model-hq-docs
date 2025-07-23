@@ -20,6 +20,7 @@ import {
   BrainCircuit,
   Library,
   FileSearch,
+  Server,
 } from "lucide-react"
 
 import {
@@ -150,7 +151,7 @@ const navigationData = {
     {
       title: "Hybrid Inferencing",
       url: "/cookbooks/hybrid-inferencing",
-      icon: FileSearch,
+      icon: Server,
     }
   ],
 }

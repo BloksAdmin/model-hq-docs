@@ -1,45 +1,81 @@
 "use client"
 
-import { BookOpen, ArrowRight, Users, ExternalLink, ChevronDown, ChevronUp, Calendar, User } from "lucide-react"
+import {
+  BookOpen,
+  ArrowRight,
+  Users,
+  ExternalLink,
+  ChevronDown,
+  ChevronUp,
+  Calendar,
+  User,
+  Cpu,
+  Zap,
+} from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
 import Image from "next/image"
 import { useState, useRef } from "react"
 
 export default function BlogsPage() {
-  const [showAllSolutions, setShowAllSolutions] = useState(false)
+  const [showAllIntelSolutions, setShowAllIntelSolutions] = useState(false)
+  const [showAllQualcommSolutions, setShowAllQualcommSolutions] = useState(false)
   const [showAllBlogs, setShowAllBlogs] = useState(false)
-  const viewMoreButtonRef = useRef<HTMLDivElement>(null)
+
+  const intelViewMoreButtonRef = useRef<HTMLDivElement>(null)
+  const qualcommViewMoreButtonRef = useRef<HTMLDivElement>(null)
   const blogViewMoreButtonRef = useRef<HTMLDivElement>(null)
 
-  const partnerSolutions = [
+  const intelSolutions = [
     {
       id: 1,
       title: "LLMWare.ai Model HQ-Local AI Partner Brief",
-      description: "Securely deploy and scale AI across the enterprise",
+      description: "Securely deploy and scale AI across the enterprise with Intel's cutting-edge AI PC technology",
       image: "/partner-solutions/PS1.png",
       link: "https://www.intel.com/content/www/us/en/content-details/856277/llmware-ai-model-hq-local-ai-partner-brief.html",
+      category: "Enterprise AI",
+      featured: true,
     },
     {
       id: 2,
       title: "Local AI—No Code, More Secure with AI PCs and the Private Cloud",
-      description: "AI PCs and the Private Cloud",
+      description: "Leverage Intel AI PCs and Private Cloud infrastructure for secure, no-code AI deployment",
       image: "/partner-solutions/PS2.png",
       link: "https://www.intel.com/content/www/us/en/content-details/854280/local-ai-no-code-more-secure-with-ai-pcs-and-the-private-cloud.html",
+      category: "Security & Privacy",
+      featured: false,
     },
     {
       id: 3,
       title: "Model HQ Now Serving Arrow Lake",
-      description: "Read about our Partner Solution for Intel Arrow Lake",
+      description: "Optimized performance and efficiency with Intel's latest Arrow Lake architecture",
       image: "/partner-solutions/PS3.png",
       link: "https://github.com/user-attachments/files/18292873/IPA.Optimization.Summary.LLMWare.1.pdf",
+      category: "Performance",
+      featured: false,
     },
     {
       id: 4,
       title: "LLMWare Unleashes the Power of the Intel AI PC",
-      description: "Cost, Performance, and Security Wins",
+      description: "Achieve superior cost, performance, and security wins with Intel AI PC technology",
       image: "/partner-solutions/PS4.png",
       link: "https://www.intel.com/content/www/us/en/content-details/844173/llmware-unleashes-the-power-of-the-intel-ai-pc-with-cost-performance-and-security-wins.html",
+      category: "Cost Optimization",
+      featured: true,
+    },
+  ]
+
+  const qualcommSolutions = [
+    // Add Qualcomm solutions here when available
+    {
+      id: 1,
+      title: "Model HQ by LLMWare.ai: Run language models and use AI agents on Snapdragon X Series devices",
+      description: "Running LLMs on device has two issues: memory footprint and efficiency. To address both problems, LLMWare’s Model HQ provides a fast, efficient on-ramp to deploying and managing Gen AI models on local devices.",
+      image: "/partner-solutions/PS5.png",
+      link: "https://www.qualcomm.com/developer/blog/2025/03/model-hq-llmware-run-language-models-use-ai-agents-on-snapdragon-x-series-devices",
+      category: "Snapdragon X Series",
+      featured: true,
     },
   ]
 
@@ -55,82 +91,46 @@ export default function BlogsPage() {
       category: "Getting Started",
       link: "https://dev.to/llmware/how-to-run-ai-models-privately-on-your-ai-pc-with-model-hq-no-cloud-no-code-3o9k",
       featured: true,
-      image: "/blogs/blog1.png"
+      image: "/blogs/blog1.png",
     },
     {
       id: 2,
       title: "How to Create a Local Chatbot Without Coding in Less Than 10 Minutes on AI PCs",
       description:
-        "In this guide, we’ll walk you through how to create your own local chatbot using Model HQ ; a revolutionary AI desktop app by LLMWare.ai. Whether you’re a student, developer, or a professional looking for a private and offline AI assistant, this tool puts the power of cutting-edge AI models directly on your laptop.",
+        "In this guide, we'll walk you through how to create your own local chatbot using Model HQ ; a revolutionary AI desktop app by LLMWare.ai. Whether you're a student, developer, or a professional looking for a private and offline AI assistant, this tool puts the power of cutting-edge AI models directly on your laptop.",
       author: "Rohan Sharma",
       publishDate: "2025-06-27",
       readTime: "6 min read",
       category: "Chat Feature",
       link: "https://dev.to/llmware/how-to-create-a-local-chatbot-without-coding-in-less-than-10-minutes-on-ai-pcs-2ajl",
       featured: false,
-      image: "/blogs/blog2.png"
+      image: "/blogs/blog2.png",
     },
-    // {
-    //   id: 3,
-    //   title: "Security Best Practices for Enterprise AI",
-    //   description:
-    //     "Essential security considerations when deploying AI models in enterprise environments. Learn about data privacy, model protection, and compliance requirements.",
-    //   author: "Dr. Emily Watson",
-    //   publishDate: "2024-01-05",
-    //   readTime: "10 min read",
-    //   category: "Security",
-    //   link: "https://example.com/blog/enterprise-ai-security",
-    //   featured: false,
-    // },
-    // {
-    //   id: 4,
-    //   title: "RAG Implementation Patterns and Best Practices",
-    //   description:
-    //     "Deep dive into Retrieval-Augmented Generation (RAG) patterns. Explore different architectures, embedding strategies, and real-world implementation examples.",
-    //   author: "Alex Thompson",
-    //   publishDate: "2023-12-28",
-    //   readTime: "15 min read",
-    //   category: "Architecture",
-    //   link: "https://example.com/blog/rag-implementation-patterns",
-    //   featured: false,
-    // },
-    // {
-    //   id: 5,
-    //   title: "Multi-Modal AI: Combining Vision and Language Models",
-    //   description:
-    //     "Explore the latest developments in multi-modal AI systems. Learn how to integrate vision and language models for powerful applications.",
-    //   author: "Dr. James Liu",
-    //   publishDate: "2023-12-20",
-    //   readTime: "11 min read",
-    //   category: "Research",
-    //   link: "https://example.com/blog/multi-modal-ai",
-    //   featured: false,
-    // },
-    // {
-    //   id: 6,
-    //   title: "Cost-Effective AI Infrastructure Scaling",
-    //   description:
-    //     "Strategies for scaling AI infrastructure while managing costs. Compare cloud vs. on-premise solutions and hybrid deployment approaches.",
-    //   author: "Maria Gonzalez",
-    //   publishDate: "2023-12-15",
-    //   readTime: "9 min read",
-    //   category: "Infrastructure",
-    //   link: "https://example.com/blog/cost-effective-ai-scaling",
-    //   featured: false,
-    // },
   ]
 
-  const displayedSolutions = showAllSolutions ? partnerSolutions : partnerSolutions.slice(0, 2)
+  const displayedIntelSolutions = showAllIntelSolutions ? intelSolutions : intelSolutions.slice(0, 2)
+  const displayedQualcommSolutions = showAllQualcommSolutions ? qualcommSolutions : qualcommSolutions.slice(0, 2)
   const displayedBlogs = showAllBlogs ? blogPosts : blogPosts.slice(0, 3)
 
-  const handleViewToggle = () => {
-    if (showAllSolutions) {
-      setShowAllSolutions(false)
+  const handleIntelViewToggle = () => {
+    if (showAllIntelSolutions) {
+      setShowAllIntelSolutions(false)
       setTimeout(() => {
-        viewMoreButtonRef.current?.scrollIntoView({ behavior: "smooth", block: "center" })
+        intelViewMoreButtonRef.current?.scrollIntoView({ behavior: "smooth", block: "center" })
       }, 100)
     } else {
-      setShowAllSolutions(true)
+      setShowAllIntelSolutions(true)
+    }
+  }
+
+  const handleQualcommViewToggle = () => {
+    if (showAllQualcommSolutions) {
+      setShowAllQualcommSolutions(false)
+      setTimeout(() => {
+        qualcommViewMoreButtonRef.current?.scrollIntoView({ behavior: "smooth", block: "center" })
+      }, 100)
+    } else {
+      setShowAllQualcommSolutions(true)
     }
   }
 
@@ -153,17 +153,81 @@ export default function BlogsPage() {
       Architecture: "bg-purple-100 text-purple-800",
       Research: "bg-orange-100 text-orange-800",
       Infrastructure: "bg-gray-100 text-gray-800",
+      "Enterprise AI": "bg-indigo-100 text-indigo-800",
+      "Security & Privacy": "bg-red-100 text-red-800",
+      Performance: "bg-green-100 text-green-800",
+      "Cost Optimization": "bg-yellow-100 text-yellow-800",
+      "Mobile AI": "bg-purple-100 text-purple-800",
     }
     return colors[category as keyof typeof colors] || "bg-gray-100 text-gray-800"
   }
 
+  const PartnerSolutionCard = ({ solution, partner }: { solution: any; partner: "intel" | "qualcomm" }) => (
+    <Card className="group hover:shadow-2xl transition-all duration-500 overflow-hidden border-0 rounded-2xl shadow-lg bg-gradient-to-br from-white to-gray-50">
+      <div className="relative">
+        {solution.featured && (
+          <div className="absolute top-4 left-4 z-10">
+            <Badge className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white font-semibold px-3 py-1 shadow-lg">
+              Featured
+            </Badge>
+          </div>
+        )}
+        <div className="absolute top-4 right-4 z-10">
+          <Badge
+            variant="secondary"
+            className={`${partner === "intel" ? "bg-blue-100 text-blue-700" : "bg-red-100 text-red-700"} font-medium shadow-sm`}
+          >
+            {solution.category}
+          </Badge>
+        </div>
+        <div className="relative w-full h-80 overflow-hidden flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
+          <Image
+            src={solution.image || "/placeholder.svg"}
+            alt={solution.title}
+            width={400}
+            height={320}
+            className="w-full h-full object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        </div>
+      </div>
+      <CardContent className="p-6 space-y-4">
+        <div className="space-y-3">
+          <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-300 line-clamp-2">
+            {solution.title}
+          </h3>
+          <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">{solution.description}</p>
+        </div>
+        <div className="pt-4 border-t border-gray-100">
+          <button
+            onClick={() => window.open(solution.link, "_blank")}
+            className={`w-full relative overflow-hidden ${
+              partner === "intel"
+                ? "bg-gradient-to-r from-[#0072CE] to-[#00C7FD] hover:from-[#005BA1] hover:to-[#0099CC]"
+                : "bg-gradient-to-r from-[#E60012] to-[#FF4444] hover:from-[#CC0010] hover:to-[#E60012]"
+            } text-white font-medium py-3 px-6 rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] group/btn`}
+          >
+            <div className="relative flex items-center justify-center gap-2">
+              <span>Read Full Article</span>
+              <ExternalLink className="h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
+            </div>
+            <div className="absolute inset-0 bg-white/10 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300 rounded-xl" />
+          </button>
+        </div>
+      </CardContent>
+    </Card>
+  )
+
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <div className="space-y-12">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="space-y-16">
         {/* Header */}
         <div className="text-center space-y-4">
-          <h1 className="text-3xl sm:text-3xl lg:text-4xl font-bold text-gray-900">Resources & Insights</h1>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
+          <h1 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">
+            Resources & Insights
+          </h1>
+          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Explore our latest blogs, partner solutions, and technical insights about AI model deployment and
             management.
           </p>
@@ -171,59 +235,57 @@ export default function BlogsPage() {
 
         {/* Blogs Section */}
         <section className="space-y-8">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="p-3 bg-green-100 rounded-full">
-              <BookOpen className="h-7 w-7 text-green-600" />
+          <div className="flex items-center gap-4 mb-8">
+            <div className="p-4 bg-gradient-to-br from-green-100 to-emerald-100 rounded-2xl shadow-sm">
+              <BookOpen className="h-8 w-8 text-green-600" />
             </div>
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">Latest Blogs</h2>
+            <div>
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">Latest Blogs</h2>
+              <p className="text-gray-600 mt-1">Stay updated with our latest insights and tutorials</p>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
             {displayedBlogs.map((blog) => (
               <Card
                 key={blog.id}
-                className="group hover:shadow-xl transition-all duration-300 overflow-hidden border-0 rounded-xl shadow-md cursor-pointer"
+                className="group hover:shadow-2xl transition-all duration-500 overflow-hidden border-0 rounded-2xl shadow-lg cursor-pointer bg-gradient-to-br from-white to-gray-50"
                 onClick={() => window.open(blog.link, "_blank")}
               >
                 <div className="relative">
                   {blog.featured && (
                     <div className="absolute top-4 left-4 z-10">
-                      <span className="bg-gradient-to-r from-blue-600 to-purple-600 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                      <Badge className="bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold px-3 py-1 shadow-lg">
                         Featured
-                      </span>
+                      </Badge>
                     </div>
                   )}
                   {blog.image ? (
                     <img
-                      src={blog.image}
+                      src={blog.image || "/placeholder.svg"}
                       alt={blog.title}
-                      className="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      className="h-52 w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   ) : (
-                    <div className="h-48 bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center group-hover:from-gray-200 group-hover:to-gray-300 transition-all duration-300">
+                    <div className="h-52 bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center group-hover:from-gray-200 group-hover:to-gray-300 transition-all duration-500">
                       <BookOpen className="h-16 w-16 text-gray-400 group-hover:text-gray-500 transition-colors duration-300" />
                     </div>
                   )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
-
                 <CardContent className="p-6 space-y-4">
                   <div className="flex items-center justify-between">
-                    <span className={`text-xs font-medium px-2 py-1 rounded-full ${getCategoryColor(blog.category)}`}>
-                      {blog.category}
-                    </span>
-                    <span className="text-xs text-gray-500">{blog.readTime}</span>
+                    <Badge className={getCategoryColor(blog.category)}>{blog.category}</Badge>
+                    <span className="text-xs text-gray-500 font-medium">{blog.readTime}</span>
                   </div>
-
                   <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-300 line-clamp-2">
                     {blog.title}
                   </h3>
-
                   <p className="text-gray-600 text-sm line-clamp-3 leading-relaxed">{blog.description}</p>
-
                   <div className="flex items-center justify-between pt-4 border-t border-gray-100">
                     <div className="flex items-center gap-2">
                       <User className="h-4 w-4 text-gray-400" />
-                      <span className="text-sm text-gray-600">{blog.author}</span>
+                      <span className="text-sm text-gray-600 font-medium">{blog.author}</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <Calendar className="h-4 w-4 text-gray-400" />
@@ -236,25 +298,22 @@ export default function BlogsPage() {
                       </span>
                     </div>
                   </div>
-
-                  <div className="flex items-center justify-between pt-2">
-                    <div className="flex items-center gap-2 text-blue-600 group-hover:text-blue-700 transition-colors duration-300">
-                      <span className="text-sm font-medium">Read Article</span>
-                      <ExternalLink className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
-                    </div>
+                  <div className="flex items-center gap-2 text-blue-600 group-hover:text-blue-700 transition-colors duration-300 pt-2">
+                    <span className="text-sm font-medium">Read Article</span>
+                    <ExternalLink className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
                   </div>
                 </CardContent>
               </Card>
             ))}
           </div>
 
-          {/* View More/Less Button for Blogs */}
           {blogPosts.length > 3 && (
             <div className="flex justify-center" ref={blogViewMoreButtonRef}>
               <Button
                 onClick={handleBlogViewToggle}
                 variant="outline"
-                className="flex items-center gap-2 bg-transparent"
+                size="lg"
+                className="flex items-center gap-2 bg-white hover:bg-gray-50 border-2 border-gray-200 hover:border-gray-300 rounded-xl px-6 py-3"
               >
                 {showAllBlogs ? (
                   <>
@@ -273,86 +332,175 @@ export default function BlogsPage() {
         </section>
 
         {/* Partner Solutions Section */}
-        <section className="space-y-8">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="p-3 bg-blue-100 rounded-full">
-              <Users className="h-7 w-7 text-blue-600" />
+        <section className="space-y-12">
+          <div className="flex items-center gap-4 mb-8">
+            <div className="p-4 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-2xl shadow-sm">
+              <Users className="h-8 w-8 text-blue-600" />
             </div>
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">Partner Solutions</h2>
+            <div>
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">Partner Solutions</h2>
+              <p className="text-gray-600 mt-1">Discover our partnerships with leading technology companies</p>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {displayedSolutions.map((solution) => (
-              <Card
-                key={solution.id}
-                className="group hover:shadow-xl transition-all duration-300 overflow-hidden border-0 rounded-xl shadow-md"
-              >
-                <div className="relative w-full h-96 overflow-hidden flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
-                  <Image
-                    src={solution.image || "/placeholder.svg"}
-                    alt={solution.title}
-                    width={320}
-                    height={453}
-                    className="w-full max-h-96 object-contain"
-                    priority
-                  />
+          {/* Intel Solutions */}
+          <div className="space-y-8">
+            <div className="flex items-center gap-4">
+              <div className="p-3 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl">
+                <Cpu className="h-6 w-6 text-blue-600" />
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold text-gray-900 flex items-center gap-3">
+                  Intel Partnership Solutions
+                  <Badge variant="secondary" className="bg-blue-100 text-blue-700">
+                    {intelSolutions.length} Solutions
+                  </Badge>
+                </h3>
+                <p className="text-gray-600 text-sm mt-1">Powered by Intel's cutting-edge AI PC technology</p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {displayedIntelSolutions.map((solution) => (
+                <PartnerSolutionCard key={solution.id} solution={solution} partner="intel" />
+              ))}
+            </div>
+
+            {intelSolutions.length > 2 && (
+              <div className="flex justify-center" ref={intelViewMoreButtonRef}>
+                <Button
+                  onClick={handleIntelViewToggle}
+                  variant="outline"
+                  size="lg"
+                  className="flex items-center gap-2 bg-white hover:bg-blue-50 border-2 border-blue-200 hover:border-blue-300 text-blue-700 hover:text-blue-800 rounded-xl px-6 py-3"
+                >
+                  {showAllIntelSolutions ? (
+                    <>
+                      <span>View Less Intel Solutions</span>
+                      <ChevronUp className="h-4 w-4" />
+                    </>
+                  ) : (
+                    <>
+                      <span>View More Intel Solutions</span>
+                      <ChevronDown className="h-4 w-4" />
+                    </>
+                  )}
+                </Button>
+              </div>
+            )}
+          </div>
+
+          {/* Qualcomm Solutions */}
+          {qualcommSolutions.length > 0 && (
+            <div className="space-y-8">
+              <div className="flex items-center gap-4">
+                <div className="p-3 bg-gradient-to-br from-red-50 to-red-100 rounded-xl">
+                  <Zap className="h-6 w-6 text-red-600" />
                 </div>
-                <CardContent className="p-4 bg-gradient-to-b from-gray-50 to-white flex justify-center">
-                  <button
-                    onClick={() => window.open(solution.link, "_blank")}
-                    className="relative overflow-hidden bg-gradient-to-r from-[#0072CE] to-[#00C7FD] text-white font-medium py-2 px-4 rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] group/btn text-sm"
+                <div>
+                  <h3 className="text-2xl font-bold text-gray-900 flex items-center gap-3">
+                    Qualcomm Partnership Solutions
+                    <Badge variant="secondary" className="bg-red-100 text-red-700">
+                      {qualcommSolutions.length} Solutions
+                    </Badge>
+                  </h3>
+                  <p className="text-gray-600 text-sm mt-1">
+                    Enhanced mobile AI capabilities with Snapdragon technology
+                  </p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                {displayedQualcommSolutions.map((solution) => (
+                  <PartnerSolutionCard key={solution.id} solution={solution} partner="qualcomm" />
+                ))}
+              </div>
+
+              {qualcommSolutions.length > 2 && (
+                <div className="flex justify-center" ref={qualcommViewMoreButtonRef}>
+                  <Button
+                    onClick={handleQualcommViewToggle}
+                    variant="outline"
+                    size="lg"
+                    className="flex items-center gap-2 bg-white hover:bg-red-50 border-2 border-red-200 hover:border-red-300 text-red-700 hover:text-red-800 rounded-xl px-6 py-3"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#005BA1] to-[#0099CC] opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
-                    <div className="relative flex items-center justify-center gap-2">
-                      <span>Read Full Article</span>
-                      <ExternalLink className="h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
-                    </div>
-                    <div className="absolute inset-0 bg-white/20 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300 rounded-lg"></div>
-                  </button>
+                    {showAllQualcommSolutions ? (
+                      <>
+                        <span>View Less Qualcomm Solutions</span>
+                        <ChevronUp className="h-4 w-4" />
+                      </>
+                    ) : (
+                      <>
+                        <span>View More Qualcomm Solutions</span>
+                        <ChevronDown className="h-4 w-4" />
+                      </>
+                    )}
+                  </Button>
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* Coming Soon for Qualcomm if no solutions */}
+          {qualcommSolutions.length === 0 && (
+            <div className="space-y-6">
+              <div className="flex items-center gap-4">
+                <div className="p-3 bg-gradient-to-br from-red-50 to-red-100 rounded-xl">
+                  <Zap className="h-6 w-6 text-red-600" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-gray-900">Qualcomm Partnership Solutions</h3>
+                  <p className="text-gray-600 text-sm mt-1">
+                    Enhanced mobile AI capabilities with Snapdragon technology
+                  </p>
+                </div>
+              </div>
+
+              <Card className="border-2 border-dashed border-gray-300 bg-gradient-to-br from-gray-50 to-white rounded-2xl">
+                <CardContent className="p-12 text-center space-y-4">
+                  <div className="p-4 bg-red-100 rounded-full w-fit mx-auto">
+                    <Zap className="h-8 w-8 text-red-600" />
+                  </div>
+                  <h4 className="text-xl font-semibold text-gray-900">Qualcomm Solutions Coming Soon</h4>
+                  <p className="text-gray-600 max-w-md mx-auto">
+                    We're working on exciting new partnerships with Qualcomm to bring you enhanced mobile AI
+                    capabilities. Stay tuned for updates!
+                  </p>
+                  <Badge variant="secondary" className="bg-red-100 text-red-700">
+                    Coming Soon
+                  </Badge>
                 </CardContent>
               </Card>
-            ))}
-          </div>
-
-          {/* View More/Less Button for Partner Solutions */}
-          {partnerSolutions.length > 2 && (
-            <div className="flex justify-center" ref={viewMoreButtonRef}>
-              <Button onClick={handleViewToggle} variant="outline" className="flex items-center gap-2 bg-transparent">
-                {showAllSolutions ? (
-                  <>
-                    <span>View Less</span>
-                    <ChevronUp className="h-4 w-4" />
-                  </>
-                ) : (
-                  <>
-                    <span>View More Partner Solutions</span>
-                    <ChevronDown className="h-4 w-4" />
-                  </>
-                )}
-              </Button>
             </div>
           )}
         </section>
 
         {/* Alternative Resources */}
-        <div className="bg-gray-50 rounded-xl p-6 sm:p-8 text-center">
-          <h3 className="text-xl font-semibold text-gray-900 mb-2">Explore More Resources</h3>
-          <p className="text-base text-gray-600 mb-6">Discover additional resources to get started with Model HQ</p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Button asChild variant="outline" className="w-full sm:w-auto bg-transparent">
+        <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 sm:p-12 text-center border border-gray-200 shadow-sm">
+          <h3 className="text-2xl font-bold text-gray-900 mb-3">Explore More Resources</h3>
+          <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+            Discover additional resources to get started with Model HQ and maximize your AI deployment success
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button asChild variant="outline" size="lg" className="bg-white hover:bg-gray-50 border-2 rounded-xl">
               <a href="/video-tutorials" className="flex items-center justify-center gap-2">
-                <BookOpen className="h-4 w-4" />
+                <BookOpen className="h-5 w-5" />
                 Watch Video Tutorials
               </a>
             </Button>
-            <Button asChild className="w-full sm:w-auto">
+            <Button
+              asChild
+              size="lg"
+              className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 rounded-xl"
+            >
               <a href="/getting-started" className="flex items-center justify-center gap-2">
-                <ArrowRight className="h-4 w-4" />
+                <ArrowRight className="h-5 w-5" />
                 Get Started Guide
               </a>
             </Button>
-            <Button asChild variant="outline" className="w-full sm:w-auto bg-transparent">
+            <Button asChild variant="outline" size="lg" className="bg-white hover:bg-gray-50 border-2 rounded-xl">
               <a href="/support" className="flex items-center justify-center gap-2">
+                <Users className="h-5 w-5" />
                 Contact Support
               </a>
             </Button>
@@ -360,15 +508,21 @@ export default function BlogsPage() {
         </div>
 
         {/* Newsletter Signup */}
-        <div className="bg-blue-50 rounded-xl p-6 sm:p-8 text-center border border-blue-200">
-          <h3 className="text-xl font-semibold text-gray-900 mb-2">Stay Updated</h3>
-          <p className="text-base text-gray-600 mb-4">
-            Be the first to know when we publish new content and partner solutions
-          </p>
-          <div className="max-w-md mx-auto">
-            <p className="text-sm text-gray-500">
-              Follow our updates and announcements through our official channels and documentation.
+        <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 sm:p-12 text-center border-2 border-blue-100 shadow-sm">
+          <div className="max-w-2xl mx-auto space-y-6">
+            <div className="p-4 bg-blue-100 rounded-full w-fit mx-auto">
+              <BookOpen className="h-8 w-8 text-blue-600" />
+            </div>
+            <h3 className="text-2xl font-bold text-gray-900">Stay Updated</h3>
+            <p className="text-lg text-gray-600">
+              Be the first to know when we publish new content, partner solutions, and product updates
             </p>
+            <div className="bg-white/50 backdrop-blur-sm rounded-xl p-6 border border-blue-200">
+              <p className="text-sm text-gray-600">
+                Follow our updates and announcements through our official channels and documentation for the latest
+                insights and features.
+              </p>
+            </div>
           </div>
         </div>
       </div>
