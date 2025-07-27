@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/og-image.png',
+        url: '/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Model HQ Documentation',
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     title: 'Model HQ Documentation',
     description:
       'Complete documentation for Model HQ platform',
-    images: ['/og-image.png'],
+    images: ['/og-image.jpg'],
   },
 }
 
