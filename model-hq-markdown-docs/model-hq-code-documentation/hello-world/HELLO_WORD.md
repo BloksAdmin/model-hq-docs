@@ -44,7 +44,7 @@ for token in client.stream(prompt=prompt, model_name=model_name):
 client.model_unload(model_name)
 ```
 
-Here’s how to run the **Hello World** example from the LLMWare SDK documentation, based on what you've asked and what you've already written:
+Here’s how to run the **Hello World** example from the LLMWare SDK documentation:
 
 ---
 
