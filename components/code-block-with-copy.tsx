@@ -3,7 +3,12 @@
 import { useState, useEffect } from "react"
 import { Check, Copy, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 
 interface CodeExample {
   curl: string
@@ -13,17 +18,20 @@ interface CodeExample {
 interface CodeBlockWithCopyProps {
   title: string
   code: CodeExample | string
-  language?: "curl" | "python"
+  // language?: "curl" | "python"
+  language?: "python"
   showLanguageSelector?: boolean
 }
 
 export function CodeBlockWithCopy({
   title,
   code,
-  language = "curl",
+  // language = "curl",
+  language = "python",
   showLanguageSelector = false,
 }: CodeBlockWithCopyProps) {
-  const [selectedLanguage, setSelectedLanguage] = useState<"curl" | "python">(language)
+  // const [selectedLanguage, setSelectedLanguage] = useState<"curl" | "python">(language)
+  const [selectedLanguage, setSelectedLanguage] = useState<"python">(language)
   const [copied, setCopied] = useState(false)
   const [mounted, setMounted] = useState(false)
 
@@ -48,8 +56,12 @@ export function CodeBlockWithCopy({
     }
   }
 
-  const getLanguageLabel = (lang: "curl" | "python") => {
-    return lang === "curl" ? "cURL" : "Python"
+  // const getLanguageLabel = (lang: "curl" | "python") => {
+  //   return lang === "curl" ? "cURL" : "Python"
+  // }
+
+  const getLanguageLabel = (lang: string) => {
+    return lang
   }
 
   if (!mounted) {
@@ -66,7 +78,7 @@ export function CodeBlockWithCopy({
         </div>
         <div className="bg-slate-950 text-slate-50 rounded-lg p-4 overflow-x-auto">
           <pre className="text-sm">
-            <code>{typeof code === "string" ? code : code.curl}</code>
+            <code>{typeof code === "string" ? code : code.python}</code>
           </pre>
         </div>
       </div>
@@ -78,7 +90,8 @@ export function CodeBlockWithCopy({
       <div className="flex items-center justify-between mb-3">
         <h4 className="font-medium">{title}</h4>
         <div className="flex items-center gap-2">
-          {showLanguageSelector && typeof code === "object" && (
+          {/*
+          showLanguageSelector && typeof code === "object" && (
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="outline" size="sm" className="h-8 px-3">
@@ -91,17 +104,23 @@ export function CodeBlockWithCopy({
                 <DropdownMenuItem onClick={() => setSelectedLanguage("python")}>Python</DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
-          )}
-          <Button variant="outline" size="sm" className="h-8 w-8 p-0" onClick={copyToClipboard}>
-            {copied ? <Check className="h-3 w-3 text-green-600" /> : <Copy className="h-3 w-3" />}
-          </Button>
+          )
+          */}
+            {showLanguageSelector && typeof code === "object" && (
+              <span className="text-sm text-foreground px-3 py-1 border rounded">
+                {getLanguageLabel(selectedLanguage)}
+              </span>
+            )}
+            <Button variant="outline" size="sm" className="h-8 w-8 p-0" onClick={copyToClipboard}>
+              {copied ? <Check className="h-3 w-3 text-green-600" /> : <Copy className="h-3 w-3" />}
+            </Button>
+          </div>
+        </div>
+        <div className="bg-slate-950 text-slate-50 rounded-lg p-4 overflow-x-auto">
+          <pre className="text-sm">
+            <code>{getCodeContent()}</code>
+          </pre>
         </div>
       </div>
-      <div className="bg-slate-950 text-slate-50 rounded-lg p-4 overflow-x-auto">
-        <pre className="text-sm">
-          <code>{getCodeContent()}</code>
-        </pre>
-      </div>
-    </div>
-  )
+      )
 }

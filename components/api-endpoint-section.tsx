@@ -29,9 +29,18 @@ interface ApiEndpointSectionProps {
 
 export function ApiEndpointSection({ endpoint, isLast }: ApiEndpointSectionProps) {
   // Generate curl example
-  const curlExample = `curl -X ${endpoint.method} "https://api.modelhq.com${endpoint.endpoint}" \\
+  const curlExample = `curl -X POST http://localhost:8088/${endpoint.id} \\
   -H "Content-Type: application/json" \\
-  -d '${JSON.stringify(endpoint.exampleRequest, null, 2)}'`
+  -d '${JSON.stringify(endpoint.exampleRequest, null, 2)
+    .split('\n')
+    .map((line) => {
+      // Add comment if line contains api_key
+      if (line.includes('"api_key"')) {
+        return line + '  // Optional';
+      }
+      return line;
+    })
+    .join('\n')}'`;
 
   // Generate Python example
   const pythonExample = `from llmware_client_sdk import LLMWareClient

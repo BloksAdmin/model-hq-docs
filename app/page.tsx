@@ -7,7 +7,7 @@ import { Analytics } from "@vercel/analytics/react"
 export default function HomePage() {
   return (
     <>
-      <div className="max-w-4xl mx-auto space-y-6">
+      <div className="max-w-5xl mx-auto space-y-6">
         {/* Hero Section */}
         <div className="text-center space-y-6 py-12 px-4">
           <div className="space-y-4">
@@ -300,7 +300,7 @@ export default function HomePage() {
                   Explore partner solutions showcasing real-world AI implementations, plus upcoming detailed articles.
                 </p>
                 <Button asChild className="w-full bg-pink-600 hover:bg-pink-700">
-                  <a href="/blogs">
+                  <a href="/blogs-and-partner-solutions">
                     Explore Resources
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </a>
@@ -469,6 +469,67 @@ export default function HomePage() {
                     - Provides a centralized interface for managing Model HQ's core settings
                   </span>
                 </div>
+              </div>
+
+              {/* Share */}
+              <div>
+                <div className="mb-3">
+                  <a href="/share-your-app" className="text-xl font-semibold text-primary hover:underline">
+                    Share Your App
+                  </a>
+                  <span className="text-muted-foreground ml-2">
+                    - Share your Agents and Custom Chatbots with others
+                  </span>
+                </div>
+              </div>
+
+              {/* Shutdown */}
+              <div>
+                <div className="mb-3">
+                  <a href="/shutdown" className="text-xl font-semibold text-primary hover:underline">
+                    Shutdown
+                  </a>
+                  <span className="text-muted-foreground ml-2">
+                    - Close the app safely as best practices and highly recommended
+                  </span>
+                </div>
+              </div>
+
+              <hr />
+
+              {/* Cookbooks */}
+              <div>
+                <div className="text-2xl font-semibold text-primary mb-3">
+                  CookBooks
+                  <span className="text-base text-muted-foreground ml-2">
+                    Don't know how to cook? Read the recepies below 👇
+                  </span>
+                </div>
+                <ol className="ml-6 space-y-1 list-decimal font-medium">
+                  <li>
+                    <a href="/cookbooks/personalized-bot" className="text-primary hover:underline">
+                      Create Your Personalized Bot in Minutes
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/cookbooks/rag-bot" className="text-primary hover:underline">
+                      Build Your Own Rag Bot
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/cookbooks/document-review-and-analysis-tool" className="text-primary hover:underline">
+                      Build a No-Code Document Review and Analysis Custom Agent Workflow in Model HQ
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/cookbooks/hybrid-inferencing" className="text-primary hover:underline">
+                      Hybrid Inferencing using Model HQ (AI PC + API Server)
+                    </a>
+                  </li>
+                  <li>
+                    Coming Soon...
+                  </li>
+                </ol>
               </div>
             </div>
           </div>

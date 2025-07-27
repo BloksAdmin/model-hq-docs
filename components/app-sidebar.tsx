@@ -21,6 +21,10 @@ import {
   Library,
   FileSearch,
   Server,
+  Share,
+  Power,
+  Code,
+  Terminal,
 } from "lucide-react"
 
 import {
@@ -93,11 +97,6 @@ const navigationData = {
       url: "/models",
       icon: Database,
     },
-    // {
-    //   title: "API Reference",
-    //   url: "/api-reference",
-    //   icon: Code,
-    // },
     {
       title: "Configs & Tools",
       url: "/configs-tools",
@@ -106,6 +105,28 @@ const navigationData = {
         { title: "🔧 Tools", url: "/tools" },
         { title: "⚙️ Configs", url: "/configs" },
       ],
+    },
+    {
+      title: "Share Your App",
+      url: "/share-your-app",
+      icon: Share,
+    },
+    {
+      title: "Shutdown",
+      url: "/shutdown",
+      icon: Power,
+    },
+  ],
+  codeDocumentation: [
+    {
+      title: "Getting Started with SDK",
+      url: "/getting-started-with-model-hq-sdk",
+      icon: Terminal,
+    },
+    {
+      title: "API Reference",
+      url: "/api-reference",
+      icon: Code,
     },
   ],
   supportedModels: [
@@ -260,6 +281,30 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                   </SidebarMenuItem>
                 )
               })}
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+
+        {/* Model HQ SDK Documentation */}
+        <SidebarGroup>
+          <SidebarGroupLabel>SDK Documentation</SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              {navigationData.codeDocumentation.map((item) => (
+                <SidebarMenuItem key={item.title}>
+                  <SidebarMenuButton
+                    asChild
+                    tooltip={item.title}
+                    isActive={pathname === item.url}
+                    suppressHydrationWarning
+                  >
+                    <a href={item.url}>
+                      {item.icon && <item.icon className="size-4" />}
+                      <span className="text-sm">{item.title}</span>
+                    </a>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              ))}
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>

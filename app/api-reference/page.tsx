@@ -75,7 +75,7 @@ const endpoints = [
     response: ["llm_response"],
     exampleRequest: {
       prompt: "Write a short story about artificial intelligence",
-      model_name: "llama-2-7b",
+      model_name: "llama-3.2-3b-instruct-ov",
       max_output: 100,
       temperature: 0.8,
       api_key: "your-api-key",
@@ -108,7 +108,7 @@ const endpoints = [
     ],
     response: ["llm_response"],
     exampleRequest: {
-      model_name: "slim-extract",
+      model_name: "phi-3-ov",
       context: "John Smith works at Acme Corp as a Software Engineer. He can be reached at john@acme.com.",
       function: "extract_entities",
       api_key: "your-api-key",
@@ -198,7 +198,7 @@ const endpoints = [
     exampleRequest: {
       uploaded_files: ["image1.jpg"],
       prompt: "Describe what you see in this image",
-      model_name: "llava-v1.6",
+      model_name: "mistral-7b-instruct-v0.3-ov",
       api_key: "your-api-key",
     },
     exampleResponse: { llm_response: "I can see a beautiful landscape with mountains in the background..." },
@@ -226,7 +226,7 @@ const endpoints = [
     response: ["llm_response"],
     exampleRequest: {
       uploaded_files: ["image1.jpg"],
-      model_name: "llava-v1.6",
+      model_name: "llama-3.2-3b-instruct-ov",
       prompt: "Analyze this image and describe the scene",
       api_key: "your-api-key",
     },
@@ -279,7 +279,7 @@ const endpoints = [
     ],
     response: ["llm_response"],
     exampleRequest: {
-      model_name: "safety-classifier",
+      model_name: "phi-4-ov",
       context: "This is a sample text to classify for safety",
       api_key: "your-api-key",
     },
@@ -304,73 +304,13 @@ const endpoints = [
     ],
     response: ["embeddings"],
     exampleRequest: {
-      model_name: "sentence-transformers",
+      model_name: "llama-3.2-3b-instruct-ov",
       context: "This is a sample text to embed",
       api_key: "your-api-key",
     },
     exampleResponse: { embeddings: [0.1, -0.2, 0.3, 0.4, -0.1] },
     isStreaming: false,
   },
-  // RAG CATEGORY
-  {
-    id: "document_inference",
-    name: "Document Q&A",
-    method: "POST",
-    endpoint: "/document_inference/",
-    description:
-      "Specialized inference to ask questions about uploaded documents. Combines document parsing, semantic search, and LLM inference.",
-    category: "rag",
-    timeout: 60,
-    requiredParams: [
-      { name: "question", type: "string", description: "Question to ask about the document" },
-      { name: "uploaded_document", type: "file", description: "Document file to analyze" },
-    ],
-    optionalParams: [
-      { name: "model_name", type: "string", description: "LLM model to use for answering" },
-      { name: "text_chunk_size", type: "integer", description: "Size of text chunks for processing" },
-      { name: "tables_only", type: "boolean", description: "Whether to focus only on tables" },
-      { name: "use_top_n_context", type: "integer", description: "Number of top context chunks to use" },
-      { name: "trusted_key", type: "string", description: "Trusted authentication key" },
-    ],
-    response: ["response"],
-    exampleRequest: {
-      question: "What is the main conclusion of this research paper?",
-      uploaded_document: "research_paper.pdf",
-      model_name: "llama-2-7b",
-      api_key: "your-api-key",
-    },
-    exampleResponse: { response: "Based on the document analysis, the main conclusion is..." },
-    isStreaming: false,
-  },
-  {
-    id: "library_inference",
-    name: "Library Q&A",
-    method: "POST",
-    endpoint: "/library_inference/",
-    description:
-      "Specialized RAG inference that ranks entries from a library and generates responses based on retrieved content.",
-    category: "rag",
-    timeout: 60,
-    requiredParams: [
-      { name: "question", type: "string", description: "Question to ask about the library content" },
-      { name: "library_name", type: "string", description: "Name of the library to search" },
-      { name: "model_name", type: "string", description: "LLM model to use for answering" },
-    ],
-    optionalParams: [
-      { name: "use_top_n_context", type: "integer", description: "Number of top context chunks to use" },
-      { name: "trusted_key", type: "string", description: "Trusted authentication key" },
-    ],
-    response: ["response"],
-    exampleRequest: {
-      question: "What are the key features of the product?",
-      library_name: "product_docs",
-      model_name: "llama-2-7b",
-      api_key: "your-api-key",
-    },
-    exampleResponse: { response: "Based on the library content, the key features include..." },
-    isStreaming: false,
-  },
-  // UTILITY/ADMIN CATEGORY
   {
     id: "list_all_models",
     name: "List models",
@@ -385,7 +325,9 @@ const endpoints = [
     exampleRequest: {
       trusted_key: "your-trusted-key",
     },
-    exampleResponse: { response: ["llama-2-7b", "llama-2-13b", "mistral-7b", "codellama-7b"] },
+    exampleResponse: {
+      response: ["llama-3.2-1b-instruct-ov", "llama-3.2-3b-instruct-ov", "mistral-7b-instruct-v0.3-ov", "phi-4-ov"],
+    },
     isStreaming: false,
   },
   {
@@ -417,10 +359,522 @@ const endpoints = [
     optionalParams: [{ name: "trusted_key", type: "string", description: "Trusted authentication key" }],
     response: ["response"],
     exampleRequest: {
-      model_name: "llama-2-7b",
+      model_name: "mistral-7b-instruct-v0.3-ov",
       trusted_key: "your-trusted-key",
     },
-    exampleResponse: { response: { name: "llama-2-7b", parameters: "7B", context_length: 4096, loaded: true } },
+    exampleResponse: {
+      response: { name: "mistral-7b-instruct-v0.3-ov", parameters: "7B", context_length: 4096, loaded: true },
+    },
+    isStreaming: false,
+  },
+  {
+    id: "model_load",
+    name: "Load model",
+    method: "POST",
+    endpoint: "/model_load/",
+    description: "Explicitly loads a selected model into memory on the API server, useful as a preparation step.",
+    category: "models",
+    timeout: 120,
+    requiredParams: [{ name: "model_name", type: "string", description: "Name of the model to load into memory" }],
+    optionalParams: [{ name: "trusted_key", type: "string", description: "Trusted authentication key" }],
+    response: ["response"],
+    exampleRequest: {
+      model_name: "phi-4-ov",
+      trusted_key: "your-trusted-key",
+    },
+    exampleResponse: { response: { model_name: "phi-4-ov", status: "loaded", memory_usage: "6.2GB" } },
+    isStreaming: false,
+  },
+  {
+    id: "model_unload",
+    name: "Unload model",
+    method: "POST",
+    endpoint: "/model_unload/",
+    description: "Explicitly unloads a selected model from memory on the API server.",
+    category: "models",
+    timeout: 30,
+    requiredParams: [{ name: "model_name", type: "string", description: "Name of the model to unload from memory" }],
+    optionalParams: [{ name: "trusted_key", type: "string", description: "Trusted authentication key" }],
+    response: ["response"],
+    exampleRequest: {
+      model_name: "llama-3.2-1b-instruct-ov",
+      trusted_key: "your-trusted-key",
+    },
+    exampleResponse: {
+      response: { model_name: "llama-3.2-1b-instruct-ov", status: "unloaded", memory_freed: "6.2GB" },
+    },
+    isStreaming: false,
+  },
+  // RAG CATEGORY
+  {
+    id: "document_inference",
+    name: "Document Q&A",
+    method: "POST",
+    endpoint: "/document_inference/",
+    description:
+      "Specialized inference to ask questions about uploaded documents. Combines document parsing, semantic search, and LLM inference.",
+    category: "rag",
+    timeout: 60,
+    requiredParams: [
+      { name: "question", type: "string", description: "Question to ask about the document" },
+      { name: "uploaded_document", type: "file", description: "Document file to analyze" },
+    ],
+    optionalParams: [
+      { name: "model_name", type: "string", description: "LLM model to use for answering" },
+      { name: "text_chunk_size", type: "integer", description: "Size of text chunks for processing" },
+      { name: "tables_only", type: "boolean", description: "Whether to focus only on tables" },
+      { name: "use_top_n_context", type: "integer", description: "Number of top context chunks to use" },
+      { name: "trusted_key", type: "string", description: "Trusted authentication key" },
+    ],
+    response: ["response"],
+    exampleRequest: {
+      question: "What is the main conclusion of this research paper?",
+      uploaded_document: "research_paper.pdf",
+      model_name: "phi-3-ov",
+      api_key: "your-api-key",
+    },
+    exampleResponse: { response: "Based on the document analysis, the main conclusion is..." },
+    isStreaming: false,
+  },
+  {
+    id: "library_inference",
+    name: "Library Q&A",
+    method: "POST",
+    endpoint: "/library_inference/",
+    description:
+      "Specialized RAG inference that ranks entries from a library and generates responses based on retrieved content.",
+    category: "rag",
+    timeout: 60,
+    requiredParams: [
+      { name: "question", type: "string", description: "Question to ask about the library content" },
+      { name: "library_name", type: "string", description: "Name of the library to search" },
+      { name: "model_name", type: "string", description: "LLM model to use for answering" },
+    ],
+    optionalParams: [
+      { name: "use_top_n_context", type: "integer", description: "Number of top context chunks to use" },
+      { name: "trusted_key", type: "string", description: "Trusted authentication key" },
+    ],
+    response: ["response"],
+    exampleRequest: {
+      question: "What are the key features of the product?",
+      library_name: "product_docs",
+      model_name: "llama-3.2-3b-instruct-ov",
+      api_key: "your-api-key",
+    },
+    exampleResponse: { response: "Based on the library content, the key features include..." },
+    isStreaming: false,
+  },
+  {
+    id: "document_batch_analysis",
+    name: "Batch document analysis",
+    method: "POST",
+    endpoint: "/document_batch_analysis/",
+    description:
+      "Analyzes multiple documents with a set of questions, ideal for processing contracts, invoices, or reports with consistent queries.",
+    category: "rag",
+    timeout: 600,
+    requiredParams: [
+      { name: "uploaded_files", type: "array", description: "Array of documents to analyze" },
+      { name: "question_list", type: "array", description: "List of questions to ask each document" },
+    ],
+    optionalParams: [
+      { name: "model_name", type: "string", description: "LLM model to use for analysis" },
+      { name: "reranker", type: "string", description: "Reranker model for result optimization" },
+      { name: "trusted_key", type: "string", description: "Trusted authentication key" },
+    ],
+    response: ["response"],
+    exampleRequest: {
+      uploaded_files: ["contract1.pdf", "contract2.pdf"],
+      question_list: ["What is the governing law?", "What is the termination notice period?"],
+      model_name: "mistral-7b-instruct-v0.3-ov",
+      api_key: "your-api-key",
+    },
+    exampleResponse: {
+      response: {
+        results: [
+          { document: "contract1.pdf", answers: ["Delaware", "30 days"] },
+          { document: "contract2.pdf", answers: ["California", "60 days"] },
+        ],
+      },
+    },
+    isStreaming: false,
+  },
+  // LIBRARY MANAGEMENT CATEGORY
+  {
+    id: "create_new_library",
+    name: "Create library",
+    method: "POST",
+    endpoint: "/create_new_library/",
+    description:
+      "Creates a new library which is a collection of documents that are parsed, indexed and organized for knowledge retrieval.",
+    category: "library",
+    timeout: 30,
+    requiredParams: [{ name: "library_name", type: "string", description: "Name for the new library" }],
+    optionalParams: [
+      { name: "account_id", type: "string", description: "Account identifier" },
+      { name: "trusted_key", type: "string", description: "Trusted authentication key" },
+    ],
+    response: ["response"],
+    exampleRequest: {
+      library_name: "contract_library",
+      account_id: "user123",
+      api_key: "your-api-key",
+    },
+    exampleResponse: { response: { library_name: "contract_library", status: "created", doc_count: 0 } },
+    isStreaming: false,
+  },
+  {
+    id: "add_files",
+    name: "Add files to library",
+    method: "POST",
+    endpoint: "/add_files/",
+    description:
+      "Core method for adding files to a Library, which are parsed, text chunked and indexed automatically upon upload.",
+    category: "library",
+    timeout: 300,
+    requiredParams: [
+      { name: "library_name", type: "string", description: "Name of the library to add files to" },
+      { name: "uploaded_files", type: "array", description: "Array of files to upload and process" },
+    ],
+    optionalParams: [
+      { name: "account_id", type: "string", description: "Account identifier" },
+      { name: "trusted_key", type: "string", description: "Trusted authentication key" },
+    ],
+    response: ["response"],
+    exampleRequest: {
+      library_name: "contract_library",
+      uploaded_files: ["contract1.pdf", "contract2.pdf"],
+      api_key: "your-api-key",
+    },
+    exampleResponse: { response: { files_processed: 2, chunks_created: 45, status: "completed" } },
+    isStreaming: false,
+  },
+  {
+    id: "query",
+    name: "Query library",
+    method: "POST",
+    endpoint: "/query/",
+    description: "Execute a text-based query against an existing library to find relevant documents and passages.",
+    category: "library",
+    timeout: 60,
+    requiredParams: [
+      { name: "library_name", type: "string", description: "Name of the library to query" },
+      { name: "user_query", type: "string", description: "Search query text" },
+    ],
+    optionalParams: [
+      { name: "result_count", type: "integer", description: "Number of results to return" },
+      { name: "trusted_key", type: "string", description: "Trusted authentication key" },
+    ],
+    response: ["response"],
+    exampleRequest: {
+      library_name: "contract_library",
+      user_query: "termination clauses",
+      result_count: 10,
+      api_key: "your-api-key",
+    },
+    exampleResponse: { response: [{ doc_id: 1, text: "Termination clause content...", score: 0.95 }] },
+    isStreaming: false,
+  },
+  {
+    id: "get_library_card",
+    name: "Get library info",
+    method: "POST",
+    endpoint: "/get_library_card/",
+    description:
+      "Get comprehensive metadata information about a library including document count, embedding status, and configuration.",
+    category: "library",
+    timeout: 10,
+    requiredParams: [
+      { name: "library_name", type: "string", description: "Name of the library to get information for" },
+    ],
+    optionalParams: [{ name: "trusted_key", type: "string", description: "Trusted authentication key" }],
+    response: ["response"],
+    exampleRequest: {
+      library_name: "contract_library",
+      api_key: "your-api-key",
+    },
+    exampleResponse: {
+      response: {
+        library_name: "contract_library",
+        doc_count: 25,
+        embedding_status: "installed",
+        created_date: "2024-01-15",
+      },
+    },
+    isStreaming: false,
+  },
+  {
+    id: "install_embedding",
+    name: "Install embeddings",
+    method: "POST",
+    endpoint: "/install_embedding/",
+    description:
+      "Installs vector embeddings across a library and creates the appropriate vectors in the vector database for semantic search.",
+    category: "library",
+    timeout: 600,
+    requiredParams: [
+      { name: "library_name", type: "string", description: "Name of the library to install embeddings for" },
+    ],
+    optionalParams: [
+      { name: "embedding_model", type: "string", description: "Embedding model to use" },
+      { name: "vector_db", type: "string", description: "Vector database to use" },
+      { name: "trusted_key", type: "string", description: "Trusted authentication key" },
+    ],
+    response: ["response"],
+    exampleRequest: {
+      library_name: "contract_library",
+      embedding_model: "llama-3.2-1b-instruct-ov",
+      api_key: "your-api-key",
+    },
+    exampleResponse: { response: { embeddings_created: 1250, vector_db: "milvus", status: "completed" } },
+    isStreaming: false,
+  },
+  {
+    id: "semantic_query",
+    name: "Semantic search",
+    method: "POST",
+    endpoint: "/semantic_query/",
+    description:
+      "Executes a semantic/vector query against embeddings for more accurate content retrieval based on meaning rather than keywords.",
+    category: "library",
+    timeout: 60,
+    requiredParams: [
+      { name: "library_name", type: "string", description: "Name of the library to search" },
+      { name: "user_query", type: "string", description: "Semantic search query" },
+    ],
+    optionalParams: [
+      { name: "result_count", type: "integer", description: "Number of results to return" },
+      { name: "db", type: "string", description: "Database type", default: "mongo" },
+      { name: "vector_db", type: "string", description: "Vector database type", default: "milvus" },
+      { name: "trusted_key", type: "string", description: "Trusted authentication key" },
+    ],
+    response: ["response"],
+    exampleRequest: {
+      library_name: "contract_library",
+      user_query: "contract termination conditions",
+      result_count: 5,
+      api_key: "your-api-key",
+    },
+    exampleResponse: { response: [{ doc_id: 1, similarity_score: 0.92, text: "Contract termination..." }] },
+    isStreaming: false,
+  },
+  {
+    id: "get_document_list",
+    name: "List documents",
+    method: "POST",
+    endpoint: "/get_document_list/",
+    description: "Returns a comprehensive list of all documents contained in a specific library with metadata.",
+    category: "library",
+    timeout: 30,
+    requiredParams: [
+      { name: "library_name", type: "string", description: "Name of the library to list documents from" },
+    ],
+    optionalParams: [{ name: "trusted_key", type: "string", description: "Trusted authentication key" }],
+    response: ["response"],
+    exampleRequest: {
+      library_name: "contract_library",
+      api_key: "your-api-key",
+    },
+    exampleResponse: {
+      response: [
+        { doc_id: 1, filename: "contract1.pdf", pages: 12, upload_date: "2024-01-15" },
+        { doc_id: 2, filename: "contract2.pdf", pages: 8, upload_date: "2024-01-16" },
+      ],
+    },
+    isStreaming: false,
+  },
+  {
+    id: "get_document_text",
+    name: "Extract document text",
+    method: "POST",
+    endpoint: "/get_document_text/",
+    description:
+      "Returns the complete text extract of a selected document from a specified library for review or processing.",
+    category: "library",
+    timeout: 60,
+    requiredParams: [
+      { name: "library_name", type: "string", description: "Name of the library containing the document" },
+    ],
+    optionalParams: [
+      { name: "doc_id", type: "string", description: "Document ID to extract text from" },
+      { name: "doc_fn", type: "string", description: "Document filename to extract text from" },
+      { name: "trusted_key", type: "string", description: "Trusted authentication key" },
+    ],
+    response: ["response"],
+    exampleRequest: {
+      library_name: "contract_library",
+      doc_id: "1",
+      api_key: "your-api-key",
+    },
+    exampleResponse: { response: { doc_id: 1, filename: "contract1.pdf", text: "Full document text content..." } },
+    isStreaming: false,
+  },
+  // AGENT CATEGORY
+  {
+    id: "run_agent",
+    name: "Execute agent",
+    method: "POST",
+    endpoint: "/run_agent/",
+    description:
+      "Executes a pre-configured agent process for automated multi-step document analysis and task completion.",
+    category: "agent",
+    timeout: 300,
+    requiredParams: [{ name: "process_name", type: "string", description: "Name of the agent process to execute" }],
+    optionalParams: [
+      { name: "process_zip", type: "file", description: "Agent process zip file to upload and execute" },
+      { name: "input_list", type: "array", description: "List of inputs for the agent process" },
+      { name: "text", type: "string", description: "Text input for the agent" },
+      { name: "snippet", type: "string", description: "Code or text snippet input" },
+      { name: "document_file", type: "file", description: "Document file for agent processing" },
+      { name: "table_file", type: "file", description: "Table/spreadsheet file for processing" },
+      { name: "image_file", type: "file", description: "Image file for agent analysis" },
+      { name: "source_file", type: "file", description: "Source code file for processing" },
+      { name: "user_files", type: "array", description: "Additional user files for processing" },
+      { name: "trusted_key", type: "string", description: "Trusted authentication key" },
+    ],
+    response: ["response"],
+    exampleRequest: {
+      process_name: "contract_analyzer",
+      document_file: "contract.pdf",
+      input_list: ["analysis_type", "text", "comprehensive"],
+      api_key: "your-api-key",
+    },
+    exampleResponse: {
+      response: {
+        agent_name: "contract_analyzer",
+        status: "completed",
+        results: { effective_date: "2024-01-01", base_salary: "$150,000" },
+        execution_time: "45s",
+      },
+    },
+    isStreaming: false,
+  },
+  {
+    id: "lookup_agent",
+    name: "Find agent",
+    method: "POST",
+    endpoint: "/lookup_agent/",
+    description: "Checks if a specific agent process exists and is available on the server for execution.",
+    category: "agent",
+    timeout: 10,
+    requiredParams: [{ name: "process_name", type: "string", description: "Name of the agent process to look up" }],
+    optionalParams: [{ name: "trusted_key", type: "string", description: "Trusted authentication key" }],
+    response: ["response"],
+    exampleRequest: {
+      process_name: "contract_analyzer",
+      trusted_key: "your-trusted-key",
+    },
+    exampleResponse: {
+      response: {
+        process_name: "contract_analyzer",
+        available: true,
+        description: "Analyzes contracts for key terms",
+        version: "1.2.0",
+      },
+    },
+    isStreaming: false,
+  },
+  {
+    id: "get_all_agents",
+    name: "List all agents",
+    method: "POST",
+    endpoint: "/get_all_agents/",
+    description: "Returns a comprehensive list of all available agent processes on the server with their capabilities.",
+    category: "agent",
+    timeout: 10,
+    requiredParams: [],
+    optionalParams: [{ name: "trusted_key", type: "string", description: "Trusted authentication key" }],
+    response: ["response"],
+    exampleRequest: {
+      trusted_key: "your-trusted-key",
+    },
+    exampleResponse: {
+      response: [
+        { name: "contract_analyzer", description: "Contract analysis agent", version: "1.2.0" },
+        { name: "invoice_processor", description: "Invoice processing agent", version: "1.0.1" },
+      ],
+    },
+    isStreaming: false,
+  },
+  // UTILITY CATEGORY
+  {
+    id: "ping",
+    name: "Health check",
+    method: "POST",
+    endpoint: "/ping/",
+    description: "Quick health check to verify if the API server is responsive and operational.",
+    category: "utility",
+    timeout: 5,
+    requiredParams: [],
+    optionalParams: [{ name: "trusted_key", type: "string", description: "Trusted authentication key" }],
+    response: ["response"],
+    exampleRequest: {
+      trusted_key: "your-trusted-key",
+    },
+    exampleResponse: { response: { status: "ok", timestamp: "2024-01-15T10:30:00Z", version: "1.0.0" } },
+    isStreaming: false,
+  },
+  {
+    id: "server_stop",
+    name: "Stop server",
+    method: "POST",
+    endpoint: "/server_stop/",
+    description: "Gracefully stops the API server. Use with caution as this will terminate all active connections.",
+    category: "utility",
+    timeout: 10,
+    requiredParams: [],
+    optionalParams: [{ name: "trusted_key", type: "string", description: "Trusted authentication key" }],
+    response: ["response"],
+    exampleRequest: {
+      trusted_key: "your-trusted-key",
+    },
+    exampleResponse: { response: { status: "stopping", message: "Server shutdown initiated" } },
+    isStreaming: false,
+  },
+  {
+    id: "get_api_catalog",
+    name: "API catalog",
+    method: "POST",
+    endpoint: "/get_api_catalog/",
+    description: "Returns a complete catalog of all available API endpoints with their specifications and parameters.",
+    category: "utility",
+    timeout: 10,
+    requiredParams: [],
+    optionalParams: [{ name: "trusted_key", type: "string", description: "Trusted authentication key" }],
+    response: ["response"],
+    exampleRequest: {
+      trusted_key: "your-trusted-key",
+    },
+    exampleResponse: {
+      response: [
+        { api_name: "inference", endpoint: "/inference/", method: "POST", timeout: 60 },
+        { api_name: "stream", endpoint: "/stream/", method: "POST", timeout: 60 },
+      ],
+    },
+    isStreaming: false,
+  },
+  {
+    id: "get_db_info",
+    name: "Database info",
+    method: "POST",
+    endpoint: "/get_db_info/",
+    description: "Returns information about registered databases and vector databases available on the server.",
+    category: "utility",
+    timeout: 10,
+    requiredParams: [],
+    optionalParams: [{ name: "trusted_key", type: "string", description: "Trusted authentication key" }],
+    response: ["response"],
+    exampleRequest: {
+      trusted_key: "your-trusted-key",
+    },
+    exampleResponse: {
+      response: {
+        databases: ["mongo", "sqlite"],
+        vector_databases: ["milvus", "faiss"],
+        default_db: "mongo",
+        default_vector_db: "milvus",
+      },
+    },
     isStreaming: false,
   },
 ]
@@ -429,6 +883,9 @@ export default function ApiReferencePage() {
   // Group endpoints by category
   const modelEndpoints = endpoints.filter((e) => e.category === "models")
   const ragEndpoints = endpoints.filter((e) => e.category === "rag")
+  const libraryEndpoints = endpoints.filter((e) => e.category === "library")
+  const agentEndpoints = endpoints.filter((e) => e.category === "agent")
+  const utilityEndpoints = endpoints.filter((e) => e.category === "utility")
 
   return (
     <div className="min-h-screen bg-background">
@@ -477,7 +934,7 @@ export default function ApiReferencePage() {
                   <code>{`from llmware_client_sdk import LLMWareClient
 client = LLMWareClient(api_endpoint='http://{ip_address}}:{port}/{endpoint}') 
 
-response = client.inference(
+response = client.{endpoint}(
   prompt='Who was the U.S. President in 1996?', 
   model_name='model_name'
 )
@@ -515,7 +972,49 @@ print('llm response: ', response)`}</code>
       </div>
 
       {ragEndpoints.map((endpoint, index) => (
-        <ApiEndpointSection key={endpoint.id} endpoint={endpoint} isLast={index === ragEndpoints.length - 1} />
+        <ApiEndpointSection key={endpoint.id} endpoint={endpoint} isLast={false} />
+      ))}
+
+      {/* Library Management Category */}
+      <div className="border-b">
+        <div className="max-w-4xl mx-auto px-6 py-8">
+          <h2 className="text-3xl font-bold mb-4">Library Management</h2>
+          <p className="text-muted-foreground mb-8">
+            Create and manage document libraries for knowledge base construction and semantic search capabilities.
+          </p>
+        </div>
+      </div>
+
+      {libraryEndpoints.map((endpoint, index) => (
+        <ApiEndpointSection key={endpoint.id} endpoint={endpoint} isLast={false} />
+      ))}
+
+      {/* Agent Category */}
+      <div className="border-b">
+        <div className="max-w-4xl mx-auto px-6 py-8">
+          <h2 className="text-3xl font-bold mb-4">Agent Execution</h2>
+          <p className="text-muted-foreground mb-8">
+            Execute automated multi-step processes and workflows using pre-configured intelligent agents.
+          </p>
+        </div>
+      </div>
+
+      {agentEndpoints.map((endpoint, index) => (
+        <ApiEndpointSection key={endpoint.id} endpoint={endpoint} isLast={false} />
+      ))}
+
+      {/* Utility Category */}
+      <div className="border-b">
+        <div className="max-w-4xl mx-auto px-6 py-8">
+          <h2 className="text-3xl font-bold mb-4">Utilities & Administration</h2>
+          <p className="text-muted-foreground mb-8">
+            Server management, health checks, and administrative functions for monitoring and control.
+          </p>
+        </div>
+      </div>
+
+      {utilityEndpoints.map((endpoint, index) => (
+        <ApiEndpointSection key={endpoint.id} endpoint={endpoint} isLast={index === utilityEndpoints.length - 1} />
       ))}
     </div>
   )

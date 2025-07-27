@@ -80,6 +80,10 @@ export function Header() {
     { title: "Models", url: "/models", type: "page", description: "Discover and manage AI models" },
     { title: "Tools", url: "/tools", type: "page", description: "System utilities and document parsing tools" },
     { title: "Configs", url: "/configs", type: "page", description: "Configuration management and settings" },
+    { title: "Share Your App", url: "/share-your-app", type: "page", description: "Share your Agents and Custom Chatbots with others" },
+    { title: "Shutdown", url: "/shutdown", type: "page", description: "Close the app safely as best practices and highly recommended" },
+    { title: "Getting Started With Model HQ SDK", url: "/getting-started-with-model-hq-sdk", type: "page", description: "Learn how to get started with the SDK of Model HQ" },
+    { title: "API References", url: "/api-references", type: "page", description: "Close the app safely as best practices and highly recommended" },
 
     // Supported Models pages
     {
@@ -242,7 +246,7 @@ export function Header() {
       parentPage: "Tools",
     },
     { title: "Backend", url: "/tools#backend", type: "heading", parentPage: "Tools" },
-    { title: "CLI", url: "/tools#cli", type: "heading", parentPage: "Tools" },
+    { title: "Command Line Interface (CLI)", url: "/tools#cli", type: "heading", parentPage: "Tools" },
     { title: "Share", url: "/tools#share", type: "heading", parentPage: "Tools" },
     { title: "Text Parser", url: "/tools#text-parser", type: "heading", parentPage: "Tools" },
     { title: "Sample Docs", url: "/tools#sample-docs", type: "heading", parentPage: "Tools" },
@@ -667,6 +671,82 @@ export function Header() {
       url: "/agent/openAI-and-anthropic#switching-to-openAI",
       type: "heading",
       parentPage: "OpenAi and Anthropic",
+    },
+
+    // Share Your App
+    {
+      title: "Sharing Agents and Chatbots with Others",
+      url: "/share-your-app#sharing-agents-and-chatbots-with-others",
+      type: "heading",
+      parentPage: "Share your App",
+    },
+    {
+      title: "Sharing Agent Processes",
+      url: "/share-your-app#sharing-agent-processes",
+      type: "heading",
+      parentPage: "Share your App",
+    },
+    {
+      title: "To upload and use a shared Agent process",
+      url: "/share-your-app#upload-and-use-a-shared-agent-process",
+      type: "heading",
+      parentPage: "Share your App",
+    },
+    {
+      title: "Sharing Chatbots",
+      url: "/share-your-app#sharing-chatbots",
+      type: "heading",
+      parentPage: "Share your App",
+    },
+    {
+      title: "To upload and use a shared custom Bot",
+      url: "/share-your-app#upload-and-use-a-shared-custom-bot",
+      type: "heading",
+      parentPage: "Share your App",
+    },
+
+    // Getting Started With Model HQ SDK
+    {
+      title: "Launching the Backend Server",
+      url: "/getting-started-with-model-hq-sdk#launching-the-backend-server",
+      type: "heading",
+      parentPage: "Getting Started With Model HQ SDK",
+    },
+    {
+      title: "Launch Backend Inference Server Guide",
+      url: "/getting-started-with-model-hq-sdk#launch-backend-inference-server-guide",
+      type: "heading",
+      parentPage: "Getting Started With Model HQ SDK",
+    },
+    {
+      title: "Stopping the Server",
+      url: "/getting-started-with-model-hq-sdk#stopping-the-server",
+      type: "heading",
+      parentPage: "Getting Started With Model HQ SDK",
+    },
+    {
+      title: "Sample Code: Hello World",
+      url: "/getting-started-with-model-hq-sdk#sample-code-hello-world",
+      type: "heading",
+      parentPage: "Getting Started With Model HQ SDK",
+    },
+    {
+      title: "Configure or Configure Backend API Server for 'Headless' Mode",
+      url: "/getting-started-with-model-hq-sdk#configure-backend-api-server",
+      type: "heading",
+      parentPage: "Getting Started With Model HQ SDK",
+    },
+    {
+      title: "Downloading the Model HQ SDK",
+      url: "/getting-started-with-model-hq-sdk#downloading-the-model-hq-sdk",
+      type: "heading",
+      parentPage: "Getting Started With Model HQ SDK",
+    },
+    {
+      title: "Closing Backend Server",
+      url: "/getting-started-with-model-hq-sdk#closing-backend-server",
+      type: "heading",
+      parentPage: "Getting Started With Model HQ SDK",
     },
 
     // Cookbooks

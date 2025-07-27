@@ -29,9 +29,18 @@ After launching the Tools section, the interface displays the following key opti
 &nbsp;
 
 ## Backend
-Launches the API backend server, and turns off the UI, providing a programmatic interface to the core Model HQ platform capabilities, while running as a background service. This enables you to close the browser, while the server quietly runs in the background, providing 50+ APIs, which can be configured to be LocalHost, or exposed over external IP (for a lightweight modular inference server accessible on the network).  You can configure the backend server, and when ready, start the server.  Note: this will have the effect of closing the application and the UI will be unresponsive. You will see a download link for a SDK client package, which includes a python-based SDK with examples and samples to get quickly started. Open your IDE, create a project with the SDK, and you should be writing API calls in minutes to the backend server - all running privately and locally.
+Select the **`Backend`** option from the tools interface. This initiates the backend API server in a headless mode, shutting down the user interface and enabling direct access via APIs.
 
-![tools](tools/backend.png)
+This is ideal for lightweight, modular deployment scenarios. Once launched, the server runs as a background service and can be accessed either via `localhost` or over an external IP address—enabling private, local inference workflows.
+
+You will be provided with a download link for the **Model HQ SDK**, which contains all the necessary libraries, sample code, and examples to get started. Simply unzip the SDK package, open your preferred IDE, and start coding with direct access to the backend APIs.
+
+![Backend Launch](getting-started/backend.png)
+
+The backend interface includes two main options:
+
+* **Launch**: Starts the backend server immediately.
+* **Configure**: Opens the configuration settings before starting the server.
 
 &nbsp;
 
@@ -43,13 +52,15 @@ response = client.inference(prompt="Who was the U.S. President in 1996?", model_
 print("llm response:", response)
 ```
 
-## CLI
+## CLI or Command Line Interface
 Selecting this option opens a separate CLI window allowing you to run commands directly.
 ![tools](tools/cli.png)
 
 By selecting to open the App in a command-line terminal, a second instance of the App will be created, exposed through a new terminal. You can use the CLI to start running chats, in parallel, while using the main app UI. 
 
-To get started, once the command line interface opens, enter 'help' - and a list of options will be provided to get started.  
+For Getting Started with CLI, enter **help** in the terminal to get all the commands or actions you can perform using
+the CLI.
+
 
 &nbsp;
 

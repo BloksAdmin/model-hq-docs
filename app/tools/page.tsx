@@ -115,26 +115,43 @@ export default function ToolsPage() {
 
         <h3 id="backend">Backend</h3>
         <p>
-          Launches the API backend server, and turns off the UI, providing a programmatic interface to the core Model HQ 
-          platform capabilities, while running as a background service. This enables you to close the browser, while the 
-          server quietly runs in the background, providing 50+ APIs, which can be configured to be LocalHost, or exposed 
-          over external IP (for a lightweight modular inference server accessible on the network).  You can configure the 
-          backend server, and when ready, start the server.  Note: this will have the effect of closing the application 
-          and the UI will be unresponsive. You will see a download link for a SDK client package, which includes a 
-          python-based SDK with examples and samples to get quickly started. Open your IDE, create a project with the 
-          SDK, and you should be writing API calls in minutes to the backend server - all running privately and locally.
+          Select the <b>Backend</b> option from the tools interface. This initiates the backend API server in a headless mode, 
+          shutting down the user interface and enabling direct access via APIs.
+        </p>
+        <p>
+          This is ideal for lightweight, modular deployment scenarios. Once launched, the server runs as a background service 
+          and can be accessed either via `localhost` or over an external IP address—enabling private, local inference workflows.
+        </p>
+        <p>
+          You will be provided with a download link for the <b>Model HQ SDK</b>, which contains all the necessary libraries, 
+          sample code, and examples to get started. Simply unzip the SDK package, open your preferred IDE, and start coding 
+          with direct access to the backend APIs.
           <br />
+        </p>
+        <p>
           <img src="/tools/backend.png" alt="backend" />
         </p>
 
+        <p>The backend interface includes two main options:</p>
+        <ul>
+          <li>
+            <b>Launch</b>: Starts the backend server immediately.
+          </li>
+          <li>
+            <b>Configure</b>: Opens the configuration settings before starting the server.
+          </li>
+        </ul>
+
         <p>&nbsp;</p>
 
-        <h3 id="cli">CLI</h3>
+        <h3 id="cli">CLI (Command Line Interface)</h3>
         <p>
           Selecting this option opens a separate CLI window allowing you to run commands directly.
-          <br />
+        </p>
+        <p>
           <img src="/tools/cli.png" alt="cli" />
-          <br />
+        </p>
+        <p>
           By selecting to open the App in a command-line terminal, a second instance of the App will be created, exposed 
           through a new terminal. You can use the CLI to start running chats, in parallel, while using the main app UI.
           <br />
@@ -153,6 +170,11 @@ export default function ToolsPage() {
         </pre>
 
         <p>Use this interface for advanced usage, scripting, or automation.</p>
+
+        <p>
+          For Getting Started with CLI, enter <b>help</b> in the terminal to get all the commands or actions you can perform using
+          the CLI.
+        </p>
 
         <p>&nbsp;</p>
 

@@ -130,7 +130,7 @@ Clicking on the **Download Model HQ Development Kit** button will download a `.z
 ├── api_service_catalog.py
 ├── examples.py
 ├── hello_world.py
-├── llamae_client_sdk.py
+├── llmware_client_sdk.py
 ├── README.txt
 ├── requirements.txt
 ├── test_file_admin.py

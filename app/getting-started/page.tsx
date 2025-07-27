@@ -83,9 +83,9 @@ export default function GettingStartedPage() {
 
         <p>Once your system compatibility is confirmed, you will be presented with the following setup options:</p>
 
-        <ul>
+        <ol>
           <li>
-            <strong>1. Full Setup</strong>
+            <strong>Full Setup</strong>
             <br />
             This option automatically configures your environment by pre-loading 25 curated models along with a set of
             test cases.
@@ -96,26 +96,26 @@ export default function GettingStartedPage() {
             <em>Estimated setup time: ~30 minutes.</em>
           </li>
           <li>
-            <strong>2. Fast Setup</strong>
+            <strong>Fast Setup</strong>
             <br />
             Quickly set up an environment with a curated selection of 3 small models to get going.
             <br />
             <em>Estimated setup time: ~2-3 minutes.</em>
           </li>
           <li>
-            <strong>3. No Setup</strong>
+            <strong>No Setup</strong>
             <br />
             Customize your environment manually by selecting and configuring only the models you need. Recommended for
             advanced users who prefer full control over their setup. The models will be loaded as they are selected and
             will take time to load.
           </li>
           <li>
-            <strong>4. Enterprise Template</strong>
+            <strong>Enterprise Template</strong>
             <br />
             Use a pre-configured enterprise-grade template designed to streamline deployment across large teams. Best
             suited for organizational adoption with minimal configuration overhead.
           </li>
-        </ul>
+        </ol>
 
         <p>&nbsp;</p>
 
