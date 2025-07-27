@@ -25,6 +25,7 @@ import {
   Power,
   Code,
   Terminal,
+  Code2,
 } from "lucide-react"
 
 import {
@@ -122,6 +123,11 @@ const navigationData = {
       title: "Getting Started with SDK",
       url: "/getting-started-with-model-hq-sdk",
       icon: Terminal,
+    },
+    {
+      title: "Hello World",
+      url: "/hello-world",
+      icon: Code2,
     },
     {
       title: "API Reference",

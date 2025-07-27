@@ -39,7 +39,7 @@ export default function GettingStartedPage() {
           To begin, navigate to the main menu at the top-right corner of the interface and click on the{" "}
           <strong>Tools</strong> button (🔧).
         </p>
-        
+
         <img src="/getting-started-with-sdk/menu.png" alt="Tools Interface" />
 
         <p>The tools page should look like this:</p>
@@ -257,10 +257,16 @@ print('llm response: ', response)`}</code>
 
         <h2>Conclusion</h2>
         <p>
-          You're now ready to begin building applications using the Model HQ backend inference server. For more advanced
-          topics, refer to the <a href="/api">API Reference Guide</a> and the <strong>Inside Model HQ SDK</strong>.
+          You're now ready to begin building applications using the Model HQ backend inference server. For more advanced topics,
+          refer to{" "}
+          <a
+            href="/api-references"
+            style={{ fontWeight: "bold", color: "#0070f3" }}
+          >
+            API Reference Guide
+          </a>{" "}
+          and the <strong>Inside Model HQ SDK</strong>.
         </p>
-
         <p>
           If you have any questions or feedback, please contact us at <code>support@aibloks.com</code>.
         </p>
