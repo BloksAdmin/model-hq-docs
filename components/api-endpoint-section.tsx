@@ -34,28 +34,35 @@ export function ApiEndpointSection({ endpoint, isLast }: ApiEndpointSectionProps
   -d '${JSON.stringify(endpoint.exampleRequest, null, 2)}'`
 
   // Generate Python example
-  const pythonExample = `import requests
-import json
+  const pythonExample = `from llmware_client_sdk import LLMWareClient
 
-url = "https://api.modelhq.com${endpoint.endpoint}"
-headers = {
-    "Content-Type": "application/json"
-}
-data = ${JSON.stringify(endpoint.exampleRequest, null, 4)}
+# Replace with your local or external endpoint
+my_endpoint = "http://localhost:8088/${endpoint.id}"
+client = LLMWareClient(api_endpoint=my_endpoint)
 
-response = requests.post(url, headers=headers, json=data)
+def run_${endpoint.id}():
+${JSON.stringify(endpoint.exampleRequest, null, 4)
+  .split('\n')
+  .map((line, index) => {
+    let indented = index === 0 ? `    data = ${line}` : `    ${line}`;
+    // Append "# Optional" if line contains "api_key":
+    if (line.includes('"api_key"')) {
+      indented += '  # Optional';
+    }
+    return indented;
+  })
+  .join('\n')}
+
 ${
   endpoint.isStreaming
-    ? `
-# For streaming responses
-for line in response.iter_lines():
-    if line:
-        print(line.decode('utf-8'))`
-    : `
-# For complete responses
-result = response.json()
-print(json.dumps(result, indent=2))`
-}`
+    ? `    # Streaming responses
+    stream = client.inference_stream(**data)
+    for chunk in stream:
+        print(chunk)`
+    : `    # Non-streaming responses
+    response = client.${endpoint.id}(**data)
+    print("llm_response:", response)`
+}`;
 
   const requestCode = {
     curl: curlExample,
@@ -64,19 +71,26 @@ print(json.dumps(result, indent=2))`
 
   // Format response as proper JSON
   const formatResponse = () => {
-    if (endpoint.isStreaming) {
-      return `// Streaming response format
-data: {"llm_response": "Quantum computing is a revolutionary approach to computation that"}
+  if (endpoint.isStreaming) {
+    const responseText = endpoint.exampleResponse?.llm_response || ""
+    const chunks = responseText.match(/.{1,60}/g) || [] // split into ~60 char chunks
+    const streamLines = chunks.map((chunk: any) => `data: {"llm_response": "${chunk}"}`).join("\n\n")
+    return `// Streaming response format\n${streamLines}`
+  } else {
+    try {
+      const response = typeof endpoint.exampleResponse.llm_response === "string"
+        ? {
+            ...endpoint.exampleResponse,
+            llm_response: JSON.parse(endpoint.exampleResponse.llm_response)
+          }
+        : endpoint.exampleResponse
 
-data: {"llm_response": " leverages the principles of quantum mechanics to process information"}
-
-data: {"llm_response": " in ways that classical computers cannot..."}
-
-data: [DONE]`
-    } else {
+      return JSON.stringify(response, null, 2)
+    } catch {
       return JSON.stringify(endpoint.exampleResponse, null, 2)
     }
   }
+}
 
   return (
     <section className={`py-12 ${!isLast ? "border-b" : ""}`} id={endpoint.id}>
