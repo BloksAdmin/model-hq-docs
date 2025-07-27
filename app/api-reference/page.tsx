@@ -27,7 +27,7 @@ const endpoints = [
         name: "temperature",
         type: "number",
         description: "Controls randomness in generation (0.0-1.0)",
-        default: "0.7",
+        default: "0.0",
       },
       { name: "sample", type: "boolean", description: "Whether to use sampling for generation", default: "true" },
       { name: "context", type: "string", description: "Additional context to provide to the model" },
@@ -36,11 +36,10 @@ const endpoints = [
     ],
     response: ["llm_response"],
     exampleRequest: {
-      model_name: "llama-2-7b",
+      model_name: "phi-3-ov",
       prompt: "Explain quantum computing in simple terms",
-      max_output: 150,
+      max_output: 300,
       temperature: 0.7,
-      api_key: "your-api-key",
     },
     exampleResponse: { llm_response: "Quantum computing is a revolutionary approach..." },
     isStreaming: true,
@@ -77,7 +76,7 @@ const endpoints = [
     exampleRequest: {
       prompt: "Write a short story about artificial intelligence",
       model_name: "llama-2-7b",
-      max_output: 200,
+      max_output: 100,
       temperature: 0.8,
       api_key: "your-api-key",
     },
@@ -444,7 +443,7 @@ export default function ApiReferencePage() {
         </div>
       </div>
 
-      {/* Authentication Section */} {/*---------> MAKE EDITS HERE*/}
+      {/* Authentication Section */}
       <div className="border-b">
         <div className="max-w-4xl mx-auto px-6 py-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -475,13 +474,15 @@ export default function ApiReferencePage() {
               <div className="bg-muted/50 rounded-lg p-6">
                 <h4 className="font-medium mb-3">Example Request</h4>
                 <pre className="text-sm overflow-x-auto">
-                  <code>{`curl -X POST "https://api.modelhq.com/inference/" \\
-  -H "Content-Type: application/json" \\
-  -d '{
-    "api_key": "your-api-key",
-    "model_name": "llama-2-7b", 
-    "prompt": "Hello world"
-  }'`}</code>
+                  <code>{`from llmware_client_sdk import LLMWareClient
+client = LLMWareClient(api_endpoint='http://{ip_address}}:{port}/{endpoint}') 
+
+response = client.inference(
+  prompt='Who was the U.S. President in 1996?', 
+  model_name='model_name'
+)
+
+print('llm response: ', response)`}</code>
                 </pre>
               </div>
             </div>
@@ -489,7 +490,7 @@ export default function ApiReferencePage() {
         </div>
       </div>
 
-      {/* Models Category */} {/*---------> MAKE EDITS HERE*/}
+      {/* Models Category */}
       <div className="border-b">
         <div className="max-w-4xl mx-auto px-6 py-8">
           <h2 className="text-3xl font-bold mb-4">Models</h2>
@@ -503,7 +504,7 @@ export default function ApiReferencePage() {
         <ApiEndpointSection key={endpoint.id} endpoint={endpoint} isLast={false} />
       ))}
 
-      {/* RAG Category */} {/*---------> MAKE EDITS HERE*/}
+      {/* RAG Category */}
       <div className="border-b">
         <div className="max-w-4xl mx-auto px-6 py-8">
           <h2 className="text-3xl font-bold mb-4">RAG (Retrieval Augmented Generation)</h2>
