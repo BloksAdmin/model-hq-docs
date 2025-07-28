@@ -191,6 +191,40 @@ for i, agent in enumerate(agent_response["response"]):
 
 ```
 
+## Useful Admin Functions 
+
+**ping** - check that the platform is running and that the client is connected
+
+```python
+
+response = client.ping()
+
+print("response: ", response)
+
+```
+
+**system_info** - get information about the system
+
+```python
+
+# get system info
+x = client.system_info()
+print("system info: ", x)
+
+# get details about the backend process
+details = get_server_details()
+print("server details: ", details)
+
+```
+
+**stop_server** - stop the Model HQ platform (running as a background service on Windows)
+
+```python
+
+stop_server()
+
+```
+
 ## Trusted Key
 
 Since the Model HQ platform is designed for self-hosted deployment (and generally for internal enterprise user access - not consumer-scale deployment), we provide flexible options to enable separate API key implementations on top of the platform.  We provide a flexible, easy-to-configure 'trusted_key' parameter which can be set at the time of launching the backend platform.
