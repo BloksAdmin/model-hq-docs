@@ -43,35 +43,35 @@ export function ApiEndpointSection({ endpoint, isLast }: ApiEndpointSectionProps
     .join('\n')}'`;
 
   // Generate Python example
-  const pythonExample = `from llmware_client_sdk import LLMWareClient
-
-# Replace with your local or external endpoint
-my_endpoint = "http://localhost:8088/${endpoint.id}"
-client = LLMWareClient(api_endpoint=my_endpoint)
-
-def run_${endpoint.id}():
-${JSON.stringify(endpoint.exampleRequest, null, 4)
-  .split('\n')
-  .map((line, index) => {
-    let indented = index === 0 ? `    data = ${line}` : `    ${line}`;
-    // Append "# Optional" if line contains "api_key":
-    if (line.includes('"api_key"')) {
-      indented += '  # Optional';
+  const pythonExample = `# Example variables
+${Object.entries(endpoint.exampleRequest)
+  .map(([key, value]) => {
+    if (typeof value === "string") {
+      return `${key} = "${value}"${key === "api_key" || key === "trusted_key" ? "  # Optional" : ""}`;
+    } else {
+      return `${key} = ${JSON.stringify(value)}`;
     }
-    return indented;
   })
-  .join('\n')}
+  .join("\n")}
 
-${
-  endpoint.isStreaming
-    ? `    # Streaming responses
-    stream = client.inference_stream(**data)
-    for chunk in stream:
-        print(chunk)`
-    : `    # Non-streaming responses
-    response = client.${endpoint.id}(**data)
-    print("llm_response:", response)`
-}`;
+print("\\nStarting '${endpoint.name || endpoint.id}'")
+${Object.keys(endpoint.exampleRequest)
+  .filter(k => k !== "api_key" && k !== "trusted_key")
+  .map(k => `print(f"${k[0].toUpperCase() + k.slice(1)}: {${k}}")`)
+  .join("\n")}
+
+# This is the ${endpoint.isStreaming ? "streaming" : "main"} ${endpoint.id} API
+${endpoint.isStreaming
+  ? `stream = client.${endpoint.id}(${Object.keys(endpoint.exampleRequest)
+      .map(k => `${k}=${k}`)
+      .join(", ")})
+for chunk in stream:
+    print(chunk)`
+  : `response = client.${endpoint.id}(${Object.keys(endpoint.exampleRequest)
+      .map(k => `${k}=${k}`)
+      .join(", ")})
+print("\\n${endpoint.name || endpoint.id} response: ", response)`}
+`;
 
   const requestCode = {
     curl: curlExample,

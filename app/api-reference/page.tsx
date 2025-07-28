@@ -1,5 +1,13 @@
 import type { Metadata } from "next"
 import { ApiEndpointSection } from "@/components/api-endpoint-section"
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb"
 
 export const metadata: Metadata = {
   title: "API Reference - Model HQ",
@@ -40,6 +48,7 @@ const endpoints = [
       prompt: "Explain quantum computing in simple terms",
       max_output: 300,
       temperature: 0.7,
+      api_key: "your-api-key",
     },
     exampleResponse: { llm_response: "Quantum computing is a revolutionary approach..." },
     isStreaming: true,
@@ -888,68 +897,305 @@ export default function ApiReferencePage() {
   const utilityEndpoints = endpoints.filter((e) => e.category === "utility")
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* Header */}
-      <div className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="max-w-4xl mx-auto px-6 py-8">
-          <h1 className="text-4xl font-bold tracking-tight mb-4">API Reference</h1>
-          <p className="text-base text-muted-foreground max-w-3xl">
-            The Model HQ API provides programmatic access to our language models through simple HTTP requests. All API
-            requests require authentication and return JSON responses.
-          </p>
-        </div>
+    <div className="max-w-4xl mx-auto space-y-6">
+      <Breadcrumb>
+        <BreadcrumbList>
+          <BreadcrumbItem>
+            <BreadcrumbLink href="/">Home</BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbPage>API Reference</BreadcrumbPage>
+          </BreadcrumbItem>
+        </BreadcrumbList>
+      </Breadcrumb>
+
+      <div className="space-y-4">
+        <h1 className="text-3xl font-bold tracking-tight">API Reference</h1>
+        <p className="text-base text-muted-foreground max-w-3xl">
+          The Model HQ API provides programmatic access to the core Model HQ platform with APIs for model inference, RAG
+          and Agent processing.
+        </p>
       </div>
 
-      {/* Authentication Section */}
-      <div className="border-b">
-        <div className="max-w-4xl mx-auto px-6 py-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div>
-              <h2 className="text-2xl font-semibold mb-4">Authentication</h2>
-              <p className="text-muted-foreground mb-6">
-                The Model HQ API uses API keys for authentication. You can obtain your API key from your dashboard.
-                Include your API key in the request body or use a trusted key for enhanced security.
-              </p>
-              <div className="space-y-4">
-                <div>
-                  <h4 className="font-medium mb-2">API Key</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Include your API key in the request body as{" "}
-                    <code className="bg-muted px-1 py-0.5 rounded text-xs">api_key</code>
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium mb-2">Trusted Key</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Alternative authentication using{" "}
-                    <code className="bg-muted px-1 py-0.5 rounded text-xs">trusted_key</code> parameter
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div className="bg-muted/50 rounded-lg p-6">
-                <h4 className="font-medium mb-3">Example Request</h4>
-                <pre className="text-sm overflow-x-auto">
-                  <code>{`from llmware_client_sdk import LLMWareClient
-client = LLMWareClient(api_endpoint='http://{ip_address}}:{port}/{endpoint}') 
+      <div className="prose prose-gray max-w-none">
+        <h2 id="how-to-access">How to access</h2>
+        <p>
+          <strong>Model HQ App (with UI)</strong> - to convert to API programmatic access, you should shift to "backend
+          mode" which can be found on the main tools bar in the upper right hand corner of the app. You can configure
+          the backend before launching, e.g., localhost vs. external IP (set to localhost by default), port (set to 8088
+          by default), and optional trusted_key to be used when calling an API. You will also see a download Model HQ
+          Client SDK link on the page, which you should download, and open as a new project in your favorite IDE. After
+          shifting to programmatic mode, models and agents created in the UI are available to be accessed through APIs.
+          If you set a trusted_key in the configuration, then the key will be checked and validated on each API call
+          (you can leave blank for development use).
+        </p>
 
-response = client.{endpoint}(
-  prompt='Who was the U.S. President in 1996?', 
-  model_name='model_name'
-)
+        <p>
+          <strong>Model HQ Dev (no UI)</strong> - this product provides the backend development server directly with
+          only programmatic access, and can be started, stopped, and configured entirely with code (requires a separate
+          license). The Model HQ Client SDK is included with the product, along with separate directions for activating
+          the license key on first use.
+        </p>
 
-print('llm response: ', response)`}</code>
-                </pre>
-              </div>
-            </div>
-          </div>
-        </div>
+        <p>
+          <strong>Model HQ Server (Linux - no UI)</strong> - this is a scalable API server with multi-user scalability,
+          larger model catalog, and an enhanced set of RAG capabilities (requires a separate license).
+        </p>
+
+        <p>
+          Most of the text below was written from the perspective of using the APIs on device (Model HQ App, or Model HQ
+          Dev), although the APIs apply to Model HQ Server as well.
+        </p>
+
+        <h2 id="model-hq-client-sdk">Model HQ Client SDK</h2>
+        <p>
+          The client SDK exposes the APIs through a Python interface to make it to easy to integrate into other Agent,
+          RAG and generative AI pipelines.
+        </p>
+
+        <p>The first step is to create a client, similar to Open AI and other API-based model services.</p>
+
+        <p>
+          In most cases, you can see the auto-detect setup convenience function <code>get_url_string()</code> to
+          automatically connect to the server.
+        </p>
+
+        <pre>
+          <code className="language-python">{`from llmware_client_sdk import LLMWareClient, get_url_string
+
+# create client interface into model hq windows background server
+api_endpoint = get_url_string()
+
+# alt: direct
+# api_endpoint = "http://localhost:8088"
+
+client = LLMWareClient(api_endpoint=api_endpoint)`}</code>
+        </pre>
+
+        <p>Once you have created the client, API calls can be initiated through methods implemented on the client.</p>
+
+        <h2 id="getting-started">Getting Started</h2>
+        <p>
+          Model inferencing takes place on device, and upon first invocation of a selected model, the model will be
+          pulled from a secure LLMWare repository, and cached onto the local device. Depending upon the size of the
+          model and the wifi/network connection, it can take between 30 seconds and a few minutes to download the model
+          the first time. After that, upon each subsequent use, the model will be loaded from disk, and generally takes
+          no more than a few seconds to load.
+        </p>
+
+        <p>
+          <strong>Example # 1 - Inference</strong> - this is the core API for accessing a model
+        </p>
+
+        <pre>
+          <code className="language-python">{`prompt = "What are the best sites to see in France?"
+model_name = "llama-3.2-1b-instruct-ov"
+
+print("\\nStarting 'Hello World'")
+print(f"Prompt: {prompt}")
+print(f"Model: {model_name}\\n")
+
+# this is the main inference API
+
+response = client.inference(prompt=prompt,model_name=model_name, max_output=100, trusted_key="")
+
+# note: will stop at output of 100 tokens and will provide a 'complete' response (e.g., not streamed)
+
+print("\\nhello world test # 1 - inference response: ", response)`}</code>
+        </pre>
+
+        <p>
+          <strong>Example #2 - Stream</strong> - this is the streaming version of the core model inference API
+        </p>
+
+        <pre>
+          <code className="language-python">{`model_name = "llama-3.2-3b-instruct-ov"
+prompt = "What are the main theoretical challenges with quantum gravity?"
+
+print("\\nRunning Model Locally in Streaming Mode")
+print(f"Prompt: {prompt}")
+print(f"Model: {model_name}\\n")
+
+# the stream method is called and consumed as a generator function
+
+for token in client.stream(prompt=prompt,
+                           model_name=model_name,max_output=300,
+                           trusted_key=""):
+
+    print(token,end="")`}</code>
+        </pre>
+
+        <p>
+          For many use cases, just using the two APIs above will give you the ability to easily access and integrate a
+          wide range of models.
+        </p>
+
+        <p>
+          <strong>Example #3 - Finding Models</strong>
+        </p>
+
+        <p>There are several key utility APIs that help to find available models:</p>
+
+        <p>
+          <strong>list_all_models</strong> - generally models in the catalog can be invoked using inference/stream with
+          the unique identifier of <code>model_name</code>.
+        </p>
+
+        <pre>
+          <code className="language-python">{`# what models are available? 
+
+model_list = client.list_all_models()
+
+# print it out the list to screen
+print("model list: ", model_list)
+for i, mod in enumerate(model_list["response"]):
+  print("model: ", i, mod)`}</code>
+        </pre>
+
+        <p>
+          <strong>model_lookup</strong> - Lookup Specific Model with more details from the Model Card
+        </p>
+
+        <pre>
+          <code className="language-python">{`print("\\nmodel lookup example\\n")
+
+response = client.model_lookup(model_name, **kwargs)
+
+print("response: ", response)`}</code>
+        </pre>
+
+        <p>
+          <strong>model_load</strong> - load a selected model into memory
+        </p>
+
+        <pre>
+          <code className="language-python">{`print("\\nmodel load test example\\n")
+
+response = client.model_load(model_name, **kwargs)
+
+print("response: ", response)`}</code>
+        </pre>
+
+        <p>
+          <strong>model_unload</strong> - unload a selected model from memory
+        </p>
+
+        <pre>
+          <code className="language-python">{`print("\\nmodel unload test example\\n")
+
+response = client.model_unload(model_name, **kwargs)
+
+print("response: ", response)`}</code>
+        </pre>
+
+        <h2 id="rag">RAG</h2>
+        <p>
+          In addition to pure model inferencing, there are several methods provided to integrate documents into an
+          inference. A more enhanced set of RAG capabilities (including vector db and full semantic search) are provided
+          on the Model HQ Server.
+        </p>
+
+        <p>
+          <strong>document_inference</strong> - ask question to a document over API
+        </p>
+
+        <pre>
+          <code className="language-python">{`# rag one step api process
+
+document_path = os.path.abspath(".\\\\modelhq_client\\\\sample_files\\\\Bia EXECUTIVE EMPLOYMENT AGREEMENT.pdf")
+question = "What is the annual rate of the base salary?"
+model_name = "llama-3.2-3b-instruct-ov"
+
+print(f"\\n\\nRAG Example - {question}\\n")
+
+response = client.document_inference(document_path, question, model_name=model_name)
+
+print("document inference response - ", response['llm_response'])`}</code>
+        </pre>
+
+        <h2 id="agents">Agents</h2>
+        <p>You can create an agent process in the UI, and then invoke and run the agent over API as follows:</p>
+
+        <pre>
+          <code className="language-python">{`# selected process
+process_name = "intake_processing"
+
+# input to the agent
+fp = os.path.abspath(".\\\\sample_files\\\\customer_transcript_1.txt")
+text = open(fp, "r").read()
+
+# call and run the agent process
+response = client.run_agent(process_name=process_name, text=text, trusted_key="")
+
+print("--run_agent intake_processing: ", response)`}</code>
+        </pre>
+
+        <p>
+          <strong>get_all_agents</strong> - provides a list of agents available
+        </p>
+
+        <pre>
+          <code className="language-python">{`# show all agents available on the background server
+
+agent_response = client.get_all_agents()
+
+for i, agent in enumerate(agent_response["response"]):
+    print("--agents available: ", i, agent)`}</code>
+        </pre>
+
+        <h2 id="useful-admin-functions">Useful Admin Functions</h2>
+        <p>
+          <strong>ping</strong> - check that the platform is running and that the client is connected
+        </p>
+
+        <pre>
+          <code className="language-python">{`response = client.ping()
+
+print("response: ", response)`}</code>
+        </pre>
+
+        <p>
+          <strong>system_info</strong> - get information about the system
+        </p>
+
+        <pre>
+          <code className="language-python">{`# get system info
+x = client.system_info()
+print("system info: ", x)
+
+# get details about the backend process
+details = get_server_details()
+print("server details: ", details)`}</code>
+        </pre>
+
+        <p>
+          <strong>stop_server</strong> - stop the Model HQ platform (running as a background service on Windows)
+        </p>
+
+        <pre>
+          <code className="language-python">{`stop_server()`}</code>
+        </pre>
+
+        <h2 id="trusted-key">Trusted Key</h2>
+        <p>
+          Since the Model HQ platform is designed for self-hosted deployment (and generally for internal enterprise user
+          access - not consumer-scale deployment), we provide flexible options to enable separate API key
+          implementations on top of the platform. We provide a flexible, easy-to-configure 'trusted_key' parameter which
+          can be set at the time of launching the backend platform.
+        </p>
+
+        <p>
+          Note: for most development stage activities, this can be skipped entirely, and no trusted_key needs to be set,
+          especially for on device use.
+        </p>
+
+        <p>&nbsp;</p>
       </div>
 
       {/* Models Category */}
       <div className="border-b">
-        <div className="max-w-4xl mx-auto px-6 py-8">
+        <div className="py-8">
           <h2 className="text-3xl font-bold mb-4">Models</h2>
           <p className="text-muted-foreground mb-8">
             Core inference endpoints for text generation, vision analysis, and specialized model functions.
@@ -963,7 +1209,7 @@ print('llm response: ', response)`}</code>
 
       {/* RAG Category */}
       <div className="border-b">
-        <div className="max-w-4xl mx-auto px-6 py-8">
+        <div className="py-8">
           <h2 className="text-3xl font-bold mb-4">RAG (Retrieval Augmented Generation)</h2>
           <p className="text-muted-foreground mb-8">
             Document and library-based question answering with semantic search and context retrieval.
@@ -977,7 +1223,7 @@ print('llm response: ', response)`}</code>
 
       {/* Library Management Category */}
       <div className="border-b">
-        <div className="max-w-4xl mx-auto px-6 py-8">
+        <div className="py-8">
           <h2 className="text-3xl font-bold mb-4">Library Management</h2>
           <p className="text-muted-foreground mb-8">
             Create and manage document libraries for knowledge base construction and semantic search capabilities.
@@ -991,7 +1237,7 @@ print('llm response: ', response)`}</code>
 
       {/* Agent Category */}
       <div className="border-b">
-        <div className="max-w-4xl mx-auto px-6 py-8">
+        <div className="py-8">
           <h2 className="text-3xl font-bold mb-4">Agent Execution</h2>
           <p className="text-muted-foreground mb-8">
             Execute automated multi-step processes and workflows using pre-configured intelligent agents.
@@ -1005,7 +1251,7 @@ print('llm response: ', response)`}</code>
 
       {/* Utility Category */}
       <div className="border-b">
-        <div className="max-w-4xl mx-auto px-6 py-8">
+        <div className="py-8">
           <h2 className="text-3xl font-bold mb-4">Utilities & Administration</h2>
           <p className="text-muted-foreground mb-8">
             Server management, health checks, and administrative functions for monitoring and control.
