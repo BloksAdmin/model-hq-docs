@@ -5,17 +5,22 @@ description: "Complete API reference for Model HQ endpoints"
 
 # API Reference
 
-The Model HQ API provides programmatic access to our language models through simple HTTP requests. All API requests require authentication and return JSON responses.
+The Model HQ API provides programmatic access to the core Model HQ platform with APIs for model inference, RAG and Agent processing. 
+
+## How to access
+
+Model HQ App (with UI) - to convert to API programmatic access, you should shift to "backend mode" which can be found on the main tools bar in the upper right hand corner of the app. You can configure the backend before launching, e.g., localhost vs. external IP (set to localhost by default), port (set to 8088 by default), and optional trusted_key to be used when calling an API.  After shifting to programmatic mode, models and agents created in the UI are available to be accessed through APIs.
+
+Model HQ Dev (no UI) - this product provides the backend development server directly with only programmatic access, and can be started, stopped, and configured entirely with code (requires a separate license).
+
+Model HQ Server (Linux - no UI) - this is a scalable API server with multi-user scalability, larger model catalog, and an enhanced set of RAG capabilities (requires a separate license).
 
 ## Authentication
 
-The Model HQ API uses API keys for authentication. You can obtain your API key from your dashboard. Include your API key in the request body or use a trusted key for enhanced security.
+Since the Model HQ platform is designed for self-hosted deployment (and generally for internal enterprise user access - not consumer-scale deployment), we provide flexible options to enable separate API key implementations on top of the platform.  We provide a flexible, easy-to-configure 'trusted_key' parameter which can be set at the time of launching the backend platform.
 
-### API Key
-Include your API key in the request body as `api_key`
+Note: for most development stage activities, this can be skipped entirely, and no trusted_key needs to be set, especially for on device use. 
 
-### Trusted Key
-Alternative authentication using `trusted_key` parameter
 
 ### Example Request
 
