@@ -9,11 +9,13 @@ The Model HQ API provides programmatic access to the core Model HQ platform with
 
 ## How to access
 
-**Model HQ App (with UI)** - to convert to API programmatic access, you should shift to "backend mode" which can be found on the main tools bar in the upper right hand corner of the app. You can configure the backend before launching, e.g., localhost vs. external IP (set to localhost by default), port (set to 8088 by default), and optional trusted_key to be used when calling an API. You will also see a download Model HQ Client SDK link on the page, which you should download, and open as a new project in your favorite IDE.  After shifting to programmatic mode, models and agents created in the UI are available to be accessed through APIs.   
+**Model HQ App (with UI)** - to convert to API programmatic access, you should shift to "backend mode" which can be found on the main tools bar in the upper right hand corner of the app. You can configure the backend before launching, e.g., localhost vs. external IP (set to localhost by default), port (set to 8088 by default), and optional trusted_key to be used when calling an API. You will also see a download Model HQ Client SDK link on the page, which you should download, and open as a new project in your favorite IDE.  After shifting to programmatic mode, models and agents created in the UI are available to be accessed through APIs.  If you set a trusted_key in the configuration, then the key will be checked and validated on each API call (you can leave blank for development use).
 
 **Model HQ Dev (no UI)** - this product provides the backend development server directly with only programmatic access, and can be started, stopped, and configured entirely with code (requires a separate license). The Model HQ Client SDK is included with the product, along with separate directions for activating the license key on first use.
 
 **Model HQ Server (Linux - no UI)** - this is a scalable API server with multi-user scalability, larger model catalog, and an enhanced set of RAG capabilities (requires a separate license).
+
+Most of the text below was written from the perspective of using the APIs on device (Model HQ App, or Model HQ Dev), although the APIs apply to Model HQ Server as well. 
 
 ## Model HQ Client SDK
 
@@ -83,9 +85,9 @@ for token in client.stream(prompt=prompt,
 
 For many use cases, just using the two APIs above will give you the ability to easily access and integrate a wide range of models.  
 
-**Example #3 - Finding Stuff **
+**Example #3 - Finding Models**
 
-There are several key utility APIs that help to find available resources:
+There are several key utility APIs that help to find available models:
 
 **list_all_models** - generally models in the catalog can be invoked using inference/stream with the unique identifier of `model_name`.  
 
@@ -132,6 +134,60 @@ print("\nmodel unload test example\n")
 response = client.model_unload(model_name, **kwargs)
 
 print("response: ", response)
+
+```
+
+## RAG
+
+In addition to pure model inferencing, there are several methods provided to integrate documents into an inference. A more enhanced set of RAG capabilities (including vector db and full semantic search) are provided on the Model HQ Server.
+
+**document_inference** - ask question to a document over API
+
+```python
+
+# rag one step api process
+
+document_path = os.path.abspath(".\\modelhq_client\\sample_files\\Bia EXECUTIVE EMPLOYMENT AGREEMENT.pdf")
+question = "What is the annual rate of the base salary?"
+model_name = "llama-3.2-3b-instruct-ov"
+
+print(f"\n\nRAG Example - {question}\n")
+
+response = client.document_inference(document_path, question, model_name=model_name)
+
+print("document inference response - ", response['llm_response'])
+
+```
+
+## Agents
+
+You can create an agent process in the UI, and then invoke and run the agent over API as follows:
+
+```python
+
+# selected process
+process_name = "intake_processing"
+
+# input to the agent
+fp = os.path.abspath(".\\sample_files\\customer_transcript_1.txt")
+text = open(fp, "r").read()
+
+# call and run the agent process
+response = client.run_agent(process_name=process_name, text=text, trusted_key="")
+
+print("--run_agent intake_processing: ", response)
+```
+
+**get_all_agents** - provides a list of agents available
+
+```python
+
+# show all agents available on the background server
+
+agent_response = client.get_all_agents()
+
+for i, agent in enumerate(agent_response["response"]):
+    print("--agents available: ", i, agent)
 
 ```
 
