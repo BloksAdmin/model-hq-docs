@@ -37,7 +37,9 @@ client = LLMWareClient(api_endpoint=api_endpoint)
 
 Once you have created the client, API calls can be initiated through methods implemented on the client.  
 
-## Hello World
+## Getting Started
+
+Model inferencing takes place on device, and upon first invocation of a selected model, the model will be pulled from a secure LLMWare repository, and cached onto the local device.  Depending upon the size of the model and the wifi/network connection, it can take between 30 seconds and a few minutes to download the model the first time.  After that, upon each subsequent use, the model will be loaded from disk, and generally takes no more than a few seconds to load.
 
 **Example # 1 - Inference** - this is the core API for accessing a model
 
@@ -79,59 +81,65 @@ for token in client.stream(prompt=prompt,
 
 ```
 
+For many use cases, just using the two APIs above will give you the ability to easily access and integrate a wide range of models.  
+
+**Example #3 - Finding Stuff **
+
+There are several key utility APIs that help to find available resources:
+
+**list_all_models** - generally models in the catalog can be invoked using inference/stream with the unique identifier of `model_name`.  
+
+```python
+
+# what models are available? 
+
+model_list = client.list_all_models()
+
+# print it out the list to screen
+print("model list: ", model_list)
+for i, mod in enumerate(model_list["response"]):
+  print("model: ", i, mod)
+```
+
+**model_lookup** - Lookup Specific Model with more details from the Model Card
+
+```python
+
+print("\nmodel lookup example\n")
+
+response = client.model_lookup(model_name, **kwargs)
+
+print("response: ", response)
+```
+
+**model_load** - load a selected model into memory
+
+```python
+
+print("\nmodel load test example\n")
+
+response = client.model_load(model_name, **kwargs)
+
+print("response: ", response)
+```
+
+**model_unload** - unload a selected model from memory
+
+```python
+
+print("\nmodel unload test example\n")
+
+response = client.model_unload(model_name, **kwargs)
+
+print("response: ", response)
+
+```
+
 ## Trusted Key
 
 Since the Model HQ platform is designed for self-hosted deployment (and generally for internal enterprise user access - not consumer-scale deployment), we provide flexible options to enable separate API key implementations on top of the platform.  We provide a flexible, easy-to-configure 'trusted_key' parameter which can be set at the time of launching the backend platform.
 
 Note: for most development stage activities, this can be skipped entirely, and no trusted_key needs to be set, especially for on device use.  
-
-
-### Hello World Example
-
-```python
-from llmware_client_sdk import LLMWareClient
-client = LLMWareClient(api_endpoint='http://{ip_address}:{port}/{endpoint}') 
-
-response = client.{endpoint}(
-  prompt='Who was the U.S. President in 1996?', 
-  model_name='model_name'
-)
-
-print('llm response: ', response)
-```
-
-### Request Code Format
-```py
-from llmware_client_sdk import LLMWareClient
-
-# Replace with your local or external endpoint
-my_endpoint = "http://localhost:8088/${endpoint.id}"
-client = LLMWareClient(api_endpoint=my_endpoint)
-
-def run_${endpoint.id}():
-${JSON.stringify(endpoint.exampleRequest, null, 4)
-  .split('\n')
-  .map((line, index) => {
-    let indented = index === 0 ? `    data = ${line}` : `    ${line}`;
-    // Append "# Optional" if line contains "api_key":
-    if (line.includes('"api_key"')) {
-      indented += '  # Optional';
-    }
-    return indented;
-  })
-  .join('\n')}
-
-${
-  endpoint.isStreaming
-    ? `    # Streaming responses
-    stream = client.inference_stream(**data)
-    for chunk in stream:
-        print(chunk)`
-    : `    # Non-streaming responses
-    response = client.${endpoint.id}(**data)
-    print("llm_response:", response)`
-}
-```
 
 
 ## Models
