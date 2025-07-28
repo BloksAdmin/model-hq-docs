@@ -23,14 +23,14 @@ The first step is to create a client, similar to Open AI and other API-based mod
 
 In most cases, you can see the auto-detect setup convenience function `get_url_string()` to automatically connect to the server. 
 
-```
+```python
 from llmware_client_sdk import LLMWareClient, get_url_string
 
 # create client interface into model hq windows background server
 api_endpoint = get_url_string()
 
 # alt: direct
-# http://localhost:8088
+# api_endpoint = "http://localhost:8088"
 
 client = LLMWareClient(api_endpoint=api_endpoint)
 ```
@@ -41,7 +41,7 @@ Once you have created the client, API calls can be initiated through methods imp
 
 **Example # 1 - Inference** - this is the core API for accessing a model
 
-```
+```python
 prompt = "What are the best sites to see in France?"
 model_name = "llama-3.2-1b-instruct-ov"
 
@@ -61,7 +61,7 @@ print("\nhello world test # 1 - inference response: ", response)
 
 **Example #2 - Stream** - this is the streaming version of the core model inference API
 
-```
+```python
 model_name = "llama-3.2-3b-instruct-ov"
 prompt = "What are the main theoretical challenges with quantum gravity?"
 
