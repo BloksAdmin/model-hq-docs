@@ -9,20 +9,84 @@ The Model HQ API provides programmatic access to the core Model HQ platform with
 
 ## How to access
 
-Model HQ App (with UI) - to convert to API programmatic access, you should shift to "backend mode" which can be found on the main tools bar in the upper right hand corner of the app. You can configure the backend before launching, e.g., localhost vs. external IP (set to localhost by default), port (set to 8088 by default), and optional trusted_key to be used when calling an API.  After shifting to programmatic mode, models and agents created in the UI are available to be accessed through APIs.
+**Model HQ App (with UI)** - to convert to API programmatic access, you should shift to "backend mode" which can be found on the main tools bar in the upper right hand corner of the app. You can configure the backend before launching, e.g., localhost vs. external IP (set to localhost by default), port (set to 8088 by default), and optional trusted_key to be used when calling an API. You will also see a download Model HQ Client SDK link on the page, which you should download, and open as a new project in your favorite IDE.  After shifting to programmatic mode, models and agents created in the UI are available to be accessed through APIs.   
 
-Model HQ Dev (no UI) - this product provides the backend development server directly with only programmatic access, and can be started, stopped, and configured entirely with code (requires a separate license).
+**Model HQ Dev (no UI)** - this product provides the backend development server directly with only programmatic access, and can be started, stopped, and configured entirely with code (requires a separate license). The Model HQ Client SDK is included with the product, along with separate directions for activating the license key on first use.
 
-Model HQ Server (Linux - no UI) - this is a scalable API server with multi-user scalability, larger model catalog, and an enhanced set of RAG capabilities (requires a separate license).
+**Model HQ Server (Linux - no UI)** - this is a scalable API server with multi-user scalability, larger model catalog, and an enhanced set of RAG capabilities (requires a separate license).
 
-## Authentication
+## Model HQ Client SDK
+
+The client SDK exposes the APIs through a Python interface to make it to easy to integrate into other Agent, RAG and generative AI pipelines. 
+
+The first step is to create a client, similar to Open AI and other API-based model services.
+
+In most cases, you can see the auto-detect setup convenience function `get_url_string()` to automatically connect to the server. 
+
+```
+from llmware_client_sdk import LLMWareClient, get_url_string
+
+# create client interface into model hq windows background server
+api_endpoint = get_url_string()
+
+# alt: direct
+# http://localhost:8088
+
+client = LLMWareClient(api_endpoint=api_endpoint)
+```
+
+Once you have created the client, API calls can be initiated through methods implemented on the client.  
+
+## Hello World
+
+**Example # 1 - Inference** - this is the core API for accessing a model
+
+```
+prompt = "What are the best sites to see in France?"
+model_name = "llama-3.2-1b-instruct-ov"
+
+print("\nStarting 'Hello World'")
+print(f"Prompt: {prompt}")
+print(f"Model: {model_name}\n")
+
+# this is the main inference API
+
+response = client.inference(prompt=prompt,model_name=model_name, max_output=100, trusted_key="")
+
+# note: will stop at output of 100 tokens and will provide a 'complete' response (e.g., not streamed)
+
+print("\nhello world test # 1 - inference response: ", response)
+
+```
+
+**Example #2 - Stream** - this is the streaming version of the core model inference API
+
+```
+model_name = "llama-3.2-3b-instruct-ov"
+prompt = "What are the main theoretical challenges with quantum gravity?"
+
+print("\nRunning Model Locally in Streaming Mode")
+print(f"Prompt: {prompt}")
+print(f"Model: {model_name}\n")
+
+# the stream method is called and consumed as a generator function
+
+for token in client.stream(prompt=prompt,
+                           model_name=model_name,max_output=300,
+                           trusted_key=""):
+
+    print(token,end="")
+
+```
+
+## Trusted Key
 
 Since the Model HQ platform is designed for self-hosted deployment (and generally for internal enterprise user access - not consumer-scale deployment), we provide flexible options to enable separate API key implementations on top of the platform.  We provide a flexible, easy-to-configure 'trusted_key' parameter which can be set at the time of launching the backend platform.
 
-Note: for most development stage activities, this can be skipped entirely, and no trusted_key needs to be set, especially for on device use. 
+Note: for most development stage activities, this can be skipped entirely, and no trusted_key needs to be set, especially for on device use.  
 
 
-### Example Request
+### Hello World Example
 
 ```python
 from llmware_client_sdk import LLMWareClient
