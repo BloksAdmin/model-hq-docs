@@ -250,7 +250,7 @@ client.model_unload(model_name)`}</code>
                     Check out the full API Reference at{" "}
                     {" "}
                     <a
-                        href="/api-references"
+                        href="/api-reference"
                         style={{ fontWeight: "bold", color: "#0070f3" }}
                     >
                         API Reference Guide
