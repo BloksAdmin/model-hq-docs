@@ -38,7 +38,7 @@ export default function HelloWorldPage() {
                 <h2 id="location">📁 Location</h2>
                 <p>This file is available in the SDK under:</p>
                 <p>
-                    <code>examples/hello-world.py</code>
+                    <code>modelhq_client/hello-world.py</code>
                 </p>
 
                 <p>&nbsp;</p>

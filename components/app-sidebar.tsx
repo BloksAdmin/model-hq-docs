@@ -26,6 +26,7 @@ import {
   Code,
   Terminal,
   Code2,
+  Camera,
 } from "lucide-react"
 
 import {
@@ -179,6 +180,11 @@ const navigationData = {
       title: "Hybrid Inferencing",
       url: "/cookbooks/hybrid-inferencing",
       icon: Server,
+    },
+    {
+      title: "Photo to Email Automation",
+      url: "/cookbooks/photo-to-email-automation",
+      icon: Camera,
     }
   ],
 }

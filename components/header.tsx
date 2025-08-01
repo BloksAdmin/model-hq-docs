@@ -775,6 +775,12 @@ export function Header() {
       type: "cookbook",
       parentPage: "Cookbooks",
     },
+    {
+      title: "From Data Plate to Inbox (Photo to Email Automation)",
+      url: "/cookbooks/photo-to-email-automation",
+      type: "cookbook",
+      parentPage: "Cookbooks",
+    },
   ]
 
   const performSearch = (query: string): SearchResult[] => {
