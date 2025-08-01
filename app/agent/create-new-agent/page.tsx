@@ -252,6 +252,19 @@ export default function CreateAgentPage() {
         <ServiceTable />
 
         <p>&nbsp;</p>
+
+        <blockquote data-type="tip">
+          <p>
+            <strong>Building and Querying a Custom Table</strong>
+          </p>
+          <p>
+            When you build a custom table, a database is created and stored in memory using the <b><code>table name</code> specified in the Instruction 
+            field</b>. <br /> If you later update or replace the table with new data, you <b>must also change the table name in the Instruction 
+            field</b>. This signals to the system that a new database should be created. <br /> Otherwise, 
+            it will continue referencing the previous version of the table.
+          </p>
+        </blockquote>
+
         <p>&nbsp;</p>
 
         <h1 id="how-to-create-an-agent-from-agent-builder">How to create an Agent from Agent Builder</h1>
