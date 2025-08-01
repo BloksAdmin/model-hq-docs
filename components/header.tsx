@@ -583,6 +583,18 @@ export function Header() {
       parentPage: "Editing Agents",
     },
     {
+      title: "How to Edit an Agent",
+      url: "/agent/edit-agent#edit-agent",
+      type: "heading",
+      parentPage: "Editing Agents",
+    },
+    {
+      title: "Editing a Copy of an Existing Process",
+      url: "/agent/edit-agent#copy-process",
+      type: "heading",
+      parentPage: "Editing Agents",
+    },
+    {
       title: "Process",
       url: "/agent/edit-agent#process",
       type: "heading",
