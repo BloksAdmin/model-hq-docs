@@ -14,6 +14,40 @@ We will use the Contract Analyzer example to illustrate this process. (Editing t
 
 Click the `Edit` button.
 
+### How to Edit an Agent?
+
+To **edit an existing Agent**, select the **Agent Process** you want to modify and click **‘Edit’**.
+
+Next, select **‘Process’** — this opens a **detailed view** of the steps inside the Agent Process.
+
+You can:
+
+* Press **‘+’** or **‘–’** to **add or delete rows**
+* Modify the **Service**, **Instruction**, or **Context** as needed
+
+> [!TIP] 
+> After editing each row, click **‘>’** to apply the changes.
+> The new **Context** and updates **won’t be saved** until you do this.
+
+Depending on your edits, you might also need to **redefine**:
+
+* **‘+ Inputs’**
+* **‘+ Files’**
+
+### 🌀 Editing a COPY of an Existing Process
+
+If you plan to make **permanent changes**, we highly recommend editing a **copy** of the process instead.
+
+To do this:
+
+1. Go to **Agents > Build New > Start Building**
+2. Give your new process a name in **Process Name**
+3. Under **“Derive from Existing Process”**, select the existing Agent to copy
+4. Click **`>`** to confirm
+
+You’ll now see a **copy** of the selected process — ready to edit without affecting the original.
+
+
 &nbsp;
 
 ## Edit Interface

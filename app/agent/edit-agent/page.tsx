@@ -55,6 +55,54 @@ export default function EditAgentPage() {
           Click the <code>Edit</code> button.
         </p>
 
+        <h2 id="edit-agent">How to Edit an Agent?</h2>
+        <p>
+          To edit an existing Agent, select the Agent Process you wish to modify and click <code>Edit</code>.
+        </p>
+
+        <p>
+          Next, click on <code>Process</code>. This opens the detailed view of all the steps within the Agent Process.
+        </p>
+
+        <ol>
+          <li>Use <code>+</code> or <code>–</code> to add or remove rows.</li>
+          <li>Modify the <strong>Service</strong>, <strong>Instruction</strong>, or <strong>Context</strong> fields as needed.</li>
+        </ol>
+
+        <blockquote data-type="tip">
+          <p><strong>Important</strong></p>
+          <p>
+            We recommend clicking <code>&gt;</code> after editing each row. This confirms and saves your changes. <br />
+            If you skip this, the new Context or step modifications will <strong>not be saved</strong>.
+          </p>
+        </blockquote>
+
+        <p>
+          Depending on the nature of your changes, you may also need to redefine the following:
+        </p>
+
+        <ul>
+          <li><code>+ Inputs</code></li>
+          <li><code>+ Files</code></li>
+        </ul>
+
+        <h2 id="copy-process">Editing a Copy of an Existing Process</h2>
+
+        <p>
+          If you intend to make significant or permanent changes, we suggest editing a <strong>copy</strong> of the process.
+        </p>
+
+        <ol>
+          <li>Go to <code>Agents &gt; Build New &gt; Start Building</code>.</li>
+          <li>In <strong>Process Name</strong>, enter a name for the new process.</li>
+          <li>Under <strong>Derive from Existing Process</strong>, select the Agent you wish to copy.</li>
+          <li>Click <code>&gt;</code> to confirm.</li>
+        </ol>
+
+        <p>
+          You'll now be able to edit a copy of the selected process — without affecting the original Agent Process.
+        </p>
+
         <p>&nbsp;</p>
 
         <h2 id="edit-interface">Edit Interface</h2>
@@ -118,9 +166,9 @@ export default function EditAgentPage() {
             <strong>Building and Querying a Custom Table</strong>
           </p>
           <p>
-            When you build a custom table, a database is created and stored in memory using the <b><code>table name</code> specified in the Instruction 
-            field</b>. <br /> If you later update or replace the table with new data, you <b>must also change the table name in the Instruction 
-            field</b>. This signals to the system that a new database should be created. <br /> Otherwise, 
+            When you build a custom table, a database is created and stored in memory using the <b><code>table name</code> specified in the Instruction
+              field</b>. <br /> If you later update or replace the table with new data, you <b>must also change the table name in the Instruction
+                field</b>. This signals to the system that a new database should be created. <br /> Otherwise,
             it will continue referencing the previous version of the table.
           </p>
         </blockquote>
