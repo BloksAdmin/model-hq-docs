@@ -605,7 +605,7 @@ export default function ACMarketingWorkflowPage() {
                             <div>Once the file is selected, click '+'</div>
                           </div>
                         </div>
-                        <div className="bg-teal-100 p-4 rounded-lg">
+                        <div className="p-4 rounded-lg">
                           <p className="text-teal-800 text-sm">
                             <strong>Note:</strong> Once all relevant content files are selected (in our case, the .CSV
                             file with Manufacturer Name and the Document file with the R-22 Technical information),
@@ -734,7 +734,7 @@ export default function ACMarketingWorkflowPage() {
                           </div>
                         </div>
 
-                        <div className="bg-cyan-100 p-4 rounded-lg">
+                        <div className="p-4 rounded-lg">
                           <p className="text-cyan-800 text-sm">
                             By performing these actions, the model number is used to query the AC unit table to find:
                           </p>
@@ -914,7 +914,7 @@ export default function ACMarketingWorkflowPage() {
                       <p className="text-yellow-800 mb-4">
                         Using a chat model, the system generates a customer-ready email:
                       </p>
-                      <div className="bg-yellow-100 p-4 rounded-lg mb-6">
+                      <div className="p-4 rounded-lg mb-6">
                         <p className="text-yellow-800 mb-2">Personalized with:</p>
                         <ul className="list-disc list-inside text-yellow-700 text-sm space-y-1">
                           <li>Customer name</li>
@@ -969,7 +969,7 @@ export default function ACMarketingWorkflowPage() {
                           <CodeBlock title="Email Formatting Instruction">
                             {`You are an email formatting expert. Review {{Chat_10}} and format the email nicely. Do not included any responses or any other text in this email other than the context. Do not add "here is" or any other responses whatsoever. This will cause the outcome to fail.`}
                           </CodeBlock>
-                          <div className="bg-yellow-100 p-4 rounded-lg mt-4">
+                          <div className="p-4 rounded-lg mt-4">
                             <p className="text-yellow-800 text-sm">A second chat step formats the email:</p>
                             <ul className="list-disc list-inside text-yellow-700 text-sm mt-2 space-y-1">
                               <li>Clean paragraphs</li>

@@ -527,7 +527,9 @@ export default function HomePage() {
                     </a>
                   </li>
                   <li>
-                    Coming Soon...
+                    <a href="/cookbooks/photo-to-email-automation" className="text-primary hover:underline">
+                      Photo to Email Automation
+                    </a>
                   </li>
                 </ol>
               </div>
