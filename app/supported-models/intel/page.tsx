@@ -15,126 +15,329 @@ import { Cpu, Info, Zap, Database } from "lucide-react"
 export default function IntelSupportedModelsPage() {
     const modelCategories = [
         {
+            category: "Embedding Models",
+            models: [
+                { name: "industry-bert-contracts-ov", parameters: "NA" },
+                { name: "industry-bert-insurance-ov", parameters: "NA" },
+                { name: "industry-bert-asset-management-ov", parameters: "NA" },
+                { name: "industry-bert-sec-ov", parameters: "NA" },
+                { name: "industry-bert-loans-ov", parameters: "NA" },
+                { name: "all-mini-lm-l6-v2-ov", parameters: "NA" },
+                { name: "all-mpnet-base-v2-ov", parameters: "NA" },
+                { name: "paraphrase-multilingual-MiniLM-L12-v2-ov", parameters: "NA" },
+                { name: "gte-small-ov", parameters: "NA" },
+                { name: "gte-base-ov", parameters: "NA" },
+                { name: "gte-large-ov", parameters: "NA" },
+                { name: "bge-small-en-v1.5-ov", parameters: "NA" },
+                { name: "bge-base-en-v1.5-ov", parameters: "NA" },
+                { name: "bge-large-en-v1.5-ov", parameters: "NA" },
+                { name: "protectai-prompt-injection-ov", parameters: "NA" },
+                { name: "malicious-url-detector-ov", parameters: "NA" },
+                { name: "xlm-roberta-language-detector-ov", parameters: "NA" },
+                { name: "valurank-bias-ov", parameters: "NA" },
+                { name: "unitary-toxic-roberta-ov", parameters: "NA" },
+                { name: "jina-reranker-v1-tiny-en-ov", parameters: "NA" },
+                { name: "jina-reranker-v1-turbo-en-ov", parameters: "NA" },
+                { name: "jina-reranker-tiny-onnx", parameters: "NA" },
+                { name: "jina-reranker-turbo-onnx", parameters: "NA" },
+                { name: "protectai-prompt-injection-onnx", parameters: "NA" },
+                { name: "valurank-bias-onnx", parameters: "NA" },
+                { name: "unitary-toxic-roberta-onnx", parameters: "NA" },
+            ],
+        },
+        {
             category: "Qwen Models",
             models: [
-                "bling-qwen-1.5b-ov",
-                "bling-qwen-500m-ov",
-                "qwen2-0.5b-chat-ov",
-                "qwen2-1.5b-instruct-ov",
-                "qwen2-7b-instruct-ov",
-                "qwen2-v1-2b-instruct-ov",
-                "qwen2-vl-7b-instruct-ov",
-                "qwen2.5-0.5b-instruct-ov",
-                "qwen2.5-1.5b-instruct-ov",
-                "qwen2.5-14b-instruct-ov",
-                "qwen2.5-coder-7b-instruct-ov",
+                { name: "qwen2-vl-2b-instruct-ov", parameters: "2" },
+                { name: "qwen2-vl-7b-instruct-ov", parameters: "7" },
+                { name: "bling-qwen-500m-ov", parameters: "0.5" },
+                { name: "bling-qwen-1.5b-ov", parameters: "1.5" },
+                { name: "dragon-qwen-7b-ov", parameters: "7" },
+                { name: "slim-extract-qwen-0.5b-ov", parameters: "0.5" },
+                { name: "slim-extract-qwen-1.5b-ov", parameters: "1.5" },
+                { name: "qwen2-7b-instruct-ov", parameters: "7" },
+                { name: "qwen2-1.5b-instruct-ov", parameters: "1.5" },
+                { name: "qwen2-0.5b-chat-ov", parameters: "0.5" },
+                { name: "qwen2.5-1.5b-instruct-ov", parameters: "1.5" },
+                { name: "qwen3-8b-ov", parameters: "8" },
+                { name: "qwen3-1.7b-ov", parameters: "1.7" },
+                { name: "qwen3-4b-ov", parameters: "4" },
+                { name: "qwen3-14b-ov", parameters: "14" },
+                { name: "qwen2.5-0.5b-instruct-ov", parameters: "0.5" },
+                { name: "qwen2.5-3b-instruct-ov", parameters: "3" },
+                { name: "qwen2.5-14b-instruct-ov", parameters: "14" },
+                { name: "qwen2.5-32b-instruct-ov", parameters: "32" },
+                { name: "qwen2.5-72b-instruct-ov", parameters: "72" },
+                { name: "qwen2.5-coder-7b-instruct-ov", parameters: "7" },
+                { name: "bling-qwen-mini-tool", parameters: "1.5" },
+                { name: "bling-qwen-0.5b-gguf", parameters: "0.5" },
+                { name: "dragon-qwen-7b-gguf", parameters: "7" },
+                { name: "qwen2-7B-instruct-gguf", parameters: "7" },
+                { name: "qwen3-1.7b-gguf", parameters: "1.7" },
+                { name: "qwen3-4b-instruct-gguf", parameters: "4" },
+                { name: "qwen3-8b-gguf", parameters: "8" },
+                { name: "qwen3-14b-gguf", parameters: "14" },
+                { name: "qwen2-1.5b-instruct-gguf", parameters: "1.5" },
+                { name: "qwen2-0.5b-instruct-gguf", parameters: "0.5" },
+                { name: "slim-extract-qwen-1.5b-gguf", parameters: "1.5" },
+                { name: "slim-extract-qwen-nano-gguf", parameters: "0.5" },
+                { name: "qwen-2.5-7b-coder-gguf", parameters: "7" },
+                { name: "qwen-2.5-14b-instruct-gguf", parameters: "14" },
+                { name: "deepseek-qwen-14b-gguf", parameters: "14" },
+                { name: "deepseek-qwen-7b-gguf", parameters: "7" },
+                { name: "qwen2.5-32b-gguf", parameters: "32" },
             ],
         },
         {
             category: "Llama-Based Models",
             models: [
-                "bling-tiny-llama-ov",
-                "dolphin-2.9.4-llama3-1.8b-ov",
-                "gradientai-llama3-8b-1048k-ov",
-                "llama-11b-vision-instruct-ov",
-                "llama-2-13b-chat-ov",
-                "llama-2-chat-ov",
-                "llama-3.1-instruct-ov",
-                "llama-3.2-1b-instruct-ov",
-                "llama-3.2-3b-instruct-ov",
-                "tiny-llama-chat-ov",
+                { name: "llama-11b-vision-instruct-ov", parameters: "11" },
+                { name: "bling-tiny-llama-ov", parameters: "1.1" },
+                { name: "bling-tiny-llama-npu-ov", parameters: "1.1" },
+                { name: "dragon-llama2-ov", parameters: "7" },
+                { name: "llama-2-chat-ov", parameters: "7" },
+                { name: "llama-2-13b-chat-ov", parameters: "13" },
+                { name: "tiny-llama-chat-ov", parameters: "1.1" },
+                { name: "llama-3.1-instruct-ov", parameters: "8" },
+                { name: "llama-3.1-8b-instruct-npu-ov", parameters: "8" },
+                { name: "nvidia-llama3-chatqa-1.5-8b-ov", parameters: "8" },
+                { name: "dolphin-2.9.4-llama3.1-8b-ov", parameters: "8" },
+                { name: "llama-3.2-3b-instruct-ov", parameters: "3" },
+                { name: "llama-3.2-3b-instruct-npu-ov", parameters: "3" },
+                { name: "llama-3.2-1b-instruct-ov", parameters: "1.1" },
+                { name: "llama-3.2-1b-instruct-npu-ov", parameters: "1.1" },
+                { name: "bling-tiny-llama-onnx", parameters: "1.1" },
+                { name: "llama-3.2-3b-onnx-qnn", parameters: "3" },
+                { name: "llama-2-chat-onnx", parameters: "7" },
+                { name: "llama-3.1-instruct-onnx", parameters: "8" },
+                { name: "llama-3.2-1b-instruct-onnx", parameters: "1.3" },
+                { name: "llama-3.2-3b-instruct-onnx", parameters: "3" },
+                { name: "dragon-llama-3.1-gguf", parameters: "8" },
+                { name: "dragon-llama-answer-tool", parameters: "7" },
+                { name: "llama-3.1-instruct-gguf", parameters: "8" },
+                { name: "llama-2-7b-chat-gguf", parameters: "7" },
+                { name: "llama-3-8b-instruct-gguf", parameters: "8" },
+                { name: "tiny-llama-chat-gguf", parameters: "1.1" },
+                { name: "llama-3.2-1b-instruct-gguf", parameters: "1.3" },
+                { name: "llama-3.2-3b-instruct-gguf", parameters: "3" },
             ],
         },
         {
             category: "Phi Models",
-            models: ["phi-3-ov", "bling-phi-3-ov", "phi-4-ov"],
+            models: [
+                { name: "bling-phi-3-ov", parameters: "3.8" },
+                { name: "slim-xsum-phi-3-ov", parameters: "3.8" },
+                { name: "slim-boolean-phi-3-ov", parameters: "3.8" },
+                { name: "slim-sa-ner-phi-3-ov", parameters: "3.8" },
+                { name: "slim-summary-phi-3-ov", parameters: "3.8" },
+                { name: "slim-sql-phi-3-ov", parameters: "3.8" },
+                { name: "slim-extract-phi-3-ov", parameters: "3.8" },
+                { name: "phi-3-ov", parameters: "3.8" },
+                { name: "phi-3-npu-ov", parameters: "3.8" },
+                { name: "phi-4-ov", parameters: "14" },
+                { name: "phi-4-mini-ov", parameters: "4" },
+                { name: "phi-4-mini-npu-ov", parameters: "4" },
+                { name: "phi-4-npu-ov", parameters: "14" },
+                { name: "bling-phi-3-onnx", parameters: "3.8" },
+                { name: "phi-3-onnx", parameters: "3.8" },
+                { name: "phi-3.5-onnx-qnn", parameters: "NA" },
+                { name: "phi-3-vision-onnx", parameters: "3.8" },
+                { name: "slim-summary-phi-3-onnx", parameters: "3.8" },
+                { name: "slim-extract-phi-3-onnx", parameters: "3.8" },
+                { name: "slim-boolean-phi-3-onnx", parameters: "3.8" },
+                { name: "bling-phi-3-gguf", parameters: "3.8" },
+                { name: "bling-phi-3.5-gguf", parameters: "3.8" },
+                { name: "phi-3.5-gguf", parameters: "3.8" },
+                { name: "phi-4-gguf", parameters: "14" },
+                { name: "phi-4-mini-gguf", parameters: "4" },
+                { name: "phi-4-mini-reasoning-gguf", parameters: "4" },
+                { name: "phi-3-gguf", parameters: "3.8" },
+                { name: "slim-extract-phi-3-gguf", parameters: "3.8" },
+                { name: "slim-xsum-phi-3-gguf", parameters: "3.8" },
+                { name: "slim-boolean-phi-3-gguf", parameters: "3.8" },
+                { name: "slim-sa-ner-phi-3-gguf", parameters: "3.8" },
+                { name: "slim-q-gen-phi-3-tool", parameters: "3.8" },
+                { name: "slim-qa-gen-phi-3-tool", parameters: "3.8" },
+            ],
         },
         {
             category: "Mistral Models",
             models: [
-                "dolphin-2.9.3-mistral-7b-32k-ov",
-                "mistral-7b-instruct-v0.2-ov",
-                "mistral-7b-instruct-v0.3-ov",
-                "mistral-nemo-instruct-2407-ov",
-                "mistral-small-instruct-2409-ov",
-                "open-orca-mistral-7b-ov",
-                "zephyr-mistral-7b-chat-ov",
+                { name: "dragon-mistral-ov", parameters: "7.3" },
+                { name: "dragon-mistral-0.3-ov", parameters: "7.3" },
+                { name: "mistral-7b-instruct-v0.3-ov", parameters: "7.3" },
+                { name: "mistral-7b-v0.3-npu-ov", parameters: "7.3" },
+                { name: "mistral-small-instruct-2409-ov", parameters: "22" },
+                { name: "mistral-nemo-instruct-2407-ov", parameters: "12" },
+                { name: "mistral-7b-instruct-v0.2-ov", parameters: "7.3" },
+                { name: "zephyr-mistral-7b-chat-ov", parameters: "7.3" },
+                { name: "teknium-open-hermes-2.5-mistral-ov", parameters: "7.3" },
+                { name: "dolphin-2.9.3-mistral-7b-32k-ov", parameters: "7.3" },
+                { name: "dragon-mistral-0.3-onnx", parameters: "7.3" },
+                { name: "mistral-7b-instruct-v0.3-onnx", parameters: "7.3" },
+                { name: "dragon-mistral-0.3-gguf", parameters: "7.3" },
+                { name: "mistral-3.2-24b-gguf", parameters: "24" },
+                { name: "openhermes-2.5-mistral-7b-gguf", parameters: "7.3" },
+                { name: "zephyr-7b-beta-gguf", parameters: "7.3" },
+                { name: "starling-lm-7b-alpha-gguf", parameters: "7" },
+                { name: "dragon-mistral-answer-tool", parameters: "7.3" },
+                { name: "mistral-7b-instruct-v0.3-gguf", parameters: "7.3" },
             ],
         },
         {
             category: "Yi Models",
-            models: ["yi-6b-1.5v-chat-ov", "yi-9b-chat-ov"],
+            models: [
+                { name: "dragon-yi-6b-ov", parameters: "5.8" },
+                { name: "dragon-yi-9b-ov", parameters: "8.8" },
+                { name: "yi-9b-chat-ov", parameters: "8.8" },
+                { name: "yi-9b-npu-ov", parameters: "8.8" },
+                { name: "yi-6b-1.5v-chat-ov", parameters: "5.8" },
+                { name: "dragon-yi-9b-gguf", parameters: "8.8" },
+                { name: "dragon-yi-answer-tool", parameters: "5.8" },
+            ],
         },
         {
             category: "DRAGON Models",
             models: [
-                "dragon-llama2-ov",
-                "dragon-mistral-0.3-ov",
-                "dragon-mistral-ov",
-                "dragon-qwen-7b-ov",
-                "dragon-yi-6b-ov",
-                "dragon-yi-9b-ov",
+                { name: "dragon-qwen-7b-ov", parameters: "7" },
+                { name: "dragon-llama2-ov", parameters: "7" },
+                { name: "dragon-mistral-ov", parameters: "7.3" },
+                { name: "dragon-mistral-0.3-ov", parameters: "7.3" },
+                { name: "dragon-yi-6b-ov", parameters: "5.8" },
+                { name: "dragon-yi-9b-ov", parameters: "8.8" },
+                { name: "dragon-mistral-0.3-onnx", parameters: "7.3" },
+                { name: "dragon-llama-3.1-gguf", parameters: "8" },
+                { name: "dragon-mistral-0.3-gguf", parameters: "7.3" },
+                { name: "dragon-yi-9b-gguf", parameters: "8.8" },
+                { name: "dragon-qwen-7b-gguf", parameters: "7" },
+                { name: "dragon-yi-answer-tool", parameters: "5.8" },
+                { name: "dragon-llama-answer-tool", parameters: "7" },
+                { name: "dragon-mistral-answer-tool", parameters: "7.3" },
             ],
         },
         {
             category: "Slim Models",
             models: [
-                "slim-boolean-phi-3-ov",
-                "slim-emotions-ov",
-                "slim-extract-tiny-ov",
-                "slim-intent-ov",
-                "slim-ner-ov",
-                "slim-q-gen-tiny-ov",
-                "slim-qa-gen-tiny-ov",
-                "slim-ratings-ov",
-                "slim-sentiment-ov",
-                "slim-sql-ov",
-                "slim-summary-phi-3-ov",
-                "slim-summary-tiny-ov",
-                "slim-tags-ov",
-                "slim-topics-ov",
-                "slim-xsum-phi-3-ov",
-                "slim-extract-qwen-0.5b-ov",
-                "slim-extract-qwen-1.5b-ov",
-                "slim-extract-phi-3-ov",
+                { name: "slim-sentiment-ov", parameters: "1.1" },
+                { name: "slim-sentiment-npu-ov", parameters: "1.1" },
+                { name: "slim-xsum-phi-3-ov", parameters: "3.8" },
+                { name: "slim-boolean-phi-3-ov", parameters: "3.8" },
+                { name: "slim-sa-ner-phi-3-ov", parameters: "3.8" },
+                { name: "slim-summary-phi-3-ov", parameters: "3.8" },
+                { name: "slim-sql-qwen-base-ov", parameters: "2" },
+                { name: "slim-sql-phi-3-ov", parameters: "3.8" },
+                { name: "slim-extract-phi-3-ov", parameters: "3.8" },
+                { name: "slim-extract-tiny-ov", parameters: "1.1" },
+                { name: "slim-extract-tiny-npu-ov", parameters: "1.1" },
+                { name: "slim-extract-qwen-0.5b-ov", parameters: "0.5" },
+                { name: "slim-extract-qwen-1.5b-ov", parameters: "1.5" },
+                { name: "slim-summary-tiny-ov", parameters: "1.1" },
+                { name: "slim-summary-tiny-npu-ov", parameters: "1.1" },
+                { name: "slim-sql-ov", parameters: "1.1" },
+                { name: "slim-sql-npu-ov", parameters: "1.1" },
+                { name: "slim-emotions-ov", parameters: "1.1" },
+                { name: "slim-emotions-npu-ov", parameters: "1.1" },
+                { name: "slim-topics-ov", parameters: "1.1" },
+                { name: "slim-topics-npu-ov", parameters: "1.1" },
+                { name: "slim-ner-ov", parameters: "1.1" },
+                { name: "slim-ner-npu-ov", parameters: "1.1" },
+                { name: "slim-intent-ov", parameters: "1.1" },
+                { name: "slim-category-ov", parameters: "1.1" },
+                { name: "slim-intent-npu-ov", parameters: "1.1" },
+                { name: "slim-tags-ov", parameters: "1.1" },
+                { name: "slim-tags-npu-ov", parameters: "1.1" },
+                { name: "slim-ratings-ov", parameters: "1.1" },
+                { name: "slim-ratings-npu-ov", parameters: "1.1" },
+                { name: "slim-q-gen-tiny-ov", parameters: "1.1" },
+                { name: "slim-qa-gen-tiny-ov", parameters: "1.1" },
+                { name: "slim-sentiment-onnx", parameters: "1.1" },
+                { name: "slim-extract-tiny-onnx", parameters: "1.1" },
+                { name: "slim-summary-tiny-onnx", parameters: "1.1" },
+                { name: "slim-sql-onnx", parameters: "1.1" },
+                { name: "slim-emotions-onnx", parameters: "1.1" },
+                { name: "slim-topics-onnx", parameters: "1.1" },
+                { name: "slim-ner-onnx", parameters: "1.1" },
+                { name: "slim-intent-onnx", parameters: "1.1" },
+                { name: "slim-tags-onnx", parameters: "1.1" },
+                { name: "slim-ratings-onnx", parameters: "1.1" },
+                { name: "slim-summary-phi-3-onnx", parameters: "3.8" },
+                { name: "slim-extract-phi-3-onnx", parameters: "3.8" },
+                { name: "slim-boolean-phi-3-onnx", parameters: "3.8" },
+                { name: "slim-ner-tool", parameters: "1.1" },
+                { name: "slim-sentiment-tool", parameters: "1.1" },
+                { name: "slim-emotions-tool", parameters: "1.1" },
+                { name: "slim-ratings-tool", parameters: "1.1" },
+                { name: "slim-intent-tool", parameters: "1.1" },
+                { name: "slim-nli-tool", parameters: "1.1" },
+                { name: "slim-topics-tool", parameters: "1.1" },
+                { name: "slim-tags-tool", parameters: "1.1" },
+                { name: "slim-sql-tool", parameters: "1.1" },
+                { name: "bling-answer-tool", parameters: "1.1" },
+                { name: "slim-category-tool", parameters: "1.1" },
+                { name: "slim-xsum-tool", parameters: "1.1" },
+                { name: "slim-extract-tool", parameters: "2.8" },
+                { name: "slim-extract-phi-3-gguf", parameters: "3.8" },
+                { name: "slim-extract-qwen-1.5b-gguf", parameters: "1.5" },
+                { name: "slim-extract-qwen-nano-gguf", parameters: "0.5" },
+                { name: "slim-extract-tiny-tool", parameters: "1.1" },
+                { name: "slim-summary-tiny-tool", parameters: "1.1" },
+                { name: "slim-summary-phi-3-gguf", parameters: "1.1" },
+                { name: "slim-xsum-phi-3-gguf", parameters: "3.8" },
+                { name: "slim-boolean-tool", parameters: "2.8" },
+                { name: "slim-boolean-phi-3-gguf", parameters: "3.8" },
+                { name: "slim-sa-ner-phi-3-gguf", parameters: "3.8" },
+                { name: "slim-sa-ner-tool", parameters: "2.8" },
+                { name: "slim-tags-3b-tool", parameters: "2.8" },
+                { name: "slim-summary-tool", parameters: "2.8" },
+                { name: "slim-q-gen-phi-3-tool", parameters: "3.8" },
+                { name: "slim-q-gen-tiny-tool", parameters: "1.1" },
+                { name: "slim-qa-gen-tiny-tool", parameters: "1.1" },
+                { name: "slim-qa-gen-phi-3-tool", parameters: "3.8" },
             ],
         },
         {
             category: "StableLM Models",
-            models: ["stablelm-2-zephyr-1_6b-ov", "stablelm-zephyr-3b-ov"],
-        },
-        {
-            category: "BERT Models",
             models: [
-                "industry-bert-asset-management-ov",
-                "industry-bert-contracts-ov",
-                "industry-bert-insurance-ov",
-                "industry-bert-loans-ov",
-                "industry-bert-sec-ov",
-                "unitary-toxic-roberta-ov",
-                "xlm-roberta-language-detector-ov",
+                { name: "stablelm-zephyr-3b-ov", parameters: "2.8" },
+                { name: "stablelm-2-zephyr-1_6b-ov", parameters: "1.6" },
+                { name: "stablelm-2-12b-chat-ov", parameters: "12" },
+                { name: "bling-stablelm-3b-gguf", parameters: "2.8" },
             ],
         },
         {
-            category: "Jina Models",
-            models: ["jina-reranker-v1-turbo-en-ov", "jina-reranker-v1-tiny-en-ov"],
+            category: "Gemma Models",
+            models: [
+                { name: "gemma-7b-it-ov", parameters: "7" },
+                { name: "codegemma-7b-it-ov", parameters: "7" },
+                { name: "gemma-2b-it-ov", parameters: "2" },
+                { name: "gemma-2b-it-onnx", parameters: "2" },
+                { name: "gemma-3-4b-gguf", parameters: "4" },
+                { name: "gemma-3-12b-gguf", parameters: "12" },
+                { name: "gemma-2-9b-instruct-gguf", parameters: "9" },
+                { name: "gemma-2-27b-instruct-gguf", parameters: "27" },
+            ],
         },
         {
             category: "Specialized Models",
-            models: ["intel-neural-chat-7b-v3-2-ov", "openchat-3.6-8b-20240522-ov"],
+            models: [
+                { name: "intel-neural-chat-7b-v3-2-ov", parameters: "7" },
+                { name: "tiny-dolphin-2.8-1.1b-ov", parameters: "1.1" },
+                { name: "dreamgen-wizardlm-2-7b-ov", parameters: "7" },
+                { name: "openchat-3.6-8b-20240522-ov", parameters: "8" },
+                { name: "mathstral-7b-ov", parameters: "7.3" },
+                { name: "whisper-cpp-base-english", parameters: "NA" },
+            ],
         },
         {
-            category: "Other Models",
+            category: "Multimodal Models",
             models: [
-                "all-mini-lm-16-v2-ov",
-                "mathstral-7b-ov",
-                "protectal-prompt-injection-ov",
-                "valurank-bias-ov",
-                "tiny-dolphin-2.8-1.1b-ov",
-                "dreamgen-wizard1m-2.7b-ov",
+                { name: "speech-t5-tts-ov", parameters: "NA" },
+                { name: "lcm-dreamshaper-ov", parameters: "NA" },
             ],
         },
     ]
+
+    const totalModels = modelCategories.reduce((sum, category) => sum + category.models.length, 0)
 
     return (
         <div className="w-full max-w-4xl mx-auto space-y-6 sm:space-y-6 px-2 sm:px-4 lg:px-6">
@@ -159,10 +362,9 @@ export default function IntelSupportedModelsPage() {
                         </h1>
                     </div>
                     <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-muted-foreground max-w-4xl mx-auto px-2 sm:px-4">
-                        Comprehensive list of AI models optimized for Intel processors using OpenVINO runtime
+                        Comprehensive list of 225+ AI models optimized for Intel processors using OpenVINO runtime
                     </p>
                 </div>
-
                 <Alert>
                     <Info className="h-4 w-4 flex-shrink-0" />
                     <AlertDescription className="text-xs sm:text-sm lg:text-base">
@@ -214,8 +416,11 @@ export default function IntelSupportedModelsPage() {
                         <Database className="h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0" />
                         <span id="intel-supported-models">Intel Supported Models</span>
                     </CardTitle>
+                    {/* <CardDescription className="text-xs sm:text-sm lg:text-base">
+                        Complete catalog of {totalModels} models optimized for Intel processors
+                    </CardDescription> */}
                     <CardDescription className="text-xs sm:text-sm lg:text-base">
-                        Complete catalog of models optimized for Intel processors
+                        Complete catalog of 228 models optimized for Intel processors
                     </CardDescription>
                 </CardHeader>
                 <CardContent className="p-0 sm:p-6">
@@ -230,31 +435,55 @@ export default function IntelSupportedModelsPage() {
                                         <th className="border border-border px-2 sm:px-4 lg:px-6 py-2 sm:py-3 lg:py-4 text-left font-semibold text-xs sm:text-sm lg:text-base xl:text-lg text-blue-900">
                                             Available Models
                                         </th>
+                                        <th className="border border-border px-2 sm:px-4 lg:px-6 py-2 sm:py-3 lg:py-4 text-left font-semibold text-xs sm:text-sm lg:text-base xl:text-lg text-blue-900">
+                                            Parameters
+                                        </th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {modelCategories.map((category, index) => (
-                                        <tr key={category.category} className={index % 2 === 0 ? "bg-background" : "bg-muted/20"}>
-                                            <td className="border border-border px-2 sm:px-4 lg:px-6 py-2 sm:py-3 lg:py-4 font-medium text-xs sm:text-sm align-top">
-                                                <div className="break-words">
-                                                    <Badge variant="secondary" className="text-xs">
-                                                        {category.category}
-                                                    </Badge>
-                                                </div>
-                                            </td>
-                                            <td className="border border-border px-2 sm:px-4 lg:px-6 py-2 sm:py-3 lg:py-4">
-                                                <div className="space-y-1 sm:space-y-2">
-                                                    {category.models.map((model, modelIndex) => (
-                                                        <div key={modelIndex} className="flex items-center gap-1 sm:gap-2">
-                                                            <code className="text-xs sm:text-sm bg-muted px-1 sm:px-2 py-0.5 sm:py-1 rounded font-mono break-all">
-                                                                {model}
-                                                            </code>
+                                    {modelCategories.map((category, index) =>
+                                        category.models.map((model, modelIndex) => (
+                                            <tr
+                                                key={`${category.category}-${modelIndex}`}
+                                                className={index % 2 === 0 ? "bg-background" : "bg-muted/20"}
+                                            >
+                                                {/* Only show Model Type (category) on first row using rowspan */}
+                                                {modelIndex === 0 && (
+                                                    <td
+                                                        rowSpan={category.models.length}
+                                                        className="border border-border px-2 sm:px-4 lg:px-6 py-2 sm:py-3 lg:py-4 font-medium text-xs sm:text-sm align-top"
+                                                    >
+                                                        <div className="break-words">
+                                                            <Badge variant="secondary" className="text-xs">
+                                                                {category.category}
+                                                            </Badge>
                                                         </div>
-                                                    ))}
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    ))}
+                                                    </td>
+                                                )}
+
+                                                {/* Model Name */}
+                                                <td className="border border-border px-2 sm:px-4 lg:px-6 py-2 sm:py-3 lg:py-4">
+                                                    <div className="flex items-center gap-1 sm:gap-2">
+                                                        <code className="text-xs sm:text-sm bg-muted px-1 sm:px-2 py-0.5 sm:py-1 rounded font-mono break-all">
+                                                            {model.name}
+                                                        </code>
+                                                    </div>
+                                                </td>
+
+                                                {/* Parameters */}
+                                                <td className="border border-border px-2 sm:px-4 lg:px-6 py-2 sm:py-3 lg:py-4">
+                                                    <div className="flex items-center gap-1 sm:gap-2">
+                                                        <Badge
+                                                            variant={model.parameters === "NA" ? "outline" : "default"}
+                                                            className="text-xs"
+                                                        >
+                                                            {model.parameters}
+                                                        </Badge>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        ))
+                                    )}
                                 </tbody>
                             </table>
                         </div>
@@ -305,4 +534,4 @@ export default function IntelSupportedModelsPage() {
             </div>
         </div>
     )
-}  
+}
