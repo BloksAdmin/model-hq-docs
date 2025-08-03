@@ -92,6 +92,10 @@ export default function EditAgentPage() {
           If you intend to make significant or permanent changes, we suggest editing a <strong>copy</strong> of the process.
         </p>
 
+        <p>
+          <img src="/agent/agentProcess.png" alt="agent process" />
+        </p>
+
         <ol>
           <li>Go to <code>Agents &gt; Build New &gt; Start Building</code>.</li>
           <li>In <strong>Process Name</strong>, enter a name for the new process.</li>

@@ -531,6 +531,11 @@ export default function HomePage() {
                       Photo to Email Automation
                     </a>
                   </li>
+                  <li>
+                    <a href="/cookbooks/clinical-trial-screening-autmation" className="text-primary hover:underline">
+                      Clinical Trial Screening Automation
+                    </a>
+                  </li>
                 </ol>
               </div>
             </div>

@@ -793,6 +793,12 @@ export function Header() {
       type: "cookbook",
       parentPage: "Cookbooks",
     },
+    {
+      title: "From Chart to Match (Clinical Trial Screening Automation)",
+      url: "/cookbooks/clinical-trial-screening-autmation",
+      type: "cookbook",
+      parentPage: "Cookbooks",
+    },
   ]
 
   const performSearch = (query: string): SearchResult[] => {

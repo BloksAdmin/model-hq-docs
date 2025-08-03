@@ -27,6 +27,7 @@ import {
   Terminal,
   Code2,
   Camera,
+  Stethoscope ,
 } from "lucide-react"
 
 import {
@@ -185,6 +186,11 @@ const navigationData = {
       title: "Photo to Email Automation",
       url: "/cookbooks/photo-to-email-automation",
       icon: Camera,
+    },
+    {
+      title: "Clinical Trial Screening Autmation",
+      url: "/cookbooks/clinical-trial-screening-autmation",
+      icon: Stethoscope ,
     }
   ],
 }
