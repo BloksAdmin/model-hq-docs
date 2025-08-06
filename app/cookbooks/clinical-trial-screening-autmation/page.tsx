@@ -194,7 +194,7 @@ export default function ClinicalTrialScreeningPage() {
                                             the content for AI-powered review.
                                         </p>
                                         <a
-                                            href="https://github.com/BloksAdmin/model-hq-docs/tree/main/public/cookbooks/clinical-trail-screening-automation"
+                                            href="https://github.com/BloksAdmin/model-hq-docs/tree/main/public/cookbooks/clinical-trial-screening-automation"
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className="text-green-600 hover:text-green-800 underline inline-flex items-center gap-1"

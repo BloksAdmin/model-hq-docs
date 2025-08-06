@@ -151,9 +151,33 @@ const serviceData = [
     context: "None",
   },
   {
+    name: "embedded_bot",
+    instruction: "Optional. None required.",
+    description: "Pauses the execution of the agent process to allow the user to interact with the current state of the agent in chat format.  ",
+    context: "None",
+  },
+  {
+    name: "condition",
+    instruction: "Enter expression to evaluate in 'if_true' or 'if_false' format",
+    description: "Evaluates the truth value of a condition, which can then be used as a variable in any other process step such that the step will only execute if it meets the selected condition",
+    context: "None",
+  },
+  {
     name: "web_search",
     instruction: "Add query for a topic or a question",
     description: "Runs web searches returning a summary text as a source and an indexed set of text chunks - needs SERP API or Tavily API",
+    context: "None",
+  },
+  {
+    name: "speech_gen",
+    instruction: "Enter a topic or short input to convert to speech file",
+    description: "Using a short text input, generates an audio voice wav file based on the input text. (Experimental)",
+    context: "None",
+  },
+  {
+    name: "image_gen",
+    instruction: "Enter a topic or description to convert to an image",
+    description: "Creates an image using the description or instruction provided by the user",
     context: "None",
   },
   {
@@ -191,6 +215,18 @@ const serviceData = [
     instruction: "Enter question to image file",
     description: "Provides answer/description from image",
     context: "User-Image",
+  },
+  {
+    name: "vision_batch",
+    instruction: "Enter question to batch of image files",
+    description: "Takes a collection of user images as an input context, along with a text input of a question or instruction. Returns text output context with the answer based on the set of images. ",
+    context: "User-Document",
+  },
+  {
+    name: "parse_batch",
+    instruction: "Enter question to batch of documents files that have been parsed",
+    description: "Takes a collection of document files as an input context, and will return a set of text chunks, indexed and packaged as a source, which can then be used as input to a number of other services",
+    context: "User-Document",
   },
   {
     name: "sentiment",
@@ -304,6 +340,18 @@ const serviceData = [
     name: "openai_chat",
     instruction: "Enter input question or instruction",
     description: "Chat agent calls OpenAI (requires separate API key in Configuration/Credentials) with an optional text input context. The output provides a context passage that can be used by other services",
+    context: "Main Input or other Text Source",
+  },
+  {
+    name: "openai_rag",
+    instruction: "Enter input question or instruction",
+    description: "Calls OpenAI (requires separate API key in Configuration/Credentials) with a RAG question. The output provides a context passage that can be used by other services",
+    context: "Main Input or other Text Source",
+  },
+  {
+    name: "openai_rag_batch",
+    instruction: "Enter input question or instruction",
+    description: "Calls OpenAI (requires separate API key in Configuration/Credentials) with a batch of document sources and generates a response based on the input instruction/question. The output provides a context passage that can be used by other services",
     context: "Main Input or other Text Source",
   },
   {

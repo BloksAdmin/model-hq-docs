@@ -330,7 +330,7 @@
 ---
 
 ### Service: **openai_rag_batch**
-**Instruction:** Input a question or instruction
+**Instruction:** Enter Input a question or instruction
 **Description:** Calls OpenAI (requires separate API key in Configuration/Credentials) with a batch of document sources and generates a response based on the input instruction/question. The output provides a context passage that can be used by other services  
 **Context:** `Main Input or other Text Source`
 
@@ -340,4 +340,3 @@
 **Instruction:** Enter input question or instruction  
 **Description:** Chat agent calls Anthropic (requires separate API key in Configuration/Credentials) with an optional text input context. The output provides a context passage that can be used by other services  
 **Context:** `Main Input or other Text Source`
-
