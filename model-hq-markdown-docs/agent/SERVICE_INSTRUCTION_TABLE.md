@@ -63,6 +63,13 @@
 
 ---
 
+### Service: **ocr**
+**Instruction:** Enter name of new document source  
+**Description:**  This is the fall-back step to documents that cannot be parsed using the 'parse_document' step because they are image-based PDFs or security-encrypted PDFs. Create Source from Document - a necessary step for handling Document-related workflows such as RAG or Summary. This service must be applied first, prior to using most User-Document related Services.   
+**Context:** `User-Document`
+
+---
+
 ### Service: **rag_answer**
 **Instruction:** Ask question to longer document input  
 **Description:** Answers a question based on a longer document input.  
@@ -72,7 +79,7 @@
 
 ### Service: **report_commentary**
 **Instruction:** (Optional) Guidance to Commentary  
-**Description:** Generate commentary on key process results from the agent state - no input context required
+**Description:** Generate report and commentary on key process results from the agent state in Word - no input context required
 **Context:** `-`
 
 ---
@@ -91,10 +98,38 @@
 
 ---
 
+### Service: **embedded_bot**
+**Instruction:** Optional. None required.
+**Description:**  Pauses the execution of the agent process to allow the user to interact with the current state of the agent in chat format.  
+**Context:** `None`
+
+---
+
+### Service: **condition**
+**Instruction:** Enter expression to evaluate in 'if_true' or 'if_false' format  
+**Description:** Evaluates the truth value of a condition, which can then be used as a variable in any other process step such that the step will only execute if it meets the selected condition
+**Context:** `None`
+
+---
+
 ### Service: **web_search**
 **Instruction**: Add query for a topic or a question 
 **Description**: Runs websearches returning a summary text as a source and an indexed set of text chunks - needs SERP API or Tavily API
 **Context**: `None`
+
+---
+
+### Service: **speech_gen**
+**Instruction:** Enter a topic or short input to convert to speech file
+**Description:**  Using a short text input, generates an audio voice wav file based on the input text. (Experimental)
+**Context:** `None`
+
+---
+
+### Service: **image_gen**
+**Instruction:** Enter a topic or description to convert to an image
+**Description:**  Creates an image using the description or instruction provided by the user
+**Context:** `None`
 
 ---
 
@@ -137,6 +172,20 @@
 **Instruction:** Enter question to image file  
 **Description:** Answer question based on image file. This is the first necessary step for any Agent process involving an image as this service provides a textual description of an image.  
 **Context:** `User-Image`
+
+---
+
+### Service: **vision_batch**
+**Instruction:** Enter question to batch of image files
+**Description:**  Takes a collection of user images as an input context, along with a text input of a question or instruction. Returns text output context with the answer based on the set of images.  
+**Context:** `User-Document`
+
+---
+
+### Service: **parse_batch**
+**Instruction:** Enter question to batch of documents files that have been parsed
+**Description:**  Takes a collection of document files as an input context, and will return a set of text chunks, indexed and packaged as a source, which can then be used as input to a number of other services 
+**Context:** `User-Document`
 
 ---
 
@@ -273,7 +322,22 @@
 
 ---
 
+### Service: **openai_rag**
+**Instruction:** Enter input question or instruction  
+**Description:** Calls OpenAI (requires separate API key in Configuration/Credentials) with a RAG question. The output provides a context passage that can be used by other services  
+**Context:** `Main Input or other Text Source`
+
+---
+
+### Service: **openai_rag_batch**
+**Instruction:** Input a question or instruction
+**Description:** Calls OpenAI (requires separate API key in Configuration/Credentials) with a batch of document sources and generates a response based on the input instruction/question. The output provides a context passage that can be used by other services  
+**Context:** `Main Input or other Text Source`
+
+---
+
 ### Service: **anthropic_chat**
 **Instruction:** Enter input question or instruction  
 **Description:** Chat agent calls Anthropic (requires separate API key in Configuration/Credentials) with an optional text input context. The output provides a context passage that can be used by other services  
 **Context:** `Main Input or other Text Source`
+
