@@ -75,6 +75,7 @@ export function Header() {
       description: "Update the default model used for Chat",
     },
     { title: "Error Handling", url: "/chat/error", type: "page", description: "Troubleshoot chat-related issues" },
+    { title: "Document Parsing Issues", url: "/chat/document-parsing-issues", type: "page", description: "Troubleshooting Document Parsing and Limitations" },
     { title: "Bots", url: "/bots", type: "page", description: "Build and customize your own bots" },
     { title: "RAG", url: "/rag", type: "page", description: "Retrieval-Augmented Generation workflows" },
     { title: "Models", url: "/models", type: "page", description: "Discover and manage AI models" },
@@ -166,6 +167,26 @@ export function Header() {
       parentPage: "Chat",
     },
     { title: "Save Button", url: "/chat#save-button", type: "heading", parentPage: "Chat" },
+
+    // Document Parsing Issues
+    {
+      title: "Handling Documents That Cannot Be Natively Parsed",
+      url: "/document-parsing-issues#handling-documents-that-cannot-be-natively-parsed",
+      type: "heading",
+      parentPage: "Document Parsing Issues",
+    },
+    {
+      title: "Fallback Solution",
+      url: "/document-parsing-issues#fallback-solution",
+      type: "heading",
+      parentPage: "Document Parsing Issues",
+    },
+    {
+      title: "How to Activate OCR",
+      url: "/document-parsing-issues#how-to-acitvate-ocr",
+      type: "heading",
+      parentPage: "Document Parsing Issues",
+    },
 
     // Models headings
     {

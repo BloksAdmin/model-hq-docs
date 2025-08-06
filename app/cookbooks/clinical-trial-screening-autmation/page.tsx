@@ -193,6 +193,15 @@ export default function ClinicalTrialScreeningPage() {
                                             Upload any text-based patient file (PDF, DOCX, TXT). The agent automatically parses and prepares
                                             the content for AI-powered review.
                                         </p>
+                                        <a
+                                            href="https://github.com/BloksAdmin/model-hq-docs/tree/main/public/cookbooks/clinical-trail-screening-automation"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-green-600 hover:text-green-800 underline inline-flex items-center gap-1"
+                                        >
+                                            Find all the required images and documents here.
+                                            <ExternalLink className="h-3 w-3" />
+                                        </a>
                                     </div>
                                 </div>
                             </CardContent>

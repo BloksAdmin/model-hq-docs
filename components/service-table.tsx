@@ -121,6 +121,12 @@ const serviceData = [
     context: "User-Document",
   },
   {
+    name: "ocr",
+    instruction: "Enter name of new document source",
+    description: "This is the fall-back step to documents that cannot be parsed using the 'parse_document' step because they are image-based PDFs or security-encrypted PDFs. Create Source from Document - a necessary step for handling Document-related workflows such as RAG or Summary. This service must be applied first, prior to using most User-Document related Services.",
+    context: "User-Document",
+  },
+  {
     name: "rag_answer",
     instruction: "Ask question to longer document input",
     description: "Answers a question based on a longer document input",
@@ -129,7 +135,7 @@ const serviceData = [
   {
     name: "report_commentary",
     instruction: "(Optional) Guidance to Commentary",
-    description: "Generates commentary on key process results from agent state",
+    description: "Generate report and commentary on key process results from the agent state in Word - no input context required",
     context: "-",
   },
   {

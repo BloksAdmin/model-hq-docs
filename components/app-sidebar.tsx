@@ -69,6 +69,7 @@ const navigationData = {
       items: [
         { title: "Chat Overview", url: "/chat" },
         { title: "Changing Chat Model", url: "/chat/changing-chat-model" },
+        { title: "Document Parsing Issues", url: "/chat/document-parsing-issues" },
         { title: "Error Handling", url: "/chat/error" },
       ],
     },
