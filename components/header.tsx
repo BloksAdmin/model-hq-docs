@@ -74,8 +74,9 @@ export function Header() {
       type: "page",
       description: "Update the default model used for Chat",
     },
-    { title: "Error Handling", url: "/chat/error", type: "page", description: "Troubleshoot chat-related issues" },
-    { title: "Document Parsing Issues", url: "/chat/document-parsing-issues", type: "page", description: "Troubleshooting Document Parsing and Limitations" },
+    { title: "Error Handling", url: "/chat/error-handling", type: "page", description: "Troubleshoot chat-related issues" },
+    { title: "Document Parsing Issues", url: "/rag/document-parsing-issues", type: "page", description: "Troubleshooting Document Parsing and Limitations" },
+    { title: "RAG Parsing", url: "/rag/rag-parsing", type: "page", description: "What is parsing in Model HQ?" },
     { title: "Bots", url: "/bots", type: "page", description: "Build and customize your own bots" },
     { title: "RAG", url: "/rag", type: "page", description: "Retrieval-Augmented Generation workflows" },
     { title: "Models", url: "/models", type: "page", description: "Discover and manage AI models" },
@@ -168,24 +169,52 @@ export function Header() {
     },
     { title: "Save Button", url: "/chat#save-button", type: "heading", parentPage: "Chat" },
 
+    // Chat Error Handling
+    {
+      title: "Unfortunately, something has gone wrong loading _model_name_",
+      url: "/chat/error-handling#unfortunately-something-has-gone-wrong-loading-model-name",
+      type: "heading",
+      parentPage: "Error Handling",
+    },
+    {
+      title: "Why does the model not load a source or a document and what should I do?",
+      url: "/chat/error-handling#why-does-the-model-not-load-a-source-or-a-document-and-what-should-i-do",
+      type: "heading",
+      parentPage: "Error Handling",
+    },
+
     // Document Parsing Issues
     {
       title: "Handling Documents That Cannot Be Natively Parsed",
-      url: "/document-parsing-issues#handling-documents-that-cannot-be-natively-parsed",
+      url: "/rag/document-parsing-issues#handling-documents-that-cannot-be-natively-parsed",
       type: "heading",
       parentPage: "Document Parsing Issues",
     },
     {
       title: "Fallback Solution",
-      url: "/document-parsing-issues#fallback-solution",
+      url: "/rag/document-parsing-issues#fallback-solution",
       type: "heading",
       parentPage: "Document Parsing Issues",
     },
     {
       title: "How to Activate OCR",
-      url: "/document-parsing-issues#how-to-acitvate-ocr",
+      url: "/rag/document-parsing-issues#how-to-acitvate-ocr",
       type: "heading",
       parentPage: "Document Parsing Issues",
+    },
+
+    // RAG Parsing
+    {
+      title: "Document Parsing Option",
+      url: "/rag/rag-parsing#document-parsing-options",
+      type: "heading",
+      parentPage: "RAG Parsing",
+    },
+    {
+      title: "How to Select Parsing Options for RAG use cases for Chat Interfaces",
+      url: "/rag/rag-parsing#parsing-options",
+      type: "heading",
+      parentPage: "RAG Parsing",
     },
 
     // Models headings

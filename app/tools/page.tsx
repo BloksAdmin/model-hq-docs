@@ -115,16 +115,16 @@ export default function ToolsPage() {
 
         <h3 id="backend">Backend</h3>
         <p>
-          Select the <b>Backend</b> option from the tools interface. This initiates the backend API server in a headless mode, 
+          Select the <b>Backend</b> option from the tools interface. This initiates the backend API server in a headless mode,
           shutting down the user interface and enabling direct access via APIs.
         </p>
         <p>
-          This is ideal for lightweight, modular deployment scenarios. Once launched, the server runs as a background service 
+          This is ideal for lightweight, modular deployment scenarios. Once launched, the server runs as a background service
           and can be accessed either via `localhost` or over an external IP address—enabling private, local inference workflows.
         </p>
         <p>
-          You will be provided with a download link for the <b>Model HQ SDK</b>, which contains all the necessary libraries, 
-          sample code, and examples to get started. Simply unzip the SDK package, open your preferred IDE, and start coding 
+          You will be provided with a download link for the <b>Model HQ SDK</b>, which contains all the necessary libraries,
+          sample code, and examples to get started. Simply unzip the SDK package, open your preferred IDE, and start coding
           with direct access to the backend APIs.
           <br />
         </p>
@@ -152,10 +152,10 @@ export default function ToolsPage() {
           <img src="/tools/cli.png" alt="cli" />
         </p>
         <p>
-          By selecting to open the App in a command-line terminal, a second instance of the App will be created, exposed 
+          By selecting to open the App in a command-line terminal, a second instance of the App will be created, exposed
           through a new terminal. You can use the CLI to start running chats, in parallel, while using the main app UI.
           <br />
-          To get started, once the command line interface opens, enter 'help' - and a list of options will be provided to 
+          To get started, once the command line interface opens, enter 'help' - and a list of options will be provided to
           get started.
         </p>
 
@@ -180,11 +180,11 @@ export default function ToolsPage() {
 
         <h3 id="share">Share</h3>
         <p>
-          Use Share Connection to transfer your session to an external IP address. This is particularly useful for collaboration 
-          or accessing the interface from another machine. Note: this will close the localhost connection, and transfer the 
-          connection to your Model HQ app to be an externally available IP address, accessible over the network. 
-          You can then use any device to access the App, provided that it has corporate network access to that IP address. 
-          Try with a smart phone, tablet or another PC. 
+          Use Share Connection to transfer your session to an external IP address. This is particularly useful for collaboration
+          or accessing the interface from another machine. Note: this will close the localhost connection, and transfer the
+          connection to your Model HQ app to be an externally available IP address, accessible over the network.
+          You can then use any device to access the App, provided that it has corporate network access to that IP address.
+          Try with a smart phone, tablet or another PC.
           <br />
           <img src="/tools/share.png" alt="share" />
         </p>
@@ -274,9 +274,15 @@ export default function ToolsPage() {
           <img src="/tools/systemInfo.png" alt="system info" />
         </p>
 
+        <blockquote data-type="important">
+          <p>
+            Here, app version is the version name of Model HQ. Make sure you're on the latest version.
+          </p>
+        </blockquote>
+
         <p>
-          This diagnostic helps assess whether your environment is suitable for downloading and running models. Please
-          check the <a href="/system-configuration">System Configurations</a>
+          This check ensures your setup can properly download and run models.
+          See the <a href="/system-configuration" style={{ color: "#5a5b5fff", textDecoration: "underline" }}> system configuration</a> for details.
         </p>
 
         <p>&nbsp;</p>

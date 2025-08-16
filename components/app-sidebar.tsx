@@ -69,8 +69,7 @@ const navigationData = {
       items: [
         { title: "Chat Overview", url: "/chat" },
         { title: "Changing Chat Model", url: "/chat/changing-chat-model" },
-        { title: "Document Parsing Issues", url: "/chat/document-parsing-issues" },
-        { title: "Error Handling", url: "/chat/error" },
+        { title: "Error Handling", url: "/chat/error-handling" },
       ],
     },
     {
@@ -95,6 +94,12 @@ const navigationData = {
       title: "RAG",
       url: "/rag",
       icon: Search,
+      items: [
+        { title: "RAG Overview", url: "/rag" },
+        { title: "RAG Parsing", url: "/rag/rag-parsing" },
+        { title: "Document Parsing Issues", url: "/rag/document-parsing-issues" },
+        { title: "Error Handling", url: "/rag/error-handling" },
+      ],
     },
     {
       title: "Models",

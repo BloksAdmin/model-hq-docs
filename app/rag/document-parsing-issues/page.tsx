@@ -17,6 +17,10 @@ export default function TroubleshootingDocumentParsingPage() {
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
+            <BreadcrumbLink href="/chat">RAG</BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
             <BreadcrumbPage>Troubleshooting Document Parsing</BreadcrumbPage>
           </BreadcrumbItem>
         </BreadcrumbList>
@@ -108,10 +112,22 @@ export default function TroubleshootingDocumentParsingPage() {
 
         <img src="/chat/pdfParsing.png" alt="pdfParsing" />
 
-        <p>&nbsp;</p>
+        <p></p>
 
         <p>
           <strong>In Agents</strong>, in lieu of Parse Documents, Select <strong>OCR</strong>.
+        </p>
+
+        <h2>Conclusion</h2>
+        <p>
+          In this documentation, we explored the <strong>RAG</strong> source-building functionality in Model HQ.
+          <br />
+          We covered how to create new and load existing RAG sources, and utilize tools like document upload, semantic
+          search, testing, and configuration settings.
+        </p>
+
+        <p>
+          If you have any questions or feedback, please contact us at <code>support@aibloks.com</code>.
         </p>
       </div>
     </div>

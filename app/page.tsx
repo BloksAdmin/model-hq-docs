@@ -368,7 +368,7 @@ export default function HomePage() {
                     </a>
                   </li>
                   <li>
-                    <a href="/chat/error" className="text-primary hover:underline">
+                    <a href="/chat/error-handling" className="text-primary hover:underline">
                       Error Handling
                     </a>
                   </li>
@@ -435,6 +435,28 @@ export default function HomePage() {
                   </a>
                   <span className="text-muted-foreground ml-2">- Retrieval-Augmented Generation workflows</span>
                 </div>
+                <ul className="ml-6 space-y-1 list-disc">
+                  <li>
+                    <a href="/rag" className="text-primary hover:underline">
+                      RAG Overview
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/rag/rag-parsing" className="text-primary hover:underline">
+                      RAG Parsing
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/rag/document-parsing-issues" className="text-primary hover:underline">
+                      Document Parsing Issues
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/rag/error-handling" className="text-primary hover:underline">
+                      Error Handling
+                    </a>
+                  </li>
+                </ul>
               </div>
 
               {/* Models */}
