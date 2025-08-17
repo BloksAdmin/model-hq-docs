@@ -123,6 +123,17 @@ export default function CloudModelsPage() {
                     </p>
                 </blockquote>
 
+                <blockquote data-type="tip">
+                    <p>
+                        <strong>ATTENTION!!</strong>
+                        <br />
+                        When you upload a <strong>CSV</strong> to the OpenAI API, the most common reason for errors is that the API doesn’t directly accept raw <code>.csv</code> files for all endpoints.
+                        <br />
+                        <br />
+                        The API also does not process compressed archives (<code>.zip</code>, <code>.tar</code>, <code>.rar</code>, etc.). If you try to upload one, you’ll get an <strong>error</strong>.
+                    </p>
+                </blockquote>
+
                 <p>&nbsp;</p>
 
                 <h2 id="output-of-openAI-agent">Final Steps</h2>
