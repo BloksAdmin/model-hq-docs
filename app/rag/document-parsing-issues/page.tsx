@@ -34,8 +34,8 @@ export default function TroubleshootingDocumentParsingPage() {
 
       <div className="prose prose-gray max-w-none">
         <p>
-          Model HQ includes proprietary high-performance parsers designed to process PDFs and other common 
-          document types with exceptional speed and accuracy. These parsers extract text, structure, and 
+          Model HQ includes proprietary high-performance parsers designed to process PDFs and other common
+          document types with exceptional speed and accuracy. These parsers extract text, structure, and
           metadata efficiently, supporting a wide range of use cases for retrieval, RAG workflows, and agentic AI.
         </p>
 
@@ -43,19 +43,19 @@ export default function TroubleshootingDocumentParsingPage() {
 
         <ul>
           <li>
-            <strong>Image-based PDFs</strong>: Certain PDFs are saved entirely as images (e.g., scanned documents), 
-            meaning there is no underlying text layer to extract. These require OCR (Optical Character Recognition) 
+            <strong>Image-based PDFs</strong>: Certain PDFs are saved entirely as images (e.g., scanned documents),
+            meaning there is no underlying text layer to extract. These require OCR (Optical Character Recognition)
             to process the content.
           </li>
           <li>
-            <strong>Permission-restricted PDFs</strong>: Some PDFs use encrypted permissions that limit actions 
-            such as text extraction, copying, or printing. These restrictions may prevent direct parsing without 
+            <strong>Permission-restricted PDFs</strong>: Some PDFs use encrypted permissions that limit actions
+            such as text extraction, copying, or printing. These restrictions may prevent direct parsing without
             prior decryption or appropriate access rights.
           </li>
         </ul>
 
         <p>
-          When encountering such files, additional preprocessing steps may be required before they can be 
+          When encountering such files, additional preprocessing steps may be required before they can be
           ingested and indexed by Model HQ.
         </p>
 
@@ -64,7 +64,7 @@ export default function TroubleshootingDocumentParsingPage() {
         <h2 id="handling-documents-that-cannot-be-natively-parsed">Handling Documents That Cannot Be Natively Parsed</h2>
 
         <p>
-          In some cases, a document cannot be parsed by Model HQ's native proprietary parsers due to being 
+          In some cases, a document cannot be parsed by Model HQ's native proprietary parsers due to being
           fully image-based or having restrictive permissions.
         </p>
 
@@ -81,7 +81,7 @@ export default function TroubleshootingDocumentParsingPage() {
         <h3>In Agents:</h3>
 
         <p>
-          The Parsing step within the workload will complete but return 0 text blocks parsed, indicating that 
+          The Parsing step within the workload will complete but return 0 text blocks parsed, indicating that
           no extractable text was found and the Rag Answer step will not return responses.
         </p>
 
@@ -90,8 +90,8 @@ export default function TroubleshootingDocumentParsingPage() {
         <h2 id="fallback-solution">Fallback Solution:</h2>
 
         <p>
-          Model HQ includes an embedded OCR (Optical Character Recognition) capability that can be activated 
-          to process such documents. Enabling OCR allows Model HQ to detect and extract text from images, 
+          Model HQ includes an embedded OCR (Optical Character Recognition) capability that can be activated
+          to process such documents. Enabling OCR allows Model HQ to detect and extract text from images,
           scanned pages, or restricted PDFs, making them fully searchable and usable in RAG and agent workflows.
         </p>
 
@@ -106,7 +106,7 @@ export default function TroubleshootingDocumentParsingPage() {
         <p>Once in <strong>RAG + Generation Config Options</strong>, go to:</p>
 
         <p>
-          <strong>PDF Parsing Options</strong>, Select <strong>OCR</strong> and click '&gt;'. Your document 
+          <strong>PDF Parsing Options</strong>, Select <strong>OCR</strong> and click '&gt;'. Your document
           will be accessed via OCR and a previously locked PDF document will now be searchable.
         </p>
 
@@ -117,6 +117,12 @@ export default function TroubleshootingDocumentParsingPage() {
         <p>
           <strong>In Agents</strong>, in lieu of Parse Documents, Select <strong>OCR</strong>.
         </p>
+
+        <blockquote data-type="tip">
+          <p>
+            OCR Agent and OCR in RAG step does not accept PPTx as a file input.
+          </p>
+        </blockquote>
 
         <h2>Conclusion</h2>
         <p>
