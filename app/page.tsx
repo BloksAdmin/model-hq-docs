@@ -469,6 +469,16 @@ export default function HomePage() {
                 </div>
               </div>
 
+              {/* Testing Models */}
+              <div>
+                <div className="mb-3">
+                  <a href="/testing-models" className="text-xl font-semibold text-primary hover:underline">
+                    Testing Models
+                  </a>
+                  <span className="text-muted-foreground ml-2">- Test the models before using them</span>
+                </div>
+              </div>
+
               {/* Tools */}
               <div>
                 <div className="mb-3">
@@ -520,7 +530,7 @@ export default function HomePage() {
               <hr />
 
               {/* Cookbooks */}
-              <div>
+              <div id="#cookbooks">
                 <div className="text-2xl font-semibold text-primary mb-3">
                   CookBooks
                   <span className="text-base text-muted-foreground ml-2">

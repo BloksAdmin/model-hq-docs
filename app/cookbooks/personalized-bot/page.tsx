@@ -19,7 +19,7 @@ export default function PersonalizedBotPage() {
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbLink href="/bots">Cookbooks</BreadcrumbLink>
+            <BreadcrumbLink href="/">Cookbooks</BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>

@@ -11,18 +11,11 @@ import {
 import { Card, CardContent } from "@/components/ui/card"
 import {
     FileText,
-    Upload,
-    Search,
     CheckCircle,
     Target,
-    Users,
     Shield,
     Stethoscope,
     Brain,
-    Heart,
-    Activity,
-    Pill,
-    UserCheck,
     FileSearch,
     Zap,
     ExternalLink,
@@ -45,22 +38,30 @@ function CodeBlock({ children, title, language = "text" }: { children: string; t
     }
 
     return (
-        <div className="relative w-full">
+        <div className="relative w-full font-mono text-sm">
             {title && (
-                <div className="bg-slate-800 text-slate-200 px-4 py-2 text-sm font-medium rounded-t-lg border-b border-slate-700">
+                <div className="bg-gray-100 text-gray-700 px-4 py-2 text-sm font-medium rounded-t-lg border-b border-gray-300">
                     {title}
                 </div>
             )}
-            <div className="relative bg-slate-950 text-slate-100 p-4 rounded-b-lg group w-full">
+            <div className="relative bg-[#f8f9fa] text-gray-800 p-4 rounded-b-lg group w-full overflow-x-auto">
                 <button
+                    suppressHydrationWarning
                     onClick={copyToClipboard}
-                    className="absolute top-2 right-2 p-2 bg-slate-800 hover:bg-slate-700 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                    className="absolute top-2 right-2 p-2 bg-gray-200 hover:bg-gray-300 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200"
                     title="Copy code"
                 >
-                    {copied ? <CheckCircle className="h-4 w-4 text-green-400" /> : <Copy className="h-4 w-4 text-slate-400" />}
+                    {copied ? (
+                        <CheckCircle className="h-4 w-4 text-green-500" />
+                    ) : (
+                        <Copy className="h-4 w-4 text-gray-600" />
+                    )}
                 </button>
-                <pre className="text-sm whitespace-pre-wrap break-words w-full">
-                    <code className="break-words text-black">{children}</code>
+
+                <pre className="whitespace-pre-wrap break-words w-full">
+                    <code className="[&_.keyword]:text-purple-600 [&_.string]:text-green-600 [&_.number]:text-blue-600 [&_.comment]:text-gray-500">
+                        {children}
+                    </code>
                 </pre>
             </div>
         </div>
@@ -77,7 +78,7 @@ export default function ClinicalTrialScreeningPage() {
                     </BreadcrumbItem>
                     <BreadcrumbSeparator />
                     <BreadcrumbItem>
-                        <BreadcrumbLink href="/bots">Cookbooks</BreadcrumbLink>
+                        <BreadcrumbLink href="/#cookbooks">Cookbooks</BreadcrumbLink>
                     </BreadcrumbItem>
                     <BreadcrumbSeparator />
                     <BreadcrumbItem>
@@ -87,351 +88,240 @@ export default function ClinicalTrialScreeningPage() {
             </Breadcrumb>
 
             <div className="space-y-4">
-                <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
-                    From Patient Chart to Trial Match: Automate Clinical Trial Screening with One Upload
-                </h1>
+                <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">From Patient Chart to Trial Match: Automate Clinical Trial Screening with One Upload</h1>
                 <p className="text-lg text-gray-600">
                     Transform patient document screening with AI-powered eligibility assessment
                 </p>
             </div>
 
             <div className="prose prose-gray max-w-none space-y-8">
-                {/* Hero Section */}
-                <section>
-                    <Card className="bg-gradient-to-r from-blue-50 to-indigo-50 border-blue-200">
-                        <CardContent className="p-6">
-                            <p className="text-blue-800 mb-4">
-                                Imagine sorting through hundreds of patient charts to identify those who might qualify for a specific
-                                clinical trial. Now imagine doing it in seconds—with zero manual review and with no sensitive data
-                                leaving your machine or private data center. That's the power of this Model HQ Clinical Trial Recruiting
-                                Agent.
-                            </p>
-                            <p className="text-blue-700">
-                                Designed to reduce screening friction, improve accuracy, and ensure no eligible patient slips through
-                                the cracks.
-                            </p>
-                        </CardContent>
-                    </Card>
-                </section>
-
-                {/* Use Cases Section */}
-                <section>
-                    <div className="flex items-center gap-3 mb-4">
-                        <div className="p-2 bg-purple-100 rounded-lg">
-                            <Brain className="h-6 w-6 text-purple-600" />
-                        </div>
-                        <h2 className="text-2xl font-bold text-gray-900">And it's not just for clinical trials…</h2>
-                    </div>
-                    <Card className="bg-purple-50 border-purple-200">
-                        <CardContent className="p-6">
-                            <p className="text-purple-800 mb-4">
-                                This pattern can be adapted across regulated industries where document-based decision-making is
-                                critical, such as:
-                            </p>
-                            <div className="grid md:grid-cols-2 gap-4">
-                                <div className="flex items-start gap-3">
-                                    <Stethoscope className="h-5 w-5 text-purple-600 mt-0.5 flex-shrink-0" />
-                                    <div>
-                                        <span className="font-semibold text-purple-900">Medical eligibility screening</span>
-                                        <p className="text-purple-700 text-sm">(e.g., surgery clearance, insurance validation)</p>
-                                    </div>
-                                </div>
-                                <div className="flex items-start gap-3">
-                                    <Shield className="h-5 w-5 text-purple-600 mt-0.5 flex-shrink-0" />
-                                    <div>
-                                        <span className="font-semibold text-purple-900">Regulatory intake</span>
-                                        <p className="text-purple-700 text-sm">for safety or compliance</p>
-                                    </div>
-                                </div>
-                                <div className="flex items-start gap-3">
-                                    <FileSearch className="h-5 w-5 text-purple-600 mt-0.5 flex-shrink-0" />
-                                    <div>
-                                        <span className="font-semibold text-purple-900">Legal discovery</span>
-                                        <p className="text-purple-700 text-sm">
-                                            (e.g., identifying parties, dates, and claims from large files)
-                                        </p>
-                                    </div>
-                                </div>
-                                <div className="flex items-start gap-3">
-                                    <FileText className="h-5 w-5 text-purple-600 mt-0.5 flex-shrink-0" />
-                                    <div>
-                                        <span className="font-semibold text-purple-900">Insurance</span>
-                                        <p className="text-purple-700 text-sm">Fraud detection or claim qualification</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <p className="text-purple-800 mt-4 font-medium text-center">
-                                One document → One workflow → One eligibility decision.
-                            </p>
-                        </CardContent>
-                    </Card>
-                </section>
-
-                {/* How It Works Section */}
-                <section>
-                    <div className="flex items-center gap-3 mb-6">
-                        <div className="p-2 bg-green-100 rounded-lg">
-                            <Upload className="h-6 w-6 text-green-600" />
-                        </div>
-                        <h2 className="text-2xl font-bold text-gray-900">Upload. Analyze. Screen.</h2>
-                    </div>
-                    <p className="text-gray-700 mb-6">
-                        With this Clinical Trial Recruiting Agent, all you need is a patient document (e.g., intake form, EMR
-                        export, or referral note). Here's how it works:
+                <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-6 border border-blue-200">
+                    <p className="text-gray-800 mb-4">
+                        Imagine sorting through hundreds of patient charts to identify those who might qualify for a specific
+                        clinical trial. Now imagine doing it in seconds—with zero manual review and with no sensitive data leaving
+                        your machine or private data center. That's the power of this Model HQ Clinical Trial Recruiting Agent.
                     </p>
+                    <p className="text-gray-800">
+                        Designed to reduce screening friction, improve accuracy, and ensure no eligible patient slips through the
+                        cracks.
+                    </p>
+                </div>
 
-                    <div className="space-y-6">
-                        <Card className="border-l-4 border-l-blue-500">
-                            <CardContent className="p-6">
-                                <div className="flex items-start gap-4">
-                                    <div className="w-10 h-10 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">
+                <Card className="border-l-4 border-l-yellow-400 bg-yellow-50">
+                    <CardContent className="p-6">
+                        <div className="flex items-start gap-3">
+                            <Brain className="h-5 w-5 text-yellow-600 mt-0.5 flex-shrink-0" />
+                            <div>
+                                <p className="font-semibold text-yellow-800 mb-2">And it's not just for clinical trials…</p>
+                                <p className="text-yellow-700 text-sm leading-relaxed mb-4">
+                                    This pattern can be adapted across regulated industries where document-based decision-making is
+                                    critical, such as:
+                                </p>
+                                <div className="grid md:grid-cols-2 gap-4">
+                                    <div className="flex items-start gap-3">
+                                        <Stethoscope className="h-5 w-5 text-yellow-600 mt-0.5 flex-shrink-0" />
+                                        <div>
+                                            <span className="font-semibold text-yellow-800">Medical eligibility screening</span>
+                                            <p className="text-yellow-700 text-sm">(e.g., surgery clearance, insurance validation)</p>
+                                        </div>
+                                    </div>
+                                    <div className="flex items-start gap-3">
+                                        <Shield className="h-5 w-5 text-yellow-600 mt-0.5 flex-shrink-0" />
+                                        <div>
+                                            <span className="font-semibold text-yellow-800">Regulatory intake</span>
+                                            <p className="text-yellow-700 text-sm">for safety or compliance</p>
+                                        </div>
+                                    </div>
+                                    <div className="flex items-start gap-3">
+                                        <FileSearch className="h-5 w-5 text-yellow-600 mt-0.5 flex-shrink-0" />
+                                        <div>
+                                            <span className="font-semibold text-yellow-800">Legal discovery</span>
+                                            <p className="text-yellow-700 text-sm">
+                                                (e.g., identifying parties, dates, and claims from large files)
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div className="flex items-start gap-3">
+                                        <FileText className="h-5 w-5 text-yellow-600 mt-0.5 flex-shrink-0" />
+                                        <div>
+                                            <span className="font-semibold text-yellow-800">Insurance</span>
+                                            <p className="text-yellow-700 text-sm">Fraud detection or claim qualification</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p className="text-yellow-800 mt-4 font-medium text-center">
+                                    One document → One workflow → One eligibility decision.
+                                </p>
+                            </div>
+                        </div>
+                    </CardContent>
+                </Card>
+
+                <div className="bg-gray-50 rounded-lg p-6 border">
+                    <p className="text-gray-700 mb-2">
+                        This agent doesn't just help recruiters — it ensures no candidate is overlooked due to inconsistencies or
+                        hidden data in unstructured files. It's fast, consistent, and auditable.
+                    </p>
+                </div>
+
+                <div className="space-y-8">
+                    {/* How It Works Section */}
+                    <section>
+                        <div className="flex items-center gap-3 mb-6">
+                            <h2 className="text-2xl font-bold text-gray-900">Upload. Analyze. Screen.</h2>
+                        </div>
+                        <p className="text-gray-700 mb-6">
+                            With this Clinical Trial Recruiting Agent, all you need is a patient document (e.g., intake form, EMR
+                            export, or referral note). Here's how it works:
+                        </p>
+
+                        <div className="space-y-4">
+                            <ol className="space-y-3 text-gray-700">
+                                <li className="flex items-start gap-2">
+                                    <span className="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-semibold flex-shrink-0 mt-0.5">
                                         1
-                                    </div>
+                                    </span>
                                     <div>
-                                        <h3 className="font-semibold text-blue-900 mb-2">Step 1: Upload Patient Document</h3>
-                                        <p className="text-blue-800">
-                                            Upload any text-based patient file (PDF, DOCX, TXT). The agent automatically parses and prepares
-                                            the content for AI-powered review.
-                                        </p>
-                                        <a
-                                            href="https://github.com/BloksAdmin/model-hq-docs/tree/main/public/cookbooks/clinical-trial-screening-automation"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="text-green-600 hover:text-green-800 underline inline-flex items-center gap-1"
-                                        >
-                                            Find all the required images and documents here.
-                                            <ExternalLink className="h-3 w-3" />
-                                        </a>
+                                        <span className="font-semibold">Upload Patient Document:</span> Upload any text-based patient file
+                                        (PDF, DOCX, TXT). The agent automatically parses and prepares the content for AI-powered review.
                                     </div>
-                                </div>
-                            </CardContent>
-                        </Card>
-
-                        <Card className="border-l-4 border-l-green-500">
-                            <CardContent className="p-6">
-                                <div className="flex items-start gap-4">
-                                    <div className="w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">
+                                </li>
+                                <li className="flex items-start gap-2">
+                                    <span className="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-semibold flex-shrink-0 mt-0.5">
                                         2
-                                    </div>
+                                    </span>
                                     <div>
-                                        <h3 className="font-semibold text-green-900 mb-3">
-                                            Step 2: Run Eligibility Questions (RAG + Boolean)
-                                        </h3>
-                                        <p className="text-green-800 mb-3">
-                                            The agent applies a series of retrieval-augmented queries to extract trial-relevant data points,
-                                            including:
-                                        </p>
-                                        <div className="grid md:grid-cols-2 gap-3">
-                                            <div className="flex items-center gap-2">
-                                                <CheckCircle className="h-4 w-4 text-green-600" />
-                                                <span className="text-green-700 text-sm">Diabetes history – current or past</span>
-                                            </div>
-                                            <div className="flex items-center gap-2">
-                                                <Heart className="h-4 w-4 text-green-600" />
-                                                <span className="text-green-700 text-sm">Patient age</span>
-                                            </div>
-                                            <div className="flex items-center gap-2">
-                                                <Users className="h-4 w-4 text-green-600" />
-                                                <span className="text-green-700 text-sm">Pregnancy or family planning status</span>
-                                            </div>
-                                            <div className="flex items-center gap-2">
-                                                <Activity className="h-4 w-4 text-green-600" />
-                                                <span className="text-green-700 text-sm">Dialysis treatment</span>
-                                            </div>
-                                            <div className="flex items-center gap-2">
-                                                <Shield className="h-4 w-4 text-green-600" />
-                                                <span className="text-green-700 text-sm">Allergies to medical-grade adhesive</span>
-                                            </div>
-                                            <div className="flex items-center gap-2">
-                                                <Pill className="h-4 w-4 text-green-600" />
-                                                <span className="text-green-700 text-sm">Allergies to isopropyl alcohol</span>
-                                            </div>
-                                        </div>
-                                        <div className="flex items-start gap-2 mt-3">
-                                            <Brain className="h-4 w-4 text-green-600 mt-0.5" />
-                                            <span className="text-green-700 text-sm">
-                                                Cognitive or mental conditions that could interfere with protocol compliance
-                                            </span>
-                                        </div>
-                                        <p className="text-green-800 mt-3 text-sm">
-                                            Each of these checks is handled using natural language understanding, not rigid forms or keyword
-                                            matching.
-                                        </p>
+                                        <span className="font-semibold">Run Eligibility Questions (RAG + Boolean):</span> The agent applies
+                                        a series of retrieval-augmented queries to extract trial-relevant data points, including diabetes
+                                        history, patient age, pregnancy status, dialysis treatment, allergies, and cognitive conditions.
                                     </div>
-                                </div>
-                            </CardContent>
-                        </Card>
-
-                        <Card className="border-l-4 border-l-purple-500">
-                            <CardContent className="p-6">
-                                <div className="flex items-start gap-4">
-                                    <div className="w-10 h-10 bg-purple-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">
+                                </li>
+                                <li className="flex items-start gap-2">
+                                    <span className="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-semibold flex-shrink-0 mt-0.5">
                                         3
-                                    </div>
+                                    </span>
                                     <div>
-                                        <h3 className="font-semibold text-purple-900 mb-3">Step 3: Eligibility Decision</h3>
-                                        <p className="text-purple-800 mb-3">
-                                            A Boolean logic step evaluates the presence and explanation of diabetes references. Output can be
-                                            fed into a CRM, database, or downstream agent to trigger next steps like:
-                                        </p>
-                                        <ul className="space-y-2 text-purple-700">
-                                            <li className="flex items-center gap-2">
-                                                <UserCheck className="h-4 w-4" />
-                                                Contacting eligible patients
-                                            </li>
-                                            <li className="flex items-center gap-2">
-                                                <FileText className="h-4 w-4" />
-                                                Sending consent forms
-                                            </li>
-                                            <li className="flex items-center gap-2">
-                                                <Users className="h-4 w-4" />
-                                                Notifying study coordinators
-                                            </li>
-                                        </ul>
+                                        <span className="font-semibold">Eligibility Decision:</span> A Boolean logic step evaluates the
+                                        presence and explanation of diabetes references. Output can be fed into a CRM, database, or
+                                        downstream agent to trigger next steps.
                                     </div>
-                                </div>
+                                </li>
+                            </ol>
+
+                            <div className="my-6">
+                                <p className="text-gray-700">
+                                    <a
+                                        href="https://github.com/BloksAdmin/model-hq-docs/tree/main/public/cookbooks/clinical-trial-screening-automation"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-green-600 hover:text-green-800 underline inline-flex items-center gap-1"
+                                    >
+                                        Find all the required images and documents here.
+                                        <ExternalLink className="h-3 w-3" />
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Step-by-Step Guide */}
+                    <section>
+                        <div className="flex items-center gap-3 mb-6">
+                            <h2 className="text-2xl font-bold text-gray-900">
+                                Step-by-Step Guide to Building the Clinical Trial Recruiting Tool
+                            </h2>
+                        </div>
+
+                        <p className="text-gray-700 mb-6">
+                            Select or enter the following Service, Instruction and Context to re-create this tool yourself.
+                        </p>
+
+                        {/* Provided Files */}
+                        <Card className="bg-blue-50 border-blue-200 mb-8">
+                            <CardContent className="p-6">
+                                <h3 className="font-semibold text-blue-900 mb-3">Provided Files:</h3>
+                                <p className="text-blue-800 mb-3">
+                                    We are using an example of a clinical trial available as public information in{" "}
+                                    <a
+                                        href="https://clinicaltrials.gov/study/NCT04959552?cond=diabetes&page=2&rank=14"
+                                        className="text-blue-600 hover:underline inline-flex items-center gap-1"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        https://clinicaltrials.gov/study/NCT04959552?cond=diabetes&page=2&rank=14
+                                        <ExternalLink className="h-3 w-3" />
+                                    </a>
+                                    . We have no association with anyone who is running this trial and are using this as only example
+                                    purposes so you can see some sample inclusion and exclusion criteria.
+                                </p>
+                                <p className="text-blue-800 mb-3">
+                                    We also downloaded some sample publicly available medical files which can be accessed here. Although
+                                    these files were from public sources, please note that these files may contain explicit and sensitive
+                                    medical content and user discretion is advised. We are providing these files for testing purposes
+                                    only.
+                                </p>
                             </CardContent>
                         </Card>
-                    </div>
-                </section>
 
-                {/* Why It Matters */}
-                <section>
-                    <Card className="bg-yellow-50 border-yellow-200">
-                        <CardContent className="p-6">
-                            <div className="flex items-center gap-3 mb-3">
-                                <Search className="h-6 w-6 text-yellow-600" />
-                                <h2 className="text-xl font-bold text-yellow-900">Why It Matters</h2>
-                            </div>
-                            <p className="text-yellow-800">
-                                This agent doesn't just help recruiters — it ensures no candidate is overlooked due to inconsistencies
-                                or hidden data in unstructured files. It's fast, consistent, and auditable.
-                            </p>
-                        </CardContent>
-                    </Card>
-                </section>
-
-                {/* Step-by-Step Guide */}
-                <section>
-                    <div className="flex items-center gap-3 mb-6">
-                        <div className="p-2 bg-indigo-100 rounded-lg">
-                            <Target className="h-6 w-6 text-indigo-600" />
-                        </div>
-                        <h2 className="text-2xl font-bold text-gray-900">
-                            Step-by-Step Guide to Building the Clinical Trial Recruiting Tool
-                        </h2>
-                    </div>
-
-                    <p className="text-gray-700 mb-6">
-                        Select or enter the following Service, Instruction and Context to re-create this tool yourself.
-                    </p>
-
-                    {/* Provided Files */}
-                    <Card className="bg-blue-50 border-blue-200 mb-8">
-                        <CardContent className="p-6">
-                            <h3 className="font-semibold text-blue-900 mb-3">Provided Files:</h3>
-                            <p className="text-blue-800 mb-3">
-                                We are using an example of a clinical trial available as public information in{" "}
-                                <a
-                                    href="https://clinicaltrials.gov/study/NCT04959552?cond=diabetes&page=2&rank=14"
-                                    className="text-blue-600 hover:underline inline-flex items-center gap-1"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    https://clinicaltrials.gov/study/NCT04959552?cond=diabetes&page=2&rank=14
-                                    <ExternalLink className="h-3 w-3" />
-                                </a>
-                                . We have no association with anyone who is running this trial and are using this as only example
-                                purposes so you can see some sample inclusion and exclusion criteria.
-                            </p>
-                            <p className="text-blue-800 mb-3">
-                                We also downloaded some sample publicly available medical files which can be accessed here. Although
-                                these files were from public sources, please note that these files may contain explicit and sensitive
-                                medical content and user discretion is advised. We are providing these files for testing purposes only.
-                            </p>
-                        </CardContent>
-                    </Card>
-
-                    {/* Preparing to Build */}
-                    <div className="space-y-8">
-                        <Card className="border-l-4 border-l-green-500">
-                            <CardContent className="p-6">
-                                <h3 className="font-semibold text-green-900 mb-4">Preparing to build:</h3>
-
-                                <p className="mb-2">
+                        {/* Preparing to Build */}
+                        <div className="space-y-8">
+                            <div className="border-l-4 border-l-green-500 bg-gray-50 p-6">
+                                <h3 className="font-semibold text-gray-900 mb-4">Preparing to build:</h3>
+                                <p className="text-gray-700 mb-2">
                                     Select <strong>Agents &gt; Build New &gt; Start Building</strong> then complete the Process Name.
                                 </p>
-
-                                <p className="mb-2">
-                                    We named it <em>Clinical Trial Recruiting Tool</em> (but since this may already be a template in your version of Model HQ, please feel free to give it a different name).
+                                <p className="text-gray-700 mb-2">
+                                    We named it <em>Clinical Trial Recruiting Tool</em> (but since this may already be a template in your
+                                    version of Model HQ, please feel free to give it a different name).
                                 </p>
+                                <p className="text-gray-700">
+                                    Press <strong>&gt;</strong>
+                                </p>
+                            </div>
 
-                                <p>Press <strong>&gt;</strong></p>
-                            </CardContent>
-                        </Card>
-
-                        {/* Defining Inputs */}
-                        <Card className="border-l-4 border-l-orange-500">
-                            <CardContent className="p-6">
-                                <h3 className="font-semibold text-orange-900 mb-4">Defining Inputs to Agent Process:</h3>
-
-                                <p className="text-orange-800 mb-4">
+                            {/* Defining Inputs */}
+                            <div className="border-l-4 border-l-orange-500 bg-gray-50 p-6">
+                                <h3 className="font-semibold text-gray-900 mb-4">Defining Inputs to Agent Process:</h3>
+                                <p className="text-gray-700 mb-4">
                                     You will then be asked to Define Inputs to Agent Process. This is the step where we will specify how
                                     the agent will receive its input to start taking action. The pre-set input is Main-Input (which is the
                                     standard chat style text input), but in this use case, we will be asking the Agent to review a patient
                                     file.
                                 </p>
 
-                                <Card className="bg-red-50 border-red-200 mb-4">
-                                    <CardContent className="p-4">
-                                        <p className="text-red-800 font-medium">DE-SELECT the Main Input</p>
-                                    </CardContent>
-                                </Card>
+                                <div className="bg-red-50 border border-red-200 p-4 mb-4 rounded">
+                                    <p className="text-red-800 font-medium">DE-SELECT the Main Input</p>
+                                </div>
 
-                                <p className="text-orange-800 mb-2">
-                                    1. To add Files as the input type, click <strong>'+'</strong> and select <strong>'Document File Input – any file type'</strong> as Input Type and in Description, type in:
+                                <ol className="space-y-2 text-gray-700">
+                                    <li>
+                                        To add Files as the input type, click <strong>'+'</strong> and select{" "}
+                                        <strong>'Document File Input – any file type'</strong> as Input Type and in Description, type in:{" "}
+                                        <em>'Upload Patient Medical File or Description'</em>
+                                    </li>
+                                    <li>
+                                        To indicate that this step is complete, it is important to click <strong>&gt;</strong> then{" "}
+                                        <strong>'Save + Exit'</strong>.
+                                    </li>
+                                    <li>
+                                        You will now enter the Agent building screen and you can start your build per instructions below.
+                                    </li>
+                                </ol>
+                            </div>
+
+                            {/* Agent Building Steps */}
+                            <div>
+                                <h2 className="text-xl font-semibold mb-6">Agent Building Steps</h2>
+                                <p className="text-gray-700 mb-6">
+                                    Here is a detailed, step-by-step guide to build the Clinical Trial Recruiting Tool in Model HQ's Agent
+                                    Builder (Note: this pre-built tool is also available as part of Model HQ set of templates). Each step
+                                    includes the: Service (what the node does), Instruction (the question or task), Context (the document
+                                    or variable used)
                                 </p>
 
-                                <p className="italic text-orange-800 mb-2">
-                                    'Upload Patient Medical File or Description'
-                                </p>
-
-                                <p className="text-orange-800 mb-2">
-                                    which specifies to the user what document this step is expecting.
-                                </p>
-
-                                <p className="text-orange-800 mb-2">
-                                    2. To indicate that this step is complete, it is important to click <strong>&gt;</strong> then <strong>'Save + Exit'</strong>.
-                                </p>
-
-                                <p className="text-orange-800">
-                                    <em>
-                                        (note: Not clicking 'Save+Exit' will assume you have other documents and may ask you to repeat the last 2 steps)
-                                    </em>
-                                </p>
-
-                                <p className="text-orange-800 mt-4">
-                                    3. You will now enter the Agent building screen and you can start your build per instructions below.
-                                </p>
-                            </CardContent>
-                        </Card>
-
-                        <p>&nbsp;</p>
-
-                        {/* Agent Building Steps */}
-                        <div>
-                            <h2 className="text-xl font-semibold mb-6">Agent Building Steps</h2>
-                            <p className="text-gray-700 mb-6">
-                                Here is a detailed, step-by-step guide to build the Clinical Trial Recruiting Tool in Model HQ's Agent
-                                Builder (Note: this pre-built tool is also available as part of Model HQ set of templates). Each step
-                                includes the: Service (what the node does), Instruction (the question or task), Context (the document or
-                                variable used)
-                            </p>
-
-                            <div className="space-y-6">
-                                {/* Row 1 */}
-                                <Card className="border rounded-lg">
-                                    <CardContent className="p-6">
+                                <div className="space-y-6">
+                                    {/* Row 1 */}
+                                    <div className="border rounded-lg p-6">
                                         <h4 className="font-semibold text-lg mb-4 flex items-center gap-2">
                                             <div className="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm font-bold">
                                                 1
@@ -460,12 +350,10 @@ export default function ClinicalTrialScreeningPage() {
                                             At the end of each row when building the Agent Process, press '+' to add the next row, until you
                                             reach the final step to End.
                                         </p>
-                                    </CardContent>
-                                </Card>
+                                    </div>
 
-                                {/* Row 2 */}
-                                <Card className="border rounded-lg">
-                                    <CardContent className="p-6">
+                                    {/* Row 2 */}
+                                    <div className="border rounded-lg p-6">
                                         <h4 className="font-semibold text-lg mb-4 flex items-center gap-2">
                                             <div className="w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-bold">
                                                 2
@@ -489,12 +377,10 @@ export default function ClinicalTrialScreeningPage() {
                                         <p className="text-gray-700 text-sm">
                                             <strong>Purpose:</strong> Checks the document for any mention of diabetes (past or present).
                                         </p>
-                                    </CardContent>
-                                </Card>
+                                    </div>
 
-                                {/* Row 3 */}
-                                <Card className="border rounded-lg">
-                                    <CardContent className="p-6">
+                                    {/* Row 3 */}
+                                    <div className="border rounded-lg p-6">
                                         <h4 className="font-semibold text-lg mb-4 flex items-center gap-2">
                                             <div className="w-6 h-6 bg-purple-500 text-white rounded-full flex items-center justify-center text-sm font-bold">
                                                 3
@@ -519,12 +405,10 @@ export default function ClinicalTrialScreeningPage() {
                                             <strong>Purpose:</strong> Verifies if the document actually confirms diabetes using the output
                                             from the previous RAG answer.
                                         </p>
-                                    </CardContent>
-                                </Card>
+                                    </div>
 
-                                {/* Row 4 */}
-                                <Card className="border rounded-lg">
-                                    <CardContent className="p-6">
+                                    {/* Row 4 */}
+                                    <div className="border rounded-lg p-6">
                                         <h4 className="font-semibold text-lg mb-4 flex items-center gap-2">
                                             <div className="w-6 h-6 bg-orange-500 text-white rounded-full flex items-center justify-center text-sm font-bold">
                                                 4
@@ -548,12 +432,10 @@ export default function ClinicalTrialScreeningPage() {
                                         <p className="text-gray-700 text-sm">
                                             <strong>Purpose:</strong> Extracts the patient's age for trial eligibility filtering.
                                         </p>
-                                    </CardContent>
-                                </Card>
+                                    </div>
 
-                                {/* Row 5 */}
-                                <Card className="border rounded-lg">
-                                    <CardContent className="p-6">
+                                    {/* Row 5 */}
+                                    <div className="border rounded-lg p-6">
                                         <h4 className="font-semibold text-lg mb-4 flex items-center gap-2">
                                             <div className="w-6 h-6 bg-teal-500 text-white rounded-full flex items-center justify-center text-sm font-bold">
                                                 5
@@ -577,12 +459,10 @@ export default function ClinicalTrialScreeningPage() {
                                         <p className="text-gray-700 text-sm">
                                             <strong>Purpose:</strong> Determines reproductive status (a key trial exclusion criterion).
                                         </p>
-                                    </CardContent>
-                                </Card>
+                                    </div>
 
-                                {/* Row 6 */}
-                                <Card className="border rounded-lg">
-                                    <CardContent className="p-6">
+                                    {/* Row 6 */}
+                                    <div className="border rounded-lg p-6">
                                         <h4 className="font-semibold text-lg mb-4 flex items-center gap-2">
                                             <div className="w-6 h-6 bg-red-500 text-white rounded-full flex items-center justify-center text-sm font-bold">
                                                 6
@@ -606,12 +486,10 @@ export default function ClinicalTrialScreeningPage() {
                                         <p className="text-gray-700 text-sm">
                                             <strong>Purpose:</strong> Identifies patients with advanced renal impairment.
                                         </p>
-                                    </CardContent>
-                                </Card>
+                                    </div>
 
-                                {/* Row 7 */}
-                                <Card className="border rounded-lg">
-                                    <CardContent className="p-6">
+                                    {/* Row 7 */}
+                                    <div className="border rounded-lg p-6">
                                         <h4 className="font-semibold text-lg mb-4 flex items-center gap-2">
                                             <div className="w-6 h-6 bg-pink-500 text-white rounded-full flex items-center justify-center text-sm font-bold">
                                                 7
@@ -637,12 +515,10 @@ export default function ClinicalTrialScreeningPage() {
                                         <p className="text-gray-700 text-sm">
                                             <strong>Purpose:</strong> Screens for skin-related contraindications for the study.
                                         </p>
-                                    </CardContent>
-                                </Card>
+                                    </div>
 
-                                {/* Row 8 */}
-                                <Card className="border rounded-lg">
-                                    <CardContent className="p-6">
+                                    {/* Row 8 */}
+                                    <div className="border rounded-lg p-6">
                                         <h4 className="font-semibold text-lg mb-4 flex items-center gap-2">
                                             <div className="w-6 h-6 bg-cyan-500 text-white rounded-full flex items-center justify-center text-sm font-bold">
                                                 8
@@ -666,12 +542,10 @@ export default function ClinicalTrialScreeningPage() {
                                         <p className="text-gray-700 text-sm">
                                             <strong>Purpose:</strong> Further screens for known chemical sensitivities for the study.
                                         </p>
-                                    </CardContent>
-                                </Card>
+                                    </div>
 
-                                {/* Row 9 */}
-                                <Card className="border rounded-lg">
-                                    <CardContent className="p-6">
+                                    {/* Row 9 */}
+                                    <div className="border rounded-lg p-6">
                                         <h4 className="font-semibold text-lg mb-4 flex items-center gap-2">
                                             <div className="w-6 h-6 bg-amber-500 text-white rounded-full flex items-center justify-center text-sm font-bold">
                                                 9
@@ -698,12 +572,10 @@ export default function ClinicalTrialScreeningPage() {
                                         <p className="text-gray-700 text-sm">
                                             <strong>Purpose:</strong> Checks cognitive readiness and consent capacity.
                                         </p>
-                                    </CardContent>
-                                </Card>
+                                    </div>
 
-                                {/* Row 10 */}
-                                <Card className="border rounded-lg">
-                                    <CardContent className="p-6">
+                                    {/* Row 10 */}
+                                    <div className="border rounded-lg p-6">
                                         <h4 className="font-semibold text-lg mb-4 flex items-center gap-2">
                                             <div className="w-6 h-6 bg-gray-500 text-white rounded-full flex items-center justify-center text-sm font-bold">
                                                 10
@@ -727,17 +599,15 @@ export default function ClinicalTrialScreeningPage() {
                                         <p className="text-gray-700 text-sm">
                                             <strong>Purpose:</strong> Marks completion of the workflow.
                                         </p>
-                                    </CardContent>
-                                </Card>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
 
-                {/* Final Notes */}
-                <section>
-                    <Card className="bg-green-50 border-green-200">
-                        <CardContent className="p-6">
+                    {/* Final Notes */}
+                    <section>
+                        <div className="bg-green-50 border border-green-200 rounded-lg p-6">
                             <div className="flex items-center gap-3 mb-4">
                                 <CheckCircle className="h-6 w-6 text-green-600" />
                                 <h2 className="text-xl font-bold text-green-900">Final Notes:</h2>
@@ -758,48 +628,46 @@ export default function ClinicalTrialScreeningPage() {
                                     </span>
                                 </li>
                             </ul>
-                        </CardContent>
-                    </Card>
-                </section>
+                        </div>
+                    </section>
 
-                {/* Expand This Pattern */}
-                <section>
-                    <Card className="bg-purple-50 border-purple-200">
-                        <CardContent className="p-6">
+                    {/* Expand This Pattern */}
+                    <section>
+                        <div className="bg-gray-50 rounded-lg p-6 border">
                             <div className="flex items-center gap-3 mb-4">
-                                <TrendingUp className="h-6 w-6 text-purple-600" />
-                                <h2 className="text-xl font-bold text-purple-900">Expand This Pattern</h2>
+                                <TrendingUp className="h-6 w-6 text-gray-600" />
+                                <h2 className="text-xl font-bold text-gray-900">Expand This Pattern</h2>
                             </div>
-                            <p className="text-purple-800 mb-4">You can easily adapt this flow to:</p>
+                            <p className="text-gray-800 mb-4">You can easily adapt this flow to:</p>
                             <div className="grid md:grid-cols-2 gap-3">
                                 <div className="flex items-center gap-2">
-                                    <Zap className="h-4 w-4 text-purple-600" />
-                                    <span className="text-purple-700">Pre-screen based on inclusion/exclusion criteria</span>
+                                    <Zap className="h-4 w-4 text-gray-600" />
+                                    <span className="text-gray-700">Pre-screen based on inclusion/exclusion criteria</span>
                                 </div>
                                 <div className="flex items-center gap-2">
-                                    <FileSearch className="h-4 w-4 text-purple-600" />
-                                    <span className="text-purple-700">Analyze investigator site files</span>
+                                    <FileSearch className="h-4 w-4 text-gray-600" />
+                                    <span className="text-gray-700">Analyze investigator site files</span>
                                 </div>
                                 <div className="flex items-center gap-2">
-                                    <Shield className="h-4 w-4 text-purple-600" />
-                                    <span className="text-purple-700">Validate adherence risks</span>
+                                    <Shield className="h-4 w-4 text-gray-600" />
+                                    <span className="text-gray-700">Validate adherence risks</span>
                                 </div>
                                 <div className="flex items-center gap-2">
-                                    <Target className="h-4 w-4 text-purple-600" />
-                                    <span className="text-purple-700">Recommend alternative trials or study arms</span>
+                                    <Target className="h-4 w-4 text-gray-600" />
+                                    <span className="text-gray-700">Recommend alternative trials or study arms</span>
                                 </div>
                             </div>
-                        </CardContent>
-                    </Card>
-                </section>
+                        </div>
+                    </section>
 
-                {/* Support */}
-                <div className="bg-gradient-to-r from-gray-50 to-slate-50 rounded-lg p-6 border text-center">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Need Help?</h3>
-                    <p className="text-gray-700">
-                        If you encounter any issues while setting up clinical trial screening, feel free to contact our support team
-                        at <code className="bg-gray-200 px-2 py-1 rounded">support@aibloks.com</code>
-                    </p>
+                    {/* Support */}
+                    <div className="bg-gradient-to-r from-gray-50 to-slate-50 rounded-lg p-6 border text-center">
+                        <h3 className="text-lg font-semibold text-gray-900 mb-2">Need Help?</h3>
+                        <p className="text-gray-700">
+                            If you encounter any issues while setting up clinical trial screening, feel free to contact our support
+                            team at <code className="bg-gray-200 px-2 py-1 rounded">support@aibloks.com</code>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>

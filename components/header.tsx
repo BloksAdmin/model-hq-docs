@@ -80,6 +80,7 @@ export function Header() {
     { title: "Bots", url: "/bots", type: "page", description: "Build and customize your own bots" },
     { title: "RAG", url: "/rag", type: "page", description: "Retrieval-Augmented Generation workflows" },
     { title: "Models", url: "/models", type: "page", description: "Discover and manage AI models" },
+    { title: "Testing Models", url: "/testing-models", type: "page", description: "Test the models before using them" },
     { title: "Tools", url: "/tools", type: "page", description: "System utilities and document parsing tools" },
     { title: "Configs", url: "/configs", type: "page", description: "Configuration management and settings" },
     { title: "Share Your App", url: "/share-your-app", type: "page", description: "Share your Agents and Custom Chatbots with others" },
@@ -282,6 +283,51 @@ export function Header() {
     { title: "Options Button", url: "/bots#options-button", type: "heading", parentPage: "Bots" },
     { title: "Export Button", url: "/bots#export-button", type: "heading", parentPage: "Bots" },
     { title: "Delete Button", url: "/bots#delete", type: "heading", parentPage: "Bots" },
+
+    // Testing Models headings
+    {
+      title: "Launching Test Interface",
+      url: "/testing-models#lauching-test-interface",
+      type: "heading",
+      parentPage: "Testing Models",
+    },
+    {
+      title: "Configuring Test Options",
+      url: "/testing-models#configuring-test-options",
+      type: "heading",
+      parentPage: "Testing Models",
+    },
+    {
+      title: "Sandbox Testing",
+      url: "/testing-models#sandbox-testing",
+      type: "heading",
+      parentPage: "Testing Models",
+    },
+    {
+      title: "Standard Testing",
+      url: "/testing-models#standard-testing",
+      type: "heading",
+      parentPage: "Testing Models",
+    },
+    {
+      title: "Custom Testing",
+      url: "/testing-models#custom-testing",
+      type: "heading",
+      parentPage: "Testing Models",
+    },
+    {
+      title: "Mapper",
+      url: "/testing-models#mapper",
+      type: "heading",
+      parentPage: "Testing Models",
+    },
+    {
+      title: "Generate Sample",
+      url: "/testing-models#generate-sample",
+      type: "heading",
+      parentPage: "Testing Models",
+    },
+
 
     // Tools headings
     {

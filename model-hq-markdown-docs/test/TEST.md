@@ -129,7 +129,7 @@ The **Generate Sample** feature allows you to automatically create test cases.
 
 1. After configuring tests, click **>**.
 
-   * If the model is not yet downloaded, it will be fetched from the internet.
+   * If the model is not yet downloaded, it will be fetched from the Model HQ Model Catalog (requires internet).
    * If already available locally, it will load directly.
      ![loadModel](test/loadModel.png)
 

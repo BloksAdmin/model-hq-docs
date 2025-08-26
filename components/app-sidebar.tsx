@@ -27,7 +27,8 @@ import {
   Terminal,
   Code2,
   Camera,
-  Stethoscope ,
+  Stethoscope,
+  FlaskConical,
 } from "lucide-react"
 
 import {
@@ -105,6 +106,11 @@ const navigationData = {
       title: "Models",
       url: "/models",
       icon: Database,
+    },
+    {
+      title: "Testing Models",
+      url: "/testing-models",
+      icon: FlaskConical,
     },
     {
       title: "Configs & Tools",

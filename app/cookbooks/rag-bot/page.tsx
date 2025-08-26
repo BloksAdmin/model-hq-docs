@@ -1,516 +1,514 @@
 import {
-    Breadcrumb,
-    BreadcrumbItem,
-    BreadcrumbLink,
-    BreadcrumbList,
-    BreadcrumbPage,
-    BreadcrumbSeparator,
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb"
 import { Card, CardContent } from "@/components/ui/card"
 import {
-    FileText,
-    MessageSquare,
-    Settings,
-    Users,
-    Code,
-    CheckCircle,
-    ExternalLink,
-    Lightbulb,
-    Download,
-    BarChart3,
-    Shield,
-    Clock,
-    Folder,
+  FileText,
+  MessageSquare,
+  Settings,
+  Users,
+  Code,
+  CheckCircle,
+  ExternalLink,
+  Lightbulb,
+  Download,
+  BarChart3,
+  Shield,
+  Clock,
+  Folder,
 } from "lucide-react"
 
 export default function RAGBotPage() {
-    return (
-        <div className="max-w-5xl mx-auto space-y-6 px-4 sm:px-6 lg:px-8 py-6">
-            <Breadcrumb>
-                <BreadcrumbList>
-                    <BreadcrumbItem>
-                        <BreadcrumbLink href="/">Home</BreadcrumbLink>
-                    </BreadcrumbItem>
-                    <BreadcrumbSeparator />
-                    <BreadcrumbItem>
-                        <BreadcrumbLink href="/bots">Cookbooks</BreadcrumbLink>
-                    </BreadcrumbItem>
-                    <BreadcrumbSeparator />
-                    <BreadcrumbItem>
-                        <BreadcrumbPage>RAG Bot</BreadcrumbPage>
-                    </BreadcrumbItem>
-                </BreadcrumbList>
-            </Breadcrumb>
+  return (
+    <div className="max-w-5xl mx-auto space-y-6 px-4 sm:px-6 lg:px-8 py-6">
+      <Breadcrumb>
+        <BreadcrumbList>
+          <BreadcrumbItem>
+            <BreadcrumbLink href="/">Home</BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbLink href="/">Cookbooks</BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbPage>RAG Bot</BreadcrumbPage>
+          </BreadcrumbItem>
+        </BreadcrumbList>
+      </Breadcrumb>
 
-            <div className="space-y-4">
-                <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">RAG Bot</h1>
-                <p className="text-lg text-gray-600">
-                    Fast and flexible document analysis using Retrieval-Augmented Generation
+      <div className="space-y-4">
+        <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">RAG Bot</h1>
+        <p className="text-lg text-gray-600">
+          Fast and flexible document analysis using Retrieval-Augmented Generation
+        </p>
+      </div>
+
+      <div className="prose prose-gray max-w-none space-y-8">
+        {/* Introduction */}
+        <div className="bg-gradient-to-r from-gray-50 to-slate-50 rounded-lg p-6 border">
+          <p className="text-gray-800 leading-relaxed">
+            The RAG Bot offers a fast and flexible way to analyze and extract insights from enterprise documents like
+            executive employment agreements, MSAs, and NDAs. Using a Retrieval-Augmented Generation (RAG) architecture,
+            this bot supports multiple modes of interaction including chatbot, agent, batch processing, and API
+            integration; making it ideal for business users, analysts, and developers alike. With no setup code
+            required, users can quickly ask natural language questions, run multi-step agent workflows, and scale
+            analysis across large volumes of documents, all from a single no-code platform.
+          </p>
+        </div>
+
+        {/* Video Tutorial */}
+        <Card className="border-l-4 border-l-red-500 bg-red-50">
+          <CardContent className="p-6">
+            <div className="flex items-start gap-3">
+              <div>
+                <h3 className="font-semibold text-red-900 mb-2">Video Tutorial Available</h3>
+                <p className="text-red-800 mb-3">
+                  This walkthrough is also demonstrated step-by-step on our YouTube video:
                 </p>
+                <a
+                  href="https://youtu.be/uy53WKrMOXc"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-red-600 hover:text-red-700 font-medium"
+                >
+                  "Private AI for Document Analysis in AI PC"
+                  <ExternalLink className="h-4 w-4" />
+                </a>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Use Case */}
+        <section>
+          <div className="flex items-center gap-3 mb-4">
+            <h2 className="text-2xl font-bold text-gray-900">Use Case</h2>
+          </div>
+          <div className="bg-gradient-to-r from-gray-50 to-slate-50 rounded-lg p-6 border">
+            <p className="text-gray-800">
+              Analyze and extract key information from executive employment agreements (a stand-in for many enterprise
+              documents like MSAs, NDAs, research papers, etc.) using Model HQ's <strong>Chat</strong>,{" "}
+              <strong>Agent</strong>, and <strong>API</strong> modes.
+            </p>
+          </div>
+        </section>
+
+        {/* Prerequisites */}
+        <section>
+          <div className="flex items-center gap-3 mb-4">
+            <h2 className="text-2xl font-bold text-gray-900">Prerequisites</h2>
+          </div>
+          <Card className="border bg-gray-50">
+            <CardContent className="p-6">
+              <ul className="space-y-4">
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="h-5 w-5 text-gray-600 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-800">Model HQ installed locally</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="h-5 w-5 text-gray-600 mt-0.5 flex-shrink-0" />
+                  <div className="text-gray-800">
+                    <span>A set of executive employment agreement PDFs (located at:</span>
+                    <code className="bg-gray-100 px-2 py-1 rounded text-sm mt-1 block">
+                      C:\users\[username]\llmware_data\sample_files\agreements\[list of 12 executive employment
+                      agreements]
+                    </code>
+                    <div className="my-4">
+                      <img
+                        src="/cookbooks/rag-bot/docPath.png"
+                        alt="doc path"
+                        className="rounded-lg shadow-md border w-full"
+                      />
+                    </div>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="h-5 w-5 text-gray-600 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-800">An AI PC or local server</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="h-5 w-5 text-gray-600 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-800">
+                    <em>(Optional)</em> Python development environment for API integration
+                  </span>
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
+        </section>
+
+        {/* Step-by-Step Process */}
+        <section>
+          <div className="flex items-center gap-3 mb-6">
+            <h2 className="text-2xl font-bold text-gray-900">Step-by-Step Recipe</h2>
+          </div>
+
+          <div className="space-y-8">
+            {/* Step 1 */}
+            <div className="relative">
+              <div className="flex items-baseline gap-4">
+                <div className="flex-shrink-0">
+                  <div className="w-10 h-10 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold">
+                    1
+                  </div>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">Start with Local Chatbot Mode (Fast Start)</h3>
+                  <Card className="bg-gray-50 border">
+                    <CardContent className="p-6">
+                      <div className="space-y-4">
+                        <div className="flex items-center gap-2 mb-4">
+                          <MessageSquare className="h-5 w-5 text-gray-600" />
+                          <p className="font-semibold text-gray-900">
+                            Purpose: Quickly chat with a document using an out-of-the-box RAG bot.
+                          </p>
+                        </div>
+
+                        <div>
+                          <h4 className="font-semibold text-gray-900 mb-3">Steps:</h4>
+                          <ul className="space-y-2 text-gray-800">
+                            <li className="flex items-start gap-2">
+                              <span className="w-5 h-5 bg-gray-200 rounded-full flex items-center justify-center text-xs font-semibold text-gray-800 mt-0.5 flex-shrink-0">
+                                1
+                              </span>
+                              <span>Launch Model HQ locally</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <span className="w-5 h-5 bg-gray-200 rounded-full flex items-center justify-center text-xs font-semibold text-gray-800 mt-0.5 flex-shrink-0">
+                                2
+                              </span>
+                              <span>
+                                Open the <strong>Fast Start</strong>, select <strong>Medium Chatbot</strong>
+                              </span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <span className="w-5 h-5 bg-gray-200 rounded-full flex items-center justify-center text-xs font-semibold text-gray-800 mt-0.5 flex-shrink-0">
+                                3
+                              </span>
+                              <div>
+                                <span>Attach an Executive Employment Agreement document</span>
+                                <div className="text-sm text-gray-600 mt-1">
+                                  (e.g., 15-page PDF found at:{" "}
+                                  <code className="bg-gray-100 px-1 rounded">
+                                    C:\users\[username]\llmware_data\sample_files\agreements\
+                                  </code>
+                                  )
+                                </div>
+                              </div>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <span className="w-5 h-5 bg-gray-200 rounded-full flex items-center justify-center text-xs font-semibold text-gray-800 mt-0.5 flex-shrink-0">
+                                4
+                              </span>
+                              <span>Model HQ auto-ingests, parses, and chunks the document (~1s)</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <span className="w-5 h-5 bg-gray-200 rounded-full flex items-center justify-center text-xs font-semibold text-gray-800 mt-0.5 flex-shrink-0">
+                                5
+                              </span>
+                              <div>
+                                <span>Ask natural language questions like:</span>
+                                <ul className="ml-4 mt-1 space-y-1 text-sm">
+                                  <li>"What's the effective date of the agreement?"</li>
+                                  <li>"How many vacation days is the executive entitled to?"</li>
+                                  <li>"What is the executive's annual base salary?"</li>
+                                </ul>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+
+                        <div className="bg-gray-100 rounded-lg p-4">
+                          <p className="text-gray-800 mb-2">Model HQ will return:</p>
+                          <ul className="space-y-1 text-gray-700 text-sm">
+                            <li>Detailed answers</li>
+                            <li>Source page references</li>
+                            <li>Option to save/download chat transcripts</li>
+                          </ul>
+                        </div>
+
+                        <div className="my-4">
+                          <img
+                            src="/cookbooks/rag-bot/executiveEmploymentAgreement.png"
+                            alt="Executive Employment Agreement"
+                            className="rounded-lg shadow-md border w-full"
+                          />
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              </div>
             </div>
 
-            <div className="prose prose-gray max-w-none space-y-8">
-                {/* Introduction */}
-                <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-6 border border-blue-200">
-                    <p className="text-blue-800 leading-relaxed">
-                        The RAG Bot offers a fast and flexible way to analyze and extract insights from enterprise documents like
-                        executive employment agreements, MSAs, and NDAs. Using a Retrieval-Augmented Generation (RAG) architecture,
-                        this bot supports multiple modes of interaction including chatbot, agent, batch processing, and API
-                        integration; making it ideal for business users, analysts, and developers alike. With no setup code
-                        required, users can quickly ask natural language questions, run multi-step agent workflows, and scale
-                        analysis across large volumes of documents, all from a single no-code platform.
-                    </p>
+            {/* Step 2 */}
+            <div className="relative">
+              <div className="flex items-baseline gap-4">
+                <div className="flex-shrink-0">
+                  <div className="w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center font-bold">
+                    2
+                  </div>
                 </div>
-
-                {/* Video Tutorial */}
-                <Card className="border-l-4 border-l-red-500 bg-red-50">
+                <div className="flex-1">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">Run Agent-Based Analysis (Single Document)</h3>
+                  <Card className="bg-gray-50 border">
                     <CardContent className="p-6">
-                        <div className="flex items-start gap-3">
-                            <div>
-                                <h3 className="font-semibold text-red-900 mb-2">Video Tutorial Available</h3>
-                                <p className="text-red-800 mb-3">
-                                    This walkthrough is also demonstrated step-by-step on our YouTube video:
+                      <div className="space-y-4">
+                        <div className="flex items-center gap-2 mb-4">
+                          <Settings className="h-5 w-5 text-gray-600" />
+                          <p className="font-semibold text-gray-900">
+                            Purpose: Automate multi-step document review using a reusable agent.
+                          </p>
+                        </div>
+
+                        <div>
+                          <h4 className="font-semibold text-gray-900 mb-3">Steps:</h4>
+                          <ul className="space-y-2 text-gray-800">
+                            <li className="flex items-start gap-2">
+                              <span className="w-5 h-5 bg-gray-200 rounded-full flex items-center justify-center text-xs font-semibold text-gray-800 mt-0.5 flex-shrink-0">
+                                1
+                              </span>
+                              <span>
+                                Switch to <strong>Agent Mode</strong> from Home
+                              </span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <span className="w-5 h-5 bg-gray-200 rounded-full flex items-center justify-center text-xs font-semibold text-gray-800 mt-0.5 flex-shrink-0">
+                                2
+                              </span>
+                              <span>
+                                Select the built-in <strong>Contract Analyzer Agent</strong>
+                              </span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <span className="w-5 h-5 bg-gray-200 rounded-full flex items-center justify-center text-xs font-semibold text-gray-800 mt-0.5 flex-shrink-0">
+                                3
+                              </span>
+                              <div>
+                                <span>
+                                  Upload a document from the{" "}
+                                  <code className="bg-gray-100 px-1 rounded">agreements</code> folder found in:
+                                </span>
+                                <code className="bg-gray-100 px-2 py-1 rounded text-xs mt-1 block">
+                                  C:\users\[username]\llmware_data\sample_files\agreements\[list of 12 executive
+                                  employment agreements]
+                                </code>
+                              </div>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <span className="w-5 h-5 bg-gray-200 rounded-full flex items-center justify-center text-xs font-semibold text-gray-800 mt-0.5 flex-shrink-0">
+                                4
+                              </span>
+                              <span>
+                                Agent will run 3 predefined questions (effective date, annual rate of base salary,
+                                number of vacation days)
+                              </span>
+                            </li>
+                          </ul>
+                        </div>
+
+                        <div className="my-4">
+                          <img
+                            src="/cookbooks/rag-bot/contractAnalyzer.png"
+                            alt="Contract Analyzer"
+                            className="rounded-lg shadow-md border w-full"
+                          />
+                        </div>
+
+                        <div className="bg-gray-100 rounded-lg p-4">
+                          <p className="text-gray-800 mb-2">Output includes:</p>
+                          <ul className="space-y-1 text-gray-700 text-sm">
+                            <li>Full inference log</li>
+                            <li>
+                              Files in <code className="bg-gray-200 px-1 rounded">.json</code>,{" "}
+                              <code className="bg-gray-200 px-1 rounded">.docx</code>, and{" "}
+                              <code className="bg-gray-200 px-1 rounded">.txt</code> formats
+                            </li>
+                          </ul>
+                        </div>
+
+                        <Card className="bg-yellow-50 border-yellow-200">
+                          <CardContent className="p-4">
+                            <div className="flex items-start gap-2">
+                              <Lightbulb className="h-5 w-5 text-yellow-600 mt-0.5 flex-shrink-0" />
+                              <div>
+                                <p className="font-semibold text-yellow-800">Bonus</p>
+                                <p className="text-yellow-700 text-sm">
+                                  Customize the questions, add/delete steps, or expand as needed. Read more about this{" "}
+                                  <a
+                                    href="https://model-hq-docs.vercel.app/agent/create-new-agent"
+                                    className="text-yellow-600 hover:text-yellow-700 underline"
+                                  >
+                                    here
+                                  </a>
+                                  .
                                 </p>
-                                <a
-                                    href="https://youtu.be/uy53WKrMOXc"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="inline-flex items-center gap-2 text-red-600 hover:text-red-700 font-medium"
-                                >
-                                    "Private AI for Document Analysis in AI PC"
-                                    <ExternalLink className="h-4 w-4" />
-                                </a>
+                              </div>
                             </div>
-                        </div>
+                          </CardContent>
+                        </Card>
+                      </div>
                     </CardContent>
-                </Card>
+                  </Card>
+                </div>
+              </div>
+            </div>
 
-                {/* Use Case */}
-                <section>
-                    <div className="flex items-center gap-3 mb-4">
-                        <h2 className="text-2xl font-bold text-gray-900">Use Case</h2>
-                    </div>
-                    <Card className="bg-green-50 border-green-200">
-                        <CardContent className="p-6">
-                            <p className="text-green-800">
-                                Analyze and extract key information from executive employment agreements (a stand-in for many enterprise
-                                documents like MSAs, NDAs, research papers, etc.) using Model HQ's <strong>Chat</strong>,{" "}
-                                <strong>Agent</strong>, and <strong>API</strong> modes.
-                            </p>
-                        </CardContent>
-                    </Card>
-                </section>
-
-                {/* Prerequisites */}
-                <section>
-                    <div className="flex items-center gap-3 mb-4">
-                        <h2 className="text-2xl font-bold text-gray-900">Prerequisites</h2>
-                    </div>
-                    <Card className="border border-orange-200 bg-orange-50">
-                        <CardContent className="p-6">
-                            <ul className="space-y-4">
-                                <li className="flex items-start gap-3">
-                                    <CheckCircle className="h-5 w-5 text-orange-600 mt-0.5 flex-shrink-0" />
-                                    <span className="text-orange-800">Model HQ installed locally</span>
-                                </li>
-                                <li className="flex items-start gap-3">
-                                    <CheckCircle className="h-5 w-5 text-orange-600 mt-0.5 flex-shrink-0" />
-                                    <div className="text-orange-800">
-                                        <span>A set of executive employment agreement PDFs (located at:</span>
-                                        <code className="bg-orange-100 px-2 py-1 rounded text-sm mt-1 block">
-                                            C:\users\[username]\llmware_data\sample_files\agreements\[list of 12 executive employment
-                                            agreements]
-                                        </code>
-                                        <div className="my-4">
-                                            <img
-                                                src="/cookbooks/rag-bot/docPath.png"
-                                                alt="doc path"
-                                                className="rounded-lg shadow-md border w-full"
-                                            />
-                                        </div>
-                                    </div>
-                                </li>
-                                <li className="flex items-start gap-3">
-                                    <CheckCircle className="h-5 w-5 text-orange-600 mt-0.5 flex-shrink-0" />
-                                    <span className="text-orange-800">An AI PC or local server</span>
-                                </li>
-                                <li className="flex items-start gap-3">
-                                    <CheckCircle className="h-5 w-5 text-orange-600 mt-0.5 flex-shrink-0" />
-                                    <span className="text-orange-800">
-                                        <em>(Optional)</em> Python development environment for API integration
-                                    </span>
-                                </li>
-                            </ul>
-                        </CardContent>
-                    </Card>
-                </section>
-
-                {/* Step-by-Step Process */}
-                <section>
-                    <div className="flex items-center gap-3 mb-6">
-                        <h2 className="text-2xl font-bold text-gray-900">Step-by-Step Recipe</h2>
-                    </div>
-
-                    <div className="space-y-8">
-                        {/* Step 1 */}
-                        <div className="relative">
-                            <div className="flex items-start gap-4">
-                                <div className="flex-shrink-0">
-                                    <div className="w-10 h-10 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold">
-                                        1
-                                    </div>
-                                </div>
-                                <div className="flex-1">
-                                    <h3 className="text-xl font-bold text-gray-900 mb-3">Start with Local Chatbot Mode (Fast Start)</h3>
-                                    <Card className="bg-blue-50 border-blue-200">
-                                        <CardContent className="p-6">
-                                            <div className="space-y-4">
-                                                <div className="flex items-center gap-2 mb-4">
-                                                    <MessageSquare className="h-5 w-5 text-blue-600" />
-                                                    <p className="font-semibold text-blue-900">
-                                                        Purpose: Quickly chat with a document using an out-of-the-box RAG bot.
-                                                    </p>
-                                                </div>
-
-                                                <div>
-                                                    <h4 className="font-semibold text-blue-900 mb-3">Steps:</h4>
-                                                    <ul className="space-y-2 text-blue-800">
-                                                        <li className="flex items-start gap-2">
-                                                            <span className="w-5 h-5 bg-blue-200 rounded-full flex items-center justify-center text-xs font-semibold text-blue-800 mt-0.5 flex-shrink-0">
-                                                                1
-                                                            </span>
-                                                            <span>Launch Model HQ locally</span>
-                                                        </li>
-                                                        <li className="flex items-start gap-2">
-                                                            <span className="w-5 h-5 bg-blue-200 rounded-full flex items-center justify-center text-xs font-semibold text-blue-800 mt-0.5 flex-shrink-0">
-                                                                2
-                                                            </span>
-                                                            <span>
-                                                                Open the <strong>Fast Start</strong>, select <strong>Medium Chatbot</strong>
-                                                            </span>
-                                                        </li>
-                                                        <li className="flex items-start gap-2">
-                                                            <span className="w-5 h-5 bg-blue-200 rounded-full flex items-center justify-center text-xs font-semibold text-blue-800 mt-0.5 flex-shrink-0">
-                                                                3
-                                                            </span>
-                                                            <div>
-                                                                <span>Attach an Executive Employment Agreement document</span>
-                                                                <div className="text-sm text-blue-600 mt-1">
-                                                                    (e.g., 15-page PDF found at:{" "}
-                                                                    <code className="bg-blue-100 px-1 rounded">
-                                                                        C:\users\[username]\llmware_data\sample_files\agreements\
-                                                                    </code>
-                                                                    )
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                        <li className="flex items-start gap-2">
-                                                            <span className="w-5 h-5 bg-blue-200 rounded-full flex items-center justify-center text-xs font-semibold text-blue-800 mt-0.5 flex-shrink-0">
-                                                                4
-                                                            </span>
-                                                            <span>Model HQ auto-ingests, parses, and chunks the document (~1s)</span>
-                                                        </li>
-                                                        <li className="flex items-start gap-2">
-                                                            <span className="w-5 h-5 bg-blue-200 rounded-full flex items-center justify-center text-xs font-semibold text-blue-800 mt-0.5 flex-shrink-0">
-                                                                5
-                                                            </span>
-                                                            <div>
-                                                                <span>Ask natural language questions like:</span>
-                                                                <ul className="ml-4 mt-1 space-y-1 text-sm">
-                                                                    <li>"What's the effective date of the agreement?"</li>
-                                                                    <li>"How many vacation days is the executive entitled to?"</li>
-                                                                    <li>"What is the executive's annual base salary?"</li>
-                                                                </ul>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-
-                                                <div className="bg-blue-100 rounded-lg p-4">
-                                                    <p className="text-blue-800 mb-2">Model HQ will return:</p>
-                                                    <ul className="space-y-1 text-blue-700 text-sm">
-                                                        <li>Detailed answers</li>
-                                                        <li>Source page references</li>
-                                                        <li>Option to save/download chat transcripts</li>
-                                                    </ul>
-                                                </div>
-
-                                                <div className="my-4">
-                                                    <img
-                                                        src="/cookbooks/rag-bot/executiveEmploymentAgreement.png"
-                                                        alt="Executive Employment Agreement"
-                                                        className="rounded-lg shadow-md border w-full"
-                                                    />
-                                                </div>
-                                            </div>
-                                        </CardContent>
-                                    </Card>
-                                </div>
-                            </div>
+            {/* Step 3 */}
+            <div className="relative">
+              <div className="flex items-baseline gap-4">
+                <div className="flex-shrink-0">
+                  <div className="w-10 h-10 bg-purple-500 text-white rounded-full flex items-center justify-center font-bold">
+                    3
+                  </div>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">
+                    Scale with Batch Agent Mode (Multiple Documents)
+                  </h3>
+                  <Card className="bg-gray-50 border">
+                    <CardContent className="p-6">
+                      <div className="space-y-4">
+                        <div className="flex items-center gap-2 mb-4">
+                          <Folder className="h-5 w-5 text-gray-600" />
+                          <p className="font-semibold text-gray-900">
+                            Purpose: Analyze dozens or hundreds of agreements in one go.
+                          </p>
                         </div>
 
-                        {/* Step 2 */}
-                        <div className="relative">
-                            <div className="flex items-start gap-4">
-                                <div className="flex-shrink-0">
-                                    <div className="w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center font-bold">
-                                        2
-                                    </div>
-                                </div>
-                                <div className="flex-1">
-                                    <h3 className="text-xl font-bold text-gray-900 mb-3">Run Agent-Based Analysis (Single Document)</h3>
-                                    <Card className="bg-green-50 border-green-200">
-                                        <CardContent className="p-6">
-                                            <div className="space-y-4">
-                                                <div className="flex items-center gap-2 mb-4">
-                                                    <Settings className="h-5 w-5 text-green-600" />
-                                                    <p className="font-semibold text-green-900">
-                                                        Purpose: Automate multi-step document review using a reusable agent.
-                                                    </p>
-                                                </div>
-
-                                                <div>
-                                                    <h4 className="font-semibold text-green-900 mb-3">Steps:</h4>
-                                                    <ul className="space-y-2 text-green-800">
-                                                        <li className="flex items-start gap-2">
-                                                            <span className="w-5 h-5 bg-green-200 rounded-full flex items-center justify-center text-xs font-semibold text-green-800 mt-0.5 flex-shrink-0">
-                                                                1
-                                                            </span>
-                                                            <span>
-                                                                Switch to <strong>Agent Mode</strong> from Home
-                                                            </span>
-                                                        </li>
-                                                        <li className="flex items-start gap-2">
-                                                            <span className="w-5 h-5 bg-green-200 rounded-full flex items-center justify-center text-xs font-semibold text-green-800 mt-0.5 flex-shrink-0">
-                                                                2
-                                                            </span>
-                                                            <span>
-                                                                Select the built-in <strong>Contract Analyzer Agent</strong>
-                                                            </span>
-                                                        </li>
-                                                        <li className="flex items-start gap-2">
-                                                            <span className="w-5 h-5 bg-green-200 rounded-full flex items-center justify-center text-xs font-semibold text-green-800 mt-0.5 flex-shrink-0">
-                                                                3
-                                                            </span>
-                                                            <div>
-                                                                <span>
-                                                                    Upload a document from the{" "}
-                                                                    <code className="bg-green-100 px-1 rounded">agreements</code> folder found in:
-                                                                </span>
-                                                                <code className="bg-green-100 px-2 py-1 rounded text-xs mt-1 block">
-                                                                    C:\users\[username]\llmware_data\sample_files\agreements\[list of 12 executive
-                                                                    employment agreements]
-                                                                </code>
-                                                            </div>
-                                                        </li>
-                                                        <li className="flex items-start gap-2">
-                                                            <span className="w-5 h-5 bg-green-200 rounded-full flex items-center justify-center text-xs font-semibold text-green-800 mt-0.5 flex-shrink-0">
-                                                                4
-                                                            </span>
-                                                            <span>
-                                                                Agent will run 3 predefined questions (effective date, annual rate of base salary,
-                                                                number of vacation days)
-                                                            </span>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-
-                                                <div className="my-4">
-                                                    <img
-                                                        src="/cookbooks/rag-bot/contractAnalyzer.png"
-                                                        alt="Contract Analyzer"
-                                                        className="rounded-lg shadow-md border w-full"
-                                                    />
-                                                </div>
-
-                                                <div className="bg-green-100 rounded-lg p-4">
-                                                    <p className="text-green-800 mb-2">Output includes:</p>
-                                                    <ul className="space-y-1 text-green-700 text-sm">
-                                                        <li>Full inference log</li>
-                                                        <li>
-                                                            Files in <code className="bg-green-200 px-1 rounded">.json</code>,{" "}
-                                                            <code className="bg-green-200 px-1 rounded">.docx</code>, and{" "}
-                                                            <code className="bg-green-200 px-1 rounded">.txt</code> formats
-                                                        </li>
-                                                    </ul>
-                                                </div>
-
-                                                <Card className="bg-yellow-50 border-yellow-200">
-                                                    <CardContent className="p-4">
-                                                        <div className="flex items-start gap-2">
-                                                            <Lightbulb className="h-5 w-5 text-yellow-600 mt-0.5 flex-shrink-0" />
-                                                            <div>
-                                                                <p className="font-semibold text-yellow-800">Bonus</p>
-                                                                <p className="text-yellow-700 text-sm">
-                                                                    Customize the questions, add/delete steps, or expand as needed. Read more about this{" "}
-                                                                    <a
-                                                                        href="https://model-hq-docs.vercel.app/agent/create-new-agent"
-                                                                        className="text-yellow-600 hover:text-yellow-700 underline"
-                                                                    >
-                                                                        here
-                                                                    </a>
-                                                                    .
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </CardContent>
-                                                </Card>
-                                            </div>
-                                        </CardContent>
-                                    </Card>
-                                </div>
-                            </div>
+                        <div>
+                          <h4 className="font-semibold text-gray-900 mb-3">Steps:</h4>
+                          <ul className="space-y-2 text-gray-800">
+                            <li className="flex items-start gap-2">
+                              <span className="w-5 h-5 bg-gray-200 rounded-full flex items-center justify-center text-xs font-semibold text-gray-800 mt-0.5 flex-shrink-0">
+                                1
+                              </span>
+                              <span>
+                                Go to <strong>Agent → Load Existing</strong>, select <strong>ContractAnalyzer</strong>
+                              </span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <span className="w-5 h-5 bg-gray-200 rounded-full flex items-center justify-center text-xs font-semibold text-gray-800 mt-0.5 flex-shrink-0">
+                                2
+                              </span>
+                              <span>
+                                Choose <strong>Batch Run</strong> in the UI
+                              </span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <span className="w-5 h-5 bg-gray-200 rounded-full flex items-center justify-center text-xs font-semibold text-gray-800 mt-0.5 flex-shrink-0">
+                                3
+                              </span>
+                              <div>
+                                <span>
+                                  Upload multiple documents (e.g., first 5 from the sample agreements folder for this
+                                  example)
+                                </span>
+                                <code className="bg-gray-100 px-2 py-1 rounded text-xs mt-1 block">
+                                  C:\users\[username]\llmware_data\sample_files\agreements\
+                                </code>
+                              </div>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <span className="w-5 h-5 bg-gray-200 rounded-full flex items-center justify-center text-xs font-semibold text-gray-800 mt-0.5 flex-shrink-0">
+                                4
+                              </span>
+                              <span>Agent will iterate through each document and apply consistent questions</span>
+                            </li>
+                          </ul>
                         </div>
 
-                        {/* Step 3 */}
-                        <div className="relative">
-                            <div className="flex items-start gap-4">
-                                <div className="flex-shrink-0">
-                                    <div className="w-10 h-10 bg-purple-500 text-white rounded-full flex items-center justify-center font-bold">
-                                        3
-                                    </div>
-                                </div>
-                                <div className="flex-1">
-                                    <h3 className="text-xl font-bold text-gray-900 mb-3">
-                                        Scale with Batch Agent Mode (Multiple Documents)
-                                    </h3>
-                                    <Card className="bg-purple-50 border-purple-200">
-                                        <CardContent className="p-6">
-                                            <div className="space-y-4">
-                                                <div className="flex items-center gap-2 mb-4">
-                                                    <Folder className="h-5 w-5 text-purple-600" />
-                                                    <p className="font-semibold text-purple-900">
-                                                        Purpose: Analyze dozens or hundreds of agreements in one go.
-                                                    </p>
-                                                </div>
+                        <div className="bg-gray-100 rounded-lg p-4">
+                          <p className="text-gray-800 mb-2">
+                            <strong>Final Output:</strong>
+                          </p>
+                          <ul className="space-y-1 text-gray-700 text-sm">
+                            <li>• Consolidated table of answers</li>
+                            <li>• Downloadable spreadsheet or report</li>
+                            <li>• Supports aggregation, comparison, and audit workflows</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              </div>
+            </div>
 
-                                                <div>
-                                                    <h4 className="font-semibold text-purple-900 mb-3">Steps:</h4>
-                                                    <ul className="space-y-2 text-purple-800">
-                                                        <li className="flex items-start gap-2">
-                                                            <span className="w-5 h-5 bg-purple-200 rounded-full flex items-center justify-center text-xs font-semibold text-purple-800 mt-0.5 flex-shrink-0">
-                                                                1
-                                                            </span>
-                                                            <span>
-                                                                Go to <strong>Agent → Load Existing</strong>, select <strong>ContractAnalyzer</strong>
-                                                            </span>
-                                                        </li>
-                                                        <li className="flex items-start gap-2">
-                                                            <span className="w-5 h-5 bg-purple-200 rounded-full flex items-center justify-center text-xs font-semibold text-purple-800 mt-0.5 flex-shrink-0">
-                                                                2
-                                                            </span>
-                                                            <span>
-                                                                Choose <strong>Batch Run</strong> in the UI
-                                                            </span>
-                                                        </li>
-                                                        <li className="flex items-start gap-2">
-                                                            <span className="w-5 h-5 bg-purple-200 rounded-full flex items-center justify-center text-xs font-semibold text-purple-800 mt-0.5 flex-shrink-0">
-                                                                3
-                                                            </span>
-                                                            <div>
-                                                                <span>
-                                                                    Upload multiple documents (e.g., first 5 from the sample agreements folder for this
-                                                                    example)
-                                                                </span>
-                                                                <code className="bg-purple-100 px-2 py-1 rounded text-xs mt-1 block">
-                                                                    C:\users\[username]\llmware_data\sample_files\agreements\
-                                                                </code>
-                                                            </div>
-                                                        </li>
-                                                        <li className="flex items-start gap-2">
-                                                            <span className="w-5 h-5 bg-purple-200 rounded-full flex items-center justify-center text-xs font-semibold text-purple-800 mt-0.5 flex-shrink-0">
-                                                                4
-                                                            </span>
-                                                            <span>Agent will iterate through each document and apply consistent questions</span>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-
-                                                <div className="bg-purple-100 rounded-lg p-4">
-                                                    <p className="text-purple-800 mb-2">
-                                                        <strong>Final Output:</strong>
-                                                    </p>
-                                                    <ul className="space-y-1 text-purple-700 text-sm">
-                                                        <li>• Consolidated table of answers</li>
-                                                        <li>• Downloadable spreadsheet or report</li>
-                                                        <li>• Supports aggregation, comparison, and audit workflows</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </CardContent>
-                                    </Card>
-                                </div>
-                            </div>
+            {/* Step 4 */}
+            <div className="relative">
+              <div className="flex items-baseline gap-4">
+                <div className="flex-shrink-0">
+                  <div className="w-10 h-10 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold">
+                    4
+                  </div>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">Enable Backend API Mode (For Developers)</h3>
+                  <Card className="bg-gray-50 border">
+                    <CardContent className="p-6">
+                      <div className="space-y-4">
+                        <div className="flex items-center gap-2 mb-4">
+                          <Code className="h-5 w-5 text-gray-600" />
+                          <p className="font-semibold text-gray-900">
+                            Purpose: Integrate Model HQ into custom applications via API.
+                          </p>
                         </div>
 
-                        {/* Step 4 */}
-                        <div className="relative">
-                            <div className="flex items-start gap-4">
-                                <div className="flex-shrink-0">
-                                    <div className="w-10 h-10 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold">
-                                        4
-                                    </div>
-                                </div>
-                                <div className="flex-1">
-                                    <h3 className="text-xl font-bold text-gray-900 mb-3">Enable Backend API Mode (For Developers)</h3>
-                                    <Card className="bg-orange-50 border-orange-200">
-                                        <CardContent className="p-6">
-                                            <div className="space-y-4">
-                                                <div className="flex items-center gap-2 mb-4">
-                                                    <Code className="h-5 w-5 text-orange-600" />
-                                                    <p className="font-semibold text-orange-900">
-                                                        Purpose: Integrate Model HQ into custom applications via API.
-                                                    </p>
-                                                </div>
+                        <div>
+                          <h4 className="font-semibold text-gray-900 mb-3">Steps:</h4>
+                          <ol className="space-y-2 text-gray-800">
+                            <li className="flex items-start gap-2">
+                              <span className="w-5 h-5 bg-gray-200 rounded-full flex items-center justify-center text-xs font-semibold text-gray-800 mt-0.5 flex-shrink-0">
+                                1
+                              </span>
+                              <div>
+                                <span>Launch Model HQ as a local backend server:</span>
+                                <ul className="ml-4 mt-1 space-y-1 text-sm">
+                                  <li>Option 1: Localhost</li>
+                                  <li>Option 2: Mini API server for LAN access</li>
+                                </ul>
+                              </div>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <span className="w-5 h-5 bg-gray-200 rounded-full flex items-center justify-center text-xs font-semibold text-gray-800 mt-0.5 flex-shrink-0">
+                                2
+                              </span>
+                              <span>Access the API using the Model HQ Python client</span>
+                            </li>
+                          </ol>
+                        </div>
 
-                                                <div>
-                                                    <h4 className="font-semibold text-orange-900 mb-3">Steps:</h4>
-                                                    <ol className="space-y-2 text-orange-800">
-                                                        <li className="flex items-start gap-2">
-                                                            <span className="w-5 h-5 bg-orange-200 rounded-full flex items-center justify-center text-xs font-semibold text-orange-800 mt-0.5 flex-shrink-0">
-                                                                1
-                                                            </span>
-                                                            <div>
-                                                                <span>Launch Model HQ as a local backend server:</span>
-                                                                <ul className="ml-4 mt-1 space-y-1 text-sm">
-                                                                    <li>Option 1: Localhost</li>
-                                                                    <li>Option 2: Mini API server for LAN access</li>
-                                                                </ul>
-                                                            </div>
-                                                        </li>
-                                                        <li className="flex items-start gap-2">
-                                                            <span className="w-5 h-5 bg-orange-200 rounded-full flex items-center justify-center text-xs font-semibold text-orange-800 mt-0.5 flex-shrink-0">
-                                                                2
-                                                            </span>
-                                                            <span>Access the API using the Model HQ Python client</span>
-                                                        </li>
-                                                    </ol>
-                                                </div>
+                        <div>
+                          <h4 className="font-semibold text-gray-900 mb-3">Two Integration Modes:</h4>
 
-                                                <div>
-                                                    <h4 className="font-semibold text-orange-900 mb-3">Two Integration Modes:</h4>
-
-                                                    <div className="space-y-4">
-                                                        <div>
-                                                            <p className="font-semibold text-orange-800 mb-2">a. Agent Run via API</p>
-                                                            <div className="rounded-md overflow-hidden">
-                                                                <pre className="text-sm font-mono text-black p-4 overflow-x-auto">
-                                                                    <code>{`from modelhq_client import ModelHQ
+                          <div className="space-y-4">
+                            <div>
+                              <p className="font-semibold text-gray-800 mb-2">a. Agent Run via API</p>
+                              <div className="bg-gray-100 rounded-md p-4">
+                                <pre className="text-sm font-mono text-gray-800 overflow-x-auto">
+                                  <code>{`from modelhq_client import ModelHQ
 
 client = ModelHQ()
 result = client.run_agent(
     file="mycontract.pdf", 
     agent="contract_analyzer"
 )`}</code>
-                                                                </pre>
-                                                            </div>
-                                                        </div>
+                                </pre>
+                              </div>
+                            </div>
 
-                                                        <div>
-                                                            <p className="font-semibold text-orange-800 mb-2">b. Batch Folder Run via API</p>
-                                                            <div className="rounded-md overflow-hidden">
-                                                                <pre className="text-sm font-mono text-black p-4 overflow-x-auto">
-                                                                    <code>{`questions = [
+                            <div>
+                              <p className="font-semibold text-gray-800 mb-2">b. Batch Folder Run via API</p>
+                              <div className="bg-gray-100 rounded-md p-4">
+                                <pre className="text-sm font-mono text-gray-800 overflow-x-auto">
+                                  <code>{`questions = [
     "How much is the base salary?", 
     "What is the termination clause?"
 ]
@@ -518,295 +516,295 @@ client.batch_analyze(
     folder="agreements_folder", 
     questions=questions
 )`}</code>
-                                                                </pre>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div className="bg-orange-100 rounded-lg p-4">
-                                                    <p className="text-orange-800 mb-2">
-                                                        <strong>Output Includes:</strong>
-                                                    </p>
-                                                    <ul className="space-y-1 text-orange-700 text-sm">
-                                                        <li>Answers per document per question</li>
-                                                        <li>Extracted text (optional) for storage or audits</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </CardContent>
-                                    </Card>
-                                </div>
+                                </pre>
+                              </div>
                             </div>
+                          </div>
                         </div>
-                    </div>
-                </section>
 
-                {/* Output Options */}
-                <section>
-                    <div className="flex items-center gap-3 mb-6">
-                        <div className="p-2 bg-teal-100 rounded-lg">
-                            <Download className="h-6 w-6 text-teal-600" />
+                        <div className="bg-gray-100 rounded-lg p-4">
+                          <p className="text-gray-800 mb-2">
+                            <strong>Output Includes:</strong>
+                          </p>
+                          <ul className="space-y-1 text-gray-700 text-sm">
+                            <li>Answers per document per question</li>
+                            <li>Extracted text (optional) for storage or audits</li>
+                          </ul>
                         </div>
-                        <h2 className="text-2xl font-bold text-gray-900">Output Options</h2>
-                    </div>
-
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                        <Card className="text-center">
-                            <CardContent className="p-6">
-                                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                                    <FileText className="h-6 w-6 text-blue-600" />
-                                </div>
-                                <h3 className="font-semibold text-gray-900 mb-2">Word Report</h3>
-                                <p className="text-sm text-gray-600">
-                                    <code className="bg-gray-100 px-2 py-1 rounded">.docx</code>
-                                </p>
-                            </CardContent>
-                        </Card>
-                        <Card className="text-center">
-                            <CardContent className="p-6">
-                                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                                    <BarChart3 className="h-6 w-6 text-green-600" />
-                                </div>
-                                <h3 className="font-semibold text-gray-900 mb-2">Excel Spreadsheet</h3>
-                                <p className="text-sm text-gray-600">
-                                    <code className="bg-gray-100 px-2 py-1 rounded">.xlsx</code>
-                                </p>
-                            </CardContent>
-                        </Card>
-                        <Card className="text-center">
-                            <CardContent className="p-6">
-                                <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                                    <Code className="h-6 w-6 text-purple-600" />
-                                </div>
-                                <h3 className="font-semibold text-gray-900 mb-2">API JSON</h3>
-                                <p className="text-sm text-gray-600">JSON payload</p>
-                            </CardContent>
-                        </Card>
-                        <Card className="text-center">
-                            <CardContent className="p-6">
-                                <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                                    <FileText className="h-6 w-6 text-orange-600" />
-                                </div>
-                                <h3 className="font-semibold text-gray-900 mb-2">Raw Text</h3>
-                                <p className="text-sm text-gray-600">Extracted text</p>
-                            </CardContent>
-                        </Card>
-                        <Card className="text-center">
-                            <CardContent className="p-6">
-                                <div className="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                                    <Clock className="h-6 w-6 text-indigo-600" />
-                                </div>
-                                <h3 className="font-semibold text-gray-900 mb-2">Inference History</h3>
-                                <p className="text-sm text-gray-600">Full processing log</p>
-                            </CardContent>
-                        </Card>
-                    </div>
-                </section>
-
-                {/* Use Cases */}
-                <section>
-                    <div className="flex items-center gap-3 mb-6">
-                        <div className="p-2 bg-yellow-100 rounded-lg">
-                            <Users className="h-6 w-6 text-yellow-600" />
-                        </div>
-                        <h2 className="text-2xl font-bold text-gray-900">Example Use Cases</h2>
-                    </div>
-
-                    <div className="grid md:grid-cols-2 gap-6">
-                        <Card className="border-l-4 border-l-blue-500">
-                            <CardContent className="p-6">
-                                <div className="flex items-start gap-3">
-                                    <Users className="h-6 w-6 text-blue-600 mt-0.5 flex-shrink-0" />
-                                    <div>
-                                        <h3 className="font-semibold text-blue-900 mb-2">HR Team</h3>
-                                        <p className="text-blue-700 text-sm">Reviewing executive compensation</p>
-                                    </div>
-                                </div>
-                            </CardContent>
-                        </Card>
-                        <Card className="border-l-4 border-l-green-500">
-                            <CardContent className="p-6">
-                                <div className="flex items-start gap-3">
-                                    <Shield className="h-6 w-6 text-green-600 mt-0.5 flex-shrink-0" />
-                                    <div>
-                                        <h3 className="font-semibold text-green-900 mb-2">Legal Team</h3>
-                                        <p className="text-green-700 text-sm">Comparing MSA clauses</p>
-                                    </div>
-                                </div>
-                            </CardContent>
-                        </Card>
-                        <Card className="border-l-4 border-l-purple-500">
-                            <CardContent className="p-6">
-                                <div className="flex items-start gap-3">
-                                    <CheckCircle className="h-6 w-6 text-purple-600 mt-0.5 flex-shrink-0" />
-                                    <div>
-                                        <h3 className="font-semibold text-purple-900 mb-2">Compliance</h3>
-                                        <p className="text-purple-700 text-sm">Tracking employment clauses</p>
-                                    </div>
-                                </div>
-                            </CardContent>
-                        </Card>
-                        <Card className="border-l-4 border-l-orange-500">
-                            <CardContent className="p-6">
-                                <div className="flex items-start gap-3">
-                                    <Code className="h-6 w-6 text-orange-600 mt-0.5 flex-shrink-0" />
-                                    <div>
-                                        <h3 className="font-semibold text-orange-900 mb-2">Developers</h3>
-                                        <p className="text-orange-700 text-sm">Building internal search tools</p>
-                                    </div>
-                                </div>
-                            </CardContent>
-                        </Card>
-                    </div>
-                </section>
-
-                {/* Summary Table */}
-                <section>
-                    <h2 className="text-2xl font-bold text-gray-900 mb-6">Summary of Interaction Modes</h2>
-
-                    {/* Desktop Table */}
-                    <div className="hidden md:block">
-                        <Card className="overflow-hidden">
-                            <table className="min-w-full border-collapse">
-                                <thead>
-                                    <tr className="bg-gray-50">
-                                        <th className="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900">Mode</th>
-                                        <th className="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900">
-                                            User Type
-                                        </th>
-                                        <th className="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900">Input</th>
-                                        <th className="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900">Output</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr className="hover:bg-gray-50">
-                                        <td className="border border-gray-300 px-4 py-3 font-medium">
-                                            <strong>Chatbot (UI)</strong>
-                                        </td>
-                                        <td className="border border-gray-300 px-4 py-3">Non-technical</td>
-                                        <td className="border border-gray-300 px-4 py-3">Single document</td>
-                                        <td className="border border-gray-300 px-4 py-3">Chat + answers + source references</td>
-                                    </tr>
-                                    <tr className="bg-gray-25 hover:bg-gray-50">
-                                        <td className="border border-gray-300 px-4 py-3 font-medium">
-                                            <strong>Agent (UI)</strong>
-                                        </td>
-                                        <td className="border border-gray-300 px-4 py-3">Analysts, HR</td>
-                                        <td className="border border-gray-300 px-4 py-3">Single document</td>
-                                        <td className="border border-gray-300 px-4 py-3">Structured report</td>
-                                    </tr>
-                                    <tr className="hover:bg-gray-50">
-                                        <td className="border border-gray-300 px-4 py-3 font-medium">
-                                            <strong>Batch Agent</strong>
-                                        </td>
-                                        <td className="border border-gray-300 px-4 py-3">Ops/Compliance</td>
-                                        <td className="border border-gray-300 px-4 py-3">Folder of documents</td>
-                                        <td className="border border-gray-300 px-4 py-3">Consolidated output, bulk analysis</td>
-                                    </tr>
-                                    <tr className="bg-gray-25 hover:bg-gray-50">
-                                        <td className="border border-gray-300 px-4 py-3 font-medium">
-                                            <strong>API</strong>
-                                        </td>
-                                        <td className="border border-gray-300 px-4 py-3">Developers</td>
-                                        <td className="border border-gray-300 px-4 py-3">Files, questions</td>
-                                        <td className="border border-gray-300 px-4 py-3">JSON/text for apps, dashboards, workflows</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </Card>
-                    </div>
-
-                    {/* Mobile Cards */}
-                    <div className="md:hidden space-y-4">
-                        <Card className="border-l-4 border-l-blue-500">
-                            <CardContent className="p-4">
-                                <h3 className="font-semibold text-blue-900 mb-2 flex items-center gap-2">
-                                    <MessageSquare className="h-5 w-5" />
-                                    Chatbot (UI)
-                                </h3>
-                                <div className="space-y-2 text-sm">
-                                    <div>
-                                        <span className="font-medium">User Type:</span> Non-technical
-                                    </div>
-                                    <div>
-                                        <span className="font-medium">Input:</span> Single document
-                                    </div>
-                                    <div>
-                                        <span className="font-medium">Output:</span> Chat + answers + source references
-                                    </div>
-                                </div>
-                            </CardContent>
-                        </Card>
-                        <Card className="border-l-4 border-l-green-500">
-                            <CardContent className="p-4">
-                                <h3 className="font-semibold text-green-900 mb-2 flex items-center gap-2">
-                                    <Settings className="h-5 w-5" />
-                                    Agent (UI)
-                                </h3>
-                                <div className="space-y-2 text-sm">
-                                    <div>
-                                        <span className="font-medium">User Type:</span> Analysts, HR
-                                    </div>
-                                    <div>
-                                        <span className="font-medium">Input:</span> Single document
-                                    </div>
-                                    <div>
-                                        <span className="font-medium">Output:</span> Structured report
-                                    </div>
-                                </div>
-                            </CardContent>
-                        </Card>
-                        <Card className="border-l-4 border-l-purple-500">
-                            <CardContent className="p-4">
-                                <h3 className="font-semibold text-purple-900 mb-2 flex items-center gap-2">
-                                    <Folder className="h-5 w-5" />
-                                    Batch Agent
-                                </h3>
-                                <div className="space-y-2 text-sm">
-                                    <div>
-                                        <span className="font-medium">User Type:</span> Ops/Compliance
-                                    </div>
-                                    <div>
-                                        <span className="font-medium">Input:</span> Folder of documents
-                                    </div>
-                                    <div>
-                                        <span className="font-medium">Output:</span> Consolidated output, bulk analysis
-                                    </div>
-                                </div>
-                            </CardContent>
-                        </Card>
-                        <Card className="border-l-4 border-l-orange-500">
-                            <CardContent className="p-4">
-                                <h3 className="font-semibold text-orange-900 mb-2 flex items-center gap-2">
-                                    <Code className="h-5 w-5" />
-                                    API
-                                </h3>
-                                <div className="space-y-2 text-sm">
-                                    <div>
-                                        <span className="font-medium">User Type:</span> Developers
-                                    </div>
-                                    <div>
-                                        <span className="font-medium">Input:</span> Files, questions
-                                    </div>
-                                    <div>
-                                        <span className="font-medium">Output:</span> JSON/text for apps, dashboards, workflows
-                                    </div>
-                                </div>
-                            </CardContent>
-                        </Card>
-                    </div>
-                </section>
-
-                {/* Support */}
-                <div className="bg-gradient-to-r from-gray-50 to-slate-50 rounded-lg p-6 border text-center">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Need Help?</h3>
-                    <p className="text-gray-700">
-                        If you encounter any issues while updating your model configuration, feel free to contact our support team
-                        at <code className="bg-gray-200 px-2 py-1 rounded">support@aibloks.com</code>
-                    </p>
+                      </div>
+                    </CardContent>
+                  </Card>
                 </div>
+              </div>
             </div>
+          </div>
+        </section>
+
+        {/* Output Options */}
+        <section>
+          <div className="flex items-center gap-3 mb-6">
+            <div className="p-2 bg-gray-100 rounded-lg">
+              <Download className="h-6 w-6 text-gray-600" />
+            </div>
+            <h2 className="text-2xl font-bold text-gray-900">Output Options</h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <Card className="text-center">
+              <CardContent className="p-6">
+                <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <FileText className="h-6 w-6 text-gray-600" />
+                </div>
+                <h3 className="font-semibold text-gray-900 mb-2">Word Report</h3>
+                <p className="text-sm text-gray-600">
+                  <code className="bg-gray-100 px-2 py-1 rounded">.docx</code>
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="text-center">
+              <CardContent className="p-6">
+                <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <BarChart3 className="h-6 w-6 text-gray-600" />
+                </div>
+                <h3 className="font-semibold text-gray-900 mb-2">Excel Spreadsheet</h3>
+                <p className="text-sm text-gray-600">
+                  <code className="bg-gray-100 px-2 py-1 rounded">.xlsx</code>
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="text-center">
+              <CardContent className="p-6">
+                <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <Code className="h-6 w-6 text-gray-600" />
+                </div>
+                <h3 className="font-semibold text-gray-900 mb-2">API JSON</h3>
+                <p className="text-sm text-gray-600">JSON payload</p>
+              </CardContent>
+            </Card>
+            <Card className="text-center">
+              <CardContent className="p-6">
+                <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <FileText className="h-6 w-6 text-gray-600" />
+                </div>
+                <h3 className="font-semibold text-gray-900 mb-2">Raw Text</h3>
+                <p className="text-sm text-gray-600">Extracted text</p>
+              </CardContent>
+            </Card>
+            <Card className="text-center">
+              <CardContent className="p-6">
+                <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <Clock className="h-6 w-6 text-gray-600" />
+                </div>
+                <h3 className="font-semibold text-gray-900 mb-2">Inference History</h3>
+                <p className="text-sm text-gray-600">Full processing log</p>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* Use Cases */}
+        <section>
+          <div className="flex items-center gap-3 mb-6">
+            <div className="p-2 bg-gray-100 rounded-lg">
+              <Users className="h-6 w-6 text-gray-600" />
+            </div>
+            <h2 className="text-2xl font-bold text-gray-900">Example Use Cases</h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            <Card className="border-l-4 border-l-blue-500">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-3">
+                  <Users className="h-6 w-6 text-blue-600 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <h3 className="font-semibold text-blue-900 mb-2">HR Team</h3>
+                    <p className="text-blue-700 text-sm">Reviewing executive compensation</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+            <Card className="border-l-4 border-l-green-500">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-3">
+                  <Shield className="h-6 w-6 text-green-600 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <h3 className="font-semibold text-green-900 mb-2">Legal Team</h3>
+                    <p className="text-green-700 text-sm">Comparing MSA clauses</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+            <Card className="border-l-4 border-l-purple-500">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="h-6 w-6 text-purple-600 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <h3 className="font-semibold text-purple-900 mb-2">Compliance</h3>
+                    <p className="text-purple-700 text-sm">Tracking employment clauses</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+            <Card className="border-l-4 border-l-orange-500">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-3">
+                  <Code className="h-6 w-6 text-orange-600 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <h3 className="font-semibold text-orange-900 mb-2">Developers</h3>
+                    <p className="text-orange-700 text-sm">Building internal search tools</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* Summary Table */}
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Summary of Interaction Modes</h2>
+
+          {/* Desktop Table */}
+          <div className="hidden md:block">
+            <Card className="overflow-hidden">
+              <table className="min-w-full border-collapse">
+                <thead>
+                  <tr className="bg-gray-50">
+                    <th className="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900">Mode</th>
+                    <th className="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900">
+                      User Type
+                    </th>
+                    <th className="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900">Input</th>
+                    <th className="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900">Output</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="hover:bg-gray-50">
+                    <td className="border border-gray-300 px-4 py-3 font-medium">
+                      <strong>Chatbot (UI)</strong>
+                    </td>
+                    <td className="border border-gray-300 px-4 py-3">Non-technical</td>
+                    <td className="border border-gray-300 px-4 py-3">Single document</td>
+                    <td className="border border-gray-300 px-4 py-3">Chat + answers + source references</td>
+                  </tr>
+                  <tr className="bg-gray-25 hover:bg-gray-50">
+                    <td className="border border-gray-300 px-4 py-3 font-medium">
+                      <strong>Agent (UI)</strong>
+                    </td>
+                    <td className="border border-gray-300 px-4 py-3">Analysts, HR</td>
+                    <td className="border border-gray-300 px-4 py-3">Single document</td>
+                    <td className="border border-gray-300 px-4 py-3">Structured report</td>
+                  </tr>
+                  <tr className="hover:bg-gray-50">
+                    <td className="border border-gray-300 px-4 py-3 font-medium">
+                      <strong>Batch Agent</strong>
+                    </td>
+                    <td className="border border-gray-300 px-4 py-3">Ops/Compliance</td>
+                    <td className="border border-gray-300 px-4 py-3">Folder of documents</td>
+                    <td className="border border-gray-300 px-4 py-3">Consolidated output, bulk analysis</td>
+                  </tr>
+                  <tr className="bg-gray-25 hover:bg-gray-50">
+                    <td className="border border-gray-300 px-4 py-3 font-medium">
+                      <strong>API</strong>
+                    </td>
+                    <td className="border border-gray-300 px-4 py-3">Developers</td>
+                    <td className="border border-gray-300 px-4 py-3">Files, questions</td>
+                    <td className="border border-gray-300 px-4 py-3">JSON/text for apps, dashboards, workflows</td>
+                  </tr>
+                </tbody>
+              </table>
+            </Card>
+          </div>
+
+          {/* Mobile Cards */}
+          <div className="md:hidden space-y-4">
+            <Card className="border-l-4 border-l-blue-500">
+              <CardContent className="p-4">
+                <h3 className="font-semibold text-blue-900 mb-2 flex items-center gap-2">
+                  <MessageSquare className="h-5 w-5" />
+                  Chatbot (UI)
+                </h3>
+                <div className="space-y-2 text-sm">
+                  <div>
+                    <span className="font-medium">User Type:</span> Non-technical
+                  </div>
+                  <div>
+                    <span className="font-medium">Input:</span> Single document
+                  </div>
+                  <div>
+                    <span className="font-medium">Output:</span> Chat + answers + source references
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+            <Card className="border-l-4 border-l-green-500">
+              <CardContent className="p-4">
+                <h3 className="font-semibold text-green-900 mb-2 flex items-center gap-2">
+                  <Settings className="h-5 w-5" />
+                  Agent (UI)
+                </h3>
+                <div className="space-y-2 text-sm">
+                  <div>
+                    <span className="font-medium">User Type:</span> Analysts, HR
+                  </div>
+                  <div>
+                    <span className="font-medium">Input:</span> Single document
+                  </div>
+                  <div>
+                    <span className="font-medium">Output:</span> Structured report
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+            <Card className="border-l-4 border-l-purple-500">
+              <CardContent className="p-4">
+                <h3 className="font-semibold text-purple-900 mb-2 flex items-center gap-2">
+                  <Folder className="h-5 w-5" />
+                  Batch Agent
+                </h3>
+                <div className="space-y-2 text-sm">
+                  <div>
+                    <span className="font-medium">User Type:</span> Ops/Compliance
+                  </div>
+                  <div>
+                    <span className="font-medium">Input:</span> Folder of documents
+                  </div>
+                  <div>
+                    <span className="font-medium">Output:</span> Consolidated output, bulk analysis
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+            <Card className="border-l-4 border-l-orange-500">
+              <CardContent className="p-4">
+                <h3 className="font-semibold text-orange-900 mb-2 flex items-center gap-2">
+                  <Code className="h-5 w-5" />
+                  API
+                </h3>
+                <div className="space-y-2 text-sm">
+                  <div>
+                    <span className="font-medium">User Type:</span> Developers
+                  </div>
+                  <div>
+                    <span className="font-medium">Input:</span> Files, questions
+                  </div>
+                  <div>
+                    <span className="font-medium">Output:</span> JSON/text for apps, dashboards, workflows
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* Support */}
+        <div className="bg-gradient-to-r from-gray-50 to-slate-50 rounded-lg p-6 border text-center">
+          <h3 className="text-lg font-semibold text-gray-900 mb-2">Need Help?</h3>
+          <p className="text-gray-700">
+            If you encounter any issues while updating your model configuration, feel free to contact our support team
+            at <code className="bg-gray-200 px-2 py-1 rounded">support@aibloks.com</code>
+          </p>
         </div>
-    )
+      </div>
+    </div>
+  )
 }

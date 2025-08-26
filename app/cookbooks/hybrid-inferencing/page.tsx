@@ -40,7 +40,7 @@ export default function HybridInferencingPage() {
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbLink href="/bots">Cookbooks</BreadcrumbLink>
+            <BreadcrumbLink href="/">Cookbooks</BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
@@ -62,24 +62,19 @@ export default function HybridInferencingPage() {
         {/* Goal Section */}
         <section>
           <div className="flex items-center gap-3 mb-4">
-            <div className="p-2 bg-blue-100 rounded-lg">
-              <Target className="h-6 w-6 text-blue-600" />
-            </div>
             <h2 className="text-2xl font-bold text-gray-900">Goal</h2>
           </div>
-          <Card className="bg-gradient-to-r from-blue-50 to-indigo-50 border-blue-200">
-            <CardContent className="p-6">
-              <p className="text-blue-800 mb-4">
-                Seamlessly combine local and server-based inference modes—chat, agents, and semantic search—all from one
-                interface.
-              </p>
-              <p className="text-blue-700">
-                This walkthrough is built for developers or technical practitioners looking to toggle between local AI
-                PC inferencing and API server-based inference, including how to access remote vector libraries, run
-                agents remotely, and build enterprise-wide RAG pipelines.
-              </p>
-            </CardContent>
-          </Card>
+          <div className="bg-gradient-to-r from-gray-50 to-slate-50 rounded-lg p-6 border">
+            <p className="text-gray-800 mb-4">
+              Seamlessly combine local and server-based inference modes—chat, agents, and semantic search—all from one
+              interface.
+            </p>
+            <p className="text-gray-700">
+              This walkthrough is built for developers or technical practitioners looking to toggle between local AI PC
+              inferencing and API server-based inference, including how to access remote vector libraries, run agents
+              remotely, and build enterprise-wide RAG pipelines.
+            </p>
+          </div>
         </section>
 
         {/* Video Tutorial */}
@@ -108,9 +103,6 @@ export default function HybridInferencingPage() {
         {/* Requirements Section */}
         <section>
           <div className="flex items-center gap-3 mb-4">
-            <div className="p-2 bg-green-100 rounded-lg">
-              <CheckCircle className="h-6 w-6 text-green-600" />
-            </div>
             <h2 className="text-2xl font-bold text-gray-900">Requirements</h2>
           </div>
 
@@ -208,31 +200,33 @@ export default function HybridInferencingPage() {
           <div className="space-y-8">
             {/* Step 1 */}
             <div className="relative">
-              <div className="flex items-start gap-4">
+              <div className="flex items-baseline gap-4">
                 <div className="flex-shrink-0">
                   <div className="w-10 h-10 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold">
                     1
                   </div>
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">Connect Model HQ Desktop to the API Server</h3>
-                  <Card className="bg-blue-50 border-blue-200">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">
+                    Connect Model HQ Desktop to the API Server
+                  </h3>
+                  <Card className="bg-gray-50 border">
                     <CardContent className="p-6">
                       <div className="space-y-6">
                         <div>
-                          <h4 className="font-semibold text-blue-900 mb-3 flex items-center gap-2">
+                          <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
                             <Settings className="h-5 w-5" />
                             1.1 Launch the Model HQ App on your AI PC
                           </h4>
-                          <ul className="space-y-2 text-blue-800">
+                          <ul className="space-y-2 text-gray-800">
                             <li className="flex items-start gap-2">
-                              <span className="w-5 h-5 bg-blue-200 rounded-full flex items-center justify-center text-xs font-semibold text-blue-800 mt-0.5 flex-shrink-0">
+                              <span className="w-5 h-5 bg-gray-200 rounded-full flex items-center justify-center text-xs font-semibold text-gray-800 mt-0.5 flex-shrink-0">
                                 1
                               </span>
                               <span>Ensure your AI PC is network-accessible to the API server</span>
                             </li>
                             <li className="flex items-start gap-2">
-                              <span className="w-5 h-5 bg-blue-200 rounded-full flex items-center justify-center text-xs font-semibold text-blue-800 mt-0.5 flex-shrink-0">
+                              <span className="w-5 h-5 bg-gray-200 rounded-full flex items-center justify-center text-xs font-semibold text-gray-800 mt-0.5 flex-shrink-0">
                                 2
                               </span>
                               <span>
@@ -240,7 +234,7 @@ export default function HybridInferencingPage() {
                               </span>
                             </li>
                             <li className="flex items-start gap-2">
-                              <span className="w-5 h-5 bg-blue-200 rounded-full flex items-center justify-center text-xs font-semibold text-blue-800 mt-0.5 flex-shrink-0">
+                              <span className="w-5 h-5 bg-gray-200 rounded-full flex items-center justify-center text-xs font-semibold text-gray-800 mt-0.5 flex-shrink-0">
                                 3
                               </span>
                               <span>
@@ -248,7 +242,7 @@ export default function HybridInferencingPage() {
                               </span>
                             </li>
                             <li className="flex items-start gap-2">
-                              <span className="w-5 h-5 bg-blue-200 rounded-full flex items-center justify-center text-xs font-semibold text-blue-800 mt-0.5 flex-shrink-0">
+                              <span className="w-5 h-5 bg-gray-200 rounded-full flex items-center justify-center text-xs font-semibold text-gray-800 mt-0.5 flex-shrink-0">
                                 4
                               </span>
                               <span>
@@ -256,11 +250,11 @@ export default function HybridInferencingPage() {
                               </span>
                             </li>
                             <li className="flex items-start gap-2">
-                              <span className="w-5 h-5 bg-blue-200 rounded-full flex items-center justify-center text-xs font-semibold text-blue-800 mt-0.5 flex-shrink-0">
+                              <span className="w-5 h-5 bg-gray-200 rounded-full flex items-center justify-center text-xs font-semibold text-gray-800 mt-0.5 flex-shrink-0">
                                 5
                               </span>
                               <span>
-                                Click <code className="bg-blue-100 px-2 py-1 rounded">&gt;</code> at the bottom of the
+                                Click <code className="bg-gray-100 px-2 py-1 rounded">&gt;</code> at the bottom of the
                                 screen
                               </span>
                             </li>
@@ -292,11 +286,11 @@ export default function HybridInferencingPage() {
                         </div>
 
                         <div>
-                          <h4 className="font-semibold text-blue-900 mb-3 flex items-center gap-2">
+                          <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
                             <CheckCircle className="h-5 w-5" />
                             1.2 Confirm Server Discoverability
                           </h4>
-                          <ul className="space-y-2 text-blue-800">
+                          <ul className="space-y-2 text-gray-800">
                             <li className="flex items-start gap-2">
                               <Library className="h-4 w-4 mt-1 flex-shrink-0" />
                               <span>
@@ -313,9 +307,9 @@ export default function HybridInferencingPage() {
                             />
                           </div>
 
-                          <div className="bg-blue-100 rounded-lg p-4">
-                            <p className="text-blue-800 mb-2">This unlocks access to:</p>
-                            <ul className="space-y-1 text-blue-700 text-sm">
+                          <div className="bg-gray-100 rounded-lg p-4">
+                            <p className="text-gray-800 mb-2">This unlocks access to:</p>
+                            <ul className="space-y-1 text-gray-700 text-sm">
                               <li>Chats and agents locally or through API</li>
                               <li>Vector search libraries hosted on the API server</li>
                               <li>Remote model options (e.g., larger LLMs)</li>
@@ -332,7 +326,7 @@ export default function HybridInferencingPage() {
 
             {/* Step 2 */}
             <div className="relative">
-              <div className="flex items-start gap-4">
+              <div className="flex items-baseline gap-4">
                 <div className="flex-shrink-0">
                   <div className="w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center font-bold">
                     2
@@ -340,17 +334,17 @@ export default function HybridInferencingPage() {
                 </div>
                 <div className="flex-1">
                   <h3 className="text-xl font-bold text-gray-900 mb-3">Run Chat Inference Locally or via Server</h3>
-                  <Card className="bg-green-50 border-green-200">
+                  <Card className="bg-gray-50 border">
                     <CardContent className="p-6">
                       <div className="space-y-6">
                         <div>
-                          <h4 className="font-semibold text-green-900 mb-3 flex items-center gap-2">
+                          <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
                             <MessageSquare className="h-5 w-5" />
                             2.1 Start a New Chatbot Session
                           </h4>
-                          <ul className="space-y-2 text-green-800">
+                          <ul className="space-y-2 text-gray-800">
                             <li className="flex items-start gap-2">
-                              <span className="w-5 h-5 bg-green-200 rounded-full flex items-center justify-center text-xs font-semibold text-green-800 mt-0.5 flex-shrink-0">
+                              <span className="w-5 h-5 bg-gray-200 rounded-full flex items-center justify-center text-xs font-semibold text-gray-800 mt-0.5 flex-shrink-0">
                                 1
                               </span>
                               <span>
@@ -358,7 +352,7 @@ export default function HybridInferencingPage() {
                               </span>
                             </li>
                             <li className="flex items-start gap-2">
-                              <span className="w-5 h-5 bg-green-200 rounded-full flex items-center justify-center text-xs font-semibold text-green-800 mt-0.5 flex-shrink-0">
+                              <span className="w-5 h-5 bg-gray-200 rounded-full flex items-center justify-center text-xs font-semibold text-gray-800 mt-0.5 flex-shrink-0">
                                 2
                               </span>
                               <span>
@@ -367,7 +361,7 @@ export default function HybridInferencingPage() {
                               </span>
                             </li>
                             <li className="flex items-start gap-2">
-                              <span className="w-5 h-5 bg-green-200 rounded-full flex items-center justify-center text-xs font-semibold text-green-800 mt-0.5 flex-shrink-0">
+                              <span className="w-5 h-5 bg-gray-200 rounded-full flex items-center justify-center text-xs font-semibold text-gray-800 mt-0.5 flex-shrink-0">
                                 3
                               </span>
                               <span>
@@ -375,17 +369,17 @@ export default function HybridInferencingPage() {
                               </span>
                             </li>
                             <li className="flex items-start gap-2">
-                              <span className="w-5 h-5 bg-green-200 rounded-full flex items-center justify-center text-xs font-semibold text-green-800 mt-0.5 flex-shrink-0">
+                              <span className="w-5 h-5 bg-gray-200 rounded-full flex items-center justify-center text-xs font-semibold text-gray-800 mt-0.5 flex-shrink-0">
                                 4
                               </span>
                               <span>
                                 Select the Model HQ{" "}
-                                <code className="bg-green-100 px-2 py-1 rounded">API Server Biz Bot</code> and click{" "}
-                                <code className="bg-green-100 px-2 py-1 rounded">&gt;</code>
+                                <code className="bg-gray-100 px-2 py-1 rounded">API Server Biz Bot</code> and click{" "}
+                                <code className="bg-gray-100 px-2 py-1 rounded">&gt;</code>
                               </span>
                             </li>
                             <li className="flex items-start gap-2">
-                              <span className="w-5 h-5 bg-green-200 rounded-full flex items-center justify-center text-xs font-semibold text-green-800 mt-0.5 flex-shrink-0">
+                              <span className="w-5 h-5 bg-gray-200 rounded-full flex items-center justify-center text-xs font-semibold text-gray-800 mt-0.5 flex-shrink-0">
                                 5
                               </span>
                               <span>
@@ -393,7 +387,7 @@ export default function HybridInferencingPage() {
                               </span>
                             </li>
                             <li className="flex items-start gap-2">
-                              <span className="w-5 h-5 bg-green-200 rounded-full flex items-center justify-center text-xs font-semibold text-green-800 mt-0.5 flex-shrink-0">
+                              <span className="w-5 h-5 bg-gray-200 rounded-full flex items-center justify-center text-xs font-semibold text-gray-800 mt-0.5 flex-shrink-0">
                                 6
                               </span>
                               <span>Begin chatting with the model</span>
@@ -410,30 +404,30 @@ export default function HybridInferencingPage() {
                         </div>
 
                         <div>
-                          <h4 className="font-semibold text-green-900 mb-3 flex items-center gap-2">
+                          <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
                             <Zap className="h-5 w-5" />
                             2.2 What Happens Behind the Scenes
                           </h4>
                           <div className="grid md:grid-cols-2 gap-4">
-                            <Card className="bg-green-100 border-green-300">
+                            <Card className="bg-gray-100 border">
                               <CardContent className="p-4">
                                 <div className="flex items-start gap-2">
-                                  <Laptop className="h-5 w-5 text-green-700 mt-0.5 flex-shrink-0" />
+                                  <Laptop className="h-5 w-5 text-gray-700 mt-0.5 flex-shrink-0" />
                                   <div>
-                                    <h5 className="font-semibold text-green-800 mb-1">Local Mode</h5>
-                                    <p className="text-green-700 text-sm">Query processed by local model (e.g., 7B)</p>
+                                    <h5 className="font-semibold text-gray-800 mb-1">Local Mode</h5>
+                                    <p className="text-gray-700 text-sm">Query processed by local model (e.g., 7B)</p>
                                   </div>
                                 </div>
                               </CardContent>
                             </Card>
-                            <Card className="bg-green-100 border-green-300">
+                            <Card className="bg-gray-100 border">
                               <CardContent className="p-4">
                                 <div className="flex items-start gap-2">
-                                  <Server className="h-5 w-5 text-green-700 mt-0.5 flex-shrink-0" />
+                                  <Server className="h-5 w-5 text-gray-700 mt-0.5 flex-shrink-0" />
                                   <div>
-                                    <h5 className="font-semibold text-green-800 mb-1">Server Mode</h5>
-                                    <p className="text-green-700 text-sm">Request sent over API to Model HQ Server</p>
-                                    <ul className="text-xs text-green-600 mt-1 space-y-1">
+                                    <h5 className="font-semibold text-gray-800 mb-1">Server Mode</h5>
+                                    <p className="text-gray-700 text-sm">Request sent over API to Model HQ Server</p>
+                                    <ul className="text-xs text-gray-600 mt-1 space-y-1">
                                       <li>Can be hosted on cloud, datacenter, or office server</li>
                                       <li>Example: 14B parameter model</li>
                                       <li>Response is returned and shown in chat</li>
@@ -453,7 +447,7 @@ export default function HybridInferencingPage() {
 
             {/* Step 3 */}
             <div className="relative">
-              <div className="flex items-start gap-4">
+              <div className="flex items-baseline gap-4">
                 <div className="flex-shrink-0">
                   <div className="w-10 h-10 bg-purple-500 text-white rounded-full flex items-center justify-center font-bold">
                     3
@@ -463,17 +457,17 @@ export default function HybridInferencingPage() {
                   <h3 className="text-xl font-bold text-gray-900 mb-3">
                     Use Remote Knowledge with Local Inference (Hybrid RAG)
                   </h3>
-                  <Card className="bg-purple-50 border-purple-200">
+                  <Card className="bg-gray-50 border">
                     <CardContent className="p-6">
                       <div className="space-y-6">
                         <div>
-                          <h4 className="font-semibold text-purple-900 mb-3 flex items-center gap-2">
+                          <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
                             <MessageSquare className="h-5 w-5" />
                             3.1 Start a Local Chat Session
                           </h4>
-                          <ul className="space-y-2 text-purple-800">
+                          <ul className="space-y-2 text-gray-800">
                             <li className="flex items-start gap-2">
-                              <span className="w-5 h-5 bg-purple-200 rounded-full flex items-center justify-center text-xs font-semibold text-purple-800 mt-0.5 flex-shrink-0">
+                              <span className="w-5 h-5 bg-gray-200 rounded-full flex items-center justify-center text-xs font-semibold text-gray-800 mt-0.5 flex-shrink-0">
                                 1
                               </span>
                               <span>
@@ -481,12 +475,12 @@ export default function HybridInferencingPage() {
                               </span>
                             </li>
                             <li className="flex items-start gap-2">
-                              <span className="w-5 h-5 bg-purple-200 rounded-full flex items-center justify-center text-xs font-semibold text-purple-800 mt-0.5 flex-shrink-0">
+                              <span className="w-5 h-5 bg-gray-200 rounded-full flex items-center justify-center text-xs font-semibold text-gray-800 mt-0.5 flex-shrink-0">
                                 2
                               </span>
                               <span>
                                 Choose <strong>Medium (7B) – Analysis and Typical RAG</strong>, then click{" "}
-                                <code className="bg-purple-100 px-2 py-1 rounded">&gt;</code>
+                                <code className="bg-gray-100 px-2 py-1 rounded">&gt;</code>
                               </span>
                             </li>
                           </ul>
@@ -501,13 +495,13 @@ export default function HybridInferencingPage() {
                         </div>
 
                         <div>
-                          <h4 className="font-semibold text-purple-900 mb-3 flex items-center gap-2">
+                          <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
                             <Database className="h-5 w-5" />
                             3.2 Connect to Remote Knowledge Base
                           </h4>
-                          <ul className="space-y-2 text-purple-800">
+                          <ul className="space-y-2 text-gray-800">
                             <li className="flex items-start gap-2">
-                              <span className="w-5 h-5 bg-purple-200 rounded-full flex items-center justify-center text-xs font-semibold text-purple-800 mt-0.5 flex-shrink-0">
+                              <span className="w-5 h-5 bg-gray-200 rounded-full flex items-center justify-center text-xs font-semibold text-gray-800 mt-0.5 flex-shrink-0">
                                 1
                               </span>
                               <span>
@@ -515,15 +509,15 @@ export default function HybridInferencingPage() {
                               </span>
                             </li>
                             <li className="flex items-start gap-2">
-                              <span className="w-5 h-5 bg-purple-200 rounded-full flex items-center justify-center text-xs font-semibold text-purple-800 mt-0.5 flex-shrink-0">
+                              <span className="w-5 h-5 bg-gray-200 rounded-full flex items-center justify-center text-xs font-semibold text-gray-800 mt-0.5 flex-shrink-0">
                                 2
                               </span>
                               <div>
                                 <span>
                                   Select a server-hosted library (e.g.,{" "}
-                                  <code className="bg-purple-100 px-2 py-1 rounded">UN_Resolutions_0527</code>)
+                                  <code className="bg-gray-100 px-2 py-1 rounded">UN_Resolutions_0527</code>)
                                 </span>
-                                <p className="text-sm text-purple-600 mt-1">
+                                <p className="text-sm text-gray-600 mt-1">
                                   If no pre-created source exists, follow Step 5 to build one
                                 </p>
                               </div>
@@ -540,14 +534,14 @@ export default function HybridInferencingPage() {
                         </div>
 
                         <div>
-                          <h4 className="font-semibold text-purple-900 mb-3 flex items-center gap-2">
+                          <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
                             <Search className="h-5 w-5" />
                             3.3 Enter a RAG-style Question
                           </h4>
-                          <Card className="bg-purple-100 border-purple-300">
+                          <Card className="bg-gray-100 border">
                             <CardContent className="p-4">
-                              <p className="text-purple-800 mb-2">Example:</p>
-                              <p className="font-semibold text-purple-900">
+                              <p className="text-gray-800 mb-2">Example:</p>
+                              <p className="font-semibold text-gray-900">
                                 "What are the resolutions related to Ukraine?"
                               </p>
                             </CardContent>
@@ -555,11 +549,11 @@ export default function HybridInferencingPage() {
                         </div>
 
                         <div>
-                          <h4 className="font-semibold text-purple-900 mb-3 flex items-center gap-2">
+                          <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
                             <Zap className="h-5 w-5" />
                             3.4 What Happens
                           </h4>
-                          <ul className="space-y-2 text-purple-800">
+                          <ul className="space-y-2 text-gray-800">
                             <li className="flex items-start gap-2">
                               <Search className="h-4 w-4 mt-1 flex-shrink-0" />
                               <span>Vector search is executed on the API server</span>
@@ -574,9 +568,9 @@ export default function HybridInferencingPage() {
                             </li>
                           </ul>
 
-                          <div className="bg-purple-100 rounded-lg p-4 mt-4">
-                            <p className="text-purple-800 mb-2">You see:</p>
-                            <ul className="space-y-1 text-purple-700 text-sm">
+                          <div className="bg-gray-100 rounded-lg p-4 mt-4">
+                            <p className="text-gray-800 mb-2">You see:</p>
+                            <ul className="space-y-1 text-gray-700 text-sm">
                               <li>Full source references</li>
                               <li>Answer generated on-device</li>
                               <li>No tokens leave your machine</li>
@@ -600,7 +594,7 @@ export default function HybridInferencingPage() {
 
             {/* Step 4 */}
             <div className="relative">
-              <div className="flex items-start gap-4">
+              <div className="flex items-baseline gap-4">
                 <div className="flex-shrink-0">
                   <div className="w-10 h-10 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold">
                     4
@@ -608,17 +602,17 @@ export default function HybridInferencingPage() {
                 </div>
                 <div className="flex-1">
                   <h3 className="text-xl font-bold text-gray-900 mb-3">Run Agent Workflows on the API Server</h3>
-                  <Card className="bg-orange-50 border-orange-200">
+                  <Card className="bg-gray-50 border">
                     <CardContent className="p-6">
                       <div className="space-y-6">
                         <div>
-                          <h4 className="font-semibold text-orange-900 mb-3 flex items-center gap-2">
+                          <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
                             <Settings className="h-5 w-5" />
                             4.1 Choose a Prebuilt or Custom Agent
                           </h4>
-                          <ul className="space-y-2 text-orange-800">
+                          <ul className="space-y-2 text-gray-800">
                             <li className="flex items-start gap-2">
-                              <span className="w-5 h-5 bg-orange-200 rounded-full flex items-center justify-center text-xs font-semibold text-orange-800 mt-0.5 flex-shrink-0">
+                              <span className="w-5 h-5 bg-gray-200 rounded-full flex items-center justify-center text-xs font-semibold text-gray-800 mt-0.5 flex-shrink-0">
                                 1
                               </span>
                               <span>
@@ -626,7 +620,7 @@ export default function HybridInferencingPage() {
                               </span>
                             </li>
                             <li className="flex items-start gap-2">
-                              <span className="w-5 h-5 bg-orange-200 rounded-full flex items-center justify-center text-xs font-semibold text-orange-800 mt-0.5 flex-shrink-0">
+                              <span className="w-5 h-5 bg-gray-200 rounded-full flex items-center justify-center text-xs font-semibold text-gray-800 mt-0.5 flex-shrink-0">
                                 2
                               </span>
                               <span>
@@ -645,13 +639,13 @@ export default function HybridInferencingPage() {
                         </div>
 
                         <div>
-                          <h4 className="font-semibold text-orange-900 mb-3 flex items-center gap-2">
+                          <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
                             <Upload className="h-5 w-5" />
                             4.2 Provide Input
                           </h4>
-                          <ul className="space-y-2 text-orange-800">
+                          <ul className="space-y-2 text-gray-800">
                             <li className="flex items-start gap-2">
-                              <span className="w-5 h-5 bg-orange-200 rounded-full flex items-center justify-center text-xs font-semibold text-orange-800 mt-0.5 flex-shrink-0">
+                              <span className="w-5 h-5 bg-gray-200 rounded-full flex items-center justify-center text-xs font-semibold text-gray-800 mt-0.5 flex-shrink-0">
                                 1
                               </span>
                               <span>
@@ -659,22 +653,22 @@ export default function HybridInferencingPage() {
                               </span>
                             </li>
                             <li className="flex items-start gap-2">
-                              <span className="w-5 h-5 bg-orange-200 rounded-full flex items-center justify-center text-xs font-semibold text-orange-800 mt-0.5 flex-shrink-0">
+                              <span className="w-5 h-5 bg-gray-200 rounded-full flex items-center justify-center text-xs font-semibold text-gray-800 mt-0.5 flex-shrink-0">
                                 2
                               </span>
                               <div>
                                 <span>Select:</span>
-                                <code className="bg-orange-100 px-2 py-1 rounded text-xs mt-1 block">
+                                <code className="bg-gray-100 px-2 py-1 rounded text-xs mt-1 block">
                                   C:\Users\[username]\llmware_data\sample_files\customer_transcripts\customer_transcript_1.txt
                                 </code>
                               </div>
                             </li>
                             <li className="flex items-start gap-2">
-                              <span className="w-5 h-5 bg-orange-200 rounded-full flex items-center justify-center text-xs font-semibold text-orange-800 mt-0.5 flex-shrink-0">
+                              <span className="w-5 h-5 bg-gray-200 rounded-full flex items-center justify-center text-xs font-semibold text-gray-800 mt-0.5 flex-shrink-0">
                                 3
                               </span>
                               <span>
-                                Click <code className="bg-orange-100 px-2 py-1 rounded">&gt;</code>, confirm input
+                                Click <code className="bg-gray-100 px-2 py-1 rounded">&gt;</code>, confirm input
                                 appears, then continue
                               </span>
                             </li>
@@ -690,11 +684,11 @@ export default function HybridInferencingPage() {
                         </div>
 
                         <div>
-                          <h4 className="font-semibold text-orange-900 mb-3 flex items-center gap-2">
+                          <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
                             <Zap className="h-5 w-5" />
                             4.3 What Happens
                           </h4>
-                          <ul className="space-y-2 text-orange-800">
+                          <ul className="space-y-2 text-gray-800">
                             <li className="flex items-start gap-2">
                               <Upload className="h-4 w-4 mt-1 flex-shrink-0" />
                               <span>Agent process and input are sent over API</span>
@@ -716,7 +710,6 @@ export default function HybridInferencingPage() {
                               className="rounded-lg shadow-md border w-full"
                             />
                           </div>
-
                         </div>
                       </div>
                     </CardContent>
@@ -727,7 +720,7 @@ export default function HybridInferencingPage() {
 
             {/* Step 5 */}
             <div className="relative">
-              <div className="flex items-start gap-4">
+              <div className="flex items-baseline gap-4">
                 <div className="flex-shrink-0">
                   <div className="w-10 h-10 bg-indigo-500 text-white rounded-full flex items-center justify-center font-bold">
                     5
@@ -737,17 +730,17 @@ export default function HybridInferencingPage() {
                   <h3 className="text-xl font-bold text-gray-900 mb-3">
                     Build a Shared Semantic Library with Vector DB
                   </h3>
-                  <Card className="bg-indigo-50 border-indigo-200">
+                  <Card className="bg-gray-50 border">
                     <CardContent className="p-6">
                       <div className="space-y-6">
                         <div>
-                          <h4 className="font-semibold text-indigo-900 mb-3 flex items-center gap-2">
+                          <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
                             <Library className="h-5 w-5" />
                             5.1 Create a New Library
                           </h4>
-                          <ul className="space-y-2 text-indigo-800">
+                          <ul className="space-y-2 text-gray-800">
                             <li className="flex items-start gap-2">
-                              <span className="w-5 h-5 bg-indigo-200 rounded-full flex items-center justify-center text-xs font-semibold text-indigo-800 mt-0.5 flex-shrink-0">
+                              <span className="w-5 h-5 bg-gray-200 rounded-full flex items-center justify-center text-xs font-semibold text-gray-800 mt-0.5 flex-shrink-0">
                                 1
                               </span>
                               <span>
@@ -755,7 +748,7 @@ export default function HybridInferencingPage() {
                               </span>
                             </li>
                             <li className="flex items-start gap-2">
-                              <span className="w-5 h-5 bg-indigo-200 rounded-full flex items-center justify-center text-xs font-semibold text-indigo-800 mt-0.5 flex-shrink-0">
+                              <span className="w-5 h-5 bg-gray-200 rounded-full flex items-center justify-center text-xs font-semibold text-gray-800 mt-0.5 flex-shrink-0">
                                 2
                               </span>
                               <span>
@@ -763,7 +756,7 @@ export default function HybridInferencingPage() {
                               </span>
                             </li>
                             <li className="flex items-start gap-2">
-                              <span className="w-5 h-5 bg-indigo-200 rounded-full flex items-center justify-center text-xs font-semibold text-indigo-800 mt-0.5 flex-shrink-0">
+                              <span className="w-5 h-5 bg-gray-200 rounded-full flex items-center justify-center text-xs font-semibold text-gray-800 mt-0.5 flex-shrink-0">
                                 3
                               </span>
                               <span>
@@ -782,13 +775,13 @@ export default function HybridInferencingPage() {
                         </div>
 
                         <div>
-                          <h4 className="font-semibold text-indigo-900 mb-3 flex items-center gap-2">
+                          <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
                             <Upload className="h-5 w-5" />
                             5.2 Upload Source Files
                           </h4>
-                          <ul className="space-y-2 text-indigo-800">
+                          <ul className="space-y-2 text-gray-800">
                             <li className="flex items-start gap-2">
-                              <span className="w-5 h-5 bg-indigo-200 rounded-full flex items-center justify-center text-xs font-semibold text-indigo-800 mt-0.5 flex-shrink-0">
+                              <span className="w-5 h-5 bg-gray-200 rounded-full flex items-center justify-center text-xs font-semibold text-gray-800 mt-0.5 flex-shrink-0">
                                 1
                               </span>
                               <span>
@@ -796,18 +789,18 @@ export default function HybridInferencingPage() {
                               </span>
                             </li>
                             <li className="flex items-start gap-2">
-                              <span className="w-5 h-5 bg-indigo-200 rounded-full flex items-center justify-center text-xs font-semibold text-indigo-800 mt-0.5 flex-shrink-0">
+                              <span className="w-5 h-5 bg-gray-200 rounded-full flex items-center justify-center text-xs font-semibold text-gray-800 mt-0.5 flex-shrink-0">
                                 2
                               </span>
                               <div>
                                 <span>Choose ~20 PDFs from:</span>
-                                <code className="bg-indigo-100 px-2 py-1 rounded text-xs mt-1 block">
+                                <code className="bg-gray-100 px-2 py-1 rounded text-xs mt-1 block">
                                   C:\Users\[username]\llmware_data\sample_files\UN-Resolutions-500
                                 </code>
                               </div>
                             </li>
                             <li className="flex items-start gap-2">
-                              <span className="w-5 h-5 bg-indigo-200 rounded-full flex items-center justify-center text-xs font-semibold text-indigo-800 mt-0.5 flex-shrink-0">
+                              <span className="w-5 h-5 bg-gray-200 rounded-full flex items-center justify-center text-xs font-semibold text-gray-800 mt-0.5 flex-shrink-0">
                                 3
                               </span>
                               <span>
@@ -815,7 +808,7 @@ export default function HybridInferencingPage() {
                               </span>
                             </li>
                             <li className="flex items-start gap-2">
-                              <span className="w-5 h-5 bg-indigo-200 rounded-full flex items-center justify-center text-xs font-semibold text-indigo-800 mt-0.5 flex-shrink-0">
+                              <span className="w-5 h-5 bg-gray-200 rounded-full flex items-center justify-center text-xs font-semibold text-gray-800 mt-0.5 flex-shrink-0">
                                 4
                               </span>
                               <span>Files are sent to the API server</span>
@@ -824,13 +817,13 @@ export default function HybridInferencingPage() {
                         </div>
 
                         <div>
-                          <h4 className="font-semibold text-indigo-900 mb-3 flex items-center gap-2">
+                          <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
                             <Settings className="h-5 w-5" />
                             5.3 Configure Embedding Settings
                           </h4>
-                          <ul className="space-y-2 text-indigo-800">
+                          <ul className="space-y-2 text-gray-800">
                             <li className="flex items-start gap-2">
-                              <span className="w-5 h-5 bg-indigo-200 rounded-full flex items-center justify-center text-xs font-semibold text-indigo-800 mt-0.5 flex-shrink-0">
+                              <span className="w-5 h-5 bg-gray-200 rounded-full flex items-center justify-center text-xs font-semibold text-gray-800 mt-0.5 flex-shrink-0">
                                 1
                               </span>
                               <div>
@@ -841,7 +834,7 @@ export default function HybridInferencingPage() {
                               </div>
                             </li>
                             <li className="flex items-start gap-2">
-                              <span className="w-5 h-5 bg-indigo-200 rounded-full flex items-center justify-center text-xs font-semibold text-indigo-800 mt-0.5 flex-shrink-0">
+                              <span className="w-5 h-5 bg-gray-200 rounded-full flex items-center justify-center text-xs font-semibold text-gray-800 mt-0.5 flex-shrink-0">
                                 2
                               </span>
                               <span>
@@ -860,13 +853,13 @@ export default function HybridInferencingPage() {
                         </div>
 
                         <div>
-                          <h4 className="font-semibold text-indigo-900 mb-3 flex items-center gap-2">
+                          <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
                             <Play className="h-5 w-5" />
                             5.4 Trigger Embedding
                           </h4>
-                          <ul className="space-y-2 text-indigo-800">
+                          <ul className="space-y-2 text-gray-800">
                             <li className="flex items-start gap-2">
-                              <span className="w-5 h-5 bg-indigo-200 rounded-full flex items-center justify-center text-xs font-semibold text-indigo-800 mt-0.5 flex-shrink-0">
+                              <span className="w-5 h-5 bg-gray-200 rounded-full flex items-center justify-center text-xs font-semibold text-gray-800 mt-0.5 flex-shrink-0">
                                 1
                               </span>
                               <span>
@@ -874,11 +867,11 @@ export default function HybridInferencingPage() {
                               </span>
                             </li>
                             <li className="flex items-start gap-2">
-                              <span className="w-5 h-5 bg-indigo-200 rounded-full flex items-center justify-center text-xs font-semibold text-indigo-800 mt-0.5 flex-shrink-0">
+                              <span className="w-5 h-5 bg-gray-200 rounded-full flex items-center justify-center text-xs font-semibold text-gray-800 mt-0.5 flex-shrink-0">
                                 2
                               </span>
                               <span>
-                                Click <code className="bg-indigo-100 px-2 py-1 rounded">&gt;</code> to start embedding
+                                Click <code className="bg-gray-100 px-2 py-1 rounded">&gt;</code> to start embedding
                                 process
                               </span>
                             </li>
@@ -892,18 +885,18 @@ export default function HybridInferencingPage() {
                             />
                           </div>
 
-                          <div className="bg-indigo-100 rounded-lg p-4">
-                            <p className="text-indigo-800 mb-2">
+                          <div className="bg-gray-100 rounded-lg p-4">
+                            <p className="text-gray-800 mb-2">
                               <strong>Model HQ will:</strong>
                             </p>
-                            <ul className="space-y-1 text-indigo-700 text-sm">
+                            <ul className="space-y-1 text-gray-700 text-sm">
                               <li>Parse and chunk documents</li>
                               <li>Create embeddings</li>
                               <li>Store them in the server-hosted vector DB</li>
                             </ul>
                           </div>
 
-                          <p className="text-indigo-800 mt-4">
+                          <p className="text-gray-800 mt-4">
                             Once complete, you'll see the library info and embeddings summary.
                           </p>
 
@@ -917,11 +910,11 @@ export default function HybridInferencingPage() {
                         </div>
 
                         <div>
-                          <h4 className="font-semibold text-indigo-900 mb-3 flex items-center gap-2">
+                          <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
                             <CheckCircle className="h-5 w-5" />
                             5.5 What You Now Have
                           </h4>
-                          <ul className="space-y-2 text-indigo-800">
+                          <ul className="space-y-2 text-gray-800">
                             <li className="flex items-start gap-2">
                               <Database className="h-4 w-4 mt-1 flex-shrink-0" />
                               <span>A shareable, queryable knowledge base</span>
@@ -945,7 +938,7 @@ export default function HybridInferencingPage() {
 
             {/* Step 6 */}
             <div className="relative">
-              <div className="flex items-start gap-4">
+              <div className="flex items-baseline gap-4">
                 <div className="flex-shrink-0">
                   <div className="w-10 h-10 bg-teal-500 text-white rounded-full flex items-center justify-center font-bold">
                     6
@@ -953,23 +946,23 @@ export default function HybridInferencingPage() {
                 </div>
                 <div className="flex-1">
                   <h3 className="text-xl font-bold text-gray-900 mb-3">Use That Library in Any Chat or Agent Flow</h3>
-                  <Card className="bg-teal-50 border-teal-200">
+                  <Card className="bg-gray-50 border">
                     <CardContent className="p-6">
                       <div className="space-y-6">
                         <div>
-                          <h4 className="font-semibold text-teal-900 mb-3 flex items-center gap-2">
+                          <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
                             <MessageSquare className="h-5 w-5" />
                             6.1 Return to Chat
                           </h4>
-                          <ul className="space-y-2 text-teal-800">
+                          <ul className="space-y-2 text-gray-800">
                             <li className="flex items-start gap-2">
-                              <span className="w-5 h-5 bg-teal-200 rounded-full flex items-center justify-center text-xs font-semibold text-teal-800 mt-0.5 flex-shrink-0">
+                              <span className="w-5 h-5 bg-gray-200 rounded-full flex items-center justify-center text-xs font-semibold text-gray-800 mt-0.5 flex-shrink-0">
                                 1
                               </span>
                               <span>Open a local or server-run chat</span>
                             </li>
                             <li className="flex items-start gap-2">
-                              <span className="w-5 h-5 bg-teal-200 rounded-full flex items-center justify-center text-xs font-semibold text-teal-800 mt-0.5 flex-shrink-0">
+                              <span className="w-5 h-5 bg-gray-200 rounded-full flex items-center justify-center text-xs font-semibold text-gray-800 mt-0.5 flex-shrink-0">
                                 2
                               </span>
                               <span>
@@ -980,11 +973,11 @@ export default function HybridInferencingPage() {
                         </div>
 
                         <div>
-                          <h4 className="font-semibold text-teal-900 mb-3 flex items-center gap-2">
+                          <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
                             <Search className="h-5 w-5" />
                             6.2 Ask Questions
                           </h4>
-                          <ul className="space-y-2 text-teal-800">
+                          <ul className="space-y-2 text-gray-800">
                             <li className="flex items-start gap-2">
                               <MessageSquare className="h-4 w-4 mt-1 flex-shrink-0" />
                               <span>Type natural-language queries related to your document domain</span>
@@ -993,11 +986,11 @@ export default function HybridInferencingPage() {
                         </div>
 
                         <div>
-                          <h4 className="font-semibold text-teal-900 mb-3 flex items-center gap-2">
+                          <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
                             <Zap className="h-5 w-5" />
                             6.3 See Results
                           </h4>
-                          <ul className="space-y-2 text-teal-800">
+                          <ul className="space-y-2 text-gray-800">
                             <li className="flex items-start gap-2">
                               <Search className="h-4 w-4 mt-1 flex-shrink-0" />
                               <span>Vector search occurs remotely</span>
@@ -1182,9 +1175,6 @@ export default function HybridInferencingPage() {
         {/* Pro Tips */}
         <section>
           <div className="flex items-center gap-3 mb-6">
-            <div className="p-2 bg-yellow-100 rounded-lg">
-              <Lightbulb className="h-6 w-6 text-yellow-600" />
-            </div>
             <h2 className="text-2xl font-bold text-gray-900">Pro Tips</h2>
           </div>
 
