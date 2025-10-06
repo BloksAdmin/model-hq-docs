@@ -387,7 +387,7 @@ export default function IntelSupportedModelsPage() {
                 <CardContent>
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4">
                         <div className="space-y-2 sm:space-y-3">
-                            <h4 className="font-semibold text-blue-900 text-sm sm:text-base">Performance Benefits</h4>
+                            <h4 className="font-semibold text-blue-900 dark:text-blue-400 text-sm sm:text-base">Performance Benefits</h4>
                             <ul className="text-xs sm:text-sm space-y-1 text-muted-foreground">
                                 <li>• Optimized for Intel CPU, GPU, and NPU architectures</li>
                                 <li>• Enhanced inference speed with OpenVINO runtime</li>
@@ -396,7 +396,7 @@ export default function IntelSupportedModelsPage() {
                             </ul>
                         </div>
                         <div className="space-y-2 sm:space-y-3">
-                            <h4 className="font-semibold text-blue-900 text-sm sm:text-base">Supported Hardware</h4>
+                            <h4 className="font-semibold text-blue-900 dark:text-blue-400 text-sm sm:text-base">Supported Hardware</h4>
                             <ul className="text-xs sm:text-sm space-y-1 text-muted-foreground">
                                 <li>• Intel Core processors (Meteor Lake, Lunar Lake, Arrow Lake)</li>
                                 <li>• Intel Xeon processors</li>
@@ -428,14 +428,14 @@ export default function IntelSupportedModelsPage() {
                         <div className="min-w-full inline-block align-middle">
                             <table className="w-full border-collapse border border-border rounded-lg">
                                 <thead>
-                                    <tr className="bg-blue-50">
-                                        <th className="border border-border px-2 sm:px-4 lg:px-6 py-2 sm:py-3 lg:py-4 text-left font-semibold text-xs sm:text-sm lg:text-base xl:text-lg text-blue-900">
+                                    <tr className="bg-blue-50 dark:bg-blue-950">
+                                        <th className="border border-border px-2 sm:px-4 lg:px-6 py-2 sm:py-3 lg:py-4 text-left font-semibold text-xs sm:text-sm lg:text-base xl:text-lg text-blue-900 dark:text-blue-100">
                                             Model Type
                                         </th>
-                                        <th className="border border-border px-2 sm:px-4 lg:px-6 py-2 sm:py-3 lg:py-4 text-left font-semibold text-xs sm:text-sm lg:text-base xl:text-lg text-blue-900">
+                                        <th className="border border-border px-2 sm:px-4 lg:px-6 py-2 sm:py-3 lg:py-4 text-left font-semibold text-xs sm:text-sm lg:text-base xl:text-lg text-blue-900 dark:text-blue-100">
                                             Available Models
                                         </th>
-                                        <th className="border border-border px-2 sm:px-4 lg:px-6 py-2 sm:py-3 lg:py-4 text-left font-semibold text-xs sm:text-sm lg:text-base xl:text-lg text-blue-900">
+                                        <th className="border border-border px-2 sm:px-4 lg:px-6 py-2 sm:py-3 lg:py-4 text-left font-semibold text-xs sm:text-sm lg:text-base xl:text-lg text-blue-900 dark:text-blue-100">
                                             Parameters
                                         </th>
                                     </tr>
@@ -517,17 +517,17 @@ export default function IntelSupportedModelsPage() {
                 </p>
             </div>
 
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 sm:p-4 lg:p-6">
-                <h2 className="text-base sm:text-lg lg:text-xl font-semibold text-blue-900 mb-2 sm:mb-3 lg:mb-4">
+            <div className="bg-blue-50 dark:bg-blue-950 border border-blue-200 dark:border-blue-800 rounded-lg p-3 sm:p-4 lg:p-6">
+                <h2 className="text-base sm:text-lg lg:text-xl font-semibold text-blue-900 dark:text-blue-100 mb-2 sm:mb-3 lg:mb-4">
                     🚀 Performance Tip
                 </h2>
-                <p className="text-xs sm:text-sm lg:text-base text-blue-800 mb-2 sm:mb-3 lg:mb-4">
+                <p className="text-xs sm:text-sm lg:text-base text-blue-800 dark:text-blue-200 mb-2 sm:mb-3 lg:mb-4">
                     For optimal performance on Intel hardware, choose models with the highest parameter count that your system can
                     support. Intel's optimization ensures efficient resource utilization.
                 </p>
                 <a
                     href="/system-configuration"
-                    className="inline-flex items-center px-2 sm:px-3 lg:px-4 py-1.5 sm:py-2 bg-blue-600 text-white text-xs sm:text-sm lg:text-base rounded-md hover:bg-blue-700 transition-colors"
+                    className="inline-flex items-center px-2 sm:px-3 lg:px-4 py-1.5 sm:py-2 bg-blue-600 dark:bg-blue-70 text-white text-xs sm:text-sm lg:text-base rounded-md hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors"
                 >
                     Check System Requirements
                 </a>

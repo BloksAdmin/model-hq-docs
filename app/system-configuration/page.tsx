@@ -239,14 +239,14 @@ export default function SystemConfigurationPage() {
         </p>
       </div>
 
-      <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 sm:p-6">
-        <h2 className="text-lg sm:text-xl font-semibold text-blue-900 mb-3 sm:mb-4">🚀 Quick Start</h2>
-        <p className="text-sm sm:text-base text-blue-800 mb-3 sm:mb-4">
+      <div className="mt-16 bg-blue-50 dark:bg-blue-950 border border-blue-200 dark:border-blue-800 rounded-lg p-6">
+        <h2 className="text-xl font-semibold text-blue-900 dark:text-blue-100 mb-4">🚀 Quick Start</h2>
+        <p className="text-blue-800 dark:text-blue-200 mb-4">
           New to Model HQ? Check out our getting started guide to begin your journey.
         </p>
         <a
           href="/getting-started"
-          className="inline-flex items-center px-3 sm:px-4 py-2 bg-blue-600 text-white text-sm sm:text-base rounded-md hover:bg-blue-700 transition-colors"
+          className="inline-flex items-center px-4 py-2 bg-blue-600 dark:bg-blue-700 text-white rounded-md hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors"
         >
           Get Started
         </a>

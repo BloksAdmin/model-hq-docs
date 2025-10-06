@@ -7,6 +7,7 @@ import { AppSidebar } from "@/components/app-sidebar"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { NavigationLoading } from "@/components/navigation-loading"
+import { ThemeProvider } from "@/components/theme-provider"
 
 const openSans = Open_Sans({
   subsets: ["latin"],
@@ -52,17 +53,24 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={openSans.className}>
-        <NavigationLoading />
-        <SidebarProvider>
-          <AppSidebar />
-          <SidebarInset>
-            <Header />
-            <main className="flex-1 p-6">{children}</main>
-            <Footer />
-          </SidebarInset>
-        </SidebarProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <NavigationLoading />
+          <SidebarProvider>
+            <AppSidebar />
+            <SidebarInset>
+              <Header />
+              <main className="flex-1 p-6">{children}</main>
+              <Footer />
+            </SidebarInset>
+          </SidebarProvider>
+        </ThemeProvider>
       </body>
     </html>
   )

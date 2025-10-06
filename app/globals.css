@@ -72,6 +72,12 @@
   body {
     @apply bg-background text-foreground;
   }
+  
+  /* Dark mode gradient background */
+  .dark body {
+    background: linear-gradient(to bottom, hsl(240, 20%, 8%), hsl(240, 10%, 3.9%), hsl(0, 0%, 0%));
+    background-attachment: fixed;
+  }
 }
 
 .prose {

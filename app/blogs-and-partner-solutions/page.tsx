@@ -108,8 +108,8 @@ export default function BlogsPage() {
     },
   ]
 
-  const displayedIntelSolutions = showAllIntelSolutions ? intelSolutions : intelSolutions.slice(0, 2)
-  const displayedQualcommSolutions = showAllQualcommSolutions ? qualcommSolutions : qualcommSolutions.slice(0, 2)
+  const displayedIntelSolutions = showAllIntelSolutions ? intelSolutions : intelSolutions.slice(0, 3)
+  const displayedQualcommSolutions = showAllQualcommSolutions ? qualcommSolutions : qualcommSolutions.slice(0, 3)
   const displayedBlogs = showAllBlogs ? blogPosts : blogPosts.slice(0, 3)
 
   const handleIntelViewToggle = () => {
@@ -147,23 +147,23 @@ export default function BlogsPage() {
 
   const getCategoryColor = (category: string) => {
     const colors = {
-      "Getting Started": "bg-blue-100 text-blue-800",
-      "Chat Feature": "bg-green-100 text-green-800",
-      Security: "bg-red-100 text-red-800",
-      Architecture: "bg-purple-100 text-purple-800",
-      Research: "bg-orange-100 text-orange-800",
-      Infrastructure: "bg-gray-100 text-gray-800",
-      "Enterprise AI": "bg-indigo-100 text-indigo-800",
-      "Security & Privacy": "bg-red-100 text-red-800",
-      Performance: "bg-green-100 text-green-800",
-      "Cost Optimization": "bg-yellow-100 text-yellow-800",
-      "Mobile AI": "bg-purple-100 text-purple-800",
+      "Getting Started": "bg-blue-100 dark:bg-blue-950 text-blue-800 dark:text-blue-300",
+      "Chat Feature": "bg-green-100 dark:bg-green-950 text-green-800 dark:text-green-300",
+      Security: "bg-red-100 dark:bg-red-950 text-red-800 dark:text-red-300",
+      Architecture: "bg-purple-100 dark:bg-purple-950 text-purple-800 dark:text-purple-300",
+      Research: "bg-orange-100 dark:bg-orange-950 text-orange-800 dark:text-orange-300",
+      Infrastructure: "bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300",
+      "Enterprise AI": "bg-indigo-100 dark:bg-indigo-950 text-indigo-800 dark:text-indigo-300",
+      "Security & Privacy": "bg-red-100 dark:bg-red-950 text-red-800 dark:text-red-300",
+      Performance: "bg-green-100 dark:bg-green-950 text-green-800 dark:text-green-300",
+      "Cost Optimization": "bg-yellow-100 dark:bg-yellow-950 text-yellow-800 dark:text-yellow-300",
+      "Mobile AI": "bg-purple-100 dark:bg-purple-950 text-purple-800 dark:text-purple-300",
     }
-    return colors[category as keyof typeof colors] || "bg-gray-100 text-gray-800"
+    return colors[category as keyof typeof colors] || "bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300"
   }
 
   const PartnerSolutionCard = ({ solution, partner }: { solution: any; partner: "intel" | "qualcomm" }) => (
-    <Card className="group hover:shadow-2xl transition-all duration-500 overflow-hidden border-0 rounded-2xl shadow-lg bg-gradient-to-br from-white to-gray-50">
+    <Card className="group hover:shadow-2xl transition-all duration-500 overflow-hidden border-0 rounded-2xl shadow-lg bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900">
       <div className="relative">
         {solution.featured && (
           <div className="absolute top-4 left-4 z-10">
@@ -175,17 +175,17 @@ export default function BlogsPage() {
         <div className="absolute top-4 right-4 z-10">
           <Badge
             variant="secondary"
-            className={`${partner === "intel" ? "bg-blue-100 text-blue-700" : "bg-red-100 text-red-700"} font-medium shadow-sm`}
+            className={`${partner === "intel" ? "bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300" : "bg-red-100 dark:bg-red-950 text-red-700 dark:text-red-300"} font-medium shadow-sm`}
           >
             {solution.category}
           </Badge>
         </div>
-        <div className="relative w-full h-80 overflow-hidden flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
+        <div className="relative w-full h-48 overflow-hidden flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
           <Image
             src={solution.image || "/placeholder.svg"}
             alt={solution.title}
             width={400}
-            height={320}
+            height={192}
             className="w-full h-full object-cover"
             priority
           />
@@ -194,12 +194,12 @@ export default function BlogsPage() {
       </div>
       <CardContent className="p-6 space-y-4">
         <div className="space-y-3">
-          <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-300 line-clamp-2">
+          <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 group-hover:text-blue-600 transition-colors duration-300 line-clamp-2">
             {solution.title}
           </h3>
-          <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">{solution.description}</p>
+          <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed line-clamp-3">{solution.description}</p>
         </div>
-        <div className="pt-4 border-t border-gray-100">
+        <div className="pt-4 border-t border-gray-100 dark:border-gray-700">
           <button
             onClick={() => window.open(solution.link, "_blank")}
             className={`w-full relative overflow-hidden ${
@@ -224,10 +224,10 @@ export default function BlogsPage() {
       <div className="space-y-16">
         {/* Header */}
         <div className="text-center space-y-4">
-          <h1 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">
+          <h1 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-400 bg-clip-text text-transparent">
             Resources & Insights
           </h1>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
             Explore our latest blogs, partner solutions, and technical insights about AI model deployment and
             management.
           </p>
@@ -236,12 +236,12 @@ export default function BlogsPage() {
         {/* Blogs Section */}
         <section className="space-y-8">
           <div className="flex items-center gap-4 mb-8">
-            <div className="p-4 bg-gradient-to-br from-green-100 to-emerald-100 rounded-2xl shadow-sm">
-              <BookOpen className="h-8 w-8 text-green-600" />
-            </div>
+            {/* <div className="p-4 bg-gradient-to-br from-green-100 to-emerald-100 dark:from-green-950 dark:to-emerald-950 rounded-2xl shadow-sm">
+              <BookOpen className="h-8 w-8 text-green-600 dark:text-green-400" />
+            </div> */}
             <div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">Latest Blogs</h2>
-              <p className="text-gray-600 mt-1">Stay updated with our latest insights and tutorials</p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-gray-100">Latest Blogs</h2>
+              <p className="text-gray-600 dark:text-gray-400 mt-1">Stay updated with our latest insights and tutorials</p>
             </div>
           </div>
 
@@ -249,7 +249,7 @@ export default function BlogsPage() {
             {displayedBlogs.map((blog) => (
               <Card
                 key={blog.id}
-                className="group hover:shadow-2xl transition-all duration-500 overflow-hidden border-0 rounded-2xl shadow-lg cursor-pointer bg-gradient-to-br from-white to-gray-50"
+                className="group hover:shadow-2xl transition-all duration-500 overflow-hidden border-0 rounded-2xl shadow-lg cursor-pointer bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900"
                 onClick={() => window.open(blog.link, "_blank")}
               >
                 <div className="relative">
@@ -276,20 +276,20 @@ export default function BlogsPage() {
                 <CardContent className="p-6 space-y-4">
                   <div className="flex items-center justify-between">
                     <Badge className={getCategoryColor(blog.category)}>{blog.category}</Badge>
-                    <span className="text-xs text-gray-500 font-medium">{blog.readTime}</span>
+                    <span className="text-xs text-gray-500 dark:text-gray-400 font-medium">{blog.readTime}</span>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-300 line-clamp-2">
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 group-hover:text-blue-600 transition-colors duration-300 line-clamp-2">
                     {blog.title}
                   </h3>
-                  <p className="text-gray-600 text-sm line-clamp-3 leading-relaxed">{blog.description}</p>
-                  <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                  <p className="text-gray-600 dark:text-gray-400 text-sm line-clamp-3 leading-relaxed">{blog.description}</p>
+                  <div className="flex items-center justify-between pt-4 border-t border-gray-100 dark:border-gray-700">
                     <div className="flex items-center gap-2">
-                      <User className="h-4 w-4 text-gray-400" />
-                      <span className="text-sm text-gray-600 font-medium">{blog.author}</span>
+                      <User className="h-4 w-4 text-gray-400 dark:text-gray-500" />
+                      <span className="text-sm text-gray-600 dark:text-gray-400 font-medium">{blog.author}</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <Calendar className="h-4 w-4 text-gray-400" />
-                      <span className="text-sm text-gray-500">
+                      <Calendar className="h-4 w-4 text-gray-400 dark:text-gray-500" />
+                      <span className="text-sm text-gray-500 dark:text-gray-400">
                         {new Date(blog.publishDate).toLocaleDateString("en-US", {
                           month: "short",
                           day: "numeric",
@@ -298,7 +298,7 @@ export default function BlogsPage() {
                       </span>
                     </div>
                   </div>
-                  <div className="flex items-center gap-2 text-blue-600 group-hover:text-blue-700 transition-colors duration-300 pt-2">
+                  <div className="flex items-center gap-2 text-blue-600 dark:text-blue-400 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors duration-300 pt-2">
                     <span className="text-sm font-medium">Read Article</span>
                     <ExternalLink className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
                   </div>
@@ -313,7 +313,7 @@ export default function BlogsPage() {
                 onClick={handleBlogViewToggle}
                 variant="outline"
                 size="lg"
-                className="flex items-center gap-2 bg-white hover:bg-gray-50 border-2 border-gray-200 hover:border-gray-300 rounded-xl px-6 py-3"
+                className="flex items-center gap-2 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 border-2 border-gray-200 dark:border-gray-600 hover:border-gray-300 dark:hover:border-gray-500 rounded-xl px-6 py-3"
               >
                 {showAllBlogs ? (
                   <>
@@ -334,45 +334,45 @@ export default function BlogsPage() {
         {/* Partner Solutions Section */}
         <section className="space-y-12">
           <div className="flex items-center gap-4 mb-8">
-            <div className="p-4 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-2xl shadow-sm">
-              <Users className="h-8 w-8 text-blue-600" />
-            </div>
+            {/* <div className="p-4 bg-gradient-to-br from-blue-100 to-indigo-100 dark:from-blue-950 dark:to-indigo-950 rounded-2xl shadow-sm">
+              <Users className="h-8 w-8 text-blue-600 dark:text-blue-400" />
+            </div> */}
             <div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">Partner Solutions</h2>
-              <p className="text-gray-600 mt-1">Discover our partnerships with leading technology companies</p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-gray-100">Partner Solutions</h2>
+              <p className="text-gray-600 dark:text-gray-400 mt-1">Discover our partnerships with leading technology companies</p>
             </div>
           </div>
 
           {/* Intel Solutions */}
           <div className="space-y-8">
             <div className="flex items-center gap-4">
-              <div className="p-3 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl">
-                <Cpu className="h-6 w-6 text-blue-600" />
+              <div className="p-3 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950 dark:to-blue-900 rounded-xl">
+                <Cpu className="h-6 w-6 text-blue-600 dark:text-blue-400" />
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-gray-900 flex items-center gap-3">
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 flex items-center gap-3">
                   Intel Partnership Solutions
-                  <Badge variant="secondary" className="bg-blue-100 text-blue-700">
+                  <Badge variant="secondary" className="bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300">
                     {intelSolutions.length} Solutions
                   </Badge>
                 </h3>
-                <p className="text-gray-600 text-sm mt-1">Powered by Intel's cutting-edge AI PC technology</p>
+                <p className="text-gray-600 dark:text-gray-400 text-sm mt-1">Powered by Intel's cutting-edge AI PC technology</p>
               </div>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {displayedIntelSolutions.map((solution) => (
                 <PartnerSolutionCard key={solution.id} solution={solution} partner="intel" />
               ))}
             </div>
 
-            {intelSolutions.length > 2 && (
+            {intelSolutions.length > 3 && (
               <div className="flex justify-center" ref={intelViewMoreButtonRef}>
                 <Button
                   onClick={handleIntelViewToggle}
                   variant="outline"
                   size="lg"
-                  className="flex items-center gap-2 bg-white hover:bg-blue-50 border-2 border-blue-200 hover:border-blue-300 text-blue-700 hover:text-blue-800 rounded-xl px-6 py-3"
+                  className="flex items-center gap-2 bg-white dark:bg-gray-800 hover:bg-blue-50 dark:hover:bg-blue-900/30 border-2 border-blue-200 dark:border-blue-800 hover:border-blue-300 dark:hover:border-blue-700 text-blue-700 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 rounded-xl px-6 py-3"
                 >
                   {showAllIntelSolutions ? (
                     <>
@@ -394,35 +394,35 @@ export default function BlogsPage() {
           {qualcommSolutions.length > 0 && (
             <div className="space-y-8">
               <div className="flex items-center gap-4">
-                <div className="p-3 bg-gradient-to-br from-red-50 to-red-100 rounded-xl">
-                  <Zap className="h-6 w-6 text-red-600" />
+                <div className="p-3 bg-gradient-to-br from-red-50 to-red-100 dark:from-red-950 dark:to-red-900 rounded-xl">
+                  <Zap className="h-6 w-6 text-red-600 dark:text-red-400" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-gray-900 flex items-center gap-3">
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 flex items-center gap-3">
                     Qualcomm Partnership Solutions
-                    <Badge variant="secondary" className="bg-red-100 text-red-700">
+                    <Badge variant="secondary" className="bg-red-100 dark:bg-red-950 text-red-700 dark:text-red-300">
                       {qualcommSolutions.length} Solutions
                     </Badge>
                   </h3>
-                  <p className="text-gray-600 text-sm mt-1">
+                  <p className="text-gray-600 dark:text-gray-400 text-sm mt-1">
                     Enhanced mobile AI capabilities with Snapdragon technology
                   </p>
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {displayedQualcommSolutions.map((solution) => (
                   <PartnerSolutionCard key={solution.id} solution={solution} partner="qualcomm" />
                 ))}
               </div>
 
-              {qualcommSolutions.length > 2 && (
+              {qualcommSolutions.length > 3 && (
                 <div className="flex justify-center" ref={qualcommViewMoreButtonRef}>
                   <Button
                     onClick={handleQualcommViewToggle}
                     variant="outline"
                     size="lg"
-                    className="flex items-center gap-2 bg-white hover:bg-red-50 border-2 border-red-200 hover:border-red-300 text-red-700 hover:text-red-800 rounded-xl px-6 py-3"
+                    className="flex items-center gap-2 bg-white dark:bg-gray-800 hover:bg-red-50 dark:hover:bg-red-900/30 border-2 border-red-200 dark:border-red-800 hover:border-red-300 dark:hover:border-red-700 text-red-700 dark:text-red-400 hover:text-red-800 dark:hover:text-red-300 rounded-xl px-6 py-3"
                   >
                     {showAllQualcommSolutions ? (
                       <>
@@ -449,24 +449,24 @@ export default function BlogsPage() {
                   <Zap className="h-6 w-6 text-red-600" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-gray-900">Qualcomm Partnership Solutions</h3>
-                  <p className="text-gray-600 text-sm mt-1">
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100">Qualcomm Partnership Solutions</h3>
+                  <p className="text-gray-600 dark:text-gray-400 text-sm mt-1">
                     Enhanced mobile AI capabilities with Snapdragon technology
                   </p>
                 </div>
               </div>
 
-              <Card className="border-2 border-dashed border-gray-300 bg-gradient-to-br from-gray-50 to-white rounded-2xl">
+              <Card className="border-2 border-dashed border-gray-300 dark:border-gray-700 bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 rounded-2xl">
                 <CardContent className="p-12 text-center space-y-4">
-                  <div className="p-4 bg-red-100 rounded-full w-fit mx-auto">
-                    <Zap className="h-8 w-8 text-red-600" />
+                  <div className="p-4 bg-red-100 dark:bg-red-950 rounded-full w-fit mx-auto">
+                    <Zap className="h-8 w-8 text-red-600 dark:text-red-400" />
                   </div>
-                  <h4 className="text-xl font-semibold text-gray-900">Qualcomm Solutions Coming Soon</h4>
-                  <p className="text-gray-600 max-w-md mx-auto">
+                  <h4 className="text-xl font-semibold text-gray-900 dark:text-gray-100">Qualcomm Solutions Coming Soon</h4>
+                  <p className="text-gray-600 dark:text-gray-400 max-w-md mx-auto">
                     We're working on exciting new partnerships with Qualcomm to bring you enhanced mobile AI
                     capabilities. Stay tuned for updates!
                   </p>
-                  <Badge variant="secondary" className="bg-red-100 text-red-700">
+                  <Badge variant="secondary" className="bg-red-100 dark:bg-red-950 text-red-700 dark:text-red-300">
                     Coming Soon
                   </Badge>
                 </CardContent>
@@ -476,13 +476,13 @@ export default function BlogsPage() {
         </section>
 
         {/* Alternative Resources */}
-        <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 sm:p-12 text-center border border-gray-200 shadow-sm">
-          <h3 className="text-2xl font-bold text-gray-900 mb-3">Explore More Resources</h3>
-          <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+        <div className="bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 dark:from-black rounded-2xl p-8 sm:p-12 text-center border border-gray-200 dark:border-blue-900 shadow-sm">
+          <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-3">Explore More Resources</h3>
+          <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
             Discover additional resources to get started with Model HQ and maximize your AI deployment success
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild variant="outline" size="lg" className="bg-white hover:bg-gray-50 border-2 rounded-xl">
+            <Button asChild variant="outline" size="lg" className="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 border-2 dark:border-gray-600 rounded-xl">
               <a href="/video-tutorials" className="flex items-center justify-center gap-2">
                 <BookOpen className="h-5 w-5" />
                 Watch Video Tutorials
@@ -498,7 +498,7 @@ export default function BlogsPage() {
                 Get Started Guide
               </a>
             </Button>
-            <Button asChild variant="outline" size="lg" className="bg-white hover:bg-gray-50 border-2 rounded-xl">
+            <Button asChild variant="outline" size="lg" className="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 border-2 dark:border-gray-600 rounded-xl">
               <a href="/support" className="flex items-center justify-center gap-2">
                 <Users className="h-5 w-5" />
                 Contact Support
@@ -508,17 +508,17 @@ export default function BlogsPage() {
         </div>
 
         {/* Newsletter Signup */}
-        <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 sm:p-12 text-center border-2 border-blue-100 shadow-sm">
+        <div className="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950 dark:to-indigo-950 rounded-2xl p-8 sm:p-12 text-center border-2 border-blue-100 dark:border-blue-800 shadow-sm">
           <div className="max-w-2xl mx-auto space-y-6">
-            <div className="p-4 bg-blue-100 rounded-full w-fit mx-auto">
-              <BookOpen className="h-8 w-8 text-blue-600" />
+            <div className="p-4 bg-blue-100 dark:bg-blue-900 rounded-full w-fit mx-auto">
+              <BookOpen className="h-8 w-8 text-blue-600 dark:text-blue-200" />
             </div>
-            <h3 className="text-2xl font-bold text-gray-900">Stay Updated</h3>
-            <p className="text-lg text-gray-600">
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100">Stay Updated</h3>
+            <p className="text-lg text-gray-600 dark:text-gray-400">
               Be the first to know when we publish new content, partner solutions, and product updates
             </p>
-            <div className="bg-white/50 backdrop-blur-sm rounded-xl p-6 border border-blue-200">
-              <p className="text-sm text-gray-600">
+            <div className="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-blue-200 dark:border-blue-800">
+              <p className="text-sm text-gray-600 dark:text-gray-400">
                 Follow our updates and announcements through our official channels and documentation for the latest
                 insights and features.
               </p>
@@ -529,3 +529,4 @@ export default function BlogsPage() {
     </div>
   )
 }
+

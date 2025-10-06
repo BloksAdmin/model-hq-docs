@@ -3,13 +3,13 @@ export default function TermsPage() {
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div className="space-y-8">
         <div>
-          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">AI Bloks LLC Terms of Service</h1>
-          <p className="text-lg text-gray-600">
+          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">AI Bloks LLC Terms of Service</h1>
+          <p className="text-lg text-gray-600 dark:text-gray-400">
             Thank you for choosing Model HQ by AI Bloks LLC dba LLMWare.ai! These terms of service ("Terms") set out
             what you can expect from us as you use our software and related services ("Software") and what we expect
             from you.
           </p>
-          <p className="text-gray-600 mt-2">
+          <p className="text-gray-600 dark:text-gray-400 mt-2">
             By using our Software, you agree to be bound by the Terms set forth here, our Privacy Policy and Acceptable
             Use Policy.
           </p>
@@ -17,15 +17,15 @@ export default function TermsPage() {
 
         <div className="space-y-8">
           <section id="your-materials">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Your Materials and Your Permissions</h2>
-            <p className="text-gray-700 leading-relaxed mb-4">
+            <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-4">Your Materials and Your Permissions</h2>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
               When using our Software, you are primarily downloading models for use on your local device or in your
               local environment (data center or public cloud) in which case we will not have any access to your data.
               However, in certain instances, via APIs or via certain workflows or apps you create or accept, you may
               explicitly opt to provide us with access to some of your user content ("Your User Content"). All of Your
               User Content belongs to you. To provide our Software, we do not have access to Your User Content.
             </p>
-            <p className="text-gray-700 leading-relaxed">
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
               However, in the event that you explicitly allow us to access any of Your User Content for other service
               engagements such as Model Fine-tuning or custom dataset creation, you are giving us permission to create
               and to access metadata & inference data, create knowledge graphs, generate information around Your User
@@ -38,9 +38,9 @@ export default function TermsPage() {
           </section>
 
           <section id="what-we-expect">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">What We Expect from You</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-4">What We Expect from You</h2>
             <div className="space-y-4">
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                 Your use of our Software must comply with our Acceptable Use Policy. Content in the Software may be
                 protected by other's intellectual property rights. Please don't copy, upload, download or share content
                 unless you have the right or the authorization to do so. In addition, any content that is generated
@@ -50,8 +50,8 @@ export default function TermsPage() {
                 of the Software as we have no access to Your User Content.
               </p>
 
-              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Data Scraping Guidelines</h3>
-              <p className="text-gray-700 leading-relaxed">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mt-6 mb-3">Data Scraping Guidelines</h3>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                 Our Software allows users to scrape data that is publicly available on the internet. You agree to not
                 engage in activities that would violate anyone's rights with respect to unauthorized access to:
                 intellectual property rights (including, but not limited to, rights regarding copyrighted material),
@@ -65,8 +65,8 @@ export default function TermsPage() {
                 to create a similar product.
               </p>
 
-              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">AI Model Usage</h3>
-              <p className="text-gray-700 leading-relaxed">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mt-6 mb-3">AI Model Usage</h3>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                 Our Software also allow users to access artificial intelligence or large language models provided by us
                 or by other vendors. Artificial intelligence or large language models are known to "hallucinate" and to
                 generate false, damaging or misleading information about facts, places, people and other information.
@@ -78,8 +78,8 @@ export default function TermsPage() {
                 you agree to not rely on any AI-generated output or supporting evidence we provide.
               </p>
 
-              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Legal Compliance</h3>
-              <p className="text-gray-700 leading-relaxed">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mt-6 mb-3">Legal Compliance</h3>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                 You expressly agree not to violate any regulations under the General Data Protection Regulation (GDPR),
                 California Consumer Privacy Act (CCPA), Better Online Ticket Sales (BOTS) Act, the Digital Economy Act
                 of 2017 or any other law or regulations in any jurisdiction that protect other's rights. In no way are
@@ -88,7 +88,7 @@ export default function TermsPage() {
                 expressly reserve the right to terminate our Software at any time.
               </p>
 
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                 You may use our Software only as permitted by applicable law, including export control laws and
                 regulations. You must be at least 13 (in the U.S.) or 16 (all other countries but the U.S.) years old to
                 use our Software. If the law where you live requires you to be older in order for us to provide the
@@ -98,14 +98,14 @@ export default function TermsPage() {
           </section>
 
           <section id="software-license">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Software</h2>
-            <p className="text-gray-700 leading-relaxed mb-4">
+            <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-4">Software</h2>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
               We give you a limited, nonexclusive, nontransferable, revocable license to use our software ("Software")
               which we may update from time to time, solely for accessing and using the Software. You agree to not
               reverse engineer or decompile the Software or any part of our software, attempt to do so, or to assist
               anyone else in doing so.
             </p>
-            <p className="text-gray-700 leading-relaxed">
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
               You are expressly prohibited from performing benchmarks or comparative tests or evaluations ("Tests") of
               the Software without our explicit consent. In the event you perform or disclose, or direct or permit any
               third party to perform or disclose, any such Tests of our Software in violation of this Agreement, you
@@ -120,10 +120,10 @@ export default function TermsPage() {
           </section>
 
           <section id="beta-testing">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+            <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-4">
               Beta Testing, Beta Features, Debugging and Additional Features
             </h2>
-            <p className="text-gray-700 leading-relaxed mb-4">
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
               From time to time, we may release products or new features that we will be testing and evaluating ("Beta
               Features"). During initial launch of Beta Features of our Software for testing by others, certain features
               may be in the Beta testing stage ("Beta Testing"). During Beta Testing, our Software may not be robust or
@@ -132,7 +132,7 @@ export default function TermsPage() {
               purpose of obtaining user feedback and you agree to share feedback with us about the Software and to not
               share information about our Software with anyone else.
             </p>
-            <p className="text-gray-700 leading-relaxed mb-4">
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
               While we will attempt to label it as such, Beta Features may or may not be labeled as such in every
               instance, and they may not be as reliable as our other features. Beta Features may ask for user feedback,
               and by using our Beta Feature and providing explicit consent, you agree that we may contact you to collect
@@ -140,7 +140,7 @@ export default function TermsPage() {
               If you use any expressly labelled Beta Features, you agree not to disclose any information about those
               Software to anyone else.
             </p>
-            <p className="text-gray-700 leading-relaxed">
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
               We may also encounter areas of trouble-shooting and debugging in our Software from time to time. In the
               event we need to access your account to trouble-shoot or debug our Software, we may have access to your
               account information and potentially come into contact with a limited amount of data in your account or
@@ -150,8 +150,8 @@ export default function TermsPage() {
           </section>
 
           <section id="user-feedback">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">User Feedback</h2>
-            <p className="text-gray-700 leading-relaxed">
+            <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-4">User Feedback</h2>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
               We may ask for, and you may provide, feedback, comments and suggestions ("Feedback") regarding the Service
               in which case such Feedback will not be deemed to constitute confidential information of the customer
               unless explicitly indicated by you. Such Feedback will be deemed to be provided "as is" and the Company's
@@ -163,8 +163,8 @@ export default function TermsPage() {
           </section>
 
           <section id="intellectual-property">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Copyright and Intellectual Property</h2>
-            <p className="text-gray-700 leading-relaxed">
+            <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-4">Copyright and Intellectual Property</h2>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
               Our Software are protected by copyright, trademark, patent and other intellectual property protection
               under U.S. and foreign laws. You do not have any right, title, or interest in the Software, other's
               content in the Software, and any of our intellectual property, trademarks, logos and other brand features
@@ -173,16 +173,16 @@ export default function TermsPage() {
           </section>
 
           <section id="accounts">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Accounts</h2>
-            <p className="text-gray-700 leading-relaxed mb-4">
+            <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-4">Accounts</h2>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
               If you are not satisfied with our product, you may request a refund within 7 days of purchase. You will be
               responsible for all applicable taxes, and we will collect the tax when required to do so by law. Refunds
               are also issued when required by law.
             </p>
-            <p className="text-gray-700 leading-relaxed mb-4">
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
               We may also change the fees we charge for the subscription of our Software from time to time.
             </p>
-            <p className="text-gray-700 leading-relaxed">
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
               Any notice we give you under this and other sections in these Terms will be to the email address you
               provide at the time of registration. It is your duty to maintain the accuracy of information you give us,
               including your email address, so that we may properly notify you of any important information regarding
@@ -192,15 +192,15 @@ export default function TermsPage() {
           </section>
 
           <section id="termination">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Termination</h2>
-            <p className="text-gray-700 leading-relaxed mb-4">
+            <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-4">Termination</h2>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
               You're free to stop using our Software at any time but the purchase price is not refundable after the
               initial 7 day period. We have the right to refuse to provide updates and to suspend or terminate your
               access to any updates to the Software with notice to you if you violate any of these Terms, use our
               Software in a manner that could potentially cause a real risk of harm or loss to us or to others, violate
               any laws, or if you do not pay in full for your Paid Account.
             </p>
-            <p className="text-gray-700 leading-relaxed">
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
               We will attempt to provide you with reasonable advance notice via the email you provided us at the time of
               registration or as modified in your account by you. However, situations may arise that may prohibit us
               from providing you with reasonable notice, including but not limited to these kinds of situations: (i)
@@ -213,8 +213,8 @@ export default function TermsPage() {
           </section>
 
           <section id="service-as-is">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Service As-Is</h2>
-            <p className="text-gray-700 leading-relaxed">
+            <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-4">Service As-Is</h2>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
               To the fullest extent permitted by law, AI Bloks and its affiliates, suppliers, distributors, directors
               and employees make no warranties, either express or implied, about the Software. The Software and any
               services we provide are provided "AS-IS." We disclaim any warranties of merchantability, fitness for a
@@ -227,8 +227,8 @@ export default function TermsPage() {
           </section>
 
           <section id="limitation-liability">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Limitation of Liability</h2>
-            <p className="text-gray-700 leading-relaxed mb-4">
+            <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-4">Limitation of Liability</h2>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
               The following terms ("Terms") don't limit liability for gross negligence or willful misconduct. To the
               extent allowed by applicable law, we are liable only for breaches of these Terms. We are not, at any time,
               liable for: loss of data, loss of use or profits, revenues, business opportunities, goodwill or
@@ -237,11 +237,11 @@ export default function TermsPage() {
               Services is limited to the fees paid to use our Software in the 12 months prior to the dispute or the
               total amount paid for Services for the specific Service in question in the 12 months prior to the dispute.
             </p>
-            <p className="text-gray-700 leading-relaxed mb-4">
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
               These limitations of liability apply regardless of whether or not we have been warned of the possibility
               of such damages. We also are not responsible for the conduct of any user of our Software.
             </p>
-            <p className="text-gray-700 leading-relaxed">
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
               To the extent allowed by applicable law, you will indemnify AI Bloks and its directors, officers,
               employees, distributors, affiliates and contractors for any third-party legal proceedings (including
               actions by government authorities) arising out of or relating to our unlawful use of the Software or
@@ -251,8 +251,8 @@ export default function TermsPage() {
           </section>
 
           <section id="dispute-resolution">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Dispute Resolution</h2>
-            <p className="text-gray-700 leading-relaxed mb-4">
+            <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-4">Dispute Resolution</h2>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
               We would like to fix any issues without a formal legal case. Before filing a legal claim against us, you
               agree to try to resolve the dispute informally by sending us a written Notice of Dispute to our Dispute
               Resolution Center that includes your name, a detailed description of the dispute, and the relief you seek
@@ -264,13 +264,13 @@ export default function TermsPage() {
               only individually and only to the extent necessary to redress your individual claim(s): the arbitrator may
               not award relief on behalf of others or the general public.
             </p>
-            <p className="text-gray-700 leading-relaxed mb-4">
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
               You and we agree to be bound by the American Arbitration Association (AAA) rules which will administer the
               arbitration under its Consumer Arbitration Rules. The AAA rules will govern payment of all arbitration
               fees. The costs and fees of arbitration shall be allocated in accordance with the arbitration provider's
               rules, including rules regarding frivolous or improper claims.
             </p>
-            <p className="text-gray-700 leading-relaxed">
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
               The exception to the agreement to arbitrate applies where we bring a lawsuit for the purpose of injunctive
               relief to stop the unauthorized use or abuse of Software, intellectual property infringement (for example,
               but not limited to, trademark, trade secret, copyright, or patent rights) without first engaging in
@@ -281,13 +281,13 @@ export default function TermsPage() {
           </section>
 
           <section id="no-class-actions">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">No Class or Representative Actions</h2>
-            <p className="text-gray-700 leading-relaxed mb-4">
+            <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-4">No Class or Representative Actions</h2>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
               You agree that you may only resolve disputes with us on an individual basis, and may not bring a claim as
               a plaintiff or a class member in a class, consolidated, or representative action. Class arbitrations,
               class actions, private attorney general actions, and consolidation with other arbitrations aren't allowed.
             </p>
-            <p className="text-gray-700 leading-relaxed mb-4">
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
               If any part of this or other sections are found to be illegal or unenforceable, the remainder will remain
               in effect, in its entirety. If you are found to have a non-waivable right to bring a particular claim or
               to request a particular form of relief that the arbitrator lacks authority to redress or award according
@@ -295,7 +295,7 @@ export default function TermsPage() {
               may be brought in court, and you and we agree that litigation of any such claim or request for relief
               shall be stayed pending the resolution of any individual claim(s) or request(s) for relief in arbitration.
             </p>
-            <p className="text-gray-700 leading-relaxed">
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
               These Terms will be governed by Connecticut law except for its conflicts of laws principles. However, some
               countries have laws that require agreements to be governed by the local laws of the consumer's country.
               This paragraph doesn't override those laws.
@@ -303,8 +303,8 @@ export default function TermsPage() {
           </section>
 
           <section id="waiver-severability">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Waiver, Severability & Assignment</h2>
-            <p className="text-gray-700 leading-relaxed">
+            <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-4">Waiver, Severability & Assignment</h2>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
               Our failure to enforce a provision is not a waiver of its right to do so later. If a provision is found
               unenforceable, the remaining provisions of the Terms will remain in full effect and an enforceable term
               will be substituted reflecting our intent as closely as possible. You may not assign any of your rights
@@ -314,22 +314,22 @@ export default function TermsPage() {
           </section>
 
           <section id="modifications">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Modifications</h2>
-            <p className="text-gray-700 leading-relaxed mb-4">
+            <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-4">Modifications</h2>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
               We may revise these Terms from time to time to better reflect:
             </p>
-            <ol className="list-decimal list-inside text-gray-700 space-y-1 ml-4">
+            <ol className="list-decimal list-inside text-gray-700 dark:text-gray-300 space-y-1 ml-4">
               <li>changes to the law,</li>
               <li>new regulatory requirements, or</li>
               <li>improvements or enhancements made to our Software.</li>
             </ol>
-            <p className="text-gray-700 leading-relaxed mt-4">
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mt-4">
               If an update affects your use of the Software or your legal rights as a user of our Software, we'll notify
               you prior to the update's effective date by sending an email to the email address associated with your
               account or via an in-product notification. These updated terms will be effective no less than 30 days from
               when we notify you.
             </p>
-            <p className="text-gray-700 leading-relaxed mt-4">
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mt-4">
               If you don't agree to the updates we make, please cancel your account and stop using the Software before
               the updated Terms become effective. Where applicable, we'll offer you a prorated refund based on the
               amounts you have prepaid for Software and your account cancellation date. By continuing to use or access
@@ -339,9 +339,10 @@ export default function TermsPage() {
         </div>
 
         <div className="border-t pt-8">
-          <p className="text-sm text-gray-500">Dated: March 3, 2025</p>
+          <p className="text-sm text-gray-500 dark:text-gray-400">Dated: March 3, 2025</p>
         </div>
       </div>
     </div>
   )
 }
+

@@ -296,16 +296,16 @@ export default function VideoTutorialsPage() {
             <div className="p-2 sm:p-3 bg-red-100 rounded-full">
               <Play className="h-6 w-6 sm:h-8 sm:w-8 text-red-600" />
             </div>
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">Video Tutorials</h1>
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-100 dark:text-gray-100">Video Tutorials</h1>
           </div>
-          <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto px-2">
+          <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto px-2">
             Learn Model HQ through comprehensive video tutorials covering everything from basic setup to advanced AI
             model deployment and business applications.
           </p>
         </div>
 
         {/* Admin Controls */}
-        {/* <div className="flex flex-col sm:flex-row items-center justify-between gap-4 bg-gray-50 rounded-lg p-4">
+        {/* <div className="flex flex-col sm:flex-row items-center justify-between gap-4 bg-gray-50 dark:bg-gray-800 rounded-lg p-4">
           <div className="flex items-center gap-2">
             <Button variant={isAdmin ? "default" : "outline"} size="sm" onClick={() => setIsAdmin(!isAdmin)}>
               {isAdmin ? "Exit Admin" : "Admin Mode"}
@@ -427,7 +427,7 @@ export default function VideoTutorialsPage() {
                 <Youtube className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
               </div>
               <div>
-                <h2 className="text-lg sm:text-xl font-semibold text-gray-900">LLMWare YouTube Channel</h2>
+                <h2 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-gray-900">LLMWare YouTube Channel</h2>
                 <p className="text-sm sm:text-base text-gray-600">Subscribe for the latest tutorials and updates</p>
               </div>
             </div>
@@ -544,7 +544,7 @@ export default function VideoTutorialsPage() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="pt-0 p-3 sm:p-6 sm:pt-0">
-                <CardDescription className="text-sm text-gray-600 line-clamp-3 mb-3">
+                <CardDescription className="text-sm text-gray-600 dark:text-gray-400 line-clamp-3 mb-3">
                   {video.description}
                 </CardDescription>
 
@@ -564,9 +564,9 @@ export default function VideoTutorialsPage() {
         </div>
 
         {/* Call to Action */}
-        <div className="bg-gray-50 rounded-xl p-6 sm:p-8 text-center">
-          <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">Need Help?</h3>
-          <p className="text-sm sm:text-base text-gray-600 mb-4">
+        <div className="bg-gray-50 dark:bg-black border border-gray-200 dark:border-blue-800 rounded-xl p-6 sm:p-8 text-center">
+          <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">Need Help?</h3>
+          <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-4">
             Can't find what you're looking for? Check out our documentation or contact support.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
@@ -582,3 +582,5 @@ export default function VideoTutorialsPage() {
     </div>
   )
 }
+
+

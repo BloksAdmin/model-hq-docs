@@ -115,8 +115,6 @@ export default function ConfigsPage() {
 
         <blockquote data-type="warning">
           <p>
-            <strong>IMPORTANT</strong>
-            <br />
             If you turn OFF the dev mode (by default it's 'ON'), you won't be able to see the{" "}
             <code>models buttons</code> in the main-menu, and much of the instructions or helper text designed for
             developer will not be visible to end users.
@@ -131,8 +129,6 @@ export default function ConfigsPage() {
 
         <blockquote data-type="warning">
           <p>
-            <strong>IMPORTANT</strong>
-            <br />
             If you turn OFF the app mode, then you will only be able to see the applications (like chat, rag, etc.)
             you've created.
           </p>
@@ -174,8 +170,6 @@ export default function ConfigsPage() {
 
         <blockquote data-type="tip">
           <p>
-            <strong>TIP</strong>
-            <br />
             In case, you want to restore the settings to the default options, then click on{" "}
             <code>restore defaults</code> button.
           </p>
@@ -313,8 +307,6 @@ export default function ConfigsPage() {
 
         <blockquote data-type="tip">
           <p>
-            <strong>TIP</strong>
-            <br />
             Text chunk size in parsing refers to the amount of text, measured in tokens, that is processed as a single
             unit during analysis or transformation of the file to a searchable body of text. Selecting the right text
             chunk size is important because it affects how accurately and efficiently a model can understand, process,
@@ -331,8 +323,6 @@ export default function ConfigsPage() {
 
         <blockquote data-type="tip">
           <p>
-            <strong>TIP</strong>
-            <br />
             Context Top N refers to selecting the top N most relevant pieces of information (e.g., number of text
             chunks) from a larger context based on similarity to a query, and it's important because it ensures the
             model focuses on the most pertinent data to generate accurate and relevant responses.
@@ -348,8 +338,6 @@ export default function ConfigsPage() {
 
         <blockquote data-type="tip">
           <p>
-            <strong>TIP</strong>
-            <br />
             Context target size is the predefined maximum amount of text (in tokens) that can be included in a model's
             input, and it balances the trade-off between including enough relevant information and staying within the
             model's processing limits to ensure efficient and coherent responses.
@@ -364,8 +352,6 @@ export default function ConfigsPage() {
 
         <blockquote data-type="tip">
           <p>
-            <strong>TIP</strong>
-            <br />
             Max samples in a reranker model refers to the maximum number of candidate items (e.g., documents, passages,
             or text chunks) that the model will consider and score for relevance, and it's important because it sets a
             limit to ensure computational efficiency while still allowing the model to choose the most relevant results
@@ -524,8 +510,6 @@ export default function ConfigsPage() {
 
         <blockquote data-type="warning">
           <p>
-            <strong>CAUTION</strong>
-            <br />
             Reset at your own risk. Once reset, your models, custom apps and other files related to Model HQ will be
             deleted and you will have to re-create/re-download them.
           </p>

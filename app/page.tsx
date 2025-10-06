@@ -124,7 +124,7 @@ export default function HomePage() {
         </div>
 
         {/* Supported Models Section */}
-        <div className="py-16 px-4 bg-gradient-to-br from-blue-50 to-green-50 rounded-lg">
+        <div className="py-16 px-4 bg-gradient-to-br from-blue-50 to-green-50 dark:from-blue-950 dark:to-green-950 rounded-lg">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold tracking-tight mb-4">Processor-Optimized Models</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -135,10 +135,10 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <Card className="border-blue-200 hover:border-blue-300 transition-all duration-300 hover:shadow-lg">
               <CardHeader className="text-center pb-4">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Cpu className="h-8 w-8 text-blue-600" />
+                <div className="w-16 h-16 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Cpu className="h-8 w-8 text-blue-600 dark:text-blue-400" />
                 </div>
-                <CardTitle className="text-blue-900 text-xl">Intel Supported Models</CardTitle>
+                <CardTitle className="text-blue-900 dark:text-blue-100 text-xl">Intel Supported Models</CardTitle>
                 <CardDescription className="text-sm">OpenVINO-optimized models for Intel processors</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -171,10 +171,10 @@ export default function HomePage() {
 
             <Card className="border-green-200 hover:border-green-300 transition-all duration-300 hover:shadow-lg">
               <CardHeader className="text-center pb-4">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Cpu className="h-8 w-8 text-green-600" />
+                <div className="w-16 h-16 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Cpu className="h-8 w-8 text-green-600 dark:text-green-400" />
                 </div>
-                <CardTitle className="text-green-900 text-xl">Qualcomm Supported Models</CardTitle>
+                <CardTitle className="text-green-900 dark:text-green-100 text-xl">Qualcomm Supported Models</CardTitle>
                 <CardDescription className="text-sm">QNN-optimized models for Snapdragon processors</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -217,7 +217,7 @@ export default function HomePage() {
         </div>
 
         {/* Resources Section */}
-        <div className="mt-8 py-16 px-4 bg-gradient-to-br from-purple-50 to-pink-50 rounded-lg">
+        <div className="mt-8 py-16 px-4 bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-950 dark:to-pink-950 rounded-lg">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold tracking-tight mb-4">Learning Resources</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -228,12 +228,12 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <Card className="border-purple-200 hover:border-purple-300 transition-all duration-300 hover:shadow-lg">
               <CardHeader className="text-center pb-4">
-                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="h-8 w-8 text-purple-600" fill="currentColor" viewBox="0 0 24 24">
+                <div className="w-16 h-16 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="h-8 w-8 text-purple-600 dark:text-purple-100" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M8 5v14l11-7z" />
                   </svg>
                 </div>
-                <CardTitle className="text-purple-900 text-xl">Video Tutorials</CardTitle>
+                <CardTitle className="text-purple-900 dark:text-purple-100 text-xl">Video Tutorials</CardTitle>
                 <CardDescription className="text-sm">Step-by-step video guides and walkthroughs</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -266,8 +266,8 @@ export default function HomePage() {
 
             <Card className="border-pink-200 hover:border-pink-300 transition-all duration-300 hover:shadow-lg">
               <CardHeader className="text-center pb-4">
-                <div className="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="h-8 w-8 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-16 h-16 bg-pink-100 dark:bg-pink-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="h-8 w-8 text-pink-600 dark:text-pink-100" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -276,7 +276,7 @@ export default function HomePage() {
                     />
                   </svg>
                 </div>
-                <CardTitle className="text-pink-900 text-xl">Blogs & Partner Solutions</CardTitle>
+                <CardTitle className="text-pink-900 dark:text-pink-100 text-xl">Blogs & Partner Solutions</CardTitle>
                 <CardDescription className="text-sm">
                   In-depth articles, technical insights & partner solutions
                 </CardDescription>
@@ -574,14 +574,14 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div className="mt-16 bg-blue-50 border border-blue-200 rounded-lg p-6">
-          <h2 className="text-xl font-semibold text-blue-900 mb-4">🚀 Quick Start</h2>
-          <p className="text-blue-800 mb-4">
+        <div className="mt-16 bg-blue-50 dark:bg-blue-950 border border-blue-200 dark:border-blue-800 rounded-lg p-6">
+          <h2 className="text-xl font-semibold text-blue-900 dark:text-blue-100 mb-4">🚀 Quick Start</h2>
+          <p className="text-blue-800 dark:text-blue-200 mb-4">
             New to Model HQ? Check out our getting started guide to begin your journey.
           </p>
           <a
             href="/getting-started"
-            className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
+            className="inline-flex items-center px-4 py-2 bg-blue-600 dark:bg-blue-700 text-white rounded-md hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors"
           >
             Get Started
           </a>

@@ -101,8 +101,6 @@ export default function CloudModelsPage() {
 
                 <blockquote data-type="note">
                     <p>
-                        <strong>NOTE</strong>
-                        <br />
                         The <strong>first step</strong> of the process (<code>chat</code>) uses a{" "}
                         <strong>default local model</strong>. It does <strong>not</strong> use an external model and is intended as
                         a <strong>quick test</strong> to ensure your models are connected properly.
@@ -111,8 +109,6 @@ export default function CloudModelsPage() {
 
                 <blockquote data-type="warning">
                     <p>
-                        <strong>IMPORTANT</strong>
-                        <br />
                         Make sure to set the <strong>Context</strong> of <code>Chat_1</code> to <code>None</code> in the first row. (the context of OpenAI should correctly remain as <code>Chat_1</code>)
                         <br />
                         There is no context needed for this model to provide a valid answer. This option may become available{" "}
@@ -125,8 +121,6 @@ export default function CloudModelsPage() {
 
                 <blockquote data-type="tip">
                     <p>
-                        <strong>ATTENTION!!</strong>
-                        <br />
                         When you upload a <strong>CSV</strong> to the OpenAI API, the most common reason for errors is that the API doesn’t directly accept raw <code>.csv</code> files for all endpoints.
                         <br />
                         <br />

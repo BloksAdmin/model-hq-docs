@@ -171,7 +171,7 @@
 //                             this Acceptable Use Policy.
 //                         </p>
 //                         <div className="text-center mt-6">
-//                             <p className="font-semibold text-gray-900">AI BLOKS LLC</p>
+//                             <p className="font-semibold text-gray-900 dark:text-gray-100">AI BLOKS LLC</p>
 //                             <p className="text-gray-600 italic">Empowering Responsible AI Deployment</p>
 //                         </div>
 //                     </section>
@@ -194,7 +194,7 @@ export default function AcceptableUsePage() {
             <div className="text-center mb-8 sm:mb-12">
                 <div className="flex items-center justify-center mb-4">
                     <Shield className="h-8 w-8 sm:h-10 sm:w-10 text-blue-600 mr-3" />
-                    <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">Acceptable Use Policy</h1>
+                    <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-100">Acceptable Use Policy</h1>
                 </div>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 mb-4">
                     <Badge variant="outline" className="text-xs sm:text-sm">
@@ -240,7 +240,7 @@ export default function AcceptableUsePage() {
                 </CardHeader>
                 <CardContent className="text-sm sm:text-base space-y-6">
                     <div>
-                        <h3 className="font-semibold text-green-700 mb-3">1.1 Permitted Uses</h3>
+                        <h3 className="font-semibold text-green-700 dark:text-green-300 mb-3">1.1 Permitted Uses</h3>
                         <p className="mb-3">Users may deploy the AI models provided by the Provider for purposes such as:</p>
                         <ul className="list-disc pl-6 space-y-2">
                             <li>Enhancing user applications, including personal, educational, or professional use</li>
@@ -255,47 +255,47 @@ export default function AcceptableUsePage() {
                         <h3 className="font-semibold text-red-700 mb-3">1.2 Prohibited Uses</h3>
                         <p className="mb-3">Users may not deploy or use the Provider's AI models:</p>
                         <div className="grid gap-4">
-                            <div className="bg-red-50 p-4 rounded-lg">
-                                <h4 className="font-medium text-red-800 mb-2">Unlawful Activities</h4>
-                                <p className="text-red-700 text-sm">
+                            <div className="bg-red-50 dark:bg-red-950/30 p-4 rounded-lg">
+                                <h4 className="font-medium text-red-800 dark:text-red-300 mb-2">Unlawful Activities</h4>
+                                <p className="text-red-700 dark:text-red-200 text-sm">
                                     For any activity that violates applicable local, national, or international laws or regulations.
                                 </p>
                             </div>
-                            <div className="bg-red-50 p-4 rounded-lg">
-                                <h4 className="font-medium text-red-800 mb-2">Harmful Activities</h4>
-                                <p className="text-red-700 text-sm">
+                            <div className="bg-red-50 dark:bg-red-950/30 p-4 rounded-lg">
+                                <h4 className="font-medium text-red-800 dark:text-red-300 mb-2">Harmful Activities</h4>
+                                <p className="text-red-700 dark:text-red-200 text-sm">
                                     To create or disseminate malicious software, spam, phishing attempts, or other harmful digital
                                     content.
                                 </p>
                             </div>
-                            <div className="bg-red-50 p-4 rounded-lg">
-                                <h4 className="font-medium text-red-800 mb-2">Hate Speech or Harassment</h4>
-                                <p className="text-red-700 text-sm">
+                            <div className="bg-red-50 dark:bg-red-950/30 p-4 rounded-lg">
+                                <h4 className="font-medium text-red-800 dark:text-red-300 mb-2">Hate Speech or Harassment</h4>
+                                <p className="text-red-700 dark:text-red-200 text-sm">
                                     To generate content that is abusive, threatening, defamatory, harassing, or discriminatory.
                                 </p>
                             </div>
-                            <div className="bg-red-50 p-4 rounded-lg">
-                                <h4 className="font-medium text-red-800 mb-2">Privacy Violations</h4>
-                                <p className="text-red-700 text-sm">
+                            <div className="bg-red-50 dark:bg-red-950/30 p-4 rounded-lg">
+                                <h4 className="font-medium text-red-800 dark:text-red-300 mb-2">Privacy Violations</h4>
+                                <p className="text-red-700 dark:text-red-200 text-sm">
                                     To collect, store, or process personal data without explicit user consent or in violation of privacy
                                     laws.
                                 </p>
                             </div>
-                            <div className="bg-red-50 p-4 rounded-lg">
-                                <h4 className="font-medium text-red-800 mb-2">Misrepresentation</h4>
-                                <p className="text-red-700 text-sm">
+                            <div className="bg-red-50 dark:bg-red-950/30 p-4 rounded-lg">
+                                <h4 className="font-medium text-red-800 dark:text-red-300 mb-2">Misrepresentation</h4>
+                                <p className="text-red-700 dark:text-red-200 text-sm">
                                     To impersonate individuals, mislead users, or spread misinformation.
                                 </p>
                             </div>
-                            <div className="bg-red-50 p-4 rounded-lg">
-                                <h4 className="font-medium text-red-800 mb-2">Surveillance</h4>
-                                <p className="text-red-700 text-sm">
+                            <div className="bg-red-50 dark:bg-red-950/30 p-4 rounded-lg">
+                                <h4 className="font-medium text-red-800 dark:text-red-300 mb-2">Surveillance</h4>
+                                <p className="text-red-700 dark:text-red-200 text-sm">
                                     To facilitate unlawful surveillance, monitoring, or data scraping of individuals or entities.
                                 </p>
                             </div>
-                            <div className="bg-red-50 p-4 rounded-lg">
-                                <h4 className="font-medium text-red-800 mb-2">Weaponization</h4>
-                                <p className="text-red-700 text-sm">
+                            <div className="bg-red-50 dark:bg-red-950/30 p-4 rounded-lg">
+                                <h4 className="font-medium text-red-800 dark:text-red-300 mb-2">Weaponization</h4>
+                                <p className="text-red-700 dark:text-red-200 text-sm">
                                     For applications involving military use, surveillance targeting, or other uses with potential for
                                     harm.
                                 </p>
@@ -411,7 +411,7 @@ export default function AcceptableUsePage() {
                         <h3 className="font-semibold mb-2">5.2 Reporting Violations</h3>
                         <p>
                             Users are encouraged to report any violations of this Policy to the Provider at{" "}
-                            <a href="mailto:support@aibloks.com" className="text-blue-600 hover:underline">
+                            <a href="mailto:support@aibloks.com" className="text-blue-600 dark:text-blue-400 hover:underline">
                                 support@aibloks.com
                             </a>
                             .
@@ -444,7 +444,7 @@ export default function AcceptableUsePage() {
                 <CardContent className="text-sm sm:text-base">
                     <p>
                         For questions or concerns regarding this Policy, please contact us at{" "}
-                        <a href="mailto:support@aibloks.com" className="text-blue-600 hover:underline font-medium">
+                        <a href="mailto:support@aibloks.com" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">
                             support@aibloks.com
                         </a>
                         .
@@ -453,21 +453,22 @@ export default function AcceptableUsePage() {
             </Card>
 
             {/* Acknowledgment */}
-            <Card className="bg-blue-50 border-blue-200">
+            <Card className="bg-blue-50 dark:bg-blue-950 border-blue-200 dark:border-blue-800">
                 <CardHeader>
-                    <CardTitle className="text-lg sm:text-xl text-blue-800">Acknowledgment</CardTitle>
+                    <CardTitle className="text-lg sm:text-xl text-blue-900 dark:text-blue-100">Acknowledgment</CardTitle>
                 </CardHeader>
-                <CardContent className="text-sm sm:text-base text-blue-700">
+                <CardContent className="text-sm sm:text-base text-blue-800 dark:text-blue-200">
                     <p className="mb-4">
                         By using the Provider's AI models, you acknowledge that you have read, understood, and agree to abide by
                         this Acceptable Use Policy.
                     </p>
                     <div className="text-center">
-                        <p className="font-semibold text-blue-800">AI BLOKS LLC</p>
-                        <p className="text-blue-600 italic">Empowering Responsible AI Deployment</p>
+                        <p className="font-semibold text-blue-900 dark:text-blue-100">AI BLOKS LLC</p>
+                        <p className="text-blue-600 dark:text-blue-300 italic">Empowering Responsible AI Deployment</p>
                     </div>
                 </CardContent>
             </Card>
         </div>
     )
 }
+

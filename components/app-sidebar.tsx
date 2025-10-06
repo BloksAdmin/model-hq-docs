@@ -417,7 +417,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             <SidebarMenuButton asChild tooltip="Contact Support" suppressHydrationWarning>
               <a
                 href="/support"
-                className="w-full flex gap-2 bg-gray-200 hover:bg-gray-300 rounded-md py-6 transition-colors"
+                className="w-full flex gap-2 bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 rounded-md py-6 transition-colors"
               >
                 <Mail className="size-6" />
                 <span>Contact Support</span>

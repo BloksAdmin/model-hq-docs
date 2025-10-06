@@ -321,8 +321,6 @@ export default function AgentPage() {
 
         <blockquote>
           <p>
-            <strong>Important</strong>
-            <br />
             In the screenshots above and below, you&apos;ll notice the name <code>contract_analyzer</code> being used
             (as mentioned before). This is because these outputs were generated while testing the Contract Analyzer
             Agent.

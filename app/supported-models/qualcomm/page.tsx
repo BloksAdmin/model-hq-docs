@@ -182,7 +182,7 @@ export default function QualcommSupportedModelsPage() {
                 <CardContent>
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4">
                         <div className="space-y-2 sm:space-y-3">
-                            <h4 className="font-semibold text-green-900 text-sm sm:text-base">Performance Benefits</h4>
+                            <h4 className="font-semibold text-green-900 dark:text-green-400 text-sm sm:text-base">Performance Benefits</h4>
                             <ul className="text-xs sm:text-sm space-y-1 text-muted-foreground">
                                 <li>• Optimized for Qualcomm Snapdragon architectures</li>
                                 <li>• Enhanced inference speed with QNN runtime</li>
@@ -191,7 +191,7 @@ export default function QualcommSupportedModelsPage() {
                             </ul>
                         </div>
                         <div className="space-y-2 sm:space-y-3">
-                            <h4 className="font-semibold text-green-900 text-sm sm:text-base">Supported Hardware</h4>
+                            <h4 className="font-semibold text-green-900 dark:text-green-400 text-sm sm:text-base">Supported Hardware</h4>
                             <ul className="text-xs sm:text-sm space-y-1 text-muted-foreground">
                                 <li>• Qualcomm Snapdragon processors</li>
                                 <li>• Hexagon Digital Signal Processors (DSP)</li>
@@ -220,11 +220,11 @@ export default function QualcommSupportedModelsPage() {
                         <div className="min-w-full inline-block align-middle">
                             <table className="w-full border-collapse border border-border rounded-lg">
                                 <thead>
-                                    <tr className="bg-green-50">
-                                        <th className="border border-border px-2 sm:px-4 lg:px-6 py-2 sm:py-3 lg:py-4 text-left font-semibold text-xs sm:text-sm lg:text-base xl:text-lg text-green-900">
+                                    <tr className="bg-green-50 dark:bg-green-950">
+                                        <th className="border border-border px-2 sm:px-4 lg:px-6 py-2 sm:py-3 lg:py-4 text-left font-semibold text-xs sm:text-sm lg:text-base xl:text-lg text-green-900 dark:text-green-100">
                                             Model Type
                                         </th>
-                                        <th className="border border-border px-2 sm:px-4 lg:px-6 py-2 sm:py-3 lg:py-4 text-left font-semibold text-xs sm:text-sm lg:text-base xl:text-lg text-green-900">
+                                        <th className="border border-border px-2 sm:px-4 lg:px-6 py-2 sm:py-3 lg:py-4 text-left font-semibold text-xs sm:text-sm lg:text-base xl:text-lg text-green-900 dark:text-green-100">
                                             Available Models
                                         </th>
                                     </tr>
@@ -285,17 +285,17 @@ export default function QualcommSupportedModelsPage() {
                 </p>
             </div>
 
-            <div className="bg-green-50 border border-green-200 rounded-lg p-3 sm:p-4 lg:p-6">
-                <h2 className="text-base sm:text-lg lg:text-xl font-semibold text-green-900 mb-2 sm:mb-3 lg:mb-4">
+            <div className="bg-green-50 dark:bg-green-950 border border-green-200 dark:border-green-800 rounded-lg p-3 sm:p-4 lg:p-6">
+                <h2 className="text-base sm:text-lg lg:text-xl font-semibold text-green-900 dark:text-green-100 mb-2 sm:mb-3 lg:mb-4">
                     🚀 Performance Tip
                 </h2>
-                <p className="text-xs sm:text-sm lg:text-base text-green-800 mb-2 sm:mb-3 lg:mb-4">
+                <p className="text-xs sm:text-sm lg:text-base text-green-800 dark:text-green-200 mb-2 sm:mb-3 lg:mb-4">
                     Qualcomm-optimized models are designed for efficient mobile and edge computing. They provide excellent
                     performance while maintaining low power consumption for extended battery life.
                 </p>
                 <a
                     href="/system-configuration"
-                    className="inline-flex items-center px-2 sm:px-3 lg:px-4 py-1.5 sm:py-2 bg-green-600 text-white text-xs sm:text-sm lg:text-base rounded-md hover:bg-green-700 transition-colors"
+                    className="inline-flex items-center px-2 sm:px-3 lg:px-4 py-1.5 sm:py-2 bg-green-600 dark:bg-green-700 text-white text-xs sm:text-sm lg:text-base rounded-md hover:bg-green-700 dark:hover:bg-green-600 transition-colors"
                 >
                     Check System Requirements
                 </a>

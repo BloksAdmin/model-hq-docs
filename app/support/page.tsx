@@ -96,12 +96,12 @@ export default function SupportPage() {
         <div className="max-w-4xl mx-auto px-2 sm:px-6 lg:px-8 py-8">
             <div className="space-y-8">
                 <div>
-                    <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Support</h1>
-                    <p className="text-lg text-gray-600">Get help with Model HQ and find answers to common questions.</p>
+                    <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">Support</h1>
+                    <p className="text-lg text-gray-600 dark:text-gray-400">Get help with Model HQ and find answers to common questions.</p>
                 </div>
 
                 {/* Support Form */}
-                <Card>
+                <Card className="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-900 dark:to-slate-900 border-blue-200 dark:border-gray-700">
                     <CardHeader>
                         <CardTitle>Contact Support</CardTitle>
                         <CardDescription>Fill out the form below and we'll get back to you as soon as possible.</CardDescription>
@@ -245,57 +245,57 @@ export default function SupportPage() {
 
                 {/* Support Options */}
                 <div className="grid md:grid-cols-2 gap-8">
-                    <div className="bg-white border border-gray-200 rounded-lg p-6">
-                        <h2 className="text-xl font-semibold text-gray-900 mb-4">📧 Email Support</h2>
-                        <p className="text-gray-600 mb-4">
+                    <div className="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950 dark:to-indigo-950 border border-blue-200 dark:border-blue-800 rounded-lg p-6">
+                        <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-4">📧 Email Support</h2>
+                        <p className="text-gray-600 dark:text-gray-400 mb-4">
                             For technical issues and general inquiries, reach out to our support team.
                         </p>
-                        <a href="mailto:support@aibloks.com" className="text-blue-600 hover:text-blue-800 underline font-medium">
+                        <a href="mailto:support@aibloks.com" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 underline font-medium">
                             support@aibloks.com
                         </a>
                     </div>
 
-                    <div className="bg-white border border-gray-200 rounded-lg p-6">
-                        <h2 className="text-xl font-semibold text-gray-900 mb-4">📚 Documentation</h2>
-                        <p className="text-gray-600 mb-4">
+                    <div className="bg-gradient-to-br from-cyan-50 to-blue-50 dark:from-cyan-950 dark:to-blue-950 border border-cyan-200 dark:border-cyan-800 rounded-lg p-6">
+                        <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-4">📚 Documentation</h2>
+                        <p className="text-gray-600 dark:text-gray-400 mb-4">
                             Browse our comprehensive documentation for detailed guides and tutorials.
                         </p>
-                        <a href="/" className="text-blue-600 hover:text-blue-800 underline font-medium">
+                        <a href="/" className="text-cyan-600 dark:text-cyan-400 hover:text-cyan-800 dark:hover:text-cyan-300 underline font-medium">
                             View Documentation
                         </a>
                     </div>
 
-                    <div className="bg-white border border-gray-200 rounded-lg p-6">
-                        <h2 className="text-xl font-semibold text-gray-900 mb-4">💬 Discord Community</h2>
-                        <p className="text-gray-600 mb-4">Join our community discussions and connect with other users.</p>
+                    <div className="bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-950 dark:to-emerald-950 border border-green-200 dark:border-green-800 rounded-lg p-6">
+                        <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-4">💬 Discord Community</h2>
+                        <p className="text-gray-600 dark:text-gray-400 mb-4">Join our community discussions and connect with other users.</p>
                         <a
                             href="https://discord.gg/bphreFK4NJ"
-                            className="text-blue-600 hover:text-blue-800 underline font-medium"
+                            className="text-green-600 dark:text-green-400 hover:text-green-800 dark:hover:text-green-300 underline font-medium"
                         >
                             Join Community
                         </a>
                     </div>
 
-                    <div className="bg-white border border-gray-200 rounded-lg p-6">
-                        <h2 className="text-xl font-semibold text-gray-900 mb-4">🐛 Bug Reports</h2>
-                        <p className="text-gray-600 mb-4">Found a bug? Report it on our GitHub repository.</p>
+                    <div className="bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-950 dark:to-red-950 border border-orange-200 dark:border-orange-800 rounded-lg p-6">
+                        <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-4">🐛 Bug Reports</h2>
+                        <p className="text-gray-600 dark:text-gray-400 mb-4">Found a bug? Report it on our GitHub repository.</p>
                         <a
                             href="https://github.com/llmware-ai/llmware/issues"
-                            className="text-blue-600 hover:text-blue-800 underline font-medium"
+                            className="text-orange-600 dark:text-orange-400 hover:text-orange-800 dark:hover:text-orange-300 underline font-medium"
                         >
                             Report Bug
                         </a>
                     </div>
                 </div>
 
-                <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
-                    <h2 className="text-xl font-semibold text-blue-900 mb-4">🚀 Quick Start</h2>
-                    <p className="text-blue-800 mb-4">
+                <div className="bg-blue-50 dark:bg-blue-950 border border-blue-200 dark:border-blue-800 rounded-lg p-6">
+                    <h2 className="text-xl font-semibold text-blue-900 dark:text-blue-100 mb-4">🚀 Quick Start</h2>
+                    <p className="text-blue-800 dark:text-blue-200 mb-4">
                         New to Model HQ? Check out our getting started guide to begin your journey.
                     </p>
                     <a
                         href="/getting-started"
-                        className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
+                        className="inline-flex items-center px-4 py-2 bg-blue-600 dark:bg-blue-700 text-white rounded-md hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors"
                     >
                         Get Started
                     </a>

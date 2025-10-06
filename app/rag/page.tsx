@@ -204,8 +204,6 @@ export default function RAGPage() {
 
         <blockquote data-type="tip">
           <p>
-            <strong>TIP</strong>
-            <br />
             Text chunk size determines how the document is segmented into smaller pieces during parsing. Choosing the
             right size is important—too small may lose context, while too large could reduce processing performance or
             exceed model input limits.
@@ -368,8 +366,6 @@ export default function RAGPage() {
 
         <blockquote data-type="tip">
           <p>
-            <strong>TIP</strong>
-            <br />
             Context Top N refers to selecting the top N most relevant pieces of information (e.g., text chunks) from a
             larger context based on similarity to a query, and it's important because it ensures the model focuses on
             the most pertinent data to generate accurate and relevant responses. Choosing this will give you the number
@@ -394,8 +390,6 @@ export default function RAGPage() {
 
         <blockquote data-type="tip">
           <p>
-            <strong>TIP</strong>
-            <br />
             Context target size is the predefined maximum amount of text (in tokens) that can be included in a model's
             input, and it balances the trade-off between including enough relevant information and staying within the
             model's processing limits to ensure efficient and coherent responses.

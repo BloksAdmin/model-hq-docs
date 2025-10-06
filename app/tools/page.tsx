@@ -239,8 +239,6 @@ export default function ToolsPage() {
 
         <blockquote data-type="tip">
           <p>
-            <strong>TIP</strong>
-            <br />
             Text chunk size in parsing refers to the amount of text, measured in tokens, that is processed as a single
             unit during analysis or transformation of the file to a searchable body of text. Selecting the right text
             chunk size is important because it affects how accurately and efficiently a model can understand, process,
