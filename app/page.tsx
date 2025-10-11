@@ -38,7 +38,7 @@ export default function HomePage() {
         {/* Stats Section */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 py-6 px-4">
           <div className="text-center space-y-2">
-            <div className="text-3xl font-bold text-primary">100+</div>
+            <div className="text-3xl font-bold text-primary">150+</div>
             <div className="text-sm text-muted-foreground">AI Models Available</div>
           </div>
           <div className="text-center space-y-2">
@@ -95,7 +95,7 @@ export default function HomePage() {
               <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
                 <Download className="h-6 w-6 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold">100+ Models</h3>
+              <h3 className="text-xl font-semibold">150+ Models</h3>
               <p className="text-muted-foreground">
                 Access a vast library of state-of-the-art models from 1B to 32B parameters.
               </p>
@@ -153,7 +153,7 @@ export default function HomePage() {
                   </div>
                   <div className="flex items-center gap-2 text-sm">
                     <Database className="h-4 w-4 text-blue-600" />
-                    <span className="font-medium">100+ Optimized Models</span>
+                    <span className="font-medium">150+ Optimized Models</span>
                   </div>
                 </div>
                 <p className="text-sm text-muted-foreground">

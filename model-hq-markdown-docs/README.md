@@ -1,7 +1,7 @@
 # Welcome to the Official Documentation of **Model HQ** by [LLMWare.ai](https://llmware.ai)
 **Model HQ** is a powerful and user-friendly desktop application that allows you to run cutting-edge AI models directly from your PC or laptop — with **zero coding required**.
 
-With access to over **100 state-of-the-art models**, ranging from **1 billion to 32 billion parameters**, Model HQ offers a secure, private, and cost-efficient solution for running AI locally. Once a model is downloaded, it can operate **offline**, ensuring that your data and sensitive information remain **completely private** and never leave your device.
+With access to over **150+ state-of-the-art models**, ranging from **1 billion to 32 billion parameters**, Model HQ offers a secure, private, and cost-efficient solution for running AI locally. Once a model is downloaded, it can operate **offline**, ensuring that your data and sensitive information remain **completely private** and never leave your device.
 
 Experience enterprise-grade AI capabilities — anytime, anywhere.
 

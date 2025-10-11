@@ -54,13 +54,15 @@ print(f"Prompt: {prompt}")
 print(f"Model: {model_name}\n")
 
 # this is the main inference API
-
-response = client.inference(prompt=prompt,model_name=model_name, max_output=100, trusted_key="")
+response = client.inference(
+    prompt=prompt,
+    model_name=model_name,
+    max_output=100,
+    trusted_key=""
+)
 
 # note: will stop at output of 100 tokens and will provide a 'complete' response (e.g., not streamed)
-
 print("\nhello world test # 1 - inference response: ", response)
-
 ```
 
 **Example #2 - Stream** - this is the streaming version of the core model inference API
@@ -74,13 +76,13 @@ print(f"Prompt: {prompt}")
 print(f"Model: {model_name}\n")
 
 # the stream method is called and consumed as a generator function
-
-for token in client.stream(prompt=prompt,
-                           model_name=model_name,max_output=300,
-                           trusted_key=""):
-
-    print(token,end="")
-
+for token in client.stream(
+    prompt=prompt,
+    model_name=model_name,
+    max_output=300,
+    trusted_key=""
+):
+    print(token, end="")
 ```
 
 For many use cases, just using the two APIs above will give you the ability to easily access and integrate a wide range of models.  
@@ -106,35 +108,25 @@ for i, mod in enumerate(model_list["response"]):
 **model_lookup** - Lookup Specific Model with more details from the Model Card
 
 ```python
-
 print("\nmodel lookup example\n")
-
 response = client.model_lookup(model_name, **kwargs)
-
 print("response: ", response)
 ```
 
 **model_load** - load a selected model into memory
 
 ```python
-
 print("\nmodel load test example\n")
-
 response = client.model_load(model_name, **kwargs)
-
 print("response: ", response)
 ```
 
 **model_unload** - unload a selected model from memory
 
 ```python
-
 print("\nmodel unload test example\n")
-
 response = client.model_unload(model_name, **kwargs)
-
 print("response: ", response)
-
 ```
 
 ## RAG
@@ -144,19 +136,17 @@ In addition to pure model inferencing, there are several methods provided to int
 **document_inference** - ask question to a document over API
 
 ```python
-
 # rag one step api process
 
-document_path = os.path.abspath(".\\modelhq_client\\sample_files\\Bia EXECUTIVE EMPLOYMENT AGREEMENT.pdf")
+document_path = os.path.abspath(
+    ".\\modelhq_client\\sample_files\\Bia EXECUTIVE EMPLOYMENT AGREEMENT.pdf"
+)
 question = "What is the annual rate of the base salary?"
 model_name = "llama-3.2-3b-instruct-ov"
 
 print(f"\n\nRAG Example - {question}\n")
-
 response = client.document_inference(document_path, question, model_name=model_name)
-
 print("document inference response - ", response['llm_response'])
-
 ```
 
 ## Agents
@@ -164,31 +154,26 @@ print("document inference response - ", response['llm_response'])
 You can create an agent process in the UI, and then invoke and run the agent over API as follows:
 
 ```python
-
 # selected process
 process_name = "intake_processing"
 
 # input to the agent
 fp = os.path.abspath(".\\sample_files\\customer_transcript_1.txt")
-text = open(fp, "r").read()
+with open(fp, "r") as f:
+    text = f.read()
 
 # call and run the agent process
 response = client.run_agent(process_name=process_name, text=text, trusted_key="")
-
 print("--run_agent intake_processing: ", response)
 ```
 
 **get_all_agents** - provides a list of agents available
 
 ```python
-
 # show all agents available on the background server
-
 agent_response = client.get_all_agents()
-
 for i, agent in enumerate(agent_response["response"]):
     print("--agents available: ", i, agent)
-
 ```
 
 ## Useful Admin Functions 
@@ -196,17 +181,13 @@ for i, agent in enumerate(agent_response["response"]):
 **ping** - check that the platform is running and that the client is connected
 
 ```python
-
 response = client.ping()
-
 print("response: ", response)
-
 ```
 
 **system_info** - get information about the system
 
 ```python
-
 # get system info
 x = client.system_info()
 print("system info: ", x)
@@ -214,15 +195,12 @@ print("system info: ", x)
 # get details about the backend process
 details = get_server_details()
 print("server details: ", details)
-
 ```
 
 **stop_server** - stop the Model HQ platform (running as a background service on Windows)
 
 ```python
-
 stop_server()
-
 ```
 
 ## Trusted Key
@@ -264,13 +242,14 @@ Generate a streaming inference response from a selected model. The response will
 
 ```json
 {
-"model_name": "phi-3-ov",
-"prompt": "Explain quantum computing in simple terms",
-"max_output": 300,
-"temperature": 0.7
-"api_key": "your-api-key" # Optional
-}
+  "model_name": "phi-3-ov",
+  "prompt": "Explain quantum computing in simple terms",
+  "max_output": 300,
+  "temperature": 0.7,
+  "api_key": "your-api-key", # Optional
 
+  "response": "client.stream(context=context, api_key=api_key)"
+}
 ```
 
 #### Example Response
@@ -310,13 +289,14 @@ Generate a complete inference response from a selected model. The response will 
 
 ```json
 {
-"prompt": "Write a short story about artificial intelligence",
-"model_name": "llama-3.2-3b-instruct-ov",
-"max_output": 100,
-"temperature": 0.8,
-"api_key": "your-api-key" # Optional
-}
+  "prompt": "Write a short story about artificial intelligence",
+  "model_name": "llama-3.2-3b-instruct-ov",
+  "max_output": 100,
+  "temperature": 0.8,
+  "api_key": "your-api-key", # Optional
 
+  "response": "client.inference(context=context, api_key=api_key)"
+}
 ```
 
 #### Example Response
@@ -357,12 +337,13 @@ Execute a specialized function call with SLIM model for structured outputs and s
 
 ```json
 {
-"model_name": "phi-3-ov",
-"context": "John Smith works at Acme Corp as a Software Engineer. He can be reached at [john@acme.com](mailto:john@acme.com).",
-"function": "extract_entities",
-"api_key": "your-api-key" # Optional
-}
+  "model_name": "phi-3-ov",
+  "context": "John Smith works at Acme Corp as a Software Engineer. He can be reached at [john@acme.com](mailto:john@acme.com).",
+  "function": "extract_entities",
+  "api_key": "your-api-key", # Optional
 
+  "response": "client.function_call(context=context, api_key=api_key)"
+}
 ```
 
 #### Example Response
@@ -399,10 +380,11 @@ Execute sentiment analysis using a specialized SLIM sentiment model.
 
 ```json
 {
-"context": "I absolutely love this new product! It's amazing and works perfectly.",
-"api_key": "your-api-key" # Optional
-}
+  "context": "I absolutely love this new product! It's amazing and works perfectly.",
+  "api_key": "your-api-key", # Optional
 
+  "response": "client.sentiment(context=context, api_key=api_key)"
+}
 ```
 
 #### Example Response
@@ -439,11 +421,12 @@ Execute information extraction using a SLIM extract model to pull specific data 
 
 ```json
 {
-"context": "Invoice #12345 dated March 15, 2024. Total amount: $1,250.00. Customer: ABC Corp.",
-"extract_keys": ["invoice_number", "date", "total_amount", "customer"],
-"api_key": "your-api-key" # Optional
-}
+  "context": "Invoice #12345 dated March 15, 2024. Total amount: $1,250.00. Customer: ABC Corp.",
+  "extract_keys": ["invoice_number", "date", "total_amount", "customer"],
+  "api_key": "your-api-key", # Optional
 
+  "response": "client.extract(context=context, api_key=api_key)"
+}
 ```
 
 #### Example Response
@@ -480,12 +463,13 @@ Execute vision model inference to analyze and describe images with text prompts.
 
 ```json
 {
-"uploaded_files": ["image1.jpg"],
-"prompt": "Describe what you see in this image",
-"model_name": "mistral-7b-instruct-v0.3-ov",
-"api_key": "your-api-key" # Optional
-}
+  "uploaded_files": ["image1.jpg"],
+  "prompt": "Describe what you see in this image",
+  "model_name": "mistral-7b-instruct-v0.3-ov",
+  "api_key": "your-api-key", # Optional
 
+  "response": "client.vision(context=context, api_key=api_key)"
+}
 ```
 
 #### Example Response
@@ -522,12 +506,13 @@ Generate a streaming inference response from vision model for real-time image an
 
 ```json
 {
-"uploaded_files": ["image1.jpg"],
-"model_name": "llama-3.2-3b-instruct-ov",
-"prompt": "Analyze this image and describe the scene",
-"api_key": "your-api-key" # Optional
-}
+  "uploaded_files": ["image1.jpg"],
+  "model_name": "llama-3.2-3b-instruct-ov",
+  "prompt": "Analyze this image and describe the scene",
+  "api_key": "your-api-key", # Optional
 
+  "response": "client.vision_stream(context=context, api_key=api_key)"
+}
 ```
 
 #### Example Response
@@ -562,11 +547,16 @@ Execute semantic similarity ranking with reranker model to rank documents by rel
 
 ```json
 {
-"query": "machine learning algorithms",
-"documents": ["Document about neural networks", "Article on cooking recipes", "Paper on deep learning"],
-"api_key": "your-api-key" # Optional
-}
+  "query": "machine learning algorithms",
+  "documents": [
+    "Document about neural networks",
+    "Article on cooking recipes",
+    "Paper on deep learning"
+  ],
+  "api_key": "your-api-key" # Optional
 
+  "response": "client.rank(context=context, api_key=api_key)"
+}
 ```
 
 #### Example Response
@@ -600,11 +590,12 @@ Execute text classification inference, primarily used for safety controls and co
 
 ```json
 {
-"model_name": "phi-4-ov",
-"context": "This is a sample text to classify for safety",
-"api_key": "your-api-key" # Optional
-}
+  "model_name": "phi-4-ov",
+  "context": "This is a sample text to classify for safety",
+  "api_key": "your-api-key" # Optional
 
+  "response": "client.classify(context=context, api_key=api_key)"
+}
 ```
 
 #### Example Response
@@ -638,11 +629,12 @@ Generate vector embeddings for text using embedding models for semantic search a
 
 ```json
 {
-"model_name": "llama-3.2-3b-instruct-ov",
-"context": "This is a sample text to embed",
-"api_key": "your-api-key" # Optional
-}
+  "model_name": "llama-3.2-3b-instruct-ov",
+  "context": "This is a sample text to embed",
+  "api_key": "your-api-key" # Optional
 
+  "response": "client.embedding(context=context, api_key=api_key)"
+}
 ```
 
 #### Example Response
@@ -669,9 +661,10 @@ Returns a list of all models available on the server.
 
 ```json
 {
-"trusted_key": "your-trusted-key"
-}
+  "trusted_key": "your-trusted-key",
 
+  "response": "client.list_all_models(context=context, api_key=api_key)"
+}
 ```
 
 #### Example Response
@@ -698,9 +691,10 @@ Returns key information about the system and server configuration.
 
 ```json
 {
-"trusted_key": "your-trusted-key"
-}
+  "trusted_key": "your-trusted-key",
 
+  "response": "client.system_info(context=context, api_key=api_key)"
+}
 ```
 
 #### Example Response
@@ -737,10 +731,11 @@ Returns detailed model card information about a selected model.
 
 ```json
 {
-"model_name": "mistral-7b-instruct-v0.3-ov",
-"trusted_key": "your-trusted-key"
-}
+  "model_name": "mistral-7b-instruct-v0.3-ov",
+  "trusted_key": "your-trusted-key",
 
+  "response": "client.model_lookup(context=context, api_key=api_key)"
+}
 ```
 
 #### Example Response
@@ -777,10 +772,11 @@ Explicitly loads a selected model into memory on the API server, useful as a pre
 
 ```json
 {
-"model_name": "phi-4-ov",
-"trusted_key": "your-trusted-key"
-}
+  "model_name": "phi-4-ov",
+  "trusted_key": "your-trusted-key",
 
+  "response": "client.model_load(context=context, api_key=api_key)"
+}
 ```
 
 #### Example Response
@@ -816,10 +812,11 @@ Explicitly unloads a selected model from memory on the API server.
 
 ```json
 {
-"model_name": "llama-3.2-1b-instruct-ov",
-"trusted_key": "your-trusted-key"
-}
+  "model_name": "llama-3.2-1b-instruct-ov",
+  "trusted_key": "your-trusted-key",
 
+  "response": "client.model_unload(context=context, api_key=api_key)"
+}
 ```
 
 #### Example Response
@@ -864,12 +861,13 @@ Specialized inference to ask questions about uploaded documents. Combines docume
 
 ```json
 {
-"question": "What is the main conclusion of this research paper?",
-"uploaded_document": "research_paper.pdf",
-"model_name": "phi-3-ov",
-"api_key": "your-api-key" # Optional
-}
+  "question": "What is the main conclusion of this research paper?",
+  "uploaded_document": "research_paper.pdf",
+  "model_name": "phi-3-ov",
+  "api_key": "your-api-key" # Optional
 
+  "response": "client.document_inference(context=context, api_key=api_key)"
+}
 ```
 
 #### Example Response
@@ -904,12 +902,13 @@ Specialized RAG inference that ranks entries from a library and generates respon
 
 ```json
 {
-"question": "What are the key features of the product?",
-"library_name": "product_docs",
-"model_name": "llama-3.2-3b-instruct-ov",
-"api_key": "your-api-key" # Optional
-}
+  "question": "What are the key features of the product?",
+  "library_name": "product_docs",
+  "model_name": "llama-3.2-3b-instruct-ov",
+  "api_key": "your-api-key" # Optional
 
+  "response": "client.library_inference(context=context, api_key=api_key)"
+}
 ```
 
 #### Example Response
@@ -944,12 +943,16 @@ Analyzes multiple documents with a set of questions, ideal for processing contra
 
 ```json
 {
-"uploaded_files": ["contract1.pdf", "contract2.pdf"],
-"question_list": ["What is the governing law?", "What is the termination notice period?"],
-"model_name": "mistral-7b-instruct-v0.3-ov",
-"api_key": "your-api-key" # Optional
-}
+  "uploaded_files": ["contract1.pdf", "contract2.pdf"],
+  "question_list": [
+    "What is the governing law?",
+    "What is the termination notice period?"
+  ],
+  "model_name": "mistral-7b-instruct-v0.3-ov",
+  "api_key": "your-api-key" # Optional
 
+  "response": "client.document_batch_analysis(context=context, api_key=api_key)"
+}
 ```
 
 #### Example Response
@@ -997,11 +1000,12 @@ Creates a new library which is a collection of documents that are parsed, indexe
 
 ```json
 {
-"library_name": "contract_library",
-"account_id": "user123",
-"api_key": "your-api-key" # Optional
-}
+  "library_name": "contract_library",
+  "account_id": "user123",
+  "api_key": "your-api-key" # Optional
 
+  "response": "client.create_new_library(context=context, api_key=api_key)"
+}
 ```
 
 #### Example Response
@@ -1039,11 +1043,12 @@ Core method for adding files to a Library, which are parsed, text chunked and in
 
 ```json
 {
-"library_name": "contract_library",
-"uploaded_files": ["contract1.pdf", "contract2.pdf"],
-"api_key": "your-api-key" # Optional
-}
+  "library_name": "contract_library",
+  "uploaded_files": ["contract1.pdf", "contract2.pdf"],
+  "api_key": "your-api-key" # Optional
 
+  "response": "client.add_files(context=context, api_key=api_key)"
+}
 ```
 
 #### Example Response
@@ -1081,12 +1086,13 @@ Execute a text-based query against an existing library to find relevant document
 
 ```json
 {
-"library_name": "contract_library",
-"user_query": "termination clauses",
-"result_count": 10,
-"api_key": "your-api-key" # Optional
-}
+  "library_name": "contract_library",
+  "user_query": "termination clauses",
+  "result_count": 10,
+  "api_key": "your-api-key" # Optional
 
+  "response": "client.query(context=context, api_key=api_key)"
+}
 ```
 
 #### Example Response
@@ -1124,10 +1130,11 @@ Get comprehensive metadata information about a library including document count,
 
 ```json
 {
-"library_name": "contract_library",
-"api_key": "your-api-key" # Optional
-}
+  "library_name": "contract_library",
+  "api_key": "your-api-key" # Optional
 
+  "response": "client.get_library_card(context=context, api_key=api_key)"
+}
 ```
 
 #### Example Response
@@ -1166,11 +1173,12 @@ Installs vector embeddings across a library and creates the appropriate vectors 
 
 ```json
 {
-"library_name": "contract_library",
-"embedding_model": "llama-3.2-1b-instruct-ov",
-"api_key": "your-api-key" # Optional
-}
+  "library_name": "contract_library",
+  "embedding_model": "llama-3.2-1b-instruct-ov",
+  "api_key": "your-api-key" # Optional
 
+  "response": "client.install_embedding(context=context, api_key=api_key)"
+}
 ```
 
 #### Example Response
@@ -1210,12 +1218,13 @@ Executes a semantic/vector query against embeddings for more accurate content re
 
 ```json
 {
-"library_name": "contract_library",
-"user_query": "contract termination conditions",
-"result_count": 5,
-"api_key": "your-api-key" # Optional
-}
+  "library_name": "contract_library",
+  "user_query": "contract termination conditions",
+  "result_count": 5,
+  "api_key": "your-api-key" # Optional
 
+  "response": "client.semantic_query(context=context, api_key=api_key)"
+}
 ```
 
 #### Example Response
@@ -1253,10 +1262,11 @@ Returns a comprehensive list of all documents contained in a specific library wi
 
 ```json
 {
-"library_name": "contract_library",
-"api_key": "your-api-key" # Optional
-}
+  "library_name": "contract_library",
+  "api_key": "your-api-key" # Optional
 
+  "response": "client.get_document_list(context=context, api_key=api_key)"
+}
 ```
 
 #### Example Response
@@ -1303,11 +1313,12 @@ Returns the complete text extract of a selected document from a specified librar
 
 ```json
 {
-"library_name": "contract_library",
-"doc_id": "1",
-"api_key": "your-api-key" # Optional
-}
+  "library_name": "contract_library",
+  "doc_id": "1",
+  "api_key": "your-api-key" # Optional
 
+  "response": "client.get_document_text(context=context, api_key=api_key)"
+}
 ```
 
 #### Example Response
@@ -1356,12 +1367,13 @@ Executes a pre-configured agent process for automated multi-step document analys
 
 ```json
 {
-"process_name": "contract_analyzer",
-"document_file": "contract.pdf",
-"input_list": ["analysis_type", "text", "comprehensive"],
-"api_key": "your-api-key" # Optional
-}
+  "process_name": "contract_analyzer",
+  "document_file": "contract.pdf",
+  "input_list": ["analysis_type", "text", "comprehensive"],
+  "api_key": "your-api-key" # Optional
 
+  "response": "client.run_agent(context=context, api_key=api_key)"
+}
 ```
 
 #### Example Response
@@ -1401,10 +1413,11 @@ Checks if a specific agent process exists and is available on the server for exe
 
 ```json
 {
-"process_name": "contract_analyzer",
-"trusted_key": "your-trusted-key"
-}
+  "process_name": "contract_analyzer",
+  "trusted_key": "your-trusted-key",
 
+  "response": "client.lookup_agent(context=context, api_key=api_key)"
+}
 ```
 
 #### Example Response
@@ -1436,9 +1449,10 @@ Returns a comprehensive list of all available agent processes on the server with
 
 ```json
 {
-"trusted_key": "your-trusted-key"
-}
+  "trusted_key": "your-trusted-key",
 
+  "response": "client.get_all_agents(context=context, api_key=api_key)"
+}
 ```
 
 #### Example Response
@@ -1480,9 +1494,10 @@ Quick health check to verify if the API server is responsive and operational.
 
 ```json
 {
-"trusted_key": "your-trusted-key"
-}
+  "trusted_key": "your-trusted-key",
 
+  "response": "client.ping(context=context, api_key=api_key)"
+}
 ```
 
 #### Example Response
@@ -1513,9 +1528,10 @@ Gracefully stops the API server. Use with caution as this will terminate all act
 
 ```json
 {
-"trusted_key": "your-trusted-key"
-}
+  "trusted_key": "your-trusted-key",
 
+  "response": "client.server_stop(context=context, api_key=api_key)"
+}
 ```
 
 #### Example Response
@@ -1545,9 +1561,10 @@ Returns a complete catalog of all available API endpoints with their specificati
 
 ```json
 {
-"trusted_key": "your-trusted-key"
-}
+  "trusted_key": "your-trusted-key",
 
+  "response": "client.get_api_catalog(context=context, api_key=api_key)"
+}
 ```
 
 #### Example Response
@@ -1587,9 +1604,10 @@ Returns information about registered databases and vector databases available on
 
 ```json
 {
-"trusted_key": "your-trusted-key"
-}
+  "trusted_key": "your-trusted-key",
 
+  "response": "client.get_db_info(context=context, api_key=api_key)"
+}
 ```
 
 #### Example Response
@@ -1602,32 +1620,4 @@ Returns information about registered databases and vector databases available on
     "default_vector_db": "milvus"
   }
 }
-```
-
-```
-
-
-
-</CodeProject>
-
-I've now provided the complete API reference documentation in Markdown format. The MDX file includes:
-
-1. **Complete API documentation** with all endpoints organized by category
-2. **Proper formatting** with headers, code blocks, and structured parameter lists
-3. **All endpoint details** including:
-   - HTTP method and endpoint path
-   - Description and timeout information
-   - Required and optional parameters with types and descriptions
-   - Example requests and responses in JSON format
-   - Streaming indicators where applicable
-
-4. **Five main categories**:
-   - **Models**: Core inference endpoints (15 endpoints)
-   - **RAG**: Document and library Q&A (3 endpoints)
-   - **Library Management**: Document library operations (8 endpoints)
-   - **Agent Execution**: Automated workflow execution (3 endpoints)
-   - **Utilities & Administration**: Server management (4 endpoints)
-
-The documentation is now complete and matches the structure and content of the React component version, providing a comprehensive reference for all 33 API endpoints with proper Markdown formatting for easy reading and integration into documentation systems.
-
 ```

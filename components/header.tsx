@@ -7,10 +7,11 @@ import { SidebarTrigger } from "@/components/ui/sidebar"
 import { Separator } from "@/components/ui/separator"
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
-import { Search, FileText, Hash, BookOpen } from "lucide-react"
+import { Search, FileText, Hash, BookOpen, Sparkles } from "lucide-react"
 import { useRouter, usePathname } from "next/navigation"
 import searchData from "./search-data"
 import { ThemeToggle } from "./theme-toggle"
+import { AiSearchModal } from "./ai-search-modal"
 
 export function Header() {
   const [searchQuery, setSearchQuery] = useState("")
@@ -21,10 +22,26 @@ export function Header() {
   const [lastScrollY, setLastScrollY] = useState(0)
   const [isSearchFocused, setIsSearchFocused] = useState(false)
   const [showBorder, setShowBorder] = useState(true)
+  const [showAiModal, setShowAiModal] = useState(false)
+  const [aiQuery, setAiQuery] = useState("")
   const router = useRouter()
   const pathname = usePathname()
   const searchRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
+
+  // Keyboard shortcut for AI search (Cmd+K or Ctrl+K)
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+        e.preventDefault()
+        setShowAiModal(true)
+        setAiQuery(searchQuery)
+      }
+    }
+
+    window.addEventListener("keydown", handleKeyDown)
+    return () => window.removeEventListener("keydown", handleKeyDown)
+  }, [searchQuery])
 
   // Scroll behavior for header visibility
   useEffect(() => {
@@ -83,10 +100,21 @@ export function Header() {
       .slice(0, 8) // Limit to 8 results
   }
 
+  // Helper function to check if query is a question
+  const isQuestion = (query: string): boolean => {
+    const questionWords = ["how", "what", "why", "when", "where", "who", "can", "does", "is", "are"]
+    const lowerQuery = query.toLowerCase()
+    return (
+      query.includes("?") ||
+      questionWords.some((word) => lowerQuery.startsWith(word + " ")) ||
+      lowerQuery.split(" ").length > 4 // Longer queries are more likely questions
+    )
+  }
+
   useEffect(() => {
     const results = performSearch(searchQuery)
     setSearchResults(results)
-    setShowResults(searchQuery.length > 0 && results.length > 0)
+    setShowResults(searchQuery.length > 0)
     setSelectedIndex(-1)
   }, [searchQuery])
 
@@ -198,21 +226,38 @@ export function Header() {
   }, [pathname])
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (!showResults) return
-
     switch (e.key) {
       case "ArrowDown":
         e.preventDefault()
-        setSelectedIndex((prev) => (prev < searchResults.length - 1 ? prev + 1 : prev))
+        if (showResults) {
+          setSelectedIndex((prev) => (prev < searchResults.length - 1 ? prev + 1 : prev))
+        }
         break
       case "ArrowUp":
         e.preventDefault()
-        setSelectedIndex((prev) => (prev > 0 ? prev - 1 : -1))
+        if (showResults) {
+          setSelectedIndex((prev) => (prev > 0 ? prev - 1 : -1))
+        }
         break
       case "Enter":
         e.preventDefault()
         if (selectedIndex >= 0 && searchResults[selectedIndex]) {
+          // Navigate to selected result
           navigateToResult(searchResults[selectedIndex])
+        } else if (searchQuery.trim().length > 0 && searchResults.length === 0 && isQuestion(searchQuery)) {
+          // No results and looks like a question - trigger AI search
+          setShowAiModal(true)
+          setAiQuery(searchQuery)
+          setSearchQuery("")
+          setShowResults(false)
+          inputRef.current?.blur()
+        } else if (searchQuery.trim().length > 0 && searchResults.length === 0) {
+          // No results but not a question - still trigger AI search for any query
+          setShowAiModal(true)
+          setAiQuery(searchQuery)
+          setSearchQuery("")
+          setShowResults(false)
+          inputRef.current?.blur()
         }
         break
       case "Escape":
@@ -231,81 +276,106 @@ export function Header() {
   }
 
   return (
-    <header
-      className={`sticky top-0 z-40 flex h-16 shrink-0 items-center gap-2 border-b bg-background px-2 sm:px-4 transition-transform duration-300 ${isVisible ? "translate-y-0" : "-translate-y-full"
-        }`}
-    >
-      <SidebarTrigger className="-ml-1" />
-      <Separator orientation="vertical" className="mr-2 h-4" />
-      <div className="flex flex-1 items-center justify-between gap-2">
-        <div className="flex items-center gap-2 min-w-0">
-          <h1 className="text-base sm:text-lg font-semibold truncate">Model HQ</h1>
-          <span className="hidden sm:inline text-sm text-muted-foreground">Documentation</span>
-        </div>
-        <div className="flex items-center gap-2">
-          <ThemeToggle />
-          <div 
-            className={`relative transition-all duration-300 ease-in-out ${
-              isSearchFocused ? 'w-[300px] sm:w-[400px]' : 'w-[200px] sm:w-[280px]'
-            }`} 
-            ref={searchRef}
-          >
-            <div className="relative">
-              <Search className={`absolute left-2 top-1/2 h-4 w-4 -translate-y-1/2 transition-colors duration-200 z-10 ${
-                isSearchFocused ? 'text-foreground' : 'text-muted-foreground'
-              }`} />
-              <input
-                ref={inputRef}
-                type="text"
-                placeholder="Search..."
-                className={`w-full pl-8 pr-3 text-sm h-9 rounded-md outline-none transition-colors duration-200 ease-in-out ${
-                  isSearchFocused 
-                    ? 'bg-accent/50 dark:bg-accent/30' 
-                    : 'bg-background'
-                } ${
-                  showBorder && !isSearchFocused
-                    ? 'border border-input'
-                    : 'border-none'
-                }`}
-                style={{ 
-                  boxShadow: 'none',
-                  outline: 'none'
-                }}
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                onKeyDown={handleKeyDown}
-                onFocus={() => {
-                  setShowBorder(false)
-                  setIsSearchFocused(true)
-                  searchQuery && setShowResults(true)
-                }}
-                onBlur={() => {
-                  // Delay to allow click events on search results to fire first
-                  setTimeout(() => {
-                    setIsSearchFocused(false)
-                    // Wait for contraction animation to complete before showing border
+    <>
+      <header
+        className={`sticky top-0 z-40 flex h-16 shrink-0 items-center gap-2 border-b bg-background px-2 sm:px-4 transition-transform duration-300 ${isVisible ? "translate-y-0" : "-translate-y-full"
+          }`}
+      >
+        <SidebarTrigger className="-ml-1" />
+        <Separator orientation="vertical" className="mr-2 h-4" />
+        <div className="flex flex-1 items-center justify-between gap-2">
+          <div className="flex items-center gap-2 min-w-0">
+            <h1 className="text-base sm:text-lg font-semibold truncate">Model HQ</h1>
+            <span className="hidden sm:inline text-sm text-muted-foreground">Documentation</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <ThemeToggle />
+            <div 
+              className={`relative transition-all duration-300 ease-in-out ${
+                isSearchFocused ? 'w-[300px] sm:w-[400px]' : 'w-[200px] sm:w-[280px]'
+              }`} 
+              ref={searchRef}
+            >
+              <div className="relative">
+                <Search className={`absolute left-2 top-1/2 h-4 w-4 -translate-y-1/2 transition-colors duration-200 z-10 ${
+                  isSearchFocused ? 'text-foreground' : 'text-muted-foreground'
+                }`} />
+                <input
+                  ref={inputRef}
+                  type="text"
+                  placeholder="Search... (⌘ + K for AI)"
+                  className={`w-full pl-8 pr-3 text-sm h-9 rounded-md outline-none transition-colors duration-200 ease-in-out ${
+                    isSearchFocused 
+                      ? 'bg-accent/50 dark:bg-accent/30' 
+                      : 'bg-background'
+                  } ${
+                    showBorder && !isSearchFocused
+                      ? 'border border-input'
+                      : 'border-none'
+                  }`}
+                  style={{ 
+                    boxShadow: 'none',
+                    outline: 'none'
+                  }}
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  onKeyDown={handleKeyDown}
+                  onFocus={() => {
+                    setShowBorder(false)
+                    setIsSearchFocused(true)
+                    searchQuery && setShowResults(true)
+                  }}
+                  onBlur={() => {
+                    // Delay to allow click events on search results to fire first
                     setTimeout(() => {
-                      setShowBorder(true)
-                    }, 300)
-                  }, 150)
-                }}
-                suppressHydrationWarning
-              />
+                      setIsSearchFocused(false)
+                      // Wait for contraction animation to complete before showing border
+                      setTimeout(() => {
+                        setShowBorder(true)
+                      }, 300)
+                    }, 150)
+                  }}
+                  suppressHydrationWarning
+                />
 
-              {/* Search Results Dropdown */}
-              {showResults && (
-                <div className="absolute top-full left-0 right-0 mt-1 bg-background border rounded-md shadow-lg z-50 max-h-96 overflow-y-auto">
-                  <SearchResult 
-                    results={searchResults} 
-                    onResultClick={handleResultClick}
-                    selectedIndex={selectedIndex}
-                  />
-                </div>
-              )}
+                {/* Search Results Dropdown */}
+                {showResults && (
+                  <div className="absolute top-full left-0 right-0 mt-1 bg-background border rounded-md shadow-lg z-50 max-h-96 overflow-y-auto">
+                    <SearchResult 
+                      results={searchResults} 
+                      onResultClick={handleResultClick}
+                      selectedIndex={selectedIndex}
+                    />
+                  </div>
+                )}
+              </div>
             </div>
+            
+            {/* AI Search Button */}
+            <button
+              onClick={() => {
+                setShowAiModal(true)
+                setAiQuery("")
+              }}
+              className="h-9 px-3 rounded-md border border-input bg-background hover:bg-accent hover:text-accent-foreground transition-colors flex items-center gap-2"
+              title="AI Search (⌘K or Ctrl+K)"
+            >
+              <Sparkles className="h-4 w-4" />
+              <span className="hidden sm:inline text-sm">AI</span>
+            </button>
           </div>
         </div>
-      </div>
-    </header>
+      </header>
+
+      {/* AI Search Modal */}
+      <AiSearchModal
+        isOpen={showAiModal}
+        onClose={() => {
+          setShowAiModal(false)
+          setAiQuery("")
+        }}
+        initialQuery={aiQuery}
+      />
+    </>
   )
 }

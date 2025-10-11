@@ -25,8 +25,8 @@ Model HQ is the fastest, easiest way to deploy and run **AI models directly on y
 
 * ⬇️ **10 seconds** – Average time to download a single model
 * ⬇️ **<30 minutes** – Download **24 models** onto device
-* 📦 **100+ models** – Optimized for AI PCs
-* ⚡ **Up to 22B parameters** – On Intel AI PCs
+* 📦 **150+ models** – Optimized for AI PCs
+* ⚡ **Up to 32B parameters** – On Intel AI PCs
 * 💸 **\$0 per-token cost** – When running models locally
 
 &nbsp;

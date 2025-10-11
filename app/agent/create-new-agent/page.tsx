@@ -249,8 +249,10 @@ export default function CreateAgentPage() {
 
         <p>&nbsp;</p>
 
+        {/* ServiceTable is intentionally not rendered here */}
+        <div id="service-table"></div>
         <ServiceTable />
-
+        
         <p>&nbsp;</p>
 
         <blockquote data-type="tip">
