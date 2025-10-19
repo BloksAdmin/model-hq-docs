@@ -1,9 +1,9 @@
-## Exploring `Integrations` in Model HQ
+# Exploring `Integrations` in Model HQ
 How to view, add, and test third-party integrations in Model HQ. It is intended for administrators and users responsible for configuring external services.
 
 The guide lists available integrations, provides step-by-step instructions for adding and testing credentials, and outlines security and troubleshooting guidance.
 
-### Supported integrations
+## Supported integrations
 Model HQ provides connectors for a variety of services. Current integrations include:
 
 - Model HQ Agent Server
@@ -26,7 +26,7 @@ Model HQ provides connectors for a variety of services. Current integrations inc
 
 Additional integrations are planned. To request a connector, contact support@aibloks.com.
 
-### Managing integrations
+## Managing integrations
 To configure integrations, open the Integrations section in the main menu and use the Manage Integrations interface to add or update credentials.
 
 1. Open Integrations from the main menu.
@@ -47,25 +47,30 @@ To configure integrations, open the Integrations section in the main menu and us
 5. After successful entry, the connector will be added to your account.
    ![integration added](integrations/addedJira.png)
 
-### Testing an integration
+## Testing an integration
 1. Select the integration from the dropdown.
 2. Click the **Test** button to verify connectivity and credentials.
    ![test integration](integrations/test.png)
 
 If the test succeeds, the integration is active. If it fails, review the error message and verify credentials and network settings.
 
-### Security and data handling
+## Using integration
+Go to: RAG > [build new] or [load existing] > [name] or [select sources] > + Add Docs
+
+Click on your integration to start using as a RAG source and so.
+
+## Security and data handling
 - No data is leaving your app.
 - Credentials are stored locally in your Model HQ app.
 - Model HQ does not share credentials with third parties without explicit consent. When enabling integrations that require external access, follow your organization’s security policy.
 - For sensitive systems (financial, production data, support systems), consult your security team before enabling access.
 
-### Troubleshooting
+## Troubleshooting
 - Verify that API keys, tokens, and URLs match the values provided by the service.
 - Confirm network connectivity and any required firewall or allowlist configuration.
 - Review logs or the Test operation error messages for diagnostic information.
 
-### Conclusion
+## Conclusion
 Model HQ integrations enable connections to external data sources and services in a secure, auditable way. Use the Manage Integrations and Credentials Handling interfaces to add, verify, and administer connectors.
 
 If you have any questions or feedback, please reach out to us at `support@aibloks.com`.
