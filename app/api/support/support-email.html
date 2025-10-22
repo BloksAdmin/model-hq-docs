@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Bloks Support Request</title>
+</head>
+<body style="margin: 0; padding: 20px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f0f4f8; line-height: 1.6;">
+  <div style="max-width: 600px; margin: 0 auto; background: white; border-radius: 8px; overflow: hidden;">
+    <!-- Header -->
+    <div style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white; padding: 40px 35px; text-align: center; border-bottom: 4px solid #1e40af;">
+      <h1 style="margin: 0 0 10px 0; font-size: 26px; font-weight: 700; letter-spacing: -0.5px;">AI Bloks Support Request</h1>
+      <p style="margin: 0; font-size: 15px; color: #cbd5e1;">New support ticket received</p>
+    </div>
+
+    <!-- Content -->
+    <div style="padding: 35px;">
+      <!-- Customer Info -->
+      <div style="background: #f8fafc; padding: 24px; border-radius: 6px; margin-bottom: 28px; border: 2px solid #e2e8f0; border-left: 4px solid #1e40af;">
+        <h2 style="margin: 0 0 18px 0; color: #0f172a; font-size: 17px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Customer Information</h2>
+        <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+          <tr>
+            <td style="padding: 10px 0; font-weight: 600; color: #475569; width: 120px;">Name:</td>
+            <td style="padding: 10px 0; color: #0f172a;">{{name}}</td>
+          </tr>
+          <tr>
+            <td style="padding: 10px 0; font-weight: 600; color: #475569; border-top: 1px solid #cbd5e1;">Email:</td>
+            <td style="padding: 10px 0; color: #0f172a; border-top: 1px solid #cbd5e1;"><a href="mailto:{{email}}" style="color: #1e40af; text-decoration: none; font-weight: 600;">{{email}}</a></td>
+          </tr>
+          <tr>
+            <td style="padding: 10px 0; font-weight: 600; color: #475569; border-top: 1px solid #cbd5e1;">Issue Type:</td>
+            <td style="padding: 10px 0; border-top: 1px solid #cbd5e1;">
+              <span style="background: #dbeafe; color: #1e40af; padding: 5px 14px; border-radius: 4px; font-size: 13px; font-weight: 600; border: 1px solid #bfdbfe;">
+                {{issueType}}
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 10px 0; font-weight: 600; color: #475569; border-top: 1px solid #cbd5e1;">Subject:</td>
+            <td style="padding: 10px 0; color: #0f172a; font-weight: 600; border-top: 1px solid #cbd5e1;">{{subject}}</td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- Message -->
+      <div style="margin-bottom: 28px;">
+        <h3 style="margin: 0 0 16px 0; color: #0f172a; font-size: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Message</h3>
+        <div style="background: #ffffff; border: 2px solid #cbd5e1; border-left: 4px solid #1e40af; border-radius: 4px; padding: 20px; white-space: pre-wrap; line-height: 1.7; color: #334155; font-size: 14px;">{{message}}</div>
+      </div>
+
+      <!-- Reply Button -->
+      <div style="text-align: center; margin-top: 32px;">
+        <a href="mailto:{{email}}?subject=Re: {{subject}}" 
+          style="background: #1e40af; color: white; padding: 14px 32px; border-radius: 4px; text-decoration: none; font-weight: 600; display: inline-block; border: 2px solid #1e40af; font-size: 14px;">
+          Reply to Customer
+        </a>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div style="background: linear-gradient(135deg, #0f172a 0%, #020617 100%); color: white; padding: 30px; text-align: center; border-top: 1px solid #1e293b;">
+      <p style="margin: 0 0 8px 0; color: #e2e8f0; font-size: 13px; line-height: 1.6;">
+        This email was sent from the AI Bloks website contact form.
+      </p>
+      <p style="margin: 0; color: #94a3b8; font-size: 12px;">
+        Received on {{date}}
+      </p>
+      <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
+        <p style="margin: 0; color: #64748b; font-size: 11px;">
+          AI Bloks - Private AI that runs locally on your infrastructure
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support Request Received - Model HQ</title>
+</head>
+<body style="margin: 0; padding: 20px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f0f4f8; line-height: 1.6;">
+  <div style="max-width: 600px; margin: 0 auto; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);">
+    
+    <!-- Header -->
+    <div style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white; padding: 45px 35px; text-align: center; border-bottom: 4px solid #1e40af;">
+      <div style="margin-bottom: 24px;">
+        <img src="https://raw.githubusercontent.com/BloksAdmin/model-hq-docs/main/public/images/llmware-logo.png" alt="llmware" style="height: 45px; width: auto; max-width: 200px; object-fit: contain;" />
+      </div>
+      <h1 style="margin: 0 0 12px 0; font-size: 26px; font-weight: 700; letter-spacing: -0.5px; color: #ffffff;">Support Request Received</h1>
+      <p style="margin: 0; font-size: 15px; color: #cbd5e1; font-weight: 400;">Thank you for contacting Model HQ Support</p>
+    </div>
+
+    <!-- Content -->
+    <div style="padding: 40px 35px;">
+      <div style="margin-bottom: 32px;">
+        <p style="color: #0f172a; font-size: 17px; font-weight: 600; margin: 0 0 18px 0;">Dear {{name}},</p>
+        <p style="color: #334155; font-size: 15px; line-height: 1.7; margin: 0 0 14px 0;">Thank you for reaching out to Model HQ Support. We have successfully received your support request and want to assure you that our team is already reviewing it.</p>
+        <p style="color: #334155; font-size: 15px; line-height: 1.7; margin: 0;">We appreciate your patience and will respond to your inquiry as soon as possible.</p>
+      </div>
+
+      <!-- Request Details -->
+      <div style="background: #f8fafc; padding: 26px; border-radius: 6px; margin-bottom: 32px; border: 2px solid #e2e8f0; border-left: 4px solid #1e40af;">
+        <h2 style="margin: 0 0 20px 0; color: #0f172a; font-size: 16px; font-weight: 700; text-transform: uppercase;">Request Details</h2>
+        <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+          <tr>
+            <td style="padding: 12px 0; font-weight: 600; color: #475569; width: 140px;">Issue Type:</td>
+            <td style="padding: 12px 0; color: #0f172a;"><span style="background: #dbeafe; color: #1e40af; padding: 6px 16px; border-radius: 4px; font-size: 13px; font-weight: 600;">{{issueType}}</span></td>
+          </tr>
+          <tr>
+            <td style="padding: 12px 0; font-weight: 600; color: #475569; border-top: 1px solid #cbd5e1;">Subject:</td>
+            <td style="padding: 12px 0; color: #0f172a; font-weight: 600; border-top: 1px solid #cbd5e1;">{{subject}}</td>
+          </tr>
+          <tr>
+            <td style="padding: 12px 0; font-weight: 600; color: #475569; border-top: 1px solid #cbd5e1;">Date Submitted:</td>
+            <td style="padding: 12px 0; color: #1e293b; border-top: 1px solid #cbd5e1;">{{date}}</td>
+          </tr>
+          <tr>
+            <td style="padding: 12px 0; font-weight: 600; color: #475569; border-top: 1px solid #cbd5e1;">Ticket ID:</td>
+            <td style="padding: 12px 0; color: #1e293b; border-top: 1px solid #cbd5e1; font-family: 'Courier New', monospace; font-weight: 600;">{{ticketId}}</td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- Your Message -->
+      <div style="margin-bottom: 32px;">
+        <h3 style="margin: 0 0 16px 0; color: #0f172a; font-size: 16px; font-weight: 700; text-transform: uppercase;">Your Message</h3>
+        <div style="background: #ffffff; border: 2px solid #cbd5e1; border-left: 4px solid #1e40af; border-radius: 4px; padding: 20px; white-space: pre-wrap; line-height: 1.7; color: #334155; font-size: 14px;">{{body}}</div>
+      </div>
+
+      <!-- What's Next -->
+      <div style="background: #eff6ff; padding: 26px; border-radius: 6px; margin-bottom: 32px; border: 2px solid #bfdbfe; border-left: 4px solid #1e40af;">
+        <h3 style="margin: 0 0 18px 0; color: #1e40af; font-size: 16px; font-weight: 700; text-transform: uppercase;">What Happens Next</h3>
+        <ul style="color: #1e293b; font-size: 14px; padding-left: 20px; line-height: 1.9;">
+          <li>Our expert support team will carefully review your request.</li>
+          <li>You'll receive a personalized response within <strong>24-48 business hours</strong>.</li>
+          <li>We'll reply directly to: <strong>{{email}}</strong>.</li>
+          <li>Please check your spam/junk folder if you don't see our response.</li>
+        </ul>
+      </div>
+
+      <!-- Resources -->
+      <div style="background: #f8fafc; padding: 22px; border-radius: 4px; margin-bottom: 32px; border: 2px solid #e2e8f0;">
+        <h3 style="margin: 0 0 16px 0; color: #0f172a; font-size: 16px; font-weight: 700; text-transform: uppercase;">Helpful Resources</h3>
+        <ul style="margin: 0; padding-left: 20px; color: #475569; line-height: 2; font-size: 14px;">
+          <li><a href="https://model-hq-docs.vercel.app" style="color: #1e40af; text-decoration: none; font-weight: 600;">Documentation</a></li>
+          <li><a href="https://model-hq-docs.vercel.app/cookbooks" style="color: #1e40af; text-decoration: none; font-weight: 600;">Cookbooks</a></li>
+          <li><a href="https://model-hq-docs.vercel.app/video-tutorials" style="color: #1e40af; text-decoration: none; font-weight: 600;">Video Tutorials</a></li>
+        </ul>
+      </div>
+
+      <!-- Buttons -->
+      <div style="text-align: center;">
+        <a href="https://discord.gg/your-discord-link" style="background: #1e40af; color: white; padding: 14px 32px; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 14px; display: inline-block; margin: 8px;">Join Our Discord</a>
+        <a href="https://model-hq-docs.vercel.app" style="background: #0f172a; color: white; padding: 14px 32px; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 14px; display: inline-block; margin: 8px;">Browse Documentation</a>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div style="background: linear-gradient(135deg, #0f172a 0%, #020617 100%); color: white; padding: 40px 35px; text-align: center;">
+      <div style="margin-bottom: 24px;">
+        <img src="https://raw.githubusercontent.com/BloksAdmin/model-hq-docs/main/public/images/llmware-logo.png" alt="llmware" style="height: 45px; width: auto; max-width: 200px; object-fit: contain;" />
+      </div>
+      <div style="background: rgba(255,255,255,0.06); padding: 20px; border-radius: 4px; margin-bottom: 24px;">
+        <p style="margin: 0 0 10px 0; color: #e2e8f0; font-size: 14px; font-weight: 600;">This is an automated confirmation email</p>
+        <p style="margin: 0; color: #cbd5e1; font-size: 13px;">Please do not reply directly to this message.<br>Our support team will respond to you at <strong style="color: #93c5fd;">{{email}}</strong></p>
+      </div>
+      <div style="padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1);">
+        <p style="margin: 0 0 8px 0; color: #94a3b8; font-size: 13px;"><strong>Model HQ</strong> - AI Development Platform</p>
+        <p style="margin: 0 0 16px 0; color: #64748b; font-size: 12px;">© {{year}} Model HQ. All rights reserved.</p>
+        <p style="margin: 0; color: #64748b; font-size: 11px;">Powered by llmware - Private AI that runs locally on your infrastructure</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
